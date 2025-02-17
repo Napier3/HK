@@ -1,10 +1,3 @@
-//这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
-//保留所有权利
-
-//SttXuiDataTabs.cpp  CSttXuiDataTabs
-
-
 #include "stdafx.h"
 #include "SttXuiDataTabs.h"
 
@@ -16,13 +9,6 @@
 
 CSttXuiDataTabs::CSttXuiDataTabs()
 {
-	//初始化属性
-	m_nX = 0;
-	m_nY = 0;
-	m_nCy = 0;
-	m_nCx = 0;
-
-	//初始化成员变量
 }
 
 CSttXuiDataTabs::~CSttXuiDataTabs()
@@ -176,7 +162,7 @@ BOOL CSttXuiDataTabs::CanPaste(UINT nClassID)
 
 CExBaseObject* CSttXuiDataTabs::CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 	CSttXMainConfigXmlRWKeys *pXmlKeys = (CSttXMainConfigXmlRWKeys*)pXmlRWKeys;
 
 
@@ -188,9 +174,9 @@ CExBaseObject* CSttXuiDataTabs::CreateNewChild(const CString &strClassID, BOOL &
 	return pNew;
 }
 
-CExBaseObject* CSttXuiDataTabs::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/)
+CExBaseObject* CSttXuiDataTabs::CreateNewChild(long nClassID)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 
 
 	if (nClassID == MNGRCLASSID_CSTTXUIDATATAB)

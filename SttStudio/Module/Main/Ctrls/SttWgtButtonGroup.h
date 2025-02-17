@@ -1,5 +1,4 @@
-#ifndef QSTTWGTBUTTONGROUP_H
-#define	QSTTWGTBUTTONGROUP_H
+#pragma once
 
 #include <QWidget>
 #include "../Module/SttWgtBaseList.h"
@@ -9,19 +8,17 @@
 class QSttWgtButtonGroup : public QSttWgtBaseList, public QWidget
 {
 public:
-	QSttWgtButtonGroup(QWidget* pParent = NULL);
-	virtual ~QSttWgtButtonGroup();
+        QSttWgtButtonGroup(QWidget* pParent = nullptr);
+        ~QSttWgtButtonGroup() override;
 
 private:
 	void InitTestBtnsGroup(CExBaseObject *pSttXuiData);
 	void InitBtnsGroup(CExBaseObject *pSttXuiData);
 	virtual void InitTestBtnsGroupChildren(CExBaseObject *pSttXuiData);
-	virtual void InitBtnsGroupChildren(CExBaseObject *pSttXuiData);
+        virtual void InitBtnsGroupChildren(CExBaseObject *pSttXuiData);
 
 public:
-	virtual void InitUIOwn(CExBaseObject *pSttXuiData);
-	virtual void InitUIChildren(CExBaseObject *pSttXuiData);
+        void InitUIOwn(CExBaseObject *pSttXuiData) override;
+        void InitUIChildren(CExBaseObject *pSttXuiData) override;
 
 };
-
-#endif//!QSTTWGTBUTTONGROUP_H

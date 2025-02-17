@@ -1,54 +1,37 @@
-//这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
-//保留所有权利
-
-//SttXuiDataTestBtnsGroup.h  CSttXuiDataTestBtnsGroup
-
 #pragma once
 
 #include "SttXMainConfigGlobal.h"
-
 #include "SttXuiDataBase.h"
-
 #include "SttXuiDataButton.h"
 
 class CSttXuiDataTestBtnsGroup : public CSttXuiDataBase
 {
 public:
 	CSttXuiDataTestBtnsGroup();
-	virtual ~CSttXuiDataTestBtnsGroup();
+    ~CSttXuiDataTestBtnsGroup() override;
 
-
-	long  m_nX;
-	long  m_nY;
-	long  m_nCx;
-	long  m_nCy;
-	long  m_nInset;
-	CString  m_strFrom;
-	CString  m_strFont;
+public:
+    long  m_nX{};
+    long  m_nY{};
+    long  m_nCx{};
+    long  m_nCy{};
+    long  m_nInset{};
+    CString  m_strFrom{};
+    CString  m_strFont{};
 //重载函数
 public:
-	virtual UINT GetClassID() {    return MNGRCLASSID_CSTTXUIDATATESTBTNSGROUP;   }
-	virtual BSTR GetXmlElementKey()  {      return CSttXMainConfigXmlRWKeys::CSttXuiDataTestBtnsGroupKey();     }
-	virtual long XmlReadOwn(CXmlRWNodeBase &oNode, CXmlRWKeys *pXmlRWKeys);
-	virtual long XmlWriteOwn(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oElement, CXmlRWKeys *pXmlRWKeys);
-	virtual long SerializeOwn(CBinarySerialBuffer &oBinaryBuffer);
-	virtual void InitAfterRead();
-	virtual BOOL IsEqualOwn(CBaseObject* pObj);
-	virtual BOOL CopyOwn(CBaseObject* pDest);
-	virtual CBaseObject* Clone();
-	virtual CBaseObject* CloneEx(BOOL bCopyOwn=TRUE, BOOL bCopyChildren=FALSE);
-	virtual BOOL CanPaste(UINT nClassID);
-	virtual CExBaseObject* CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys);
-	virtual CExBaseObject* CreateNewChild(long nClassID/*, BOOL &bAddToTail*/);
-
-//私有成员变量
-private:
-
-//私有成员变量访问方法
-public:
-
-//属性变量访问方法
-public:
+    UINT GetClassID() override {    return MNGRCLASSID_CSTTXUIDATATESTBTNSGROUP;   }
+    BSTR GetXmlElementKey() override {      return CSttXMainConfigXmlRWKeys::CSttXuiDataTestBtnsGroupKey();     }
+    long XmlReadOwn(CXmlRWNodeBase &oNode, CXmlRWKeys *pXmlRWKeys) override;
+    long XmlWriteOwn(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oElement, CXmlRWKeys *pXmlRWKeys) override;
+    long SerializeOwn(CBinarySerialBuffer &oBinaryBuffer) override;
+    void InitAfterRead() override;
+    BOOL IsEqualOwn(CBaseObject* pObj) override;
+    BOOL CopyOwn(CBaseObject* pDest) override;
+    CBaseObject* Clone() override;
+    CBaseObject* CloneEx(BOOL bCopyOwn=TRUE, BOOL bCopyChildren=FALSE) override;
+    BOOL CanPaste(UINT nClassID) override;
+    CExBaseObject* CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys) override;
+    CExBaseObject* CreateNewChild(long nClassID/*, BOOL &bAddToTail*/) override;
 };
 

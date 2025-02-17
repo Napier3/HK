@@ -1,5 +1,4 @@
-#ifndef QSTTWGTNATIVEMAINLINUX_H
-#define QSTTWGTNATIVEMAINLINUX_H
+#pragma once
 
 #include <QWidget>
 #include "../../../Module/BaseClass/ExBaseList.h"
@@ -9,7 +8,7 @@
 class QSttWgtNativeMainLinux : public QWidget
 {
 public:
-	QSttWgtNativeMainLinux(QWidget* pParent = NULL);
+    QSttWgtNativeMainLinux(QWidget* pParent = nullptr);
 	virtual ~QSttWgtNativeMainLinux();
 
 	CExBaseList* m_pGlobalStyle;
@@ -22,5 +21,3 @@ public:
 };
 
 extern QSttWgtNativeMainLinux* m_gQSttWgtNativeMainLinux;
-
-#endif//!QSTTWGTNATIVEMAINLINUX_H

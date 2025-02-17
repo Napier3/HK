@@ -1,5 +1,4 @@
-#ifndef QSTTWGTFILEMNGRGRID_H
-#define	QSTTWGTFILEMNGRGRID_H
+#pragma once
 
 #include <QTableWidget>
 #include "../Module/SttWgtBase.h"
@@ -7,14 +6,12 @@
 class QSttWgtFileMngrGrid : public QSttWgtBase, public QTableWidget
 {
 public:
-	QSttWgtFileMngrGrid(QWidget* pParent = NULL);
-	virtual ~QSttWgtFileMngrGrid();
+    QSttWgtFileMngrGrid(QWidget* pParent = nullptr);
+    ~QSttWgtFileMngrGrid() override;
 
 public:
-	virtual void InitUIOwn(CExBaseObject *pSttXuiData);
+    void InitUIOwn(CExBaseObject *pSttXuiData) override;
 	void LoadFiles(const CString& strPath, const CString& strStyle);
 	void InitUI();
 	void Clear();
 };
-
-#endif//!QSTTWGTFILEMNGRGRID_H

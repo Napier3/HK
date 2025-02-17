@@ -1,5 +1,4 @@
-#ifndef QSTTWGTCMDTHREAD_H
-#define QSTTWGTCMDTHREAD_H
+#pragma once
 
 #include <QThread>
 #include <QStringList>
@@ -9,7 +8,7 @@ class QSttWgtCmdThread : public QThread
 {
 public:
 	QSttWgtCmdThread();
-	virtual ~QSttWgtCmdThread();
+    ~QSttWgtCmdThread() override;
 
 	QString m_strPath;
 	QStringList m_listCmd;
@@ -18,8 +17,6 @@ public:
 	static void start_exe(const CString &strExe, const CString &strArguments);
 	static void startDetached_exe(const CString &strExe, const CString &strArguments);
 public:
-	virtual void run();
+    void run() override;
 
 };
-
-#endif//!QSTTWGTCMDTHREAD_H

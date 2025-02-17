@@ -1,5 +1,4 @@
-#ifndef QSTTWGTSTYLE_H
-#define QSTTWGTSTYLE_H
+#pragma once
 #include "../SttXuiData/SttXuiDataBase.h"
 
 #define WGT_TYPE_FONT "font"
@@ -15,9 +14,7 @@ public:
 
 public:
 	QSttWgtStyle();
-	virtual ~QSttWgtStyle();
+    ~QSttWgtStyle() override;
 
 	void InitStyle(CSttXuiDataBase* pSttXuiDataBase);
 };
-
-#endif//!QSTTWGTSTYLE_H

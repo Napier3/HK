@@ -1,10 +1,3 @@
-//这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
-//保留所有权利
-
-//SttXuiDataText.cpp  CSttXuiDataText
-
-
 #include "stdafx.h"
 #include "SttXuiDataText.h"
 
@@ -16,13 +9,6 @@
 
 CSttXuiDataText::CSttXuiDataText()
 {
-	//初始化属性
-	m_nX = 0;
-	m_nY = 0;
-	m_nCx = 0;
-	m_nCy = 0;
-
-	//初始化成员变量
 }
 
 CSttXuiDataText::~CSttXuiDataText()
@@ -196,19 +182,13 @@ BOOL CSttXuiDataText::CanPaste(UINT nClassID)
 
 CExBaseObject* CSttXuiDataText::CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 	CSttXMainConfigXmlRWKeys *pXmlKeys = (CSttXMainConfigXmlRWKeys*)pXmlRWKeys;
-
-
-
-	return pNew;
+    return pNew;
 }
 
-CExBaseObject* CSttXuiDataText::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/)
+CExBaseObject* CSttXuiDataText::CreateNewChild(long nClassID)
 {
-	CExBaseObject *pNew  = NULL;
-
-
-
+    CExBaseObject *pNew  = nullptr;
 	return pNew;
 }

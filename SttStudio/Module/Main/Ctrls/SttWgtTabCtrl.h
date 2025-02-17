@@ -1,5 +1,4 @@
-#ifndef QSTTWGTTABCTRL_H
-#define	QSTTWGTTABCTRL_H
+#pragma once
 
 #include <QTabWidget>
 #include "../Module/SttWgtBaseList.h"
@@ -7,24 +6,22 @@
 class QSttWgtTabCtrl : public QSttWgtBaseList, public QTabWidget
 {
 public:
-	QSttWgtTabCtrl(QWidget* pParent = NULL);
-	virtual ~QSttWgtTabCtrl();
+    QSttWgtTabCtrl(QWidget* pParent = nullptr);
+    ~QSttWgtTabCtrl() override;
 
 public:
-	virtual void InitUIOwn(CExBaseObject *pSttXuiData);
-	virtual void InitUIChildren(CExBaseObject *pSttXuiData);
+    void InitUIOwn(CExBaseObject *pSttXuiData) override;
+    void InitUIChildren(CExBaseObject *pSttXuiData) override;
 };
 
 class QSttWgtTab : public QSttWgtBase, public QWidget
 {
 public:
-	QSttWgtTab(QWidget* pParent = NULL);
-	virtual ~QSttWgtTab();
+    QSttWgtTab(QWidget* pParent = nullptr);
+    ~QSttWgtTab() override;
 
 public:
-	virtual void InitUIOwn(CExBaseObject *pSttXuiData);
-	virtual void InitUIChildren(CExBaseObject *pSttXuiData);
+    void InitUIOwn(CExBaseObject *pSttXuiData) override;
+    void InitUIChildren(CExBaseObject *pSttXuiData) override;
 	void AddWidgetChild(QWidget *pChildWidget);
 };
-
-#endif//!QSTTWGTTABCTRL_H

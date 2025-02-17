@@ -16,8 +16,8 @@
 #include "../../../../Module/OSInterface/QT/XMessageBox.h"
 
 
-QSttWgtCmdExecTool* g_pQSttWgtCmdExecTool = NULL;
-QMainWindow *g_pSttWgtCmdMainWindow = NULL;
+QSttWgtCmdExecTool* g_pQSttWgtCmdExecTool = nullptr;
+QMainWindow *g_pSttWgtCmdMainWindow = nullptr;
 QSharedMemory g_oTestMacroSM(STT_UPDATE_TESTMACRO_SM_ID);//2023-12-26 wuxinyi 切换测试模块共享内存
 
 double g_dStartupDelayTime = 3.0f;//开机后等待自动测试启动需要的延时时间
@@ -64,7 +64,6 @@ CString QSttWgtCmdExecTool::GetCmdParasString_WaitingTime()
 
 void QSttWgtCmdExecTool::ExecCmd(const CString& strType, const CString& strID, const CString& strSrcData, const CString &strArgv)
 {
-//	if(g_pQSttWgtCmdExecTool->m_nType == LINUX)
 	{
 		if(strType == "cmd")
 		{
@@ -87,10 +86,6 @@ void QSttWgtCmdExecTool::ExecCmd(const CString& strType, const CString& strID, c
 			OnMacroExe(strID, strArgv);
 		}
 	}
-// 	else
-// 	{
-// 		OnMacroTest(strID);
-// 	}
 }
 
 void QSttWgtCmdExecTool::ExecCmd(const CString& strType, QStringList strings)
@@ -134,13 +129,6 @@ void QSttWgtCmdExecTool::OnOpenFile( const CString& strDataSrc , const CString &
 //macrotest macro_id=XXXX;iec=1/0;meas_svr=1/0;
 void QSttWgtCmdExecTool::OnMacroTest( const CString& strID , const CString &strArgv)
 {
-// 	if (strID.IsEmpty())//20220627 zhouhj 未发布的功能模块,ID填空,不进行打开操作
-// 	{
-// 		QMessageBox oMessageBox;
-// 		oMessageBox.setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint);
-// 		oMessageBox.information(NULL, QObject::tr("提示"), QObject::tr("此功能模块正在测试中,待发布."));
-// 		return;
-// 	}
 
 	g_pQSttWgtCmdExecTool->m_oThread.m_strPath = _P_GetBinPath();
 
@@ -194,14 +182,6 @@ void QSttWgtCmdExecTool::OnMacroExe( const CString& strID , const CString &strAr
 	g_pQSttWgtCmdExecTool->m_oThread.m_listCmd << strArgv;
 
 	CString strParas,strSsclPath;
-// 	strParas.Format(_T("%s=%s;"), ARGV_CMD_PARA_ID_MACROID, strID.GetString());
-// 	strSsclPath = g_oXSclFileMngr.GetCurrSelSsclFilePah();
-// 	strParas.AppendFormat(_T("%s="),ARGV_CMD_PARA_ID_sscl_path);
-// 	strParas += strSsclPath;
-// 	strParas += _T(";");
-// 	strParas += strArgv;
-//	g_pQSttWgtCmdExecTool->m_oThread.m_listCmd << strParas;
-
 	g_pQSttWgtCmdExecTool->m_oThread.start();
 
 #ifndef _PSX_QT_LINUX_
@@ -224,12 +204,6 @@ void QSttWgtCmdExecTool::OnMacroExe( const CString& strID , const CString &strAr
 		g_pSttWgtCmdMainWindow->showNormal();
 	}
 #endif
-
-// 	if (g_pSttSelSclFileWidget != NULL)
-// 	{
-// 		g_oXSclFileMngr.OpenSclFileMngrCfg();
-// 		g_pSttSelSclFileWidget->InitDatas();
-// 	}
 }
 
 void QSttWgtCmdExecTool::OnOpenDialog( const CString& strID , const CString &strArgv)
@@ -268,10 +242,6 @@ void QSttWgtCmdExecTool::OnOpenDialog( const CString& strID , const CString &str
 	strParas += g_pQSttWgtCmdExecTool->GetCmdParasString_WaitingTime();
 	strParas += strArgv;
 	g_pQSttWgtCmdExecTool->m_oThread.m_listCmd << strParas;
-
-// 	strParas += strArgv;
-// 	g_pQSttWgtCmdExecTool->m_oThread.m_listCmd << strParas;
-
 	g_pQSttWgtCmdExecTool->m_oThread.start();
 
 #ifndef _PSX_QT_LINUX_
@@ -294,7 +264,7 @@ void QSttWgtCmdExecTool::OnOpenDialog( const CString& strID , const CString &str
 	}
 #endif
 
-	if ((g_pSttSelSclFileWidget != NULL)&&bUpdateScl)
+    if ((g_pSttSelSclFileWidget != nullptr)&&bUpdateScl)
 	{
 		g_oXSclFileMngr.OpenSclFileMngrCfg();
 		g_pSttSelSclFileWidget->InitDatas();
@@ -319,7 +289,6 @@ void QSttWgtCmdExecTool::OnCmd( const CString& strID )
 	}
 	else if (TOOL_TEST_SUPPORT == strID)
 	{
-		//QDesktopServices::openUrl(QUrl("http://www.ponovo333x33.cn/service/marketin.html"));
 	}
 	else if (TOOL_TEST_POWERSET == strID)
 	{
@@ -337,7 +306,7 @@ void QSttWgtCmdExecTool::ReadSharedData()
 {
 	 CString strTplID, strParaFilePath;
 	char *TestMacroSM_addr = static_cast<char *>(g_oTestMacroSM.data());
-	if (TestMacroSM_addr != NULL) 
+    if (TestMacroSM_addr != nullptr)
 	{
 		QString strRevData = QString::fromLocal8Bit(TestMacroSM_addr, STT_UPDATE_TESTMACRO_SM_SIZE);//2024-01-03 wuxinyi 修改中文乱码
 
@@ -352,7 +321,7 @@ void QSttWgtCmdExecTool::ReadSharedData()
 			if(g_oTestMacroSM.create(sizeof(STT_UPDATE_TESTMACRO_SM_ID)))
 			{
 				char *fszTestMacroData = static_cast<char *>(g_oTestMacroSM.data());
-				if (fszTestMacroData != NULL)
+                if (fszTestMacroData != nullptr)
 				{
 // 					qint64 nSharedMemorySize = g_oTestMacroSM.size();
 					memset(fszTestMacroData, 0, g_oTestMacroSM.size());
@@ -377,35 +346,28 @@ void QSttWgtCmdExecTool::UpdateExecCmd( const CString &strTmpFile, const CString
 	CString strAbnormalType;
 		g_pQSttWgtCmdExecTool->m_oThread.m_listCmd.clear();
 
-	if(strTplID == SMVABNTEST_TPL_ID)//sv异常模拟
-		{
+    if(strTplID == SMVABNTEST_TPL_ID)//sv异常模拟
+    {
 		CString strSVExe = _T("StateTest");
 		strAbnormalType.Format(_T("%s=%s;"), STATE_ABNORMAL_TYPE, "1");
 		g_pQSttWgtCmdExecTool->m_oThread.m_listCmd << strAbnormalType;
-		strEXE =  strSVExe  + _T(".exe");//StateTest.exe
-		}
+		strEXE =  strSVExe  + _T(".exe");//StateTest.exe	
+    }
 	else
-		{
+    {
 		strEXE =  strTplID  + _T(".exe");//ReplayTest.exe
 	}
 	strExePath = _P_GetBinPath() + strEXE;
 
-			if(IsFileExist(strExePath))
-			{
-				g_pQSttWgtCmdExecTool->m_oThread.m_strPath = _P_GetBinPath();
-				g_pQSttWgtCmdExecTool->m_oThread.m_strExe = strEXE;
-
-// 			CString strParas;
-//  			strParas.Format(_T("%s=%s;"), ARGV_CMD_PARA_ID_TmpPath, strTmpFile.GetString());
-
-				CString strParas;
-			QString strQPara = QString("%1=%2;").arg(ARGV_CMD_PARA_ID_TmpPath).arg(strTmpFile);//2024-01-03 wuxinyi 解决中文路径乱码问题
-			// 			strParas.Format(_T("%s=%s;"), ARGV_CMD_PARA_ID_TmpPath, strParasFile.GetString());
-			strParas.Format(strQPara);
-
-				g_pQSttWgtCmdExecTool->m_oThread.m_listCmd << strParas;
-
-				g_pQSttWgtCmdExecTool->m_oThread.start();
+    if(IsFileExist(strExePath))
+    {
+        g_pQSttWgtCmdExecTool->m_oThread.m_strPath = _P_GetBinPath();
+        g_pQSttWgtCmdExecTool->m_oThread.m_strExe = strEXE;
+        CString strParas;
+        QString strQPara = QString("%1=%2;").arg(ARGV_CMD_PARA_ID_TmpPath).arg(strTmpFile);//2024-01-03 wuxinyi 解决中文路径乱码问题
+        strParas.Format(strQPara);
+        g_pQSttWgtCmdExecTool->m_oThread.m_listCmd << strParas;
+        g_pQSttWgtCmdExecTool->m_oThread.start();
 
 #ifndef _PSX_QT_LINUX_
 				if (g_pSttWgtCmdMainWindow != NULL)
@@ -414,12 +376,12 @@ void QSttWgtCmdExecTool::UpdateExecCmd( const CString &strTmpFile, const CString
 				}
 #endif
 
-				CTickCount32 time;
-				while(!g_pQSttWgtCmdExecTool->m_oThread.isFinished())
-				{
-					time.DoEvents(10);
-				}
-				ReadSharedData();//进程结束读取数据
+     CTickCount32 time;
+     while(!g_pQSttWgtCmdExecTool->m_oThread.isFinished())
+     {
+        time.DoEvents(10);
+     }
+     ReadSharedData();//进程结束读取数据
 
 #ifndef _PSX_QT_LINUX_
 				if (g_pSttWgtCmdMainWindow != NULL)
@@ -428,14 +390,14 @@ void QSttWgtCmdExecTool::UpdateExecCmd( const CString &strTmpFile, const CString
 				}
 #endif
 
-			}
+    }
 	else
 	{
 		CString strTip = _T("");
 			strTip.Format( _T("找不到该【%s】文件路径！"), strExePath.GetString());
-		CXMessageBox::information(NULL, _T("提示"), strTip);
+        CXMessageBox::information(nullptr, _T("提示"), strTip);
 	}
 
 	return;
-		}
+}
 

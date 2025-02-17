@@ -1,10 +1,3 @@
-//这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
-//保留所有权利
-
-//SttXuiDataGlobal.cpp  CSttXuiDataGlobal
-
-
 #include "stdafx.h"
 #include "SttXuiDataGlobal.h"
 
@@ -16,9 +9,6 @@
 
 CSttXuiDataGlobal::CSttXuiDataGlobal()
 {
-	//初始化属性
-
-	//初始化成员变量
 }
 
 CSttXuiDataGlobal::~CSttXuiDataGlobal()
@@ -121,7 +111,7 @@ BOOL CSttXuiDataGlobal::CanPaste(UINT nClassID)
 
 CExBaseObject* CSttXuiDataGlobal::CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 	CSttXMainConfigXmlRWKeys *pXmlKeys = (CSttXMainConfigXmlRWKeys*)pXmlRWKeys;
 
 
@@ -137,9 +127,9 @@ CExBaseObject* CSttXuiDataGlobal::CreateNewChild(const CString &strClassID, BOOL
 	return pNew;
 }
 
-CExBaseObject* CSttXuiDataGlobal::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/)
+CExBaseObject* CSttXuiDataGlobal::CreateNewChild(long nClassID)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 
 
 	if (nClassID == MNGRCLASSID_CSTTXUIDATAFONT)

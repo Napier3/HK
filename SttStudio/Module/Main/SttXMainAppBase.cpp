@@ -5,7 +5,7 @@
 #include "../UI/Module/PopupDialog/SttFileMngrTool.h"
 #include "../../../61850/Module/XLanguageResourcePp_Mms.h"
 
-CSttXMainAppBase *g_pTheSttXMainApp = NULL;
+CSttXMainAppBase *g_pTheSttXMainApp = nullptr;
 
 CSttXMainAppBase::CSttXMainAppBase()
 {
@@ -23,8 +23,8 @@ void CSttXMainAppBase::InitSttXMainApp(CXLanguageResourceBase *pLanguage)
 	_P_InitSystemPath();
 
 	CXLanguageXmlRWKeys::Create();
-	CXLanguageMngr::Create(pLanguage, TRUE);
-	CXLanguageMngr::xlang_AddXLanguageRerouce(new CXLanguageResourcePp_Mms(), TRUE);
+    CXLanguageMngr::Create(pLanguage, true);
+    CXLanguageMngr::xlang_AddXLanguageRerouce(new CXLanguageResourcePp_Mms(), true);
 
     CDataMngrXmlRWKeys::Create();
 	CCfgDataMngrXmlRWKeys::Create();

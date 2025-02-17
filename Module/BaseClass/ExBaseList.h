@@ -42,7 +42,7 @@ public:
 		return CreateNewChild(strNodeName, bAddToTail, pXmlRWKeys);
 	}
 	virtual CExBaseObject* CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys);
-	virtual CExBaseObject* CreateNewChild(long nClassID/*, BOOL &bAddToTail*/);
+    virtual CExBaseObject* CreateNewChild(long nClassID);
 	virtual CExBaseObject* AddNew(long nClassID);
 
 	virtual UINT GetClassID()                             {      return CLASSID_EXLISTCLASS;                 }

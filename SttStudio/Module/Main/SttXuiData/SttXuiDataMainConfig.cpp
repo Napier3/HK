@@ -233,7 +233,7 @@ BOOL CSttXuiDataMainConfig::CanPaste(UINT nClassID)
 
 CExBaseObject* CSttXuiDataMainConfig::CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 	CSttXMainConfigXmlRWKeys *pXmlKeys = (CSttXMainConfigXmlRWKeys*)pXmlRWKeys;
 
 
@@ -269,9 +269,9 @@ CExBaseObject* CSttXuiDataMainConfig::CreateNewChild(const CString &strClassID, 
 	return pNew;
 }
 
-CExBaseObject* CSttXuiDataMainConfig::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/)
+CExBaseObject* CSttXuiDataMainConfig::CreateNewChild(long nClassID)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 
 
 	if (nClassID == MNGRCLASSID_CSTTXUIDATAGLOBAL)

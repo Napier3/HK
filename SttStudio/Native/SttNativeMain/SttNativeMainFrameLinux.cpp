@@ -186,9 +186,9 @@ void QSttNativeMainFrameLinux::UpdateBatteryState(int nState)
 
 long QSttNativeMainFrameLinux::OnRtData(CSttParas *pParas)
 {
-	CExBaseObject *pChildObj = NULL;
+    CExBaseObject *pChildObj = nullptr;
 	POS pos = pParas->GetHeadPosition();
-	CDataGroup *pRtDataGroup = NULL;
+    CDataGroup *pRtDataGroup = nullptr;
 	long nPowerAC = m_nPowerAC;
 	long nBatCapValue = m_nBatCapValue;
 

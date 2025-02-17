@@ -81,7 +81,7 @@ void QSttWgtTab::InitUIChildren(CExBaseObject *pSttXuiData)
 //#endif
 			QSttSelSclFileWidget *pQSttSelSclFileWidget = new QSttSelSclFileWidget(this);
 
-			if (g_pSttGlobalFont != NULL)
+            if (g_pSttGlobalFont != nullptr)
 			{
 				pQSttSelSclFileWidget->setFont(*g_pSttGlobalFont);
 			}
@@ -93,7 +93,7 @@ void QSttWgtTab::InitUIChildren(CExBaseObject *pSttXuiData)
 		else
 		{
 			CSttXuiDataBase* pData = (CSttXuiDataBase*)pSttXuiData;
-			CSttXuiDataBase* pNode = NULL;
+            CSttXuiDataBase* pNode = nullptr;
 			POS pos = pData->GetHeadPosition();
 
 			while(pos)
