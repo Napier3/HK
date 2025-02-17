@@ -1,5 +1,4 @@
-#ifndef QSttXMainFRAMEBASE_H
-#define QSttXMainFRAMEBASE_H
+#pragma once
 
 #include <QMainWindow>
 #include <QHBoxLayout>
@@ -17,23 +16,18 @@ class QSttXMainFrameBase : public QMainWindow, public CLogBase
 
 protected:
 	QSttWgtCmdExecTool m_oCmdTool;//用于响应挂载cmd
-
-
 public:
-    explicit QSttXMainFrameBase(QWidget *parent, CString strConfigFile = "");
+    explicit QSttXMainFrameBase(QWidget *parent = nullptr, CString strConfigFile = "");
     ~QSttXMainFrameBase();
 
-	void InitResource();
-	void ReleaseResource();
-
-	void InitUI(CString strConfigFile = "");
-	void CreateCloseHidingBtns();
+    void InitResource();
+    void ReleaseResource();
+    void InitUI(CString strConfigFile = "");
+    void CreateCloseHidingBtns();
     void CreateCloseBtns();
-	QFont m_gFont;
-	CSttXuiDataMainConfig* m_pMainConfig;
-
-signals:
-
+public:
+    QFont m_gFont;
+    CSttXuiDataMainConfig* m_pMainConfig;
 public slots:
 	void slot_CloseApp();
 	void slot_HideApp();
@@ -41,6 +35,3 @@ public slots:
 
 extern QSttXMainFrameBase *g_theSttXMainFrame;
 extern double g_dUIShowCoef; // 界面显示缩放比例
-
-
-#endif // QSttXMainFRAMEBASE_H

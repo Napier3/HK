@@ -1,10 +1,3 @@
-//这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
-//保留所有权利
-
-//SttXuiDataFileMngrGrid.cpp  CSttXuiDataFileMngrGrid
-
-
 #include "stdafx.h"
 #include "SttXuiDataFileMngrGrid.h"
 
@@ -16,13 +9,6 @@
 
 CSttXuiDataFileMngrGrid::CSttXuiDataFileMngrGrid()
 {
-	//初始化属性
-	m_nX = 0;
-	m_nY = 0;
-	m_nCx = 0;
-	m_nCy = 0;
-
-	//初始化成员变量
 }
 
 CSttXuiDataFileMngrGrid::~CSttXuiDataFileMngrGrid()
@@ -184,7 +170,7 @@ BOOL CSttXuiDataFileMngrGrid::CanPaste(UINT nClassID)
 
 CExBaseObject* CSttXuiDataFileMngrGrid::CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 	CSttXMainConfigXmlRWKeys *pXmlKeys = (CSttXMainConfigXmlRWKeys*)pXmlRWKeys;
 
 
@@ -200,9 +186,9 @@ CExBaseObject* CSttXuiDataFileMngrGrid::CreateNewChild(const CString &strClassID
 	return pNew;
 }
 
-CExBaseObject* CSttXuiDataFileMngrGrid::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/)
+CExBaseObject* CSttXuiDataFileMngrGrid::CreateNewChild(long nClassID)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 
 
 	if (nClassID == MNGRCLASSID_CSTTXUIDATAFILETYPES)

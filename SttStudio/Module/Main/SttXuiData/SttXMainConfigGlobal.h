@@ -30,7 +30,7 @@ class CSttXMainConfigXmlRWKeys : public CXmlRWKeys
 {
 protected:
 	CSttXMainConfigXmlRWKeys();
-	virtual ~CSttXMainConfigXmlRWKeys();
+    ~CSttXMainConfigXmlRWKeys() override;
 	static long g_nMngrRef;
 
 public:
@@ -126,17 +126,6 @@ public:
 private:
 	static long g_nGlobalRef;
 	static CSttXMainConfigConstGlobal *g_pGlobal;
-
-private:
-//定义全局常量管理对象，例如  CExBaseList m_oVariableDataTypes
-
-//定义全局常量管理对象初始化函数，例如  void InitVariableDataTypes()
-
-public:
-//定义全局常量管理对象访问函数，例如  static CExBaseList* GetVariableDataTypes()	{	return &(g_pGlobal->m_oVariableDataTypes);	}
-
-//定义全局常量，例如  static CString g_pstrVariableType_CString;
-
 };
 
 extern double g_dUIShowCoef;

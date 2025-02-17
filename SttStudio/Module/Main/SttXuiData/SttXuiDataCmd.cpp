@@ -1,10 +1,3 @@
-//这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
-//保留所有权利
-
-//SttXuiDataCmd.cpp  CSttXuiDataCmd
-
-
 #include "stdafx.h"
 #include "SttXuiDataCmd.h"
 
@@ -143,19 +136,13 @@ BOOL CSttXuiDataCmd::CanPaste(UINT nClassID)
 
 CExBaseObject* CSttXuiDataCmd::CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 	CSttXMainConfigXmlRWKeys *pXmlKeys = (CSttXMainConfigXmlRWKeys*)pXmlRWKeys;
-
-
-
 	return pNew;
 }
 
-CExBaseObject* CSttXuiDataCmd::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/)
+CExBaseObject* CSttXuiDataCmd::CreateNewChild(long nClassID)
 {
-	CExBaseObject *pNew  = NULL;
-
-
-
+    CExBaseObject *pNew  = nullptr;
 	return pNew;
 }

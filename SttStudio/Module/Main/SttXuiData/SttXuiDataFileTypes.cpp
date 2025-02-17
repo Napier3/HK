@@ -1,10 +1,3 @@
-//这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
-//保留所有权利
-
-//SttXuiDataFileTypes.cpp  CSttXuiDataFileTypes
-
-
 #include "stdafx.h"
 #include "SttXuiDataFileTypes.h"
 
@@ -16,9 +9,6 @@
 
 CSttXuiDataFileTypes::CSttXuiDataFileTypes()
 {
-	//初始化属性
-
-	//初始化成员变量
 }
 
 CSttXuiDataFileTypes::~CSttXuiDataFileTypes()
@@ -117,7 +107,7 @@ BOOL CSttXuiDataFileTypes::CanPaste(UINT nClassID)
 
 CExBaseObject* CSttXuiDataFileTypes::CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 	CSttXMainConfigXmlRWKeys *pXmlKeys = (CSttXMainConfigXmlRWKeys*)pXmlRWKeys;
 
 
@@ -129,10 +119,9 @@ CExBaseObject* CSttXuiDataFileTypes::CreateNewChild(const CString &strClassID, B
 	return pNew;
 }
 
-CExBaseObject* CSttXuiDataFileTypes::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/)
+CExBaseObject* CSttXuiDataFileTypes::CreateNewChild(long nClassID)
 {
-	CExBaseObject *pNew  = NULL;
-
+    CExBaseObject *pNew  = nullptr;
 
 	if (nClassID == MNGRCLASSID_CSTTXUIDATAFILETYPE)
 	{

@@ -9,7 +9,6 @@ QSttWgtButton::QSttWgtButton(QWidget* pParent)
 {
 	m_pParent = pParent;
 	setParent(pParent);
-//	setWordWrap(false);
 }
 
 QSttWgtButton::~QSttWgtButton()

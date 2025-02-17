@@ -14,7 +14,7 @@
 static char THIS_FILE[] = __FILE__; 
 #endif 
 
-QSttWgtFactory* g_pSttWgtFactory = NULL;
+QSttWgtFactory* g_pSttWgtFactory = nullptr;
 long g_nSttWgtFactoryRef = 0;
 
 QSttWgtFactory::QSttWgtFactory()
@@ -41,7 +41,7 @@ QSttWgtFactory *QSttWgtFactory::Create()
 
 QSttWgtBase* QSttWgtFactory::CreateSttWgt(CSttXuiDataBase *pSttXuiData, QWidget* pParent)
 {
-	QSttWgtBase *pWgtBase = NULL;
+    QSttWgtBase *pWgtBase = nullptr;
 
 	if (pSttXuiData->GetClassID() == MNGRCLASSID_CSTTXUIDATATABS)
 	{
@@ -86,6 +86,6 @@ void QSttWgtFactory::Release()
 	if (g_nSttWgtFactoryRef == 0)
 	{
 		delete g_pSttWgtFactory;
-		g_pSttWgtFactory = NULL;
+        g_pSttWgtFactory = nullptr;
 	}
 }

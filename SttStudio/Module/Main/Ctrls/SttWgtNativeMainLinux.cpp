@@ -4,21 +4,21 @@
 #include "QGridLayout"
 #include "SttWgtStyle.h"
 
-QSttWgtNativeMainLinux* m_gQSttWgtNativeMainLinux = NULL;
+QSttWgtNativeMainLinux* m_gQSttWgtNativeMainLinux = nullptr;
 
 QSttWgtNativeMainLinux::QSttWgtNativeMainLinux(QWidget* pParent)
 {
 	m_gQSttWgtNativeMainLinux = this;
 	m_pGlobalStyle = new CExBaseList;
 	m_pAutoTestSettings = new CExBaseList;
-	m_pMainConfig = NULL;
+    m_pMainConfig = nullptr;
 }
 
 QSttWgtNativeMainLinux::~QSttWgtNativeMainLinux()
 {
 	delete m_pGlobalStyle;
 	delete m_pAutoTestSettings;
-	m_pGlobalStyle = NULL;
+    m_pGlobalStyle = nullptr;
 }
 
 void QSttWgtNativeMainLinux::InitUI(CString strFilePath, CSttXuiDataMainConfig* pSttXuiDataMainConfig)
@@ -53,7 +53,7 @@ void QSttWgtNativeMainLinux::InitUI(CString strFilePath, CSttXuiDataMainConfig* 
 				{
 					QSttWgtStyle* pWgtStyle = new QSttWgtStyle();
 					pWgtStyle->InitStyle(pData);
-					CExBaseList* pStyle = NULL;
+                    CExBaseList* pStyle = nullptr;
 					pStyle = (CExBaseList*)m_pGlobalStyle->FindByID(pWgtStyle->m_strType);
 					if(!pStyle)
 					{

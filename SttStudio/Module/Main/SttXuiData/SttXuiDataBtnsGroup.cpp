@@ -16,14 +16,6 @@
 
 CSttXuiDataBtnsGroup::CSttXuiDataBtnsGroup()
 {
-	//初始化属性
-	m_nX = 0;
-	m_nY = 0;
-	m_nCx = 0;
-	m_nCy = 0;
-	m_nInset = 0;
-
-	//初始化成员变量
 }
 
 CSttXuiDataBtnsGroup::~CSttXuiDataBtnsGroup()
@@ -213,7 +205,7 @@ BOOL CSttXuiDataBtnsGroup::CanPaste(UINT nClassID)
 
 CExBaseObject* CSttXuiDataBtnsGroup::CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 	CSttXMainConfigXmlRWKeys *pXmlKeys = (CSttXMainConfigXmlRWKeys*)pXmlRWKeys;
 
 
@@ -227,7 +219,7 @@ CExBaseObject* CSttXuiDataBtnsGroup::CreateNewChild(const CString &strClassID, B
 
 CExBaseObject* CSttXuiDataBtnsGroup::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 
 
 	if (nClassID == MNGRCLASSID_CSTTXUIDATABUTTON)

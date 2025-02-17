@@ -242,7 +242,7 @@ void CExBaseList::AppendClone(CExBaseList &oListSrc, long nBegin, long nCount)
 }
 
 CExBaseObject* CExBaseList::CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys)  {    return NULL;     }
-CExBaseObject* CExBaseList::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/)            {    return NULL;     }
+CExBaseObject* CExBaseList::CreateNewChild(long nClassID)            {    return NULL;     }
 
 CExBaseObject* CExBaseList::AddNew(long nClassID)
 {

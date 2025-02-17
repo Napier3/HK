@@ -11,7 +11,7 @@
 #include <QApplication>
 #include <QDebug>
 
-QSttXMainFrameBase *g_theSttXMainFrame = NULL;
+QSttXMainFrameBase *g_theSttXMainFrame = nullptr;
 long g_nComBoxItemHeight = 50;
 long g_nComBoxVertScrollWidth = 30;
 long g_nTableVertScrollWidth = 30;
@@ -21,34 +21,18 @@ QFont *g_pSttGlobalFont = NULL;
 QSttXMainFrameBase::QSttXMainFrameBase(QWidget *parent, CString strConfigFile)
 : QMainWindow(parent)
 {
-	m_pMainConfig = NULL;
+    m_pMainConfig = nullptr;
 	g_theSttXMainFrame = this;
 	g_pSttWgtCmdMainWindow = this;
-
-// 	HDC hd = GetDC(NULL);
-// 	int dotPix1 = GetDeviceCaps(hd, LOGPIXELSX);
-// 	int dotPix2 = GetDeviceCaps(hd, LOGPIXELSY);	//获取放大比例
-// 	///windows函数获取 end/
-// 
-// 
-// 	//Qt///
-// 	QDesktopWidget* desktopWidget = QApplication::desktop(); 
-// 	int nMainScreenID = desktopWidget->primaryScreen();
-// 	QRect oScreenRect = desktopWidget->screenGeometry(nMainScreenID);
-// 	int nScreenWidth = oScreenRect.width();
-// 	int nScreenHeight = oScreenRect.height();
-
-//#ifdef _PSX_QT_LINUX_
 	m_gFont = font();
 	g_pSttGlobalFont = &m_gFont;
-//#endif
 	InitResource();
 	InitUI(strConfigFile);
 }
 
 QSttXMainFrameBase::~QSttXMainFrameBase()
 {
-	g_pSttWgtCmdMainWindow = NULL;
+    g_pSttWgtCmdMainWindow = nullptr;
 	ReleaseResource();
 }
 
@@ -61,7 +45,7 @@ void QSttXMainFrameBase::InitResource()
 void QSttXMainFrameBase::ReleaseResource()
 {
 	CSttXMainConfigXmlRWKeys::Release();
-	CLogPrint::SetLog(NULL);
+    CLogPrint::SetLog(nullptr);
 	CLogPrint::Release();
 }
 
@@ -79,11 +63,6 @@ void QSttXMainFrameBase::InitUI(CString strConfigFile)
 #else
 	setWindowFlags(Qt::FramelessWindowHint|Qt::WindowMinimizeButtonHint|Qt::WindowMaximizeButtonHint);
 #endif
-
-// 	setWindowFlags(Qt::FramelessWindowHint);
-// 	setAttribute(Qt::WA_TranslucentBackground,true);
-
-
 	//读取配置文件
 	CString strFile = _P_GetConfigPath();
     qDebug() << "path is "<<strFile;
@@ -128,7 +107,6 @@ void QSttXMainFrameBase::InitUI(CString strConfigFile)
 #endif
 		setMinimumSize(sizeNew/*900,600*/);
 	}
-
 	//开始对Main进行界面生成
 	//QSttWgtNativeMainLinux* p = (QSttWgtNativeMainLinux*)QSttWgtFactory::CreateSttWgt(pMainConfig);
 	QSttWgtNativeMainLinux* p = new QSttWgtNativeMainLinux();
@@ -147,7 +125,6 @@ void QSttXMainFrameBase::CreateCloseHidingBtns()
 	QSize szBtn = QSize(36, 24);
 	long nX = rc.right() - szBtn.width();
 	QPushButton* pBtn = new QPushButton(this);
-	//pBtn->setText("×");
 	pBtn->setText(QString::fromLocal8Bit("×"));//dingxy 20240729 解决乱码问题
 	pBtn->setGeometry(nX, 0, szBtn.width(), szBtn.height());
 	pBtn->setStyleSheet("QPushButton{border:0px solid white; color: white; background:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #058a93, stop: 0.4 #06a1ac, stop: 0.5 #06a1ac, stop: 1.0 #058a93);}"
@@ -155,7 +132,6 @@ void QSttXMainFrameBase::CreateCloseHidingBtns()
 	connect(pBtn, SIGNAL(clicked()), this, SLOT(slot_CloseApp()));
 	nX = nX - szBtn.width();
 	pBtn = new QPushButton(this);
-	//pBtn->setText("—");
 	pBtn->setText(QString::fromLocal8Bit("—"));
 	pBtn->setStyleSheet("QPushButton{border:0px solid white; color: white; background:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #058a93, stop: 0.4 #06a1ac, stop: 0.5 #06a1ac, stop: 1.0 #058a93);}"
 		"QPushButton:hover{border:1px solid white;background:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #4d4dff, stop: 0.4 #9a9aff, stop: 0.5 #9a9aff, stop: 1.0 #4d4dff);}");
@@ -177,11 +153,6 @@ void QSttXMainFrameBase::CreateCloseBtns()
         "QPushButton:hover{border:1px solid white;background:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #ff0000, stop: 0.4 #ff8080, stop: 0.5 #ff8080, stop: 1.0 #ff0000);}");
     connect(pBtn, SIGNAL(clicked()), this, SLOT(slot_CloseApp()));
 }
-
-// long Global_GetComBoxItemHeight()
-// {
-//	return 50;
-//}
 
 void QSttXMainFrameBase::slot_CloseApp()
 {

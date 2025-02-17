@@ -1,5 +1,4 @@
-#ifndef QSTTWGTTEXT_H
-#define	QSTTWGTTEXT_H
+#pragma once
 
 #include <QLabel>
 #include "../Module/SttWgtBaseList.h"
@@ -7,15 +6,13 @@
 class QSttWgtText : public QSttWgtBaseList, public QLabel
 {
 public:
-	QSttWgtText(QWidget* pParent = NULL);
-	virtual ~QSttWgtText();
+    QSttWgtText(QWidget* pParent = nullptr);
+    ~QSttWgtText() override;
 
 private:
 	void SetWgtStyle(QSttWgtStyle* pStyle);
 
 public:
-	virtual void InitUIOwn(CExBaseObject *pSttXuiData);
+    void InitUIOwn(CExBaseObject *pSttXuiData) override;
 
 };
-
-#endif//!QSTTWGTTEXT_H

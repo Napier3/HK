@@ -1,7 +1,5 @@
-#ifndef QSTTWGTFACTORY_H
-#define QSTTWGTFACTORY_H
+#pragma once
 
-#include "SttWgtFactory.h"
 #include "SttWgtBase.h"
 #include "../SttXuiData/SttXuiDataBase.h"
 
@@ -20,5 +18,3 @@ public:
 
 extern QSttWgtFactory* g_pSttWgtFactory;
 extern long g_nSttWgtFactoryRef;
-
-#endif//!QSTTWGTFACTORY_H

@@ -1,10 +1,3 @@
-//这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
-//保留所有权利
-
-//SttXuiDataTestBtnsGroup.cpp  CSttXuiDataTestBtnsGroup
-
-
 #include "stdafx.h"
 #include "SttXuiDataTestBtnsGroup.h"
 
@@ -16,14 +9,6 @@
 
 CSttXuiDataTestBtnsGroup::CSttXuiDataTestBtnsGroup()
 {
-	//初始化属性
-	m_nX = 0;
-	m_nY = 0;
-	m_nCx = 0;
-	m_nCy = 0;
-	m_nInset = 0;
-
-	//初始化成员变量
 }
 
 CSttXuiDataTestBtnsGroup::~CSttXuiDataTestBtnsGroup()
@@ -202,7 +187,7 @@ BOOL CSttXuiDataTestBtnsGroup::CanPaste(UINT nClassID)
 
 CExBaseObject* CSttXuiDataTestBtnsGroup::CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 	CSttXMainConfigXmlRWKeys *pXmlKeys = (CSttXMainConfigXmlRWKeys*)pXmlRWKeys;
 
 
@@ -214,9 +199,9 @@ CExBaseObject* CSttXuiDataTestBtnsGroup::CreateNewChild(const CString &strClassI
 	return pNew;
 }
 
-CExBaseObject* CSttXuiDataTestBtnsGroup::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/)
+CExBaseObject* CSttXuiDataTestBtnsGroup::CreateNewChild(long nClassID)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 
 
 	if (nClassID == MNGRCLASSID_CSTTXUIDATABUTTON)

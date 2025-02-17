@@ -1,10 +1,3 @@
-//这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
-//保留所有权利
-
-//SttXuiDataBase.cpp  CSttXuiDataBase
-
-
 #include "stdafx.h"
 #include "SttXuiDataBase.h"
 
@@ -16,9 +9,6 @@
 
 CSttXuiDataBase::CSttXuiDataBase()
 {
-	//初始化属性
-
-	//初始化成员变量
 }
 
 CSttXuiDataBase::~CSttXuiDataBase()
@@ -104,19 +94,13 @@ BOOL CSttXuiDataBase::CanPaste(UINT nClassID)
 
 CExBaseObject* CSttXuiDataBase::CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys)
 {
-	CExBaseObject *pNew  = NULL;
+    CExBaseObject *pNew  = nullptr;
 	CSttXMainConfigXmlRWKeys *pXmlKeys = (CSttXMainConfigXmlRWKeys*)pXmlRWKeys;
-
-
-
 	return pNew;
 }
 
 CExBaseObject* CSttXuiDataBase::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/)
 {
-	CExBaseObject *pNew  = NULL;
-
-
-
+    CExBaseObject *pNew  = nullptr;
 	return pNew;
 }
