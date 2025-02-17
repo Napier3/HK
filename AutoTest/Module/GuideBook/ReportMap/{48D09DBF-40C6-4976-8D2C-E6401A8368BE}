@@ -1,0 +1,11 @@
+#include "StdAfx.h"
+#include "RptFillInterface.h"
+
+CRptFillInterface::CRptFillInterface(void)
+{
+	m_nCommCmdCpusIndex = 0;
+}
+
+CRptFillInterface::~CRptFillInterface(void)
+{
+}

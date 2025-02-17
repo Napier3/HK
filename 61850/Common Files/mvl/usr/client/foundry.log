@@ -1,0 +1,14 @@
+
+
+***********************************************************
+          LOGGING STARTED Wed Apr 25 16:50:00 2012
+***********************************************************
+
+2012-04-25 16:50:00.920 SLOGALWAYS (Fo_main.c 258) 
+  Executing '..\..\bin\foundry'
+  Input TDL file         : '..\..\mvl\usr\client\clntobj.odf'
+  Configuration file     : '..\..\mvl\util\foundry\win32\align.cfg'
+  Output 'C' file        : '..\..\mvl\usr\client\clntobj.c'
+  Output 'H' file        : '..\..\mvl\usr\client\clntobj.h'
+  Output 'LAP XML' file  : '..\..\mvl\usr\client\lap_out.xml'
+  Output 'Lefttodo' file : '..\..\mvl\usr\client\lefttodo.txt'

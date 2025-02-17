@@ -1,0 +1,21 @@
+# Qt build artifacts
+build-*/
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.user
+*.user.*  
+Makefile
+*.layout
+*.autosave
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+
+# Backup & temporary files
+*.bak
+*.tmp
+*.swp
+*.swo

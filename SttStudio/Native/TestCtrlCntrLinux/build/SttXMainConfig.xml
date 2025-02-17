@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<main name="PFIT-PONOVO" version="" title="" pic="" cx="1280" cy="800" startup-delaytime="1"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SttXMainConfig_Def.xsd">
+	<global>
+		<font id="font1" cr-back="#008080" cr-text="#FFFFFF" size="16"/>
+		<font id="font2" cr-back="" cr-text="" size="12"/>
+		<font id="font3" cr-back="" cr-text="" size="18"/>
+		<font id="font4" cr-back="#FFFFFF" cr-text="#000000" size="24"/>
+	</global>
+	<text name="智能测试终端-继电保护系统V1.0" id="Title" text="智能测试终端-继电保护系统V1.0" x="0" y="0" cx="1024" cy="60" pic="images/Title.png"/>
+	<tabs x="0" y="61" cx="1024" cy="708" font="font3">
+		<tab name="继电保护" id="TestFunction" font="font1">
+			<text name="基础功能测试" id="Exten" text="基础功能测试" x="0" y="0" cx="1024" cy="30" font="font1"/>
+			<btns-group name="" id="Exten" x="0" y="32" cx="1024" cy="120" inset="5" type="static" from="local" font="font2">
+				<button name="通用试验" id="ManualTest" pic="images/ManualTest.png" infor="">
+					<cmd name="" id="ManualTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="状态序列" id="StateTest" pic="images/StatusSequence.png" infor="">
+					<cmd name="" id="StateTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="谐波" id="HarmTest" pic="images/HarmTest.png" infor="">
+					<cmd name="" id="HarmTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="递变" id="GradientTest" pic="images/Gradient.png" infor="">
+					<cmd name="" id="GradientTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="动作时间" id="ActionTimeTest" pic="images/ActionTimeTest" infor="">
+					<cmd name="" id="ActionTimeTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="报文探测" id="IecCapTest" pic="images/IecCapTest" infor="">
+					<cmd name="" id="IecCapTest" type="macrotest" data-src="" argv="iec=1;meas_svr=0;macro_file=MuTest;assist=ieccaptest;"/>
+				</button>
+				<button name="SV异常模拟" id="SmvAbnTest" pic="images/SmvAbnTest" infor="">
+					<cmd name="SmvAbnTest" id="SmvAbnTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="GOOSE异常模拟" id="GseAbnTest" pic="images/GseAbnTest" infor="">
+					<cmd name="GseAbnTest" id="GseAbnTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+			</btns-group>
+			<text name="专项功能测试" id="Special" text="专项功能测试" x="0" y="164" cx="1024" cy="30" font="font1"/>
+			<btns-group name="" id="Special" x="0" y="196" cx="1024" cy="120" inset="5" type="static" from="local" font="font2">
+				<button name="距离保护" id="DistanceTest" pic="images/DistanceTest.png" infor="">
+					<cmd name="" id="DistanceTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="整组传动" id="CBOperateTest" pic="images/CBOperateTest.png" infor="">
+					<cmd name="" id="CBOperateTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="过流保护" id="OverCurrTest" pic="images/OverCurrentTest.png" infor="">
+					<cmd name="" id="OverCurrentTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="零序保护" id="ZeroTest" pic="images/ZeroSequenceTest.png" infor="">
+					<cmd name="ZeroTest" id="ZeroTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="工频变化量距离" id="PowerFreqDistTest" pic="images/PowerFrequency.png" infor="">
+					<cmd name="PowerFreqDistTest" id="PowerFreqDistTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="重合闸及后加速" id="RecloseAccTest" pic="images/Reclose.png" infor="">
+					<cmd name="RecloseAccTest" id="RecloseAccTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="低压减载" id="LowVolTest" pic="images/LowUTest.png" infor="">
+					<cmd name="LowVolTest" id="LowVolTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="低周减载" id="LowFreqTest" pic="images/LowFreTest.png" infor="">
+					<cmd name="LowFreqTest" id="LowFreqTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="差动" id="DiffCurr6ITest" pic="images/DifferTest.png" infor="">
+					<cmd name="DiffCurr6ITest" id="DiffCurr6ITest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+			</btns-group>
+			<text name="高级功能测试" id="Senior" text="高级功能测试" x="0" y="328" cx="1024" cy="30" font="font1"/>
+			<btns-group name="" id="Senior" x="0" y="360" cx="1024" cy="120" inset="5" type="static" from="local" font="font2">
+				<button name="电流动作值" id="CurrentActValueTest" pic="images/CurrentActValueTest.png" infor="">
+					<cmd name="CurrentActValueTest" id="CurrentActValueTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="电压动作值" id="VolActValueTest" pic="images/VolActValueTest.png" infor="">
+					<cmd name="VolActValueTest" id="VolActValueTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="搜索阻抗边界" id="DistSearchOneTest" pic="images/SearchZBorderTest.png" infor="">
+					<cmd name="DistSearchOneTest" id="DistSearchOneTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="故障回放" id="ReplayTest" pic="images/FaultBack.png" infor="">
+					<cmd name="ReplayTest" id="ReplayTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="振荡" id="SwingTest" pic="images/Oscillation.png" infor="">
+					<cmd name="SwingTest" id="SwingTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="电流反时限" id="CurrInverseTimeTest" pic="images/CurrInverseTimeTest.png" infor="">
+					<cmd name="CurrInverseTimeTest" id="CurrInverseTimeTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="电压反时限" id="VolInverseTimeTest" pic="images/VolInverseTimeTest.png" infor="">
+					<cmd name="VolInverseTimeTest" id="VolInverseTimeTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="功率方向" id="PowerDirectionTest" pic="images/PowerDirection.png" infor="">
+					<cmd name="PowerDirectionTest" id="PowerDirectionTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="复压闭锁" id="ULockOverCurrTest" pic="images/UnderPressure.png" infor="">
+					<cmd name="ULockOverCurrTest" id="ULockOverCurrTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+			</btns-group>
+			<btns-group name="" id="Senior" x="0" y="492" cx="1024" cy="120" inset="5" type="static" from="local" font="font2">
+				<button name="序分量" id="SequenceManuTest" pic="images/SequenceManuTest.png" infor="">
+					<cmd name="" id="SequenceManuTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="自动准同期" id="SynTest" pic="images/AutoSTest.png" infor="">
+					<cmd name="SynTest" id="SynTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="通用试验线电压" id="LineVolManuTest" pic="images/ManualTest.png" infor="">
+					<cmd name="" id="LineVolManuTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="递变线电压" id="LineVolGradientTest" pic="images/ManualTest.png" infor="">
+					<cmd name="" id="LineVolGradientTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="递变序分量" id="SequenceGradientTest" pic="images/ManualTest.png" infor="">
+					<cmd name="" id="SequenceGradientTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+				<button name="智能终端自动测试" id="TerminalAutoTest" pic="images/MUAccurAutoTest.png" infor="">
+					<cmd name="TerminalAutoTest" id="TerminalAutoTest" type="macrotest" data-src="" argv="iec=0;meas_svr=0;macro_file=RelayTest;"/>
+				</button>
+			</btns-group>
+		</tab>
+		<tab name="合并单元" id="MUTestFunction" font="font1">
+			<text name="稳态性能测试" id="SteadyText" text="稳态性能测试" x="0" y="0" cx="1024" cy="30" font="font1"/>
+			<btns-group name="" id="SteadyGroup" x="0" y="32" cx="1024" cy="120" inset="5" type="static" from="local" font="font2">
+				<button name="精确度测试" id="MUAccuracyTest" pic="images/MUAccuracyTest.png" infor="">
+					<cmd name="" id="MUAccuracyTest" type="macrotest" data-src="" argv="iec=1;meas_svr=0;macro_file=MuTest;assist=mutest;"/>
+				</button>
+				<button name="自动测试" id="MUAccurAutoTest" pic="images/MUAccurAutoTest.png" infor="">
+					<cmd name="" id="MUAccurAutoTest" type="macrotest" data-src="" argv="iec=1;meas_svr=1;macro_file=MuTest;assist=mutest;"/>
+				</button>
+			</btns-group>
+			<text name="暂态功能测试" id="TransientText" text="暂态功能测试" x="0" y="164" cx="1024" cy="30" font="font1"/>
+			<btns-group name="" id="" x="0" y="196" cx="1024" cy="120" inset="5" type="static" from="local" font="font2">
+				<button name="首周波测试" id="MUFirstCycleTest" pic="images/StatusSequence.png" infor="">
+					<cmd name="" id="" type="macrotest" data-src="" argv="iec=1;meas_svr=0;macro_file=MuTest;assist=mutest;"/>
+				</button>
+				<button name="峰值瞬时误差" id="MUMaxPeakErrorTest" pic="images/StatusSequence.png" infor="">
+					<cmd name="" id="" type="macrotest" data-src="" argv="iec=1;meas_svr=0;macro_file=MuTest;assist=mutest;"/>
+				</button>
+				<button name="衰减常数测试" id="MUAttenConstantTest" pic="images/StatusSequence.png" infor="">
+					<cmd name="" id="" type="macrotest" data-src="" argv="iec=1;meas_svr=0;macro_file=MuTest;assist=mutest;"/>
+				</button>
+			</btns-group>
+			<text name="时间测试" id="TimeText" text="时间测试" x="0" y="328" cx="1024" cy="30" font="font1"/>
+			<btns-group name="" id="" x="0" y="360" cx="1024" cy="120" inset="5" type="static" from="local" font="font2">
+				<button name="对时误差测试" id="MUTimingAccurTest" pic="images/MUTimingAccurTest.png" infor="">
+					<cmd name="MUTimingAccurTest" id="MUTimingAccurTest" type="macrotest" data-src="" argv="iec=1;meas_svr=0;macro_file=MuTest;"/>
+				</button>
+				<button name="守时误差测试" id="MUPunctAccurTest" pic="images/MUPunctAccurTest.png" infor="">
+					<cmd name="MUPunctAccurTest" id="MUPunctAccurTest" type="macrotest" data-src="" argv="iec=1;meas_svr=0;macro_file=MuTest;"/>
+				</button>
+			</btns-group>
+		</tab>
+		<tab name="选择SCL文件" id="SelSCLFile" font="font1"/>
+		<tab name="设备管理" id="DeviceMngr" font="font1">
+			<text name="设备升级" id="DeviceUpdate" text="设备升级" x="0" y="0" cx="1024" cy="30" font="font1"/>
+			<btns-group name="" id="DeviceGroup" x="0" y="32" cx="1024" cy="120" inset="5" type="static" from="local" font="font2">
+				<button name="在线升级" id="Liveupdate" pic="images/Liveupdate.png" infor="">
+					<cmd name="" id="Liveupdate" type="open_dialog" data-src="" argv=""/>
+				</button>
+				<button name="离线升级" id="ULiveupdate" pic="images/ULiveupdate.png" infor="">
+					<cmd name="" id="ULiveupdate" type="open_dialog" data-src="" argv=""/>
+				</button>
+			</btns-group>
+			<text name="硬件设置及版本信息" id="HardwareAndVersion" text="硬件设置及版本信息" x="0" y="164" cx="1024" cy="30" font="font1"/>
+			<btns-group name="" id="HardwareAndVersionGroup" x="0" y="196" cx="1024" cy="120" inset="5" type="static" from="local" font="font2">
+				<button name="输出功率" id="OutputPower" pic="images/OutputPower.png" infor="">
+					<cmd name="" id="OutputPower" type="open_dialog" data-src="" argv=""/>
+				</button>
+				<button name="硬件设置" id="HardConfig" pic="images/HardConfig.png" infor="">
+					<cmd name="" id="HardConfig" type="open_dialog" data-src="" argv=""/>
+				</button>
+				<button name="版本信息" id="VersionInfo" pic="images/VersionInfoo.png" infor="">
+					<cmd name="" id="VersionInfo" type="open_dialog" data-src="" argv=""/>
+				</button>
+			</btns-group>
+			<text name="其它设置" id="OtherSet" text="其它设置" x="0" y="328" cx="1024" cy="30" font="font1"/>
+			<btns-group name="" id="OtherGroup" x="0" y="360" cx="1024" cy="120" inset="5" type="static" from="local" font="font2">
+				<button name="文件管理" id="FileMngr" pic="images/FileMngr.png" infor="">
+					<cmd name="" id="FileMngr" type="open_dialog" data-src="" argv=""/>
+				</button>
+				<button name="语言设置" id="LangSetting" pic="images/LangSetting.png" infor="">
+					<cmd name="" id="LangSetting" type="open_dialog" data-src="" argv=""/>
+				</button>
+			</btns-group>
+		</tab>
+	</tabs>
+</main>

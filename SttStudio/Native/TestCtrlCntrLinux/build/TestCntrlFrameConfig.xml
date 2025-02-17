@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame-config width="1280" height="800" log-debug-infor="0" sel-macro-show="1">
+	<font name="Tahoma" width="0" height="18" bold="0"/>
+	<global-datas>
+		<global-data name="Tab控件高度" id="TabHeight" data-type="long" value="40"/>
+		<global-data name="Combox控件单个Item高度" id="ComBoxItemHeight" data-type="long" value="50"/>
+		<global-data name="Combox下拉框控件下拉框竖直滑动条宽度" id="ComBoxVertScrollWidth" data-type="long" value="30"/>
+		<global-data name="表格类垂直滚动条宽度设置" id="TableVertScrollWidth" data-type="long" value="30"/>
+		<global-data name="表格类水平滚动条高度设置" id="TableHorizontalScrollHeight" data-type="long" value="30"/>
+		<global-data name="QTreeWidth树型竖直滑动条宽度" id="TreeVertScrollWidth" data-type="long" value="30"/>
+		<global-data name="QTreeWidth树型水平滑动条宽度" id="TreeHorizontalScrollHeight" data-type="long" value="30"/>
+	</global-datas>
+	<menus use="0">
+		<menu name="文件" id="menuFile">
+			<item name="选择功能" id="AddMacro" icon="" width="0" enable-state="TestStoped"/>
+			<item name="打开模板" id="OpenTemplate" icon="" width="0" enable-state="TestStoped"/>
+			<item name="保存模板" id="SaveTemplate" icon="" width="0" enable-state="TestStoped"/>
+			<item name="模板另存为" id="SaveAsTemplate" icon="" width="0" enable-state="TestStoped"/>
+			<item name="保存报告" id="SaveTest" icon="" width="0" enable-state="TestStoped"/>
+			<item name="报告另存为" id="SaveAsRpt" icon="" width="0" enable-state="TestStoped"/>
+			<item name="文件管理" id="FileMngr" icon="" width="0" enable-state="TestStoped"/>
+			<item name="截屏" id="ScreenShot" icon="" width="0" enable-state=""/>
+		</menu>
+		<menu name="参数设置" id="menuParasEdit">
+			<item name="系统参数" id="SystemParas" icon="" width="0" enable-state="TestStoped"/>
+			<item name="IEC配置" id="IECConfig" icon="" width="0" enable-state="TestStoped"/>
+			<item name="输出功率" id="OutputPower" icon="" width="0" enable-state="TestStoped"/>
+			<item name="语言设置" id="LangSetting" icon="" width="0" enable-state="TestStoped"/>
+			<item name="报告设置" id="ReportSetting" icon="" width="0" enable-state="TestStoped"/>
+			<item name="通道映射" id="ChRsMaps" icon="" width="0" enable-state="TestStoped"/>
+			<item name="自定义设置" id="CustomSet" icon="" width="0" enable-state="TestStoped"/>
+		</menu>
+		<menu name="视图列表" id="menuViewList">
+			<item name="模板视图" id="TemplateView" icon="" width="0" enable-state=""/>
+			<item name="项目列表" id="ItemList" icon="" width="0" enable-state=""/>
+			<item name="报告视图" id="ReportView" icon="" width="0" enable-state=""/>
+			<item name="矢量图" id="VectorDrawView" icon="" width="0" enable-state=""/>
+			<item name="状态图" id="StateDrawView" icon="" width="0" enable-state=""/>
+			<item name="特性图" id="CharDrawView" icon="" width="0" enable-state=""/>
+			<item name="序分量图" id="SequenceView" icon="" width="0" enable-state=""/>
+			<item name="信息视图" id="InfoView" icon="" width="0" enable-state=""/>
+			<item name="IEC探测" id="IecCap" icon="" width="0" enable-state=""/>
+			<item name="IEC抓包存储" id="IecCapWriteFile" icon="" width="0" enable-state=""/>
+			<item name="IEC调试-AT02头" id="IecCapDebugHead" icon="" width="0" enable-state=""/>
+			<item name="输出窗口" id="debugOutPutWidget" icon="" width="0" enable-state=""/>
+		</menu>
+		<menu name="版本" id="menuVersion">
+			<item name="版本信息" id="VersionInfo" icon="" width="0" enable-state="TestStoped"/>
+			<item name="更新软件" id="Liveupdate" icon="" width="0" enable-state="TestStoped"/>
+			<item name="离线升级" id="ULiveupdate" icon="" width="0" enable-state="TestStoped"/>
+		</menu>
+	</menus>
+	<tool-bar icon-pos="None" height="40" width="1024">
+		<panal name="" id="static-buttons" type="static">
+			<button name="菜单" id="Menu" icon="" width="0" enable-state=""/>
+			<button name="项目列表" id="ItemList" icon="" width="0" enable-state=""/>
+			<button name="模板视图" id="TemplateView" icon="" width="0" enable-state=""/>
+			<button name="报告视图" id="ReportView" icon="" width="0" enable-state=""/>
+		</panal>
+		<panal name="工具栏" id="float-buttons" type="float">
+			<button name="IEC配置" id="IECConfig" icon="" width="0" enable-state="TestStoped"/>
+			<button name="矢量图" id="VectorDrawView" icon="" width="0" enable-state=""/>
+			<button name="状态图" id="StateDrawView" icon="" width="0" enable-state=""/>
+			<button name="IEC探测" id="IecCap" icon="" width="0" enable-state=""/>
+			<button name="通道映射" id="ChRsMaps" icon="" width="0" enable-state="TestStoped"/>
+			<button name="输出窗口" id="debugOutPutWidget" icon="" width="0" enable-state=""/>
+			<button name="报告设置" id="ReportSetting" icon="" width="0" enable-state="TestStoped"/>
+			<button name="截屏" id="ScreenShot" icon="" width="0" enable-state=""/>
+		</panal>
+		<panal name="" id="state-pic" type="static">
+			<data name="4G" id="4G" width="21" icon="" type="4G"/>
+			<data name="Wifi" id="Wifi" width="21" icon="" type="wifi"/>
+			<data name="BlueTooth" id="Ble" width="21" icon="" type="bluetooth"/>
+			<data name="USB" id="USB" width="21" icon="" type="usb"/>
+			<data name="Battery" id="BatCap" width="38" icon="" type="battery"/>
+		</panal>
+	</tool-bar>
+	<gb-tree>
+		<size width="200" height="0"/>
+		<font name="Tahoma" width="0" height="13" bold="0"/>
+	</gb-tree>
+	<macro-para-view>
+		<font name="Tahoma" width="0" height="18" bold="0"/>
+	</macro-para-view>
+	<report-view>
+		<font name="Tahoma" width="0" height="18" bold="0"/>
+	</report-view>
+	<right-panes>
+		<size width="200" height="0"/>
+	</right-panes>
+	<result-bar icon-pos="top" height="100" width="1024">
+		<panal name="" id="result" type="result"/>
+	</result-bar>
+	<status-bar icon-pos="top" height="40" width="1024">
+		<panal name="" id="" type="float-single">
+			<data name="Run" id="Run" width="20" icon="" type="light"/>
+			<data name="A" id="Bin001" width="20" icon="" type="bin"/>
+			<data name="B" id="Bin002" width="20" icon="" type="bin"/>
+			<data name="C" id="Bin003" width="20" icon="" type="bin"/>
+			<data name="D" id="Bin004" width="20" icon="" type="bin"/>
+			<data name="E" id="Bin005" width="20" icon="" type="bin"/>
+			<data name="F" id="Bin006" width="20" icon="" type="bin"/>
+			<data name="G" id="Bin007" width="20" icon="" type="bin"/>
+			<data name="H" id="Bin008" width="20" icon="" type="bin"/>
+			<data name="I" id="OI" width="20" icon="" type="light"/>
+			<data name="U" id="U" width="20" icon="" type="light"/>
+			<data name="OH" id="OH" width="20" icon="" type="light"/>
+			<data name="1" id="Bout001" width="20" icon="" type="bout"/>
+			<data name="2" id="Bout002" width="20" icon="" type="bout"/>
+			<data name="3" id="Bout003" width="20" icon="" type="bout"/>
+			<data name="4" id="Bout004" width="20" icon="" type="bout"/>
+			<data name="5" id="Bout005" width="20" icon="" type="bout"/>
+			<data name="6" id="Bout006" width="20" icon="" type="bout"/>
+			<data name="7" id="Bout007" width="20" icon="" type="bout"/>
+			<data name="8" id="Bout008" width="20" icon="" type="bout"/>
+		</panal>
+		<panal name="" id="state-pic" type="static">
+			<button name="开始测试" id="StartTest" icon="" width="80" enable-state=""/>
+			<button name="手动触发" id="ManuTriger" icon="triger.png" width="80" enable-state="Testing"/>
+			<data name="未对时" id="GPS" width="160" icon="" type="gps"/>
+			<button name="关闭" id="Exit" icon="" width="80" enable-state="TestStoped"/>
+			<button name="" id="Assist" icon="Assist.png" width="40" enable-state=""/>
+		</panal>
+	</status-bar>
+</frame-config>
