@@ -275,18 +275,18 @@ SOURCES += main.cpp\
     ../../Module/UI/SoftKeyboard/Keyboard/googlepinyin/userdict.cpp \
     ../../Module/UI/SoftKeyboard/Keyboard/googlepinyin/utf16char.cpp \
     ../../Module/UI/SoftKeyboard/Keyboard/googlepinyin/utf16reader.cpp \
-    ../../Module/Main/Ctrls/SttWgtButton.cpp \
-    ../../Module/Main/Ctrls/SttWgtButtonGroup.cpp \
-    ../../Module/Main/Ctrls/SttWgtFileMngrGrid.cpp \
-    ../../Module/Main/Ctrls/SttWgtNativeMainLinux.cpp \
-    ../../Module/Main/Ctrls/SttWgtStyle.cpp \
-    ../../Module/Main/Ctrls/SttWgtTabCtrl.cpp \
-    ../../Module/Main/Ctrls/SttWgtText.cpp \
-    ../../Module/Main/Module/SttWgtBase.cpp \
-    ../../Module/Main/Module/SttWgtBaseList.cpp \
-    ../../Module/Main/Module/SttWgtCmdExecTool.cpp \
-    ../../Module/Main/Module/SttWgtCmdThread.cpp \
-    ../../Module/Main/Module/SttWgtFactory.cpp \
+    ../../Module/Main/Ctrls/HKButton.cpp \
+    ../../Module/Main/Ctrls/HKButtonGroup.cpp \
+    ../../Module/Main/Ctrls/HKWgtFileMngrGrid.cpp \
+    ../../Module/Main/Ctrls/HKWgtLinux.cpp \
+    ../../Module/Main/Ctrls/HKWgtStyle.cpp \
+    ../../Module/Main/Ctrls/HkTabWidget.cpp \
+    ../../Module/Main/Ctrls/HKWgtText.cpp \
+    ../../Module/Main/Module/HKWgtBase.cpp \
+    ../../Module/Main/Module/HKWgtBaseList.cpp \
+    ../../Module/Main/Module/HKWgtCmdExecTool.cpp \
+    ../../Module/Main/Module/HKWgtCmdThread.cpp \
+    ../../Module/Main/Module/HKWgtFactory.cpp \
     ../../Module/Main/SttXuiData/SttXMainConfigGlobal.cpp \
     ../../Module/Main/SttXuiData/SttXuiDataBase.cpp \
     ../../Module/Main/SttXuiData/SttXuiDataBtnsGroup.cpp \
@@ -321,10 +321,10 @@ SOURCES += main.cpp\
     ../../Module/UI/Module/ScrollCtrl/ScrollTreeWidget.cpp \
     ../../Module/UI/Module/ScrollCtrl/ScrollTableWidget.cpp \
     ../../Module/UI/Controls/SttCheckBox.cpp \
-    SttNativeMainApplication.cpp \
-    ../../Module/Main/SttXMainAppBase.cpp \
-    SttNativeMainFrameLinux.cpp \
-    ../../Module/Main/SttXMainFrameBase.cpp \
+    HKMainApplication.cpp \
+    ../../Module/Main/HKMainApplicationBase.cpp \
+    HKMainFrameLinux.cpp \
+    ../../Module/Main/HKMainFrameBase.cpp \
     ../../Module/SttTestBase/SttComplexCalApi.cpp \
     ../../Module/SttTestBase/SttComplexp.cpp \
     ../../Module/SttTestBase/SttMacroXmlKeys.cpp \
@@ -663,18 +663,18 @@ HEADERS  += \
     ../../Module/UI/SoftKeyboard/Keyboard/googlepinyin/userdict.h \
     ../../Module/UI/SoftKeyboard/Keyboard/googlepinyin/utf16char.h \
     ../../Module/UI/SoftKeyboard/Keyboard/googlepinyin/utf16reader.h \
-    ../../Module/Main/Ctrls/SttWgtButton.h \
-    ../../Module/Main/Ctrls/SttWgtButtonGroup.h \
-    ../../Module/Main/Ctrls/SttWgtFileMngrGrid.h \
-    ../../Module/Main/Ctrls/SttWgtNativeMainLinux.h \
-    ../../Module/Main/Ctrls/SttWgtStyle.h \
-    ../../Module/Main/Ctrls/SttWgtTabCtrl.h \
-    ../../Module/Main/Ctrls/SttWgtText.h \
-    ../../Module/Main/Module/SttWgtBase.h \
-    ../../Module/Main/Module/SttWgtBaseList.h \
-    ../../Module/Main/Module/SttWgtCmdExecTool.h \
-    ../../Module/Main/Module/SttWgtCmdThread.h \
-    ../../Module/Main/Module/SttWgtFactory.h \
+    ../../Module/Main/Ctrls/HKButton.h \
+    ../../Module/Main/Ctrls/HKButtonGroup.h \
+    ../../Module/Main/Ctrls/HKWgtFileMngrGrid.h \
+    ../../Module/Main/Ctrls/HKWgtLinux.h \
+    ../../Module/Main/Ctrls/HKWgtStyle.h \
+    ../../Module/Main/Ctrls/HkTabWidget.h \
+    ../../Module/Main/Ctrls/HKWgtText.h \
+    ../../Module/Main/Module/HKWgtBase.h \
+    ../../Module/Main/Module/HKWgtBaseList.h \
+    ../../Module/Main/Module/HKWgtCmdExecTool.h \
+    ../../Module/Main/Module/HKWgtCmdThread.h \
+    ../../Module/Main/Module/HKWgtFactory.h \
     ../../Module/Main/SttXuiData/SttXMainConfigGlobal.h \
     ../../Module/Main/SttXuiData/SttXuiDataBase.h \
     ../../Module/Main/SttXuiData/SttXuiDataBtnsGroup.h \
@@ -710,11 +710,11 @@ HEADERS  += \
     ../../Module/UI/Module/ScrollCtrl/ScrollTreeWidget.h \
     ../../Module/UI/Module/ScrollCtrl/ScrollTableWidget.h \
     ../../Module/UI/Controls/SttCheckBox.h \
-    SttNativeMainApplication.h \
+    HKMainApplication.h \
     ../../Module/Main/SttMainArgvDef.h \
-    ../../Module/Main/SttXMainAppBase.h \
-    SttNativeMainFrameLinux.h \
-    ../../Module/Main/SttXMainFrameBase.h \
+    ../../Module/Main/HKMainApplicationBase.h \
+    HKMainFrameLinux.h \
+    ../../Module/Main/HKMainFrameBase.h \
     ../../Module/SttTestBase/SttComplexCalApi.h \
     ../../Module/SttTestBase/SttComplexp.h \
     ../../Module/SttTestBase/SttMacroXmlKeys.h \
