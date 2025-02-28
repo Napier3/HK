@@ -28,8 +28,8 @@ INCLUDEPATH += ../../../61850/mmslite/inc
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = SttNativeMain
-TEMPLATE = app
-DESTDIR = "../../../PONOVO/PowerTest/Stt/Bin"
+OBJECTS_DIR = ./ObjectFiles
+DESTDIR = "/home/uisrc/HK/Stt/Bin"
 
 
 SOURCES += main.cpp\

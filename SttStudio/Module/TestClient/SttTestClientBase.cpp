@@ -201,6 +201,7 @@ BOOL CSttTestClientBase::OnTimer(UINT nTimerID, DWORD dwTime)
 
 BOOL CSttTestClientBase::ConnectSttServer(CSttTestAppConfigTool *pTool)
 {
+    qDebug()<<"debug sun ConnectSttServer 1";
 	if (m_oTestAppCfg.IsLocal())
 	{
 		if (!CSttTestAppConfigTool::IsTestAppExist(&m_oTestAppCfg))
@@ -208,9 +209,8 @@ BOOL CSttTestClientBase::ConnectSttServer(CSttTestAppConfigTool *pTool)
 			return FALSE;
 		}
 	}
-
     //FreeXClientEngine();  // shaolei 20201212  断链会导致输出无法保持，故注释
-	if (pTool != NULL)
+    if (pTool != nullptr)
 	{
 		pTool->m_pSttTestMsgViewInterface = this;
 
@@ -224,11 +224,11 @@ BOOL CSttTestClientBase::ConnectSttServer(CSttTestAppConfigTool *pTool)
 		m_pXClientEngine = oSttTestAppConfigTool.CreateTestEngine(&m_oTestAppCfg);
 	}
 
-	if (m_pTestEventRcv != NULL)
+    if (m_pTestEventRcv != nullptr)
 	{
 		m_pXClientEngine->SetTestEventInterface(m_pTestEventRcv);
 	}
-
+    qDebug()<<"debug sun ConnectSttServer 2";
 	return TRUE;
 }
 

@@ -62,12 +62,13 @@ void CSttTestAppConfigTool::TestAppConfig(CSttTestEngineClientData **ppXClientEn
 
 CSttTestEngineClientData* CSttTestAppConfigTool::CreateTestEngine(CSttTestAppCfg *pSttTestAppCfg)
 {
+    qDebug()<<"debug sun CreateTestEngine 1";
 	if (m_strServerID.GetLength() == 0)
 	{
 		m_strServerID = STT_SOFT_ID_TEST;
 	}
-m_strServerID = STT_SOFT_ID_TEST;
-	CSttTestEngineClientData *pClientEngine = NULL; 
+    m_strServerID = STT_SOFT_ID_TEST;
+    CSttTestEngineClientData *pClientEngine = nullptr;
 	if (m_strServerID == STT_SOFT_ID_ATS)
 	{
 		pClientEngine = CreateAtsEngine(pSttTestAppCfg, m_strSoftID);
@@ -77,7 +78,8 @@ m_strServerID = STT_SOFT_ID_TEST;
 		pClientEngine = CreateTestCtrlEngine(pSttTestAppCfg, m_strSoftID);
 	}
 
-	m_pClientEngine = NULL;
+    m_pClientEngine = nullptr;
+    qDebug()<<"debug sun CreateTestEngine 2";
 	return pClientEngine;
 }
 
@@ -86,23 +88,16 @@ CSttTestEngineClientData* CSttTestAppConfigTool::CreateTestCtrlEngine(CSttTestAp
 	if (pSttTestAppCfg->IsLocal())
 	{
         CString strTestAppIP;
-#ifdef _PSX_OS_CENTOS_
-        strTestAppIP = pSttTestAppCfg->GetTestAppIP(); //Centos下，是工控机，和Z7平台是分开的，无法直接通过获取主机IP的方式连接测试仪底层Server
-#else
-#ifdef _PSX_QT_LINUX_
         CString strMask;
         stt_net_get_deviceip(strTestAppIP, strMask);
-#else
-        strTestAppIP = pSttTestAppCfg->GetTestAppIP();
-#endif
-#endif
+        qDebug() << "debug sun CreateTestCtrlEngine 1";
         Local_ConnectServer(pSttTestAppCfg, strTestAppIP, STT_PORT_TEST_SERVER, strSoftID);
+        qDebug() << "debug sun CreateTestCtrlEngine 2";
     }
 	else
 	{
 		Remote_ConnectServer(pSttTestAppCfg, pSttTestAppCfg->GetCloudIP(), pSttTestAppCfg->GetCloudServerPort());
 	}
-
 	return m_pClientEngine;
 }
 
@@ -223,81 +218,40 @@ BOOL CSttTestAppConfigTool::Local_ConnectServer(CSttTestAppCfg *pSttTestAppCfg, 
  	}
  qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  1";
 	pSttTestAppCfg->SetLocalApp();
- qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  2";
-	if (m_pClientEngine == NULL)
+    if (m_pClientEngine == nullptr)
 	{
 		CSttClientTestEngine *pNew = new CSttClientTestEngine();
 		pNew->AttatchSttTestMsgViewInterface(m_pSttTestMsgViewInterface);
 		m_pClientEngine = pNew;
 
-		if (pTestEventRcv != NULL)
+        if (pTestEventRcv != nullptr)
 		{
 			m_pClientEngine->SetTestEventInterface(pTestEventRcv);
 		}
 	}
- qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  3" << strIP;
 	BOOL bRet = m_pClientEngine->ConnectServer(strIP,nPort);
- qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  4";
 	if(!bRet)
 	{
-         qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  5";
         CLogPrint::LogFormatString(XLOGLEVEL_ERROR,_T("Connect Server [%s] failed"), strIP.GetString());
 		return bRet;
 	}
-
-	//设置LocalIP
-#ifdef _PSX_OS_CENTOS_
-        m_pClientEngine->m_pSttClientSocket->m_strIPLocal = pSttTestAppCfg->GetLocalIP(); //Centos下，是工控机，和Z7平台是分开的，无法直接通过获取主机IP的方式连接测试仪底层Server
-#else
-#ifdef _PSX_QT_LINUX_
     CString strMask;
-    qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  6";
     stt_net_get_deviceip( m_pClientEngine->m_pSttClientSocket->m_strIPLocal, strMask);
-    qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  7";
-#else
-    m_pClientEngine->m_pSttClientSocket->m_strIPLocal = pSttTestAppCfg->GetLocalIP();
-#endif
-#endif
 
-#ifdef _PSX_QT_LINUX_
-    qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  8";
     m_pClientEngine->m_oCurrUser.ID_Terminal(STT_TERMINAL_TYPE_NATIVE);
-    qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  9";
-#else
-	m_pClientEngine->m_oCurrUser.ID_Terminal(STT_TERMINAL_TYPE_LOCAL);
-#endif
-qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  10";
     m_pClientEngine->m_pSttClientSocket->SetSocketType(STT_SOCKET_TYPE_LOCAL);
-qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  11";
-#ifdef STT_TEST_CMD_USE_RandomNum
-	//ID_Tester改为随机数 2024-6-4
-	srand((unsigned int)time(NULL));
-	unsigned int nIDTester = rand();
-	m_pClientEngine->m_oCurrUser.ID_Tester(nIDTester/*g_nIDTester*/);
-#else
     m_pClientEngine->m_oCurrUser.ID_Tester(g_nIDTester);
-#endif
-qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  12";
 	m_pClientEngine->m_oCurrUser.IP_User(m_pClientEngine->m_pSttClientSocket->m_strIPLocal);
 	m_pClientEngine->m_oCurrUser.Name_User(m_pClientEngine->m_pSttClientSocket->m_strIPLocal);
 	m_pClientEngine->m_oCurrUser.id_soft(strIdSoft);
-#ifndef _PSX_QT_LINUX_
-	m_pClientEngine->m_oCurrUser.SetLogInTime();//zhouhj 2024.5.13 传递登录时间
-#endif
-qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  13";
 	CSttCmdData oRetData;
 	long nExecStatus = m_pClientEngine->System_Login(TRUE, &oRetData);
-qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  14";
 	if (nExecStatus != STT_CMD_ExecStatus_SUCCESS)
 	{
 		bRet = FALSE;
 		CLogPrint::LogFormatString(XLOGLEVEL_INFOR,_T("Login失败"));
 	}
-// 	else
-// 	{
-// 		m_pClientEngine->System_Request(KEY_AUTHORITY_MODULE_Test,0);
-// 	}
-qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  15";
+    qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  2";
 	return bRet;
 }
 

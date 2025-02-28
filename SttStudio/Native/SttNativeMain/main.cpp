@@ -19,19 +19,19 @@ int main(int argc, char *argv[])
 {
     QSharedMemory *shareMem = new QSharedMemory(QString("HKMain"));
 
-    volatile short i = 2;
-    while (i--)
-    {
-        if(shareMem->attach(QSharedMemory::ReadOnly))
-        {
-            shareMem->detach();
-        }
-    }
-    if(!shareMem->create(1))
-    {
-        qDebug() << "Error: HKMain is exist !";
-        return 0;
-    }
+    //volatile short i = 2;
+    //while (i--)
+    //{
+    //    if(shareMem->attach(QSharedMemory::ReadOnly))
+    //    {
+    //        shareMem->detach();
+    //    }
+    //}
+    //if(!shareMem->create(1))
+    //{
+    //    qDebug() << "Error: HKMain is exist !";
+    //    return 0;
+    //}
 #ifdef USE_Custom_CDateTime
     CDateTime::CreateClientDataTime();
 #endif
@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
     oHKMainApplication.InitApplication(new CXLangResource_SttNativeMain());
     HKMainFrameLinux oHKMainFrameLinux;
     g_pHKWgtCmdExecTool->m_oStartTickCount.Enter();
+    QApplication::setOverrideCursor(Qt::BlankCursor);
     oHKMainFrameLinux.show();
     oHKMainApplication.exec();
 
@@ -51,4 +52,5 @@ int main(int argc, char *argv[])
     CDateTime::ReleaseClientDataTime();
 #endif
     return 0;
+
 }

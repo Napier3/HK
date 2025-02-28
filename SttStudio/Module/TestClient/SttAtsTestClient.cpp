@@ -227,9 +227,7 @@ BOOL CSttAtsTestClient::ConnectAtsTestServer(const CString &strTestAppIP)
     //stt_net_get_deviceip(strIP, strMask);
     stt_net_get_ip(&strIP);
 #endif
-    nPort = 19814;//debug sun
-    //debug sun m_bTestAppConnect = ConnectAtsTestServer(strIP,nPort, STT_SOFT_ID_ATS);
-m_bTestAppConnect = ConnectAtsTestServer(strIP,nPort, STT_SOFT_ID_TEST);
+    m_bTestAppConnect = ConnectAtsTestServer(strIP,nPort, STT_SOFT_ID_ATS);
 	return m_bTestAppConnect;
 }
 

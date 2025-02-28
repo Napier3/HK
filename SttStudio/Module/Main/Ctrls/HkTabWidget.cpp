@@ -9,7 +9,6 @@
 
 HkTabWidget::HkTabWidget(QWidget* pParent)
 {
-    setTabPosition(QTabWidget::West);
 	m_pParent = pParent;
 	setParent(pParent);
 }

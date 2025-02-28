@@ -17,30 +17,30 @@ extern CSttTestClientBase *g_theSingleSttTestClient;
 HKMainFrameLinux::HKMainFrameLinux(QWidget *parent) :
     HKMainFrameBase(parent)
 {
-	CMacroXmlKeys::Create();
-	CSttCmdOverTimeTool::Create();
-	CSttCmdDefineXmlRWKeys::Create();
-	CCfgDataMngrConstGlobal::Create();
+    CMacroXmlKeys::Create();
+    CSttCmdOverTimeTool::Create();
+    CSttCmdDefineXmlRWKeys::Create();
+    CCfgDataMngrConstGlobal::Create();
 
-	stt_CreateSingleSttTestClient();
-	g_oSttTestAppConfigTool.m_strServerID = STT_SOFT_ID_TEST;
-	g_oSttTestAppConfigTool.m_strSoftID = STT_SOFT_ID_DEBUG;
-	m_bConnected = 0;
-	m_bConnected = g_theSingleSttTestClient->ConnectSttServer(&g_oSttTestAppConfigTool);
-	m_nConnectCnt = 1;//第一次联机，如果未成功，后面3秒一次继续尝试9次
-	if (m_bConnected)
-	{
-		g_oSttTestAppConfigTool.m_pClientEngine = g_theSingleSttTestClient->GetTestEngineClient();
-		g_oSttTestAppConfigTool.m_pClientEngine->SetTestEventInterface((CTestEventBaseInterface*)this);
-	}
-	else
-	{
-		m_oTimerForConnect.start(3000);
-		connect(&m_oTimerForConnect,SIGNAL(timeout()),this,SLOT(slot_SttConnect()));
-	}
-	m_nTesterVerIdx = -1;
-	InitBatteryBtn();
-	connect(this,SIGNAL(sig_UpdateBatteryState()),this,SLOT(slot_UpdateBatteryState()),Qt::QueuedConnection);
+    stt_CreateSingleSttTestClient();
+    g_oSttTestAppConfigTool.m_strServerID = STT_SOFT_ID_TEST;
+    g_oSttTestAppConfigTool.m_strSoftID = STT_SOFT_ID_DEBUG;
+    m_bConnected = 0;
+    m_bConnected = g_theSingleSttTestClient->ConnectSttServer(&g_oSttTestAppConfigTool);
+    m_nConnectCnt = 1;//第一次联机，如果未成功，后面3秒一次继续尝试9次
+    if (m_bConnected)
+    {
+        g_oSttTestAppConfigTool.m_pClientEngine = g_theSingleSttTestClient->GetTestEngineClient();
+        g_oSttTestAppConfigTool.m_pClientEngine->SetTestEventInterface((CTestEventBaseInterface*)this);
+    }
+    else
+    {
+        m_oTimerForConnect.start(3000);
+        connect(&m_oTimerForConnect,SIGNAL(timeout()),this,SLOT(slot_SttConnect()));
+    }
+    m_nTesterVerIdx = -1;
+    InitBatteryBtn();
+    connect(this,SIGNAL(sig_UpdateBatteryState()),this,SLOT(slot_UpdateBatteryState()),Qt::QueuedConnection);
 }
 
 HKMainFrameLinux::~HKMainFrameLinux()

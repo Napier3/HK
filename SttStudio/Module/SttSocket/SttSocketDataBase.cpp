@@ -81,7 +81,7 @@ qDebug() << "debug sun:  long CSttSocketDataBase::SendCmdSync  4";
 	if (nRet > 0)
 	{
         qDebug() << "debug sun:  long CSttSocketDataBase::SendCmdSync  5";
-		nExecStatus = pCmd->DoWait(this,pCmdInfo,nTimeOut,pRetData,bDoEvents);
+        //debug sun wait nExecStatus = pCmd->DoWait(this,pCmdInfo,nTimeOut,pRetData,bDoEvents);
         qDebug() << "debug sun:  long CSttSocketDataBase::SendCmdSync  6";
 	}
 	else

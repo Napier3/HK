@@ -30,7 +30,8 @@ LIBS += -L "/usr/local/qwt-6.1.2/lib" -lqwt
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = TestCtrlCntrLinux
-TEMPLATE = app
+OBJECTS_DIR = ./ObjectFiles
+DESTDIR = "/home/uisrc/HK/Stt/Bin"
 
 
 SOURCES += main.cpp\

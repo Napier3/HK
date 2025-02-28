@@ -48,8 +48,8 @@ void HKMainFrameBase::ReleaseResource()
 
 void HKMainFrameBase::InitUI(CString strConfigFile)
 {
-	QSize size(1024, 768);
-	resize(1024,768);
+    QSize size(1280, 800);
+    resize(1280,800);
 	setMaximumSize(size);
     setMinimumSize(size);
 	setWindowFlags(Qt::FramelessWindowHint);
