@@ -84,7 +84,6 @@ void CSttMacroParaEditViewOriginal::initTestParas()
 
 BOOL CSttMacroParaEditViewOriginal::OpenTestTestMngrFile(const CString& strParasFile)
 {
-    qDebug()<< "debug sun: entering OpenTestTestMngrFile ";
 	if (g_pTheSttTestApp->m_pTestMacroUI == NULL)
 	{
 		return FALSE;
@@ -96,7 +95,6 @@ BOOL CSttMacroParaEditViewOriginal::OpenTestTestMngrFile(const CString& strParas
 	{
         //sun stt_ui_OpenParasFile(g_pTheSttTestApp->m_pTestMacroUI->m_strUI_ParaFile,pDataGroup);
 	}
-qDebug()<< "debug sun: CSttMacroParaEditViewOriginal::OpenTestTestMngrFile 1";
 	if (pDataGroup->GetCount()>0)
 	{
 		CSttDataGroupSerializeRead oRead(pDataGroup);
@@ -114,7 +112,6 @@ qDebug()<< "debug sun: CSttMacroParaEditViewOriginal::OpenTestTestMngrFile 1";
 		//		stt_xml_serialize(pCurrTmtPara, &oRead);
 		return TRUE;
 	}
-    qDebug()<< "debug sun: CSttMacroParaEditViewOriginal::OpenTestTestMngrFile 2";
 
 	//zhouhj 2023.8.31 后面代码废弃,统一采用参数配置文件方式
 	CString strFile;
@@ -133,22 +130,18 @@ qDebug()<< "debug sun: CSttMacroParaEditViewOriginal::OpenTestTestMngrFile 1";
 		CLogPrint::LogFormatString(XLOGLEVEL_INFOR,/*_T("功能测试参数文件【%s】不存在")*/g_sLangTxt_Gradient_Functionalfiledtexist.GetString(),strFile.GetString()); //lcq
 		return FALSE;
 	}
-qDebug()<< "debug sun: CSttMacroParaEditViewOriginal::OpenTestTestMngrFile 3";
 	CSttXmlSerializeTool oSttXmlSerializeTool;
 	CSttXmlSerializeBase *pRootParas = NULL, *pMacroParas = NULL;
 	pRootParas = oSttXmlSerializeTool.CreateXmlSerializeRead(stt_TestMacrosKey(), strFile);
-qDebug()<< "debug sun: CSttMacroParaEditViewOriginal::OpenTestTestMngrFile 4";
 	if (pRootParas == NULL)
 	{
 		CLogPrint::LogFormatString(XLOGLEVEL_INFOR,/*_T("解析功能测试参数文件【%s】失败")*/g_sLangTxt_Gradient_FailedTestParameterfile.GetString(),strFile.GetString());//lcq
 		return FALSE;
 	}
-qDebug()<< "debug sun: CSttMacroParaEditViewOriginal::OpenTestTestMngrFile 5";
 	long nIndex = 0;
 	PTMT_PARAS_HEAD p = NULL;
 
 	char szMacroID[TMT_PARAS_HEAD_MACROID_LEN];  
-    qDebug()<< "debug sun: CSttMacroParaEditViewOriginal::OpenTestTestMngrFile 6";
 	const char* pCharMacroID = GetMacroID();
 	pMacroParas = pRootParas->xml_serialize(pCharMacroID,pCharMacroID, "macro", stt_TestMacroKey());
 
@@ -156,14 +149,12 @@ qDebug()<< "debug sun: CSttMacroParaEditViewOriginal::OpenTestTestMngrFile 5";
 	{
 		return FALSE;
 	}
-qDebug()<< "debug sun: CSttMacroParaEditViewOriginal::OpenTestTestMngrFile 7";
 	stt_xml_serialize_ReadMacroID(pMacroParas,szMacroID);
 	p = GetTestParas();
 
 	CSttXmlSerializeBase *pXmlParas = pMacroParas->xml_serialize("paras", "paras", "paras", stt_ParasKey());
 	SerializeTestParas(pXmlParas, p,g_oSttTestResourceMngr.m_pTestResouce->GetVolRsNum(),g_oSttTestResourceMngr.m_pTestResouce->GetVCurRsNum(),
 		g_oLocalSysPara.m_nCHBinInExNum,g_oLocalSysPara.m_nCHBinOutExNum,g_oSystemParas.m_nHasDigital);
-qDebug()<< "debug sun: CSttMacroParaEditViewOriginal::OpenTestTestMngrFile 8";
 	return TRUE;
 }
 

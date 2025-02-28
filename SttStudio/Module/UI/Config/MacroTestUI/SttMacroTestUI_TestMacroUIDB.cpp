@@ -33,37 +33,8 @@ CSttMacroTestUI_TestMacroUIDB* CSttMacroTestUI_TestMacroUIDB::Create(const CStri
 		CSttTestCtrrlMacroTestUIMngrXmlRWKeys::Create();
 		g_pSttTestMacroUIDB = new CSttMacroTestUI_TestMacroUIDB();
         g_pSttTestMacroUIDB->Open(strSysPath);
-        if(!g_pSttTestMacroUIDB)
-        {
-            qDebug()<<"!!!!!!!!!!debug sun: g_pSttTestMacroUIDB is still a nullptr 1 ";
-        }
         g_pSttTestMacroUIDB->InitAfterRead();
-        if(!g_pSttTestMacroUIDB)
-        {
-            qDebug()<<"!!!!!!!!!!debug sun: g_pSttTestMacroUIDB is still a nullptr 2";
-        }
-
-#ifndef NOT_USE_XLANGUAGE
-        //xlang_TranslateByResourceFileEx(g_pSttTestMacroUIDB, g_strSttTestMacroUIMngrFile);
-#endif
 	}
-    if(!g_pSttTestMacroUIDB)
-    {
-        qDebug()<<"!!!!!!!!!!debug sun: g_pSttTestMacroUIDB is still a nullptr 3";
-    }
-    if(g_pSttTestMacroUIDB)
-    {
-        qDebug()<<"##########debug sun: g_pSttTestMacroUIDB is alive";
-    }
-
-    if(!g_pSttTestMacroUIDB->m_pTestMacroUIs)
-    {
-        qDebug()<<"!!!!!!!!!!debug sun: g_pSttTestMacroUIDB->m_pTestMacroUIs is still a nullptr 1";
-    }
-    if(g_pSttTestMacroUIDB->m_pTestMacroUIs)
-    {
-        qDebug()<<"!!!!!!!!!!debug sun: g_pSttTestMacroUIDB->m_pTestMacroUIs is alive";
-    }
 	return g_pSttTestMacroUIDB;
 }
 
@@ -135,11 +106,6 @@ void CSttMacroTestUI_TestMacroUIDB::InitAfterRead()
 	POS pos = GetHeadPosition();
 	CBaseObject *p = NULL;
 	UINT nClassID = 0;
-    if(!pos)
-    {
-        qDebug()<<"######## debug sun pos is null";
-
-    }
 	while (pos != NULL)
 	{
 		p = GetNext(pos);
@@ -164,13 +130,6 @@ void CSttMacroTestUI_TestMacroUIDB::InitAfterRead()
 	{
 		m_pTestMacroUIs = (CSttMacroTestUI_TestMacroUIs*)AddNewChild(new CSttMacroTestUI_TestMacroUIs());
 	}
-    if(m_pTestMacroUIs)
-    {
-        qDebug()<<"!!!! debug sun: CSttMacroTestUI_TestMacroUIDB::InitAfterRead(), m_pTestMacroUIs is alive";
-    }else
-    {
-        qDebug()<<"!!!! debug sun: CSttMacroTestUI_TestMacroUIDB::InitAfterRead(), m_pTestMacroUIs is null";
-    }
 
 }
 
@@ -276,30 +235,12 @@ CExBaseObject* CSttMacroTestUI_TestMacroUIDB::CreateNewChild(long nClassID/*, BO
 
 CSttMacroTestUI_TestMacroUI* CSttMacroTestUI_TestMacroUIDB::FindTestMacroUI(const CString &strMacroUiId)
 {
-
-    if (g_pSttTestMacroUIDB == nullptr)
-	{
-        qDebug()<<"FindTestMacroUI!!!!!!!!!!debug sun: g_pSttTestMacroUIDB is nullllllllllllll";
-
-        //return NULL;
-	}
-
-    if (g_pSttTestMacroUIDB->m_pTestMacroUIs == nullptr)
-	{
-    qDebug()<<"FindTestMacroUI!!!!!!!!!!debug sun: g_pSttTestMacroUIDB->m_pTestMacroUIs is nullllllllllllll";
-        //return NULL;
-	}
-    qDebug()<<"288 FindTestMacroUI!!!!!!!!!!debug sun: id is " << strMacroUiId;
-
 	return (CSttMacroTestUI_TestMacroUI*)g_pSttTestMacroUIDB->m_pTestMacroUIs->FindByID(strMacroUiId);
 }
 
 BOOL CSttMacroTestUI_TestMacroUIDB::Open(const CString &strSysPath)
 {
-    qDebug()<<"!!!!!!!!!!debug sun: Entering CSttMacroTestUI_TestMacroUIDB::Open ";
-
 	ASSERT (CSttTestCtrrlMacroTestUIMngrXmlRWKeys::g_pXmlKeys != NULL);
-     qDebug()<<"!!!!!!!!!!debug sun: Entering CSttMacroTestUI_TestMacroUIDB::Open after assert ";
 	CString strConfigFolderPath;
 
 	if (strSysPath.GetLength() == 0)
@@ -326,8 +267,6 @@ BOOL CSttMacroTestUI_TestMacroUIDB::Open(const CString &strSysPath)
 	{
 		m_strFile = strConfigFolderPath + g_strSttTestMacroUIMngrFile;
 	}
-    qDebug()<<"!!!!!!!!!!debug sun: CSttMacroTestUI_TestMacroUIDB::Open path is " << m_strFile;
-
 	return OpenFile(m_strFile);
 }
 

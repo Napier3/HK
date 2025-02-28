@@ -1,6 +1,4 @@
-#ifndef CXMESSAGEBOX_H
-#define CXMESSAGEBOX_H
-
+#pragma once
 #include <QMessageBox>
 
 class CXMessageBox : public QMessageBox
@@ -11,10 +9,7 @@ public:
 		StandardButton defaultButton = NoButton)
 	{
 		QMessageBox messageBox(NoIcon, title, text, buttons, parent);
-//		messageBox.setFixedWidth(80);
 		messageBox.setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint);
 		return messageBox.exec();
 	}
 };
-
-#endif//!CXMESSAGEBOX_H

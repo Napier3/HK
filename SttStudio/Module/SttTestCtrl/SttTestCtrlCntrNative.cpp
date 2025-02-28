@@ -35,7 +35,6 @@ CSttTestCtrlCntrNative::CSttTestCtrlCntrNative()
 	CString strTestMacroFile = strConfigPath;
 	strTestMacroFile += "RelayTest/TestMacro.xml";
 	m_pTestMacros = new CTestMacros();
-    qDebug() << "Debug sun: from TestCtrlCntrLinux!!!! path is %s"<<strTestMacroFile;
     //m_pTestMacros->OpenXmlFile(strTestMacroFile, CTestMacroXmlRWKeys::g_pXmlKeys);
 	CString strStateTestDataTypeFile = strConfigPath;
 	strStateTestDataTypeFile += _T("StateTestDataType.xml");
@@ -1710,7 +1709,6 @@ bool CSttTestCtrlCntrNative::IsTestStarted()
 {
     if(m_oSttAtsClient.m_pXClientEngine == nullptr)
 	{
-        qDebug() << "debug sun:  m_oSttAtsClient.m_pXClientEngine ia nullptrrrrrrrrrrrrrrrrrrrrrrrrrrr " ;
 		return false;
 	}
 

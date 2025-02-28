@@ -604,26 +604,6 @@ void QSttTestCntrFrameBase::InitFrame(const CString &strFrameCfgFile)
     stt_xml_serialize_write_ReplayTest();
 	InitConfig(strFrameCfgFile);
     m_pSttFrameConfig->InitAfterRead();
-    if(!m_pSttFrameConfig->GetFont())
-    {
-qDebug() << "Debug sun: m_pSttFrameConfig->GetFont() is nullllllllllllll";
-    }
-    if(!m_pSttFrameConfig->GetMenus())
-    {
-qDebug() << "Debug sun: m_pSttFrameConfig->GetMenus() is nullllllllllllll";
-    }
-    if(!m_pSttFrameConfig->GetToolBar())
-    {
-qDebug() << "Debug sun: m_pSttFrameConfig->GetToolBar() is nullllllllllllll";
-    }
-    if(!m_pSttFrameConfig->GetResultBar())
-    {
-qDebug() << "Debug sun: m_pSttFrameConfig->GetResultBar() is nullllllllllllll";
-    }
-    if(!m_pSttFrameConfig->GetStatusBar())
-    {
-qDebug() << "Debug sun: m_pSttFrameConfig->GetStatusBar() is nullllllllllllll";
-    }
 	g_oFileMngrTool.OpenConfigFile();
 	InitUI();
 	InitIcon();
@@ -1986,17 +1966,7 @@ CXDrawLine* QSttTestCntrFrameBase::GetCharLibLeftButtonLine()
 }
 
 void QSttTestCntrFrameBase::AdjustMacroEditWidgetToFrame(CSttMacroTestUI_TestMacroUI *pTestMacroUI)
-{//2022-3-25  调整参数窗口
-    //if(m_pSttGbTreeView->m_pTreeCtrl)
-    //{
-    //    disconnect(m_pSttGbTreeView->m_pTreeCtrl,SIGNAL(itemChanged(QTreeWidgetItem *, int)),m_pSttGbTreeView->m_pTreeCtrl,SLOT(slot_TreeItemChanged(QTreeWidgetItem *, int)));
-    //    qDebug() << "Debug sun: before m_pSttGbTreeView->ShowBaseList!!!!";
-    //
-    //    m_pSttGbTreeView->ShowBaseList((CExBaseList *)m_pTestCtrlCntrBase->GetGuideBook());
-    //
-    //    qDebug() << "Debug sun: after m_pSttGbTreeView->ShowBaseList!!!!";
-    //    connect(m_pSttGbTreeView->m_pTreeCtrl,SIGNAL(itemChanged(QTreeWidgetItem *, int)),m_pSttGbTreeView->m_pTreeCtrl,SLOT(slot_TreeItemChanged(QTreeWidgetItem *, int)));
-    //}
+{
 	QWidget *pMacroEditWidget = GetMacroEditWidget();
 	if (pTestMacroUI->IsUIOriginal())
 	{
@@ -2211,11 +2181,8 @@ void QSttTestCntrFrameBase::OpenMacroTestUI_Test(CSttMacroTestUI_TestMacroUI *pT
 
 	//第一步：创建参数编辑页面、加载报告html页面
 	m_pTestCtrlCntrBase->OpenMacroTestUI(pTestMacroUI);
-qDebug() << "!!!!!!!! after m_pTestCtrlCntrBase->OpenMacroTestUI(pTestMacroUI)";
 	//2022-3-27  lijunqing  创建参数编辑窗口
 	CreateSttMacroParaEditView(pTestMacroUI);
-qDebug() << "Debug sun: fQSttTestCntrFrameBase::OpenMacroTestUI_Test!!!! 1";
-	if (g_nLogDebugInfor == 1)	{		CLogPrint::LogString(XLOGLEVEL_TRACE, ">> begin OpenMacroTestUI 2 >>");	}
 
 	if (pTestMacroUI->IsUIOriginal())
 	{//原生态网页，获取页面参数数据
@@ -4188,30 +4155,26 @@ void QSttTestCntrFrameBase::slot_MenuButtonClick(QString strID)
 	}
 }
 
-//yyj 
 bool QSttTestCntrFrameBase::GenerateTemplate(CExBaseObject *pParentItems, const CString &strItemsName, const CString &strItemsID
 											 , long nRepeatTimes, long nRptTitle, long nTitleLevel)
 {
 	bool bTemplateGened = false;
 	long nRet = m_pTestCtrlCntrBase->Ats_GenerateTemplate();
 
-	if (nRet == STT_CMD_ExecStatus_SUCCESS)	//模板生成完成
+    if (nRet == STT_CMD_ExecStatus_SUCCESS)
 	{
 		bTemplateGened = true;
-//		CLogPrint::LogFormatString(XLOGLEVEL_INFOR,_T("底层测试模板生成完成."));
 	}
 	else
 	{
 #ifdef _PSX_QT_LINUX_
-		CString strTitile,strMsg;
-		strTitile = g_sLangTxt_Message/*"提示"*/;
-		strMsg = g_sLangTxt_Native_LowLevelTmplFail/*"底层测试模板生成失败."*/;
-		sig_MsgBox(strTitile,strMsg);
-//		CXMessageBox::information(this, strTitile, strMsg);
+        CString strTitile,strMsg;
+        strTitile = g_sLangTxt_Message/*"提示"*/;
+        strMsg = g_sLangTxt_Native_LowLevelTmplFail/*"底层测试模板生成失败."*/;
+        sig_MsgBox(strTitile,strMsg);
 #endif
 		CLogPrint::LogFormatString(XLOGLEVEL_INFOR,/*_T("底层测试模板生成失败.")*/g_sLangTxt_Native_LowLevelTmplFail.GetString());
 	}
-
 	return bTemplateGened;
 }
 
@@ -4219,7 +4182,6 @@ bool QSttTestCntrFrameBase::IsTestStarted()
 {
     if (m_pTestCtrlCntrBase == nullptr)
     {
-        qDebug() << "debug sun:  m_pTestCtrlCntrBase ia nullptrrrrrrrrrrrrrrrrrrrrrrrrrrr " ;
 		return false;
 	}
 
@@ -6925,7 +6887,6 @@ void QSttTestCntrFrameBase::slot_MsgBox(QString strTitle,QString strMsg)
 
     if (g_pSttMUTestIecCbSelWidget != nullptr)
 	{
-		//合并单元相关测试时,防止控制块选择界面挡住对应弹窗
 		if (!g_pSttMUTestIecCbSelWidget->isHidden())
 		{
 			g_pSttMUTestIecCbSelWidget->hide();
@@ -6935,12 +6896,14 @@ void QSttTestCntrFrameBase::slot_MsgBox(QString strTitle,QString strMsg)
 		}
 	}
 
-	CXMessageBox::information(this, strTitle, strMsg);
-
+    CXMessageBox::information(this, strTitle, strMsg);
 	if (bShowMUTestIecCbSelWidget)
 	{
 		g_pSttMUTestIecCbSelWidget->show();
 	}
+    this->activateWindow();
+    this->raise();
+    this->setFocus();
 }
 
 //zhouhj 2023.12.6 从window派生类移入

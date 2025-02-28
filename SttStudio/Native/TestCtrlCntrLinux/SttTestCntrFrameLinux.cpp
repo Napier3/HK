@@ -123,30 +123,13 @@ void QSttTestCntrFrameLinux::InitUI()
 	this->setFixedWidth(m_pSttFrameConfig->m_nWidth);
 	this->setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint);
 	
-// #ifndef _PSX_QT_LINUX_
-// 	this->move(0, 0);
-// #endif//2024-2-26 zhouyangyong注释，不同分辨率下都设置为默认居中显示
 	QSttTestCntrFrameBase::InitUI();
-if(!m_pSttFrameConfig)
-{
-
-    qDebug() << "Debug sun: from  m_pSttFrameConfigis nulllllllllllllllllllllllllll!!!!";
-
-}
 	CSttFrame_ToolBar *pToolBarParas = m_pSttFrameConfig->GetToolBar();
 	CSttFrame_StatusBar *pStatusBarParas = m_pSttFrameConfig->GetStatusBar();
 	CSttFrame_ResultBar *pResultBarParas = m_pSttFrameConfig->GetResultBar();
-qDebug() << "Debug sun: from  QSttTestCntrFrameLinux::InitUI()!!!! 3";
-if(!pToolBarParas)
-{
-    qDebug() << "Debug sun: pToolBarParas is nulllllllllllllllllllllllllllll";
-}
     m_pToolBar = new QSttBarBase(pToolBarParas, m_oDataBtnsMngr,m_gFont,this);
-
     m_pToolBar->setGeometry(0,0,pToolBarParas->m_nWidth,pToolBarParas->m_nHeight);
-
     m_pStatusBar = new QSttBarBase(pStatusBarParas, m_oDataBtnsMngr,m_gFont,this);
-
 	if (pResultBarParas != NULL)
 	{
 		m_pResultBarUI = new QSttBarBase(pResultBarParas, m_oDataBtnsMngr,m_gFont,this);
@@ -160,7 +143,6 @@ if(!pToolBarParas)
         m_pStatusBar->setGeometry(0,m_pSttFrameConfig->m_nHeight - pStatusBarParas->m_nHeight,pStatusBarParas->m_nWidth,pStatusBarParas->m_nHeight);
 
     }
-
 	UpdateButtonsStateByID();
 
 	//项目列表视图
@@ -196,10 +178,6 @@ void QSttTestCntrFrameLinux::UpdateButtonsStateByID()
 	{
 		UpdateButtonStateByID(STT_CNTR_CMD_IECConfig,false,false);
 	}
-// 	else
-// 	{
-// 		UpdateButtonStateByID(STT_CNTR_CMD_IECConfig,true,true);
-// 	}
 
 	AdjustToolBarButtons();
 }
@@ -478,7 +456,6 @@ void QSttTestCntrFrameLinux::OnCmd_Menu()
 
 void QSttTestCntrFrameLinux::slot_CloseMenu()
 {
-    qDebug()<<"debug sun i am hitting the close button 1";
 	if (m_pMenuWidget == NULL)
 	{
 		return;

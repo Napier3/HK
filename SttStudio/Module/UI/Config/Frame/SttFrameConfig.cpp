@@ -145,14 +145,9 @@ long CSttFrameConfig::SerializeOwn(CBinarySerialBuffer &oBinaryBuffer)
 
 void CSttFrameConfig::InitAfterRead()
 {
-    qDebug() << "Debug sun: CSttFrameConfig::InitAfterRead()!!!";
 	POS pos = GetHeadPosition();
 	CBaseObject *p = NULL;
     UINT nClassID = 0;
-    if(!pos)
-    {
-        qDebug() << "Debug sun: position is nulllllllllll";
-    }
 	while (pos != NULL)
 	{
 		p = GetNext(pos);
@@ -168,7 +163,6 @@ void CSttFrameConfig::InitAfterRead()
 		}
 		else if (nClassID == MNGRCLASSID_CSTTFRAME_MENUS)
 		{
-            qDebug() << "Debug sun: creating menus";
 			m_pMenus = (CSttFrame_Menus*)p;
 		}
 		else if (nClassID == MNGRCLASSID_CSTTFRAME_TOOLBAR)
@@ -500,7 +494,6 @@ BOOL CSttFrameConfig::Open(const CString &strFrameCfgFile)
 			m_strMacroFileID = strFrameCfgFile.Left(nIndex);
 		}
 	}
-qDebug() << "Debug sun: CSttFrameConfig::Open file is: "<<m_strFile;
 	return OpenFile(m_strFile);
 }
 

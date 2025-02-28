@@ -70,7 +70,6 @@ long CSttNativeRemoteClientSocket::ReceiveBuffer(BYTE *pBuf, long nLen)
 
 long CSttNativeRemoteClientSocket::SendBuffer(BYTE *pBuf, long nLen)
 {
-     qDebug() << "debug sun:  long CSttNativeRemoteClientSocket::SendBuffer  1";
 	stt_pkg_set_send_index(pBuf, m_nSendIndex++);
 	return m_pSocket->write((const char*)pBuf,nLen);
 }

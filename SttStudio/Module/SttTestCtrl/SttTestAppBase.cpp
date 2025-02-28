@@ -80,7 +80,6 @@ CSttTestAppBase::~CSttTestAppBase()
 
 void CSttTestAppBase::InitSttTestApp(CXLanguageResourceBase *pLanguage)
 {
-    qDebug()<<"debug sun: entering CSttTestAppBase::InitSttTestApp";
 	_P_InitSystemPath();
 #ifndef _PSX_QT_LINUX_
 	RunCrashHandler();
@@ -106,33 +105,15 @@ void CSttTestAppBase::InitSttTestApp(CXLanguageResourceBase *pLanguage)
 	CCfgDataMngrConstGlobal::Create();
     //sun CDeviceModelXmlKeys::Create();
 	CSttMacroTestUI_TestMacroUIDB::Create();
-    qDebug()<<"debug sun: finished creating CSttMacroTestUI_TestMacroUIDB";
-    if(!m_pTestMacroUI)
-    {
-        qDebug()<<"debug sun: m_pTestMacroUI is still nullllllllllllllllllllllllllllllllllllll";
-    }
 	CSttCmdOverTimeTool::Create();
 	CSclFileMngrXmlRWKeys::Create();
 
 	CCharacteristicXmlRWKeys::Create();
 	CKeyDbXmlRWKeys::Create();
-//	CTestMacroXmlRWKeys::Create();
 	CSttSafetyMsgCfgXmlRWKeys::Create();
 	C61850ClientCfgMngrXmlRWKeys::Create();
 	CTestMacroRptTemplateXmlRWKeys::Create();
-
 	CSttTestGridDefineXmlRWKeys::Create();
-// 	QWebSettings::setMaximumPagesInCache(0);
-// 	QWebSettings::setObjectCacheCapacities(0, 0, 0);
-// 	QWebSettings::setOfflineStorageDefaultQuota(0);
-// 	QWebSettings::setOfflineWebApplicationCacheQuota(0);
-
-#ifdef _use_g_theIotEngineApp_
-	//2022-11-12  lijunqing  通信客户端
-	g_theIotEngineApp = new CPpSttIotEngineClientApp();
-	g_theIotEngineApp->InitPpSttIotEngineClientApp();
-	//Create_PpSttIotEngineDebugWidget();
-#endif
 }
 
 //2023-03-01 lijunqing 为了提高程序启动速度，和通信相关的，打开通信界面的时候在启动初始化
@@ -224,25 +205,7 @@ void CSttTestAppBase::SetSttTestCtrlCntr(CSttTestCtrlCntrBase *pTestCtrlCntr)
 
 void CSttTestAppBase::SetCurrTestMacroUI(const CString &strID)
 {
-    if(!m_pTestMacroUI)
-    {
-        qDebug()<<"!!!!! 229 debug sun: before find CSttTestAppBase::SetCurrTestMacroUI m_pTestMacroUI  is null";
-    }else
-    {
-        qDebug()<<"!!!!! 232 debug sun: before find CSttTestAppBase::SetCurrTestMacroUI m_pTestMacroUI  is alive";
-
-    }
-
 	m_pTestMacroUI = CSttMacroTestUI_TestMacroUIDB::FindTestMacroUI(strID);
-
-    if(!m_pTestMacroUI)
-    {
-        qDebug()<<"!!!!! 240 debug sun: after find CSttTestAppBase::SetCurrTestMacroUI m_pTestMacroUI  is null";
-    }else
-    {
-        qDebug()<<"!!!!! 243 debug sun: after find CSttTestAppBase::SetCurrTestMacroUI m_pTestMacroUI  is alive";
-
-    }
 }
 
 void CSttTestAppBase::SetCurrTestMacroUI(CSttMacroTestUI_TestMacroUI *pTestMacroUI)

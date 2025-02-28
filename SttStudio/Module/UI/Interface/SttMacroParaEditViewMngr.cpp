@@ -122,8 +122,6 @@ CSttMacroParaEditInterface* CSttMacroParaEditViewMngr::CreateSttMacroParaEditVie
 	CSttMacroParaEditInterface *pNew = NULL;
 	BOOL bWeb = FALSE;
 
-	if (g_nLogDebugInfor == 1)	{		CLogPrint::LogString(XLOGLEVEL_TRACE, ">> begin CreateSttMacroParaEditView -  >>");	}
-qDebug() << "Debug sun: begin CreateSttMacroParaEditView - ----------->";
  	if((strMacroID == STT_ORG_MACRO_ManualTest)||(strMacroID == STT_ORG_MACRO_MUAccuracyTest)||(strMacroID == STT_ORG_MACRO_MUFirstCycleTest)||
 		(strMacroID == STT_ORG_MACRO_MUTimingAccurTest)||(strMacroID == STT_ORG_MACRO_MUPunctAccurTest))
  	{
@@ -131,10 +129,8 @@ qDebug() << "Debug sun: begin CreateSttMacroParaEditView - ----------->";
  	}
  	else if(strMacroID == STT_ORG_MACRO_StateTest)
  	{
-		if (g_nLogDebugInfor == 1)	{		CLogPrint::LogString(XLOGLEVEL_TRACE, ">> begin new QSttMacroParaEditViewState -  >>");	}
 		QSttMacroParaEditViewState *pSttMacroParaEditViewState = new QSttMacroParaEditViewState(false);
 		pNew = pSttMacroParaEditViewState;
-		if (g_nLogDebugInfor == 1)	{		CLogPrint::LogString(XLOGLEVEL_TRACE, ">> end new QSttMacroParaEditViewState -  >>");	}
 
 #ifndef SttTestCntrThread_H
 		pSttMacroParaEditViewState->initUI_Paras(false);
@@ -297,7 +293,6 @@ qDebug() << "Debug sun: begin CreateSttMacroParaEditView - ----------->";
 	g_pSttMacroParaEditViewMngr->m_pMacroParaView = pNew;
 
 	if (g_nLogDebugInfor == 1)	{		CLogPrint::LogString(XLOGLEVEL_TRACE, ">> end CreateSttMacroParaEditView -  >>");	}
-    qDebug() << "Debug sun: end CreateSttMacroParaEditView - ----------->";
 
 	return pNew;
 }

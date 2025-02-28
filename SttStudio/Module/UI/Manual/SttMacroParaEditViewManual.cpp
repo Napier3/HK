@@ -53,33 +53,25 @@ QSttMacroParaEditViewManual::QSttMacroParaEditViewManual(QWidget *parent) :
 	m_strParaFilePostfix = "project(*.mntxml)";
 	m_strDefaultParaFile = _P_GetConfigPath();
 	m_strDefaultParaFile.append("ManualTest.mntxml");
-    qDebug()<<"###################debug sun maunal test file is !!!!!!!!!"<<m_strDefaultParaFile;
 
 	//先初始化Resource才能设置最大最小值
 	m_pOriginalSttTestResource = g_theTestCntrFrame->GetSttTestResource();
-    qDebug()<< "!!!!!!!!!!!!!!!!!!!!!debug sun: 1111111111111111111111111111 ";
 	g_theTestCntrFrame->InitTestResource();
-qDebug()<< "!!!!!!!!!!!!!!!!!!!!!debug sun: 2222222222222222222222222 ";
 	if (g_nLogDebugInfor == 1)	{		CLogPrint::LogString(XLOGLEVEL_TRACE, ">> ---------- QSttMacroParaEditViewManual -  3 >>");	}
 
 	m_pManualParas = &m_oManualTest.m_oManuParas;
-qDebug()<< "!!!!!!!!!!!!!!!!!!!!!debug sun: 33333333333333333333333333 ";
 	if (g_oSystemParas.m_nHasDigital)//zhouhj 在打开测试模板前先初始化当前GOOSE发布数据
 	{
 		InitGoosePubDataGroups();
 		InitFT3PubDataGroups();
 	}
-qDebug()<< "!!!!!!!!!!!!!!!!!!!!!debug sun: before OpenTestTestMngrFile ";
 	OpenTestTestMngrFile(m_strDefaultParaFile);
-qDebug()<< "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!debug sun: after OpenTestTestMngrFile ";
 	if (g_nLogDebugInfor == 1)	{		CLogPrint::LogString(XLOGLEVEL_TRACE, ">> ---------- QSttMacroParaEditViewManual -  4 >>");	}
 
 	CopyBinaryConfig();
 	//g_theTestCntrFrame->UpdateToolButtons();//QSttTestCntrFrameBase::OpenMacroTestUI_Test会再次重复刷新
-qDebug()<< "debug sun: init  InitIVView ";
 	this->InitIVView();
 	this->InitParasView();
-    qDebug()<< "debug sun: init connect ";
 	InitConnect();
 
 	if (g_nLogDebugInfor == 1)	{		CLogPrint::LogString(XLOGLEVEL_TRACE, ">> ---------- QSttMacroParaEditViewManual -  5 >>");	}
@@ -92,12 +84,7 @@ qDebug()<< "debug sun: init  InitIVView ";
 		m_oIV.m_pUIParaWidget->setMacroType(MACROTYPE_Manual);
 		m_oIV.m_pUIParaWidget->setPropertyOfParaSet(P_Common,g_oSttTestResourceMngr.m_pTestResouce,m_pManualParas->m_uiVOL,m_pManualParas->m_uiCUR);
 		m_oIV.m_pUIParaWidget->setMaxMinAndEDVal();
-        qDebug() << "debug sun: before connect m_oIV.m_pUIParaWidget " ;
 		connect(m_oIV.m_pUIParaWidget,SIGNAL(sig_updataParas()),this,SLOT(slot_updateParas()), Qt::UniqueConnection);
-        qDebug() << "debug sun: after connect m_oIV.m_pUIParaWidget " ;
-    }else
-    {
-        qDebug() << "debug sun: m_oIV.m_pUIParaWidget is nullllllllllllllllllllptrrrrrrrrrrrrrrrrrrrrrr" ;
     }
 
 	if (m_oIV.m_pHarmUIParaWidget)
@@ -1671,7 +1658,6 @@ void QSttMacroParaEditViewManual::on_m_editStep_editingFinished()
 
 void QSttMacroParaEditViewManual::slot_ChannelTableItemValue(QString str,float fstep,int valueFlag,int AddOrMinus,bool bDC)
 {
-    qDebug() << "debug sun: start editing";
 	m_bIsChanging = TRUE;
 	m_oIV.m_pUIParaWidget->setChannelTableItemValue(str, fstep, valueFlag, AddOrMinus, bDC);
 	m_bIsChanging = FALSE;
@@ -1679,26 +1665,18 @@ void QSttMacroParaEditViewManual::slot_ChannelTableItemValue(QString str,float f
 
 void QSttMacroParaEditViewManual::slot_updateParas()
 {
-    qDebug() << "debug sun: beginning the slot_updateParas()!!!!!!!!!!!!!!!!!! " ;
     if (g_theTestCntrFrame == nullptr)
 	{
-        qDebug() << "debug sun: g_theTestCntrFrame is nullptrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr " ;
 		return;
 	}
 
 	if (g_theTestCntrFrame->IsTestStarted() && (!m_pManualParas->m_bLockChanged))  //解锁状态
 	{
-        qDebug() << "debug sun:  starting SendUpdateParameter " ;
 		SendUpdateParameter();
-        qDebug() << "debug sun: finishing SendUpdateParameter " ;
 	}
-qDebug() << "debug sun:  the slot_updateParas()!!!!!!!!!!!!!!!!!!  1" ;
 	g_theTestCntrFrame->UpdateVectorData();
-    qDebug() << "debug sun:  the slot_updateParas()!!!!!!!!!!!!!!!!!!  2" ;
 	g_theTestCntrFrame->UpdatePowerData();
-    qDebug() << "debug sun:  the slot_updateParas()!!!!!!!!!!!!!!!!!!  3" ;
 	SetParaChanged();
-    qDebug() << "debug sun: finishing the slot_updateParas()!!!!!!!!!!!!!!!!!! " ;
 }
 
 void QSttMacroParaEditViewManual::on_m_cbOld_clicked()

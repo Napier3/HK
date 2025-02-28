@@ -168,13 +168,12 @@ BOOL CSttAtsTestClient::ConnectAtsTestServer(const CString &strIP,long nPort,con
 	CLogPrint::LogFormatString(XLOGLEVEL_TRACE, strText.GetString());
 
 	g_oSttTestAppConfigTool.m_pSttTestMsgViewInterface = this;
-    qDebug() << "#!#!#!#!#!debug sun:  start local connection  " << strIP <<  " |  " << nPort  <<  " |  " << strSoftID;
+    qDebug() << "#!#!#!#!#!start local connection  " << strIP <<  " |  " << nPort  <<  " |  " << strSoftID;
     BOOL bRet = g_oSttTestAppConfigTool.Local_ConnectServer(&g_oSttTestAppCfg,strIP,nPort,strSoftID,this);
 
 
 	if(bRet)
 	{
-        qDebug() << "#!#!#!#!#!debug sun:  connection ok!!!!!!!!!!!!!!  " << strText2;
 		CLogPrint::LogFormatString(XLOGLEVEL_TRACE, strText1.GetString());
 #ifndef _PSX_OS_CENTOS_//zhouhj 2024.5.16 装在工控机内,此处不能设置AppIP
 		g_oSttTestAppCfg.SetTestAppIP(strIP);
@@ -186,8 +185,6 @@ BOOL CSttAtsTestClient::ConnectAtsTestServer(const CString &strIP,long nPort,con
 	}
 	else
 	{
-        qDebug() << "#!#!#!#!#!debug sun:  connection failed!!!!!!!!!!!!!!  " << strText2;
-
 		CLogPrint::LogFormatString(XLOGLEVEL_ERROR, strText2.GetString());
 	}
 #endif
