@@ -201,7 +201,6 @@ BOOL CSttTestClientBase::OnTimer(UINT nTimerID, DWORD dwTime)
 
 BOOL CSttTestClientBase::ConnectSttServer(CSttTestAppConfigTool *pTool)
 {
-    qDebug()<<"debug sun ConnectSttServer 1";
 	if (m_oTestAppCfg.IsLocal())
 	{
 		if (!CSttTestAppConfigTool::IsTestAppExist(&m_oTestAppCfg))
@@ -228,7 +227,6 @@ BOOL CSttTestClientBase::ConnectSttServer(CSttTestAppConfigTool *pTool)
 	{
 		m_pXClientEngine->SetTestEventInterface(m_pTestEventRcv);
 	}
-    qDebug()<<"debug sun ConnectSttServer 2";
 	return TRUE;
 }
 

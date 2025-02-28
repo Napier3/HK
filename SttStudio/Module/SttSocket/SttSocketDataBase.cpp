@@ -49,47 +49,36 @@ BOOL CSttSocketDataBase::ProcessRecvPacket(BYTE *pBuf,long nLen)
 //发送命令之前先生成报文头
 long CSttSocketDataBase::SendCmd(CSttCmdBase *pCmd,BOOL bCompress,BOOL bReset)
 {
-    qDebug() << "debug sun:  long CSttSocketDataBase::SendCmd  1";
+    qDebug() << "Start sending command";
 	BYTE *pSendBuf = NULL;
 	long nSendBufLen = 0;
 
 	pCmd->m_nIDTester = GetIDTest();
-    qDebug() << "debug sun:  long CSttSocketDataBase::SendCmd  2";
 	stt_InitSendBuf_Cmd(&pSendBuf,nSendBufLen,pCmd,bCompress, m_nSttCmdDataFormat);
-qDebug() << "debug sun:  long CSttSocketDataBase::SendCmd  3";
 	long nRet = SendBuffer(pSendBuf,nSendBufLen);
-    qDebug() << "debug sun:  long CSttSocketDataBase::SendCmd  4";
 	delete pSendBuf;
-qDebug() << "debug sun:  long CSttSocketDataBase::SendCmd  5";
 	return nRet;
 }
 
 long CSttSocketDataBase::SendCmdSync(CSttCmdBase *pCmd,long nTimeOut,CSttCmdData *pRetData,BOOL bDoEvents,BOOL bCompress,BOOL bReset)
 {
 	long nExecStatus = 0;
-qDebug() << "debug sun:  long CSttSocketDataBase::SendCmdSync  1";
 	//命令发送之前添加到超时链表
 	STT_CMD_INFO *pCmdInfo = CSttCmdOverTimeTool::AddSttCmd(this,pCmd->m_nType_Cmd,pCmd->m_strID,0, 0, NULL,STT_CMD_Send_Sync);
 	if (pCmdInfo == NULL)
 	{
-        qDebug() << "debug sun:  long CSttSocketDataBase::SendCmdSync  2";
 		return nExecStatus;
 	}
-qDebug() << "debug sun:  long CSttSocketDataBase::SendCmdSync  3";
 	long nRet = SendCmd(pCmd,bCompress,bReset);
-qDebug() << "debug sun:  long CSttSocketDataBase::SendCmdSync  4";
 	if (nRet > 0)
 	{
-        qDebug() << "debug sun:  long CSttSocketDataBase::SendCmdSync  5";
         //debug sun wait nExecStatus = pCmd->DoWait(this,pCmdInfo,nTimeOut,pRetData,bDoEvents);
-        qDebug() << "debug sun:  long CSttSocketDataBase::SendCmdSync  6";
 	}
 	else
 	{
 		pCmdInfo->SetUsed(0);//发送失败删除超时链表
 		CLogPrint::LogFormatString(XLOGLEVEL_TRACE, _T("Send cmd %s  failed"), pCmd->m_strID.GetString());
 	}
-qDebug() << "debug sun:  long CSttSocketDataBase::SendCmdSync  7";
 	return nExecStatus;
 }
 

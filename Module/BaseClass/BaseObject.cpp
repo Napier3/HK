@@ -7,17 +7,6 @@
 #include "../API/FileApi.h"
 #include <QtDebug>
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-//从XML节点中读取关键字
-
 const char* CXmlRWKeys::g_pszNameKeyString  = "name";
 const char* CXmlRWKeys::g_pszIDKeyString    = "id";
 
@@ -26,24 +15,11 @@ long CXmlRWKeys::ReadFromXmlFile(const CString &strFile)
 	return 0;
 }
 
-//从XML节点中读取关键字
-#ifdef XML_USE_MSXML
-// long CXmlRWKeys::ReadXml(CXmlRWNodeBase & &oNode)
-// {
-// 	return 0;
-// }
-#endif
-
 BSTR GetXml();
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 
 CBaseObject::CBaseObject()
 {
-	m_pParent = NULL;
+    m_pParent = nullptr;
 }
 
 CBaseObject::~CBaseObject()
@@ -53,12 +29,12 @@ CBaseObject::~CBaseObject()
 
 CBaseObject* CBaseObject::GetAncestor(UINT nClassID)
 {
-	CBaseObject *pAncestor = NULL;
-	CBaseObject *pAncestorFind = NULL;
+    CBaseObject *pAncestor = nullptr;
+    CBaseObject *pAncestorFind = nullptr;
 
 	pAncestor = this;//m_pParent;
 
-	while (pAncestor != NULL)
+    while (pAncestor != nullptr)
 	{
 		if (nClassID == pAncestor->GetClassID())
 		{
@@ -74,12 +50,12 @@ CBaseObject* CBaseObject::GetAncestor(UINT nClassID)
 
 CBaseObject* CBaseObject::GetAncestorEx(UINT nClassID)
 {
-	CBaseObject *pAncestor = NULL;
-	CBaseObject *pAncestorFind = NULL;
+    CBaseObject *pAncestor = nullptr;
+    CBaseObject *pAncestorFind = nullptr;
 
 	pAncestor = m_pParent;
 
-	while (pAncestor != NULL)
+    while (pAncestor != nullptr)
 	{
 		if (nClassID == (pAncestor->GetClassID() & nClassID) )
 		{
@@ -103,13 +79,13 @@ CBaseObject* CBaseObject::GetAncestorEx(UINT nClassID)
  */
 CBaseObject* CBaseObject::GetAncestorByDepth(long nDepth)
 {
-	CBaseObject *pAncestor = NULL;
-	CBaseObject *pAncestorFind = NULL;
+    CBaseObject *pAncestor = nullptr;
+    CBaseObject *pAncestorFind = nullptr;
 	
 	pAncestor = m_pParent;
 	long nTemp = nDepth;
 	
-	while (pAncestor != NULL)
+    while (pAncestor != nullptr)
 	{
 		if (nTemp == 0)
 		{
@@ -127,15 +103,15 @@ CBaseObject* CBaseObject::GetAncestorByDepth(long nDepth)
 
 long CBaseObject::GetDepth()
 {
-	CBaseObject *pTemp = NULL;
+    CBaseObject *pTemp = nullptr;
 	CBaseObject *pParent = GetParent();
 	long nDepth = 0;
 	
-	while (pParent != NULL)
+    while (pParent != nullptr)
 	{
 		pTemp = pParent->GetParent();
 		
-		if (pTemp == NULL)
+        if (pTemp == nullptr)
 		{
 			break;
 		}
@@ -149,14 +125,14 @@ long CBaseObject::GetDepth()
 
 CBaseObject* CBaseObject::GetRoot()
 {
-	CBaseObject *pTemp = NULL;
+    CBaseObject *pTemp = nullptr;
 	CBaseObject *pRoot = this;
 
-	while (pRoot != NULL)
+    while (pRoot != nullptr)
 	{
 		pTemp = pRoot->GetParent();
 
-		if (pTemp == NULL)
+        if (pTemp == nullptr)
 		{
 			break;
 		}
@@ -171,7 +147,7 @@ BOOL CBaseObject::HasParent(CBaseObject *pParent)
 {
 	CBaseObject *pTemp = GetParent();
 
-	while (pTemp != NULL)
+    while (pTemp != nullptr)
 	{
 		if (pTemp == pParent)
 		{
@@ -192,9 +168,6 @@ long CBaseObject::XmlRead(CXmlRWNodeBase &oNode, CXmlRWKeys *pXmlRWKeys)
 	}
 	catch (...)
 	{
-#ifndef _PSX_IDE_QT_
-        TRACE("Read xml error......");
-#endif
     }
 
 	try
@@ -204,9 +177,6 @@ long CBaseObject::XmlRead(CXmlRWNodeBase &oNode, CXmlRWKeys *pXmlRWKeys)
 	}
 	catch (...)
 	{
-#ifndef _PSX_IDE_QT_
-        TRACE("Read xml error......");
-#endif
     }
 
 	InitAfterRead();
@@ -224,14 +194,13 @@ long CBaseObject::XmlReadChildren(CXmlRWNodeListBase &oNodes, CXmlRWKeys *pXmlRW
 	return 0;
 }
 
-
 //2020-12-1  lijunqing
 long CBaseObject::XmlWriteEx(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oParent, CXmlRWKeys *pXmlRWKeys, CXmlRWElementBase* &pRetElement)
 {
 	BSTR pszElementKey = GetXmlElementKey();
-	ASSERT(pszElementKey != NULL);
+    ASSERT(pszElementKey != nullptr);
 
-	if (pszElementKey == NULL)
+    if (pszElementKey == nullptr)
 	{
 		return -1;
 	}
@@ -254,12 +223,11 @@ long CBaseObject::XmlWriteEx(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oParent,
 	return 0;
 }
 
-
 long CBaseObject::XmlWrite(CXmlRWDocBase &oXMLDoc,CXmlRWElementBase &oParent, BSTR pszElementKey, CXmlRWKeys *pXmlRWKeys)
 {
-	ASSERT(pszElementKey != NULL);
+    ASSERT(pszElementKey != nullptr);
 
-	if (pszElementKey == NULL)
+    if (pszElementKey == nullptr)
 	{
 		return -1;
 	}
@@ -286,14 +254,12 @@ long CBaseObject::XmlWrite(CXmlRWDocBase &oXMLDoc,CXmlRWElementBase &oParent, BS
 
 long CBaseObject::XmlWrite(CXmlRWDocBase &oXMLDoc,CXmlRWElementBase &oParent, CXmlRWKeys *pXmlRWKeys)
 {
-	//2020-12-1  lijunqing  如下的代码，就不调用XmlWriteEx了
 	BSTR pszElementKey = GetXmlElementKey();
 	return XmlWrite(oXMLDoc, oParent, pszElementKey, pXmlRWKeys);
 }
 
 long CBaseObject::XmlWriteOwn(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oElement, CXmlRWKeys *pXmlRWKeys)
 {
-	
 	return 0;
 }
 
@@ -301,7 +267,6 @@ long CBaseObject::XmlWriteChildren(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oE
 {
 	return 0;
 };
-
 
 long CBaseObject::Serialize(CBinarySerialBuffer &oBinaryBuffer)
 {
@@ -356,46 +321,14 @@ long CBaseObject::SerializeWrite(CBinarySerialBuffer &oBinaryBuffer)
 	return 0;
 }
 
-#ifdef _DBLIB_USE_SHAREMEM_
-long CBaseObject::SerializeWrite(CShareMemSerialize *pBinaryBuffer)
-{
-	pBinaryBuffer->SetCharSet(CHAR_SET_ASCII);
-	pBinaryBuffer->ResetBufferPointer();
-	pBinaryBuffer->SetWriteMode();
-	Serialize(*pBinaryBuffer);
-
-	return 0;
-}
-#endif
-
 BOOL CBaseObject::BinarySerializeReadFromFile(const CString &strFile)
 {
 	CBinarySerialBuffer oBuffer;
-
 	return FALSE;
-// 	if (oBuffer->(strFile))
-// 	{
-// 		oBuffer.SetModeRead();
-// 		Serialize(oBuffer);
-// 		return TRUE;
-// 	}
-// 	else
-// 	{
-// 		return FALSE;
-// 	}
 }
 
 BOOL CBaseObject::BinarySerializeWriteToFile(const CString &strFile)
 {
-// 	CBinarySerialBuffer oBuffer;
-// 
-// 	oBuffer.SetModeCalSize();
-// 	Serialize(oBuffer);
-// 	oBuffer.AllocMemBuffer(0);
-// 	oBuffer.SetModeWrite();
-// 	Serialize(oBuffer);
-// 
-// 	return oBuffer.WriteToFile(strFile);
 	return FALSE;
 }
 
@@ -442,11 +375,8 @@ BOOL CBaseObject::IsSame(CBaseObject* pObj)
 
 CBaseObject* CBaseObject::FindSame(CBaseObject* pObj)
 {
-	return NULL;
+    return nullptr;
 }
-
-//////////////////////////////////////////////////////////////////////////
-//复制 对比
 
 long CBaseObject::ValCmp(CBaseObject* pRightObj)
 {
@@ -489,53 +419,40 @@ BOOL CBaseObject::IsEqualChildren(CBaseObject* pObj)
 	return TRUE;
 }
 
-
-//msxml调用
 BOOL CBaseObject::OpenXmlFile(const CString &strFile, BSTR bstrElementKey, CXmlRWKeys *pXmlRWKeys,const long &nXmlRWType)
 {
-    qDebug() << "Debug sun: entering OpenXmlFile, file name is" << strFile;
+    qDebug() << "Trying to opening file: << " << strFile << " >>";
 	if (!IsFileExist(strFile))
 	{
-		//2022-11-25  lijunqing
-#ifdef _DEBUG
-		CString strMsg = _T("File error :") + strFile;
-		CLogPrint::LogString(XLOGLEVEL_ERROR, strMsg);
-#endif
-        qDebug() << "Debug sun: file does not exist, file name is" << strFile;
 		return FALSE;
 	}
 	CXmlRWDocBase *pRWDoc = xml_CreateXmlRWDoc(nXmlRWType);
-    qDebug() << "Debug sun: after xml_CreateXmlRWDoc, file name is" << strFile;
 	try
 	{
-		if ( !xml_OpenFile(pRWDoc, strFile) )//调用XMLInterface.h中的全局函数，加载资源，入口返回给oDoc；
+        if ( !xml_OpenFile(pRWDoc, strFile) )
 		{
-            qDebug() << "Debug sun: not crash";
 			delete pRWDoc;
 			return FALSE;
 		}
 	}
 	catch (...)
 	{
-        qDebug() << "Debug sun: crash";
 		delete pRWDoc;
 		return FALSE;
 	}
 	CXmlRWNodeBase *pDocRoot = pRWDoc->GetDocNode();
 	
-	if (bstrElementKey != NULL)
+    if (bstrElementKey != nullptr)
 	{
-        qDebug()<<"526 debug sun : bstrElementKey is not null";
 		pDocRoot = pDocRoot->GetChildNode(bstrElementKey);
 	}
 	else
 	{
 		delete pRWDoc;
 		return FALSE;
-		//pDocRoot = pRWDoc->GetDocNode();
 	}
 
-	if (pDocRoot == NULL)
+    if (pDocRoot == nullptr)
 	{
 		delete pRWDoc;
 		return FALSE;
@@ -546,9 +463,7 @@ BOOL CBaseObject::OpenXmlFile(const CString &strFile, BSTR bstrElementKey, CXmlR
 		delete pRWDoc;
 		return FALSE;
 	}
-    qDebug()<<" debug sun : before XmlRead(*pDocRoot, pXmlRWKeys)"<<strFile;
 	XmlRead(*pDocRoot, pXmlRWKeys);
-    qDebug()<<" debug sun : after XmlRead(*pDocRoot, pXmlRWKeys)"<<strFile;
 	delete pRWDoc;
 
 	return TRUE;
@@ -556,9 +471,7 @@ BOOL CBaseObject::OpenXmlFile(const CString &strFile, BSTR bstrElementKey, CXmlR
 
 BOOL CBaseObject::OpenXmlFile(const CString &strFile, CXmlRWKeys *pXmlRWKeys,const long &nXmlRWType)
 {
-    qDebug() << "Debug sun: from CBaseObject::OpenXmlFile!!!! 1 openning file : "<<strFile;
     BSTR bstrElementKey = GetXmlElementKey();//虚函数，利用多态直接调用子类的此函数，返回静态成员变量的值；实际操作为{      return CXLanguageXmlRWKeys::CXLanguageMngrKey();     }
-    qDebug() << "Debug sun: from CBaseObject::OpenXmlFile!!!! 2 openning file : "<<strFile;
     return OpenXmlFile(strFile, bstrElementKey, pXmlRWKeys,nXmlRWType);//中间参数为刚刚在语言关键子里静态变量指针指向的对象成员变量的值；其对应了根节点的名称；
 }
 
@@ -587,7 +500,6 @@ BOOL CBaseObject::SaveXmlFile(const CString &strFile, CXmlRWKeys *pXmlRWKeys ,co
 	}
 	catch (...)
 	{
-//		CLogPrint::LogFormatString(XLOGLEVEL_ERROR, ("Save  [%s]  Failed!"), strFile);
 		return 0;
 	}
 	
@@ -614,7 +526,6 @@ void CBaseObject::GetXml(CXmlRWKeys *pXmlRWKeys, CString &bstrXml,const long &nX
 	delete pRWDoc;
 }
 
-//xxy 20200516:生成ppszRetBuffer为utf-8字节流
 long CBaseObject::GetXml(CXmlRWKeys *pXmlRWKeys, char **ppszRetBuffer, long nOffset,const long &nXmlRWType)
 {
 	CXmlRWDocBase *pRWDoc = xml_CreateXmlRWDoc(nXmlRWType);
@@ -646,7 +557,7 @@ BOOL CBaseObject::SetXml(CXmlRWDocBase *pRWDoc, BSTR bstrElementKey, CXmlRWKeys 
 {
     CXmlRWNodeBase *pDocRoot = pRWDoc->GetDocNode();
 
-    if (bstrElementKey != NULL)
+    if (bstrElementKey != nullptr)
     {
         pDocRoot = pDocRoot->GetChildNode(bstrElementKey);
     }
@@ -655,46 +566,25 @@ BOOL CBaseObject::SetXml(CXmlRWDocBase *pRWDoc, BSTR bstrElementKey, CXmlRWKeys 
         pDocRoot = pRWDoc->GetDocNode();
     }
 
-	//2020-06-21  lijunqing
-	if (pDocRoot == NULL)
+    if (pDocRoot == nullptr)
 	{
-		CLogPrint::LogString(XLOGLEVEL_TRACE, _T("SetXml Error: oDocRoot == NULL"));
+        CLogPrint::LogString(XLOGLEVEL_TRACE, _T("SetXml Error: oDocRoot == nullptr"));
 		return 0;
 	}
 
     if(!pDocRoot->IsValid())
     {
-#ifndef _PSX_IDE_QT_
-        CLogPrint::LogString(XLOGLEVEL_TRACE, _T("SetXml Error: oDocRoot == NULL"));
-
-//         if (wcslen(strXml) <= 2048)
-//         {
-//             CString strTemp;
-//             strTemp = strXml;
-//             CLogPrint::LogString(XLOGLEVEL_TRACE, strTemp);
-//         }
-#endif
-
         return FALSE;
     }
-
     XmlRead(*pDocRoot, pXmlRWKeys);
-
     return TRUE;
 }
 
 BOOL CBaseObject::SetXml(const CString &strXml, CXmlRWKeys *pXmlRWKeys,const long &nXmlRWType)
 {
 	BSTR bstrXml = strXml.AllocSysString();
-
 	BOOL bRet = SetXml(bstrXml, pXmlRWKeys, nXmlRWType);
-
-#ifdef _PSX_IDE_QT_
 	delete bstrXml;
-#else
-	SysFreeString(bstrXml);
-#endif
-
 	return bRet;
 }
 
@@ -717,89 +607,7 @@ BOOL CBaseObject::SetXml(BSTR strXml, BSTR bstrElementKey, CXmlRWKeys *pXmlRWKey
     delete pRWDoc;
 
     return bRet;
-
-//	CXmlRWNodeBase *pDocRoot = pRWDoc->GetDocNode();
-//
-//	if (bstrElementKey != NULL)
-//	{
-//		pDocRoot = pDocRoot->GetChildNode(bstrElementKey);
-//	}
-//	else
-//	{
-//		pDocRoot = pRWDoc->GetDocNode();
-//	}
-//
-//	if(!pDocRoot->IsValid())
-//	{
-//#ifndef _PSX_IDE_QT_
-//        CLogPrint::LogString(XLOGLEVEL_TRACE, _T("SetXml Error: oDocRoot == NULL"));
-//
-//		if (wcslen(strXml) <= 2048)
-//		{
-//			CString strTemp;
-//			strTemp = strXml;
-//			CLogPrint::LogString(XLOGLEVEL_TRACE, strTemp);
-//		}
-//#endif
-//
-//		delete pRWDoc;
-//		return FALSE;
-//	}
-//
-//	XmlRead(*pDocRoot, pXmlRWKeys);
-//	delete pRWDoc;
-//
-//	return TRUE;
 }
-
-#ifndef _PSX_IDE_QT_
-BOOL CBaseObject::SetXml(_bstr_t &strXml,BSTR bstrElementKey, CXmlRWKeys *pXmlRWKeys,const long &nXmlRWType)
-{
-	CXmlRWDocBase *pRWDoc = xml_CreateXmlRWDoc(nXmlRWType);
-
-	if (!pRWDoc->SetXml(strXml))
-	{
-		delete pRWDoc;
-		return FALSE;
-	}
-
-    BOOL bRet = SetXml(pRWDoc, bstrElementKey, pXmlRWKeys);
-    delete pRWDoc;
-
-    return bRet;
-
-//	CXmlRWNodeBase *pDocRoot = pRWDoc->GetDocNode();
-
-//	if (bstrElementKey != NULL)
-//	{
-//		pDocRoot = pDocRoot->GetChildNode(bstrElementKey);
-//	}
-//	else
-//	{
-//		pDocRoot = pRWDoc->GetDocNode();
-//	}
-
-//	if(!pDocRoot->IsValid())
-//	{
-//		CLogPrint::LogString(XLOGLEVEL_TRACE, _T("SetXml Error: oDocRoot == NULL"));
-
-//		if (wcslen(strXml) <= 2048)
-//		{
-//			CString strTemp;
-//            strTemp = (LPCSTR)strXml;
-//			CLogPrint::LogString(XLOGLEVEL_TRACE, strTemp);
-//		}
-
-//		delete pRWDoc;
-//		return FALSE;
-//	}
-
-//	XmlRead(*pDocRoot, pXmlRWKeys);
-//	delete pRWDoc;
-//	return TRUE;
-}
-#endif
-
 
 BOOL CBaseObject::SetXml(BSTR strXml, CXmlRWKeys *pXmlRWKeys,const long &nXmlRWType)
 {
@@ -808,30 +616,14 @@ BOOL CBaseObject::SetXml(BSTR strXml, CXmlRWKeys *pXmlRWKeys,const long &nXmlRWT
 	return SetXml(strXml, bstrElementKey, pXmlRWKeys,nXmlRWType);
 }
 
-#ifndef _PSX_IDE_QT_
-BOOL CBaseObject::SetXml(_bstr_t &strXml, CXmlRWKeys *pXmlRWKeys,const long &nXmlRWType)
-{
-	BSTR bstrElementKey = GetXmlElementKey();
-
-	return SetXml(strXml, bstrElementKey, pXmlRWKeys,nXmlRWType);
-}
-#endif
-
 BOOL CBaseObject::SetXml_ASCII(char *strXml,long nLen, CXmlRWKeys *pXmlRWKeys,const long &nXmlRWType)
 {
-//     if (strlen(strXml) == 0)
-//     {
-//         return FALSE;
-//     }
-
     CXmlRWDocBase *pRWDoc = xml_CreateXmlRWDoc(nXmlRWType);
-
     if (!pRWDoc->SetXml_ASCII(strXml,nLen))
     {
         delete pRWDoc;
         return FALSE;
     }
-
     BSTR bstrElementKey = GetXmlElementKey();
     BOOL bRet = SetXml(pRWDoc, bstrElementKey, pXmlRWKeys);
     delete pRWDoc;
@@ -841,11 +633,6 @@ BOOL CBaseObject::SetXml_ASCII(char *strXml,long nLen, CXmlRWKeys *pXmlRWKeys,co
 
 BOOL CBaseObject::SetXml_UTF8(char *strXml,long nLen, CXmlRWKeys *pXmlRWKeys,const long &nXmlRWType)
 {
-//    if (strlen(strXml) == 0)
-//    {
-//        return FALSE;
-//    }
-
     CXmlRWDocBase *pRWDoc = xml_CreateXmlRWDoc(nXmlRWType);
 
 	if (!pRWDoc->SetXml_UTF8(strXml,nLen))
@@ -853,7 +640,6 @@ BOOL CBaseObject::SetXml_UTF8(char *strXml,long nLen, CXmlRWKeys *pXmlRWKeys,con
         delete pRWDoc;
         return FALSE;
     }
-
     BSTR bstrElementKey = GetXmlElementKey();
     BOOL bRet = SetXml(pRWDoc, bstrElementKey, pXmlRWKeys);
     delete pRWDoc;
@@ -868,10 +654,7 @@ void CBaseObject::SetModifiedFlag(BOOL bModified)
 	pRoot->SetModifiedFlagOwn(bModified);
 }
 
-void CBaseObject::SetModifiedFlagOwn(BOOL bModified)
-{
-
-}
+void CBaseObject::SetModifiedFlagOwn(BOOL bModified) {}
 
 BOOL CBaseObject::GetModifiedFlagOwn()
 {
@@ -883,8 +666,6 @@ void CBaseObject::SaveBaseObject()
 	SetModifiedFlagOwn(FALSE);
 }
 
-//2021-5-5  lijunqing  可以获取自身节点是否被改变，也可以获取根节点的状态
-//这样方便使用任意层级对象判断是否被编辑
 BOOL CBaseObject::GetModifiedFlag(BOOL bRoot)
 {
 	if (bRoot)

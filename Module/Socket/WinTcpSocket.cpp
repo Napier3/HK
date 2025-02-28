@@ -12,7 +12,7 @@ long nWifiSendTimeout = 3;
 CWinTcpSocket::CWinTcpSocket()
 {
 	m_dwReceiveBuffLen = 1024;
-	m_pReceiveBuff = NULL;
+    m_pReceiveBuff = nullptr;
 	SetReceiveBuffLen(1024);
 
 	SetReceiveGap(1);
@@ -21,31 +21,29 @@ CWinTcpSocket::CWinTcpSocket()
 
 CWinTcpSocket::~CWinTcpSocket()
 {
-	if (m_pReceiveBuff != NULL)
+    if (m_pReceiveBuff != nullptr)
 	{
 		delete m_pReceiveBuff;
-		m_pReceiveBuff = NULL;
+        m_pReceiveBuff = nullptr;
 	}
 }
 
 BOOL CWinTcpSocket::Connect(const char* strRemote, unsigned int iPort )
 {
-	if (strRemote == NULL || iPort == NULL)
+    if (strRemote == nullptr || iPort == 0)
 	{
 		return FALSE;
 	}
-qDebug() << "debug sun: BOOL CWinTcpSocket::Connect 1";
 	if( strlen( strRemote ) == 0 )
 	{
 		return FALSE;
 	}
-    qDebug() << "debug sun: BOOL CWinTcpSocket::Connect 2";
-	hostent *hostEnt = NULL;
+    hostent *hostEnt = nullptr;
 	long lIPAddress = 0;
 
 	hostEnt = gethostbyname( strRemote );
-    qDebug() << "debug sun: BOOL CWinTcpSocket::Connect remote name is " << strRemote;
-	if( hostEnt != NULL )
+    qDebug() << "Connect to the remote with name: " << strRemote;
+    if( hostEnt != nullptr )
 	{
 		lIPAddress = ((in_addr*)hostEnt->h_addr)->s_addr;
 		m_sockaddr.sin_addr.s_addr = lIPAddress;
@@ -54,19 +52,14 @@ qDebug() << "debug sun: BOOL CWinTcpSocket::Connect 1";
 	{
 		m_sockaddr.sin_addr.s_addr = inet_addr( strRemote );
 	}
-    qDebug() << "debug sun: BOOL CWinTcpSocket::Connect 3";
 	m_sockaddr.sin_family = AF_INET;
 	m_sockaddr.sin_port = htons( iPort );
-    qDebug() << "debug sun: BOOL CWinTcpSocket::Connect 4";
 	if( connect( m_hSocket, (SOCKADDR*)&m_sockaddr, sizeof( m_sockaddr ) ) == SOCKET_ERROR )
 	{
 #ifndef _PSX_QT_LINUX_
         set_LastError( "connect() failed", WSAGetLastError() );
 #else
 		int n = errno;
-        qDebug() << "debug sun: BOOL CWinTcpSocket::Connect error is " << errno;
-		CLogPrint::LogFormatString(XLOGLEVEL_ERROR, _T("CWinTcpSocket::Connect 1  error=%d") , n);
-qDebug() << "debug sun: BOOL CWinTcpSocket::Connect 5";
         if (n == EINPROGRESS)
 		{
 			struct timeval stTv;
@@ -78,19 +71,14 @@ qDebug() << "debug sun: BOOL CWinTcpSocket::Connect 5";
 			FD_ZERO(&fdSet);
 			FD_SET(m_hSocket,&fdSet);
 			iLength = sizeof(int);
-qDebug() << "debug sun: BOOL CWinTcpSocket::Connect 6";
-			if (0 < select( (m_hSocket+1) , NULL,&fdSet,NULL,&stTv))
+            if (0 < select( (m_hSocket+1) , nullptr,&fdSet,nullptr,&stTv))
 			{
-                qDebug() << "debug sun: BOOL CWinTcpSocket::Connect 7";
 				if(0 > getsockopt(m_hSocket,SOL_SOCKET,SO_ERROR,(void*)(&iValOpt),&iLength))
 				{
-                    qDebug() << "debug sun: BOOL CWinTcpSocket::Connect 8";
 					return FALSE;
 				}
-
 				if (0 != iValOpt)
 				{
-                    qDebug() << "debug sun: BOOL CWinTcpSocket::Connect 9";
 					return FALSE;
 				}
 
@@ -98,26 +86,22 @@ qDebug() << "debug sun: BOOL CWinTcpSocket::Connect 6";
 			}
 			else
 			{
-                qDebug() << "debug sun: BOOL CWinTcpSocket::Connect 10";
 				return FALSE;
 			}
 		}
 #endif
-        qDebug() << "debug sun: BOOL CWinTcpSocket::Connect 11";
 		return FALSE;
 	}
-	
 	return TRUE;
 }
 
 long CWinTcpSocket::Send( SOCKET s, char* strData, int iLen )
 {
-	if( strData == NULL || iLen == 0 ||s<=0)
+    if( strData == nullptr || iLen == 0 ||s<=0)
 	{
 		return SOCKET_ERROR;
 	}
 
-	//2020-4-6  lijunqing  避免一次没有全部发送完毕，分成多次发送
 	int nLeft = iLen;
 	char *p = strData;
 	int nSend =  0;
@@ -166,7 +150,7 @@ long CWinTcpSocket::Send(char* strData, int iLen )
 
 long CWinTcpSocket::Receive(char* strData, int iLen )
 {
-	if( strData == NULL )
+    if( strData == nullptr )
 	{
 		return SOCKET_ERROR;
 	}
@@ -186,7 +170,7 @@ long CWinTcpSocket::Receive(char* strData, int iLen )
 
 long CWinTcpSocket::Receive(SOCKET s, char* strData, int iLen )
 {
-	if( strData == NULL )
+    if( strData == nullptr )
 	{
 		return SOCKET_ERROR;
 	}
@@ -263,7 +247,7 @@ void CWinTcpSocket::SetReceiveBuffLen(DWORD dwLen)
 {
 	m_dwReceiveBuffLen = dwLen;
 
-	if (m_pReceiveBuff != NULL)
+    if (m_pReceiveBuff != nullptr)
 	{
 		delete m_pReceiveBuff;
 	}

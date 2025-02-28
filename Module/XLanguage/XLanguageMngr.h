@@ -57,7 +57,7 @@ protected:
 //жидиКЏЪ§
 public:
 	virtual UINT GetClassID() {    return LGUGCLASSID_CLANGUAGEMNGR;   }
-    virtual BSTR GetXmlElementKey()  {      qDebug() << "#####Debug sun: from CXLanguageMngr::OpenXmlFile!!!! ";return CXLanguageXmlRWKeys::CXLanguageMngrKey();     }
+    virtual BSTR GetXmlElementKey()  { return CXLanguageXmlRWKeys::CXLanguageMngrKey();     }
 	virtual long XmlReadOwn(CXmlRWNodeBase &oNode, CXmlRWKeys *pXmlRWKeys);
 	virtual long XmlWriteOwn(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oElement, CXmlRWKeys *pXmlRWKeys);
 	virtual long SerializeOwn(CBinarySerialBuffer &oBinaryBuffer);

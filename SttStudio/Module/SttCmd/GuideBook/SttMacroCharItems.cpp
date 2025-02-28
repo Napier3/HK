@@ -226,7 +226,6 @@ CSttMacroCharItems::~CSttMacroCharItems()
 
 BSTR CSttMacroCharItems::GetXmlElementKey()
 {
-    qDebug() << "Debug sun: from CSttMacroCharItems::GetXmlElementKey()!!!! 111";
 	if (CSttCmdDefineXmlRWKeys::stt_Is_GuideBookUseItemKey(NULL))
 	{
 		return CSttCmdDefineXmlRWKeys::CSttItemBaseKey();

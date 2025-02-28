@@ -30,7 +30,6 @@ CSttSafety::~CSttSafety()
 
 BSTR CSttSafety::GetXmlElementKey()
 {
-    qDebug() << "Debug sun: from CSttSafety::GetXmlElementKey()!!!! 111";
 	if (CSttCmdDefineXmlRWKeys::stt_Is_GuideBookUseItemKey(NULL))
 	{
 		return CSttCmdDefineXmlRWKeys::CSttItemBaseKey();

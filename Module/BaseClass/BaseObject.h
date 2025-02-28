@@ -1,16 +1,8 @@
-// BaseObject.h: interface for the CBaseObject class.
-//
-//////////////////////////////////////////////////////////////////////
-
-#if !defined(_BASEOBJECT_H__)
-#define _BASEOBJECT_H__
-
-#if _MSC_VER > 1000
+/*
+ *Shandong HuanKe copyright 2025
+ *Author: Eric
+*/
 #pragma once
-#endif // _MSC_VER > 1000
-
-//2022-3-25  李俊庆修改
-//所有空函数，都放到CPP中，因为QT编译器会报很多很多的warning
 
 #define CLASSID_BASECLASS       0x00000000	//对象基类
 #define CLASSID_LISTCLASS       0x10000000	//列表
@@ -21,7 +13,7 @@
 
 #include "BinarySerialInterface.h"
 #include "../xml/XmlRWInterface.h"
-#include<QtDebug>
+#include <QtDebug>
 
 //XML文件读写关键字定义
 //格式
@@ -42,11 +34,7 @@ public:
 		m_strLangIDKey   = L"xlang";
 	}
 
-	virtual ~CXmlRWKeys()
-	{
-	}
-
-	//从XML节点中读取关键字
+    virtual ~CXmlRWKeys() {}
 	long ReadFromXmlFile(const CString &strFile);
 	
 public:
@@ -65,9 +53,7 @@ public:
 	virtual ~CBaseObject();
 
 protected:
-	CBaseObject *m_pParent;
-
-//方法
+    CBaseObject *m_pParent {};
 public:
 	CBaseObject* GetParent()                {    return m_pParent;    }
 	void SetParent(CBaseObject *pParent)    {    m_pParent = pParent; }
@@ -86,13 +72,11 @@ public:
 	bool IsBaseList()         {        return ( (GetClassID() & CLASSID_LISTCLASS) == CLASSID_LISTCLASS);      };
 	bool IsBaseMngr()         {        return ( (GetClassID() & CLASSID_MNGRCLASS) == CLASSID_MNGRCLASS);      };
 
-	//ReadXML
 	virtual long XmlRead(CXmlRWNodeBase &oNode, CXmlRWKeys *pXmlRWKeys);
 	virtual long XmlReadOwn(CXmlRWNodeBase &oNode, CXmlRWKeys *pXmlRWKeys);
 	virtual long XmlReadChildren(CXmlRWNodeListBase &oNodes, CXmlRWKeys *pXmlRWKeys)	;
 
-	//WriteXML
-    virtual BSTR GetXmlElementKey()  { qDebug() << "Debug sun: GetXmlElementKey is retnning nulllllllllllll";     return nullptr;     }
+    virtual BSTR GetXmlElementKey() { return nullptr;}
 	virtual long XmlWrite(CXmlRWDocBase &oXMLDoc,CXmlRWElementBase &oParent, BSTR pszElementKey, CXmlRWKeys *pXmlRWKeys);
 	virtual long XmlWrite(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oParent, CXmlRWKeys *pXmlRWKeys); 
 	virtual long XmlWriteEx(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oParent, CXmlRWKeys *pXmlRWKeys, CXmlRWElementBase* &pRetElement);
@@ -145,7 +129,6 @@ public:
 
     virtual BSTR GetXml(CXmlRWKeys *pXmlRWKeys,const long &nXmlRWType = _PUGI_XML_TYPE_);
     virtual void GetXml(CXmlRWKeys *pXmlRWKeys, CString &bstrXml,const long &nXmlRWType = _PUGI_XML_TYPE_);
-	//2019-12-28  lijunqing
 	virtual long GetXml(CXmlRWKeys *pXmlRWKeys, char **ppszRetBuffer, long nOffset=0,const long &nXmlRWType = _PUGI_XML_TYPE_);
 	virtual long GetXml_UTF8(CXmlRWKeys *pXmlRWKeys, char **ppszRetBuffer, long nOffset=0,const long &nXmlRWType = _PUGI_XML_TYPE_);
 	virtual long GetXml_ASCII(CXmlRWKeys *pXmlRWKeys, char **ppszRetBuffer, long nOffset=0,const long &nXmlRWType = _PUGI_XML_TYPE_);
@@ -179,8 +162,3 @@ public:
 protected:
 	virtual void SetModifiedFlagOwn(BOOL bModified=TRUE);
 };
-
-
-
-
-#endif // !defined(_BASEOBJECT_H__)

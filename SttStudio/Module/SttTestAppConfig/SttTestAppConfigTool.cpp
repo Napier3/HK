@@ -62,7 +62,6 @@ void CSttTestAppConfigTool::TestAppConfig(CSttTestEngineClientData **ppXClientEn
 
 CSttTestEngineClientData* CSttTestAppConfigTool::CreateTestEngine(CSttTestAppCfg *pSttTestAppCfg)
 {
-    qDebug()<<"debug sun CreateTestEngine 1";
 	if (m_strServerID.GetLength() == 0)
 	{
 		m_strServerID = STT_SOFT_ID_TEST;
@@ -79,7 +78,6 @@ CSttTestEngineClientData* CSttTestAppConfigTool::CreateTestEngine(CSttTestAppCfg
 	}
 
     m_pClientEngine = nullptr;
-    qDebug()<<"debug sun CreateTestEngine 2";
 	return pClientEngine;
 }
 
@@ -90,9 +88,7 @@ CSttTestEngineClientData* CSttTestAppConfigTool::CreateTestCtrlEngine(CSttTestAp
         CString strTestAppIP;
         CString strMask;
         stt_net_get_deviceip(strTestAppIP, strMask);
-        qDebug() << "debug sun CreateTestCtrlEngine 1";
         Local_ConnectServer(pSttTestAppCfg, strTestAppIP, STT_PORT_TEST_SERVER, strSoftID);
-        qDebug() << "debug sun CreateTestCtrlEngine 2";
     }
 	else
 	{
@@ -216,7 +212,6 @@ BOOL CSttTestAppConfigTool::Local_ConnectServer(CSttTestAppCfg *pSttTestAppCfg, 
  	{
  		FreeClientEngine();
  	}
- qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  1";
 	pSttTestAppCfg->SetLocalApp();
     if (m_pClientEngine == nullptr)
 	{
@@ -251,7 +246,6 @@ BOOL CSttTestAppConfigTool::Local_ConnectServer(CSttTestAppCfg *pSttTestAppCfg, 
 		bRet = FALSE;
 		CLogPrint::LogFormatString(XLOGLEVEL_INFOR,_T("Login ß∞‹"));
 	}
-    qDebug() << "debug sun:  CSttTestAppConfigTool::Local_ConnectServer  2";
 	return bRet;
 }
 

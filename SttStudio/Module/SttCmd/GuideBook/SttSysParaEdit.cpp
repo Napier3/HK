@@ -27,7 +27,6 @@ CSttSysParaEdit::~CSttSysParaEdit()
 
 BSTR CSttSysParaEdit::GetXmlElementKey() 
 { 
-    qDebug() << "Debug sun: from CSttSysParaEdit::GetXmlElementKey() !!!! 111";
 	if (CSttCmdDefineXmlRWKeys::stt_Is_GuideBookUseItemKey(NULL))
 	{
 		return CSttCmdDefineXmlRWKeys::CSttItemBaseKey();

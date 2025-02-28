@@ -51,7 +51,6 @@ CSttCommCmdData::~CSttCommCmdData()
 
 BSTR CSttCommCmdData::GetXmlElementKey()
 {
-    qDebug() << "Debug sun: from CSttCommCmdData GetXmlElementKey!!!! 111";
 	return CSttCmdDefineXmlRWKeys::CSttCommCmdDataKey(); 
 }
 
@@ -353,7 +352,6 @@ CSttCommCmd::~CSttCommCmd()
 
 BSTR CSttCommCmd::GetXmlElementKey()
 {
-    qDebug() << "Debug sun: from CSttCommCmdData GetXmlElementKey!!!! 222";
 	if (CSttCmdDefineXmlRWKeys::stt_Is_GuideBookUseItemKey(NULL))
 	{
 		return CSttCmdDefineXmlRWKeys::CSttItemBaseKey();

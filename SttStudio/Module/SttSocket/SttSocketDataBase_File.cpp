@@ -60,7 +60,6 @@ BOOL CSttSocketDataBase_File::ConnectServer()
 #ifndef _PSX_QT_LINUX_
 	InitSocket();
 #endif
-    qDebug() << "debug sun: BOOL CSttSocketDataBase_File::ConnectServer()  1";
 	SetReceiveBuffLen( STT_FILECMD_MAX_LEN );
 	Create(SOCK_STREAM);
 	InitSocketClient(20);
@@ -75,10 +74,6 @@ BOOL CSttSocketDataBase_File::ConnectServer()
 	if (bRet)
 	{
 		CLogPrint::LogFormatString(XLOGLEVEL_TRACE, g_sLangTxt_ConServerSucc.GetString(), m_strIPRemote.GetString(), m_nPortRemote);
-    }else
-    {
-         qDebug() << "debug sun: CSttSocketDataBase_File::ConnectServer() failllllllllllllllllllllll";
-         qDebug() << "debug sun: CSttSocketDataBase_File::ConnectServer()" << m_strIPRemote.GetString() <<m_nPortRemote ;
     }
 	#endif
 	return bRet;
@@ -86,7 +81,6 @@ BOOL CSttSocketDataBase_File::ConnectServer()
 
 BOOL CSttSocketDataBase_File::ConnectServer(const CString &strIPServer,long nPort)
 {//本地或远程测试端，连接成功后设置SttLocalTestEngine的RefSocket
- qDebug() << "debug sun: BOOL CSttSocketDataBase_File::ConnectServer  1";
 	char pszIPServer[64] = {0};
 	CString_to_char(strIPServer,pszIPServer);
 
@@ -151,7 +145,6 @@ void CSttSocketDataBase_File::CloseSocket()
 
 long CSttSocketDataBase_File::SendBuffer(BYTE *pBuf,long nLen)
 {
-    qDebug() << "debug sun:  long CSttSocketDataBase_File::SendBuffer  1";
 	long nRet = Send((char*)pBuf, nLen);
 
 	if(nRet <= 0)

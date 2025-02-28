@@ -31,10 +31,8 @@ CSttClientTestEngine::~CSttClientTestEngine()
 
 BOOL CSttClientTestEngine::ConnectServer(const CString &strIPServer, long nPort)
 {
-     qDebug() << "debug sun: CSttClientTestEngine::ConnectServer  1";
 	if (m_pSttClientSocket == NULL)
 	{
-        qDebug() << "debug sun: CSttClientTestEngine::ConnectServer  creaatinggggggggggggggggggg";
 		m_pSttClientSocket = new CSttClientSocket();
 
 		m_oCurrUser.SetRefSttSckt(m_pSttClientSocket);
@@ -63,31 +61,15 @@ BOOL CSttClientTestEngine::ConnectServer(const CString &strIPServer, long nPort)
 #endif
 #endif
 
- qDebug() << "debug sun: CSttClientTestEngine::ConnectServer  2";
     bRet = m_pSttClientSocket->ConnectServer(strIPServer, nPort);
- qDebug() << "debug sun: CSttClientTestEngine::ConnectServer  3";
 	if (!bRet)
 	{
-         qDebug() << "debug sun: CSttClientTestEngine::ConnectServer  4 nulllllllllllllllll";
 		delete m_pSttClientSocket;
 		m_pSttClientSocket = NULL;
 	}
 
 	return bRet;
 }
-
-//xxy 20200927:ClientEngineData::Disconnect已经有了
-// void CSttClientTestEngine::CloseSocket(CSttSocketDataBase *pSocket)
-// {
-// 	if (m_pSttClientSocket == NULL)
-// 	{
-// 		return;
-// 	}
-// 
-// 	m_pSttClientSocket->WaitForThreadExit();
-// 	delete m_pSttClientSocket;
-// 	m_pSttClientSocket = NULL;
-// }
 
 void CSttClientTestEngine::OnSocketClose(CSttSocketDataBase *pSocket, BOOL bDeleteSocket)
 {

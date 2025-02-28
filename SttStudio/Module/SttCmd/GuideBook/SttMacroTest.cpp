@@ -77,8 +77,6 @@ long CSttMacroTestPara::SerializeOwn(CBinarySerialBuffer &oBinaryBuffer)
 
 BSTR CSttMacroTestPara::GetXmlElementKey()
 {
-    qDebug() << "Debug sun: from SttMacroTest.cpp GetXmlElementKey!!!! 111";
-
 	CSttCmdDefineXmlRWKeys *pXmlKeys = CSttCmdDefineXmlRWKeys::g_pXmlKeys;
 	return pXmlKeys->m_strParaKey;
 }
@@ -138,7 +136,6 @@ CSttMacroTest::~CSttMacroTest()
 
 BSTR CSttMacroTest::GetXmlElementKey()
 {
-    qDebug() << "Debug sun: from SttMacroTest.cpp GetXmlElementKey!!!! 222";
     if (CSttCmdDefineXmlRWKeys::stt_Is_GuideBookUseItemKey(NULL))
 	{
 		return CSttCmdDefineXmlRWKeys::CSttItemBaseKey();

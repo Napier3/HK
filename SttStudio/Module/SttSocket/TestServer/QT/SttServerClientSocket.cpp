@@ -59,7 +59,6 @@ long CSttServerClientSocket::ReceiveBuffer(BYTE *pBuf,long nLen)
 
 long CSttServerClientSocket::SendBuffer(BYTE *pBuf,long nLen)
 {
-    qDebug() << "debug sun:  long CSttServerClientSocket::SendBuffer  1";
     stt_pkg_set_send_index(pBuf, m_nSendIndex++);
 	int nRet=m_pSocket->write((const char*)pBuf,nLen);
 	return nRet;

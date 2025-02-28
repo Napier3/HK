@@ -295,10 +295,8 @@ long CSttTestEngineClientData::SendBuffer(BYTE *pBuf,long nLen)
 long CSttTestEngineClientData::SendCmdSync(CSttCmdBase *pCmd,long nTimeOut,CSttCmdData *pRetData
 										   ,BOOL bDoEvents,BOOL bCompress,BOOL bReset)
 {
-    qDebug() << "debug sun:  long CSttTestEngineClientData::SendCmdSync  1";
 	if (m_pSttClientSocket == NULL)
 	{
-        qDebug() << "debug sun:  long CSttTestEngineClientData::SendCmdSync  2";
 		return 0;
 	}
 
@@ -388,28 +386,21 @@ long CSttTestEngineClientData::System_DownFile(CDataGroup *pParas, BOOL bDoEvent
 
 long CSttTestEngineClientData::System_Login(BOOL bDoEvents,CSttCmdData *pRetData)
 {
-    qDebug() << "debug sun:  long CSttTestEngineClientData::System_Login(BOOL bDoEvents,CSttCmdData *pRetData)  1";
 	if (m_pSttClientSocket == NULL)
 	{
-        qDebug() << "debug sun:  long CSttTestEngineClientData::System_Login(BOOL bDoEvents,CSttCmdData *pRetData)  11";
 		return 0;
 	}
-qDebug() << "debug sun:  long CSttTestEngineClientData::System_Login(BOOL bDoEvents,CSttCmdData *pRetData)  111";
 	m_bHasLogin = FALSE;
 
 	CSttSystemCmd oSysCmd;
 	oSysCmd.m_strID = STT_CMD_TYPE_SYSTEM_Login;
 	oSysCmd.m_strTestor = m_oCurrUser.id_soft();
 	m_oCurrUser.InitSttSystemCmd(oSysCmd);
-qDebug() << "debug sun:  long CSttTestEngineClientData::System_Login(BOOL bDoEvents,CSttCmdData *pRetData)  2";
 	long nRet = SendCmdSync(&oSysCmd,g_nTimeOut_System,pRetData,bDoEvents);
-qDebug() << "debug sun:  long CSttTestEngineClientData::System_Login(BOOL bDoEvents,CSttCmdData *pRetData)  3";
 	if (pRetData != NULL)
 	{
-        qDebug() << "debug sun:  long CSttTestEngineClientData::System_Login(BOOL bDoEvents,CSttCmdData *pRetData)  4";
 		CSttParas *pParas = pRetData->GetSttParas();
 		CDataGroup *pDevAttrs = (CDataGroup *)pParas->FindByID(STT_CMD_PARA_DeviceAttrs);
-qDebug() << "debug sun:  long CSttTestEngineClientData::System_Login(BOOL bDoEvents,CSttCmdData *pRetData)  5";
 		if (pDevAttrs != NULL)
 		{
             if(g_pDeviceAttrs != NULL)
@@ -418,12 +409,9 @@ qDebug() << "debug sun:  long CSttTestEngineClientData::System_Login(BOOL bDoEve
                 delete g_pDeviceAttrs;
                 g_pDeviceAttrs = NULL;
             }
-            qDebug() << "debug sun:  long CSttTestEngineClientData::System_Login(BOOL bDoEvents,CSttCmdData *pRetData)  6";
             g_pDeviceAttrs = (CDataGroup *)pDevAttrs->CloneEx(TRUE, TRUE);
-            qDebug() << "debug sun:  long CSttTestEngineClientData::System_Login(BOOL bDoEvents,CSttCmdData *pRetData)  7";
 		}
 	}
-    qDebug() << "debug sun:  long CSttTestEngineClientData::System_Login(BOOL bDoEvents,CSttCmdData *pRetData)  8";
 	return nRet;
 }
 
@@ -970,8 +958,6 @@ long CSttTestEngineClientData::Ats_StartTest(CDataGroup *pTestMacroUI, CDataGrou
 {
 	if (m_pSttClientSocket == NULL)
 	{
-        qDebug() << "debug sun:  m_pSttClientSocket ia nullptrrrrrrrrrrrrrrrrrrrrrrrrrrr " ;
-
 		return 0;
 	}
 

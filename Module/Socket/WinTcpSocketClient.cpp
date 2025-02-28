@@ -57,7 +57,6 @@ BOOL CWinTcpSocketClient::Connect(const char* strRemote, unsigned int iPort )
     BOOL bTrue = CWinTcpSocket::Connect(strRemote, iPort);
 	if (!bTrue)
 	{
-        qDebug() << "debug sun: BOOL CWinTcpSocketClient::Connect failllllllllllllllllllllll depper";
 		return FALSE;
 	}
 

@@ -41,7 +41,6 @@ CSttItemBase::~CSttItemBase()
 
 BSTR CSttItemBase::GetXmlElementKey()
 {
-    qDebug() << "Debug sun: from CSttItemBase GetXmlElementKey!!!! 111";
 	return CSttCmdDefineXmlRWKeys::CSttItemBaseKey();
 }
 
