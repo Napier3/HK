@@ -35,6 +35,7 @@ DESTDIR = "/home/uisrc/HK/Stt/Bin"
 
 
 SOURCES += main.cpp\
+    ../../../HKWidgets/hkgridbuttons.cpp \
     ../../Module/SttCmdToolMngr.cpp \
     ../../Module/SttTestSysGlobalPara.cpp \
     ../../../Module/XLanguage/XLanguageResource.cpp \
@@ -1216,6 +1217,7 @@ SOURCES += main.cpp\
 
 
 HEADERS  += \
+    ../../../HKWidgets/hkgridbuttons.h \
     ../../Module/SttCmdToolMngr.h \
     ../../Module/SttGlobalDef.h \
     ../../Module/SttGlobalDef_File.h \
@@ -2428,6 +2430,7 @@ HEADERS  += \
     ../../../Module/Expression/XExprRangeEx.h
 
 FORMS += \
+    ../../../HKWidgets/hkgridbuttons.ui \
     ../../Module/Assist/MU/SttAssistIecCbSelWidget.ui \
     ../../Module/Assist/DynEffect/QSttAssistMsgWidget.ui \
     ../../Module/Assist/DynEffect/QSttAssistTipsShowWidget.ui \

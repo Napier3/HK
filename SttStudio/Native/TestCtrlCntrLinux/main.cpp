@@ -127,7 +127,6 @@ int main(int argc, char *argv[])
 
 	if (IsFileExist(oParser.m_strSsclFilePath))
 	{
-
 		pSttTestCtrlCntrNative->m_oSclStation.OpenSclStationFile(oParser.m_strSsclFilePath);
 	}
  	oSttTestCntrFrameLinux.InitFrame(strFrameConfigPath);
@@ -164,6 +163,7 @@ qDebug() << "Debug sun: from TestCtrlCntrLinux!!!! R";
 #endif
 #endif
 #endif
+        QApplication::setOverrideCursor(Qt::BlankCursor);
 		oSttTestCntrApplication.exec();
 qDebug() << "Debug sun: from TestCtrlCntrLinux!!!! S";
 #ifdef _PSX_QT_LINUX_
