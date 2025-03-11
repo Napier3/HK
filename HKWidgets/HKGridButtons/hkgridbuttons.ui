@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HKGridButtons</class>
+ <widget class="QWidget" name="HKGridButtons">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>150</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>300</width>
+    <height>150</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>318</width>
+    <height>168</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>150</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>300</width>
+       <height>150</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QPushButton" name="m_pushButtonTopLeft">
+        <property name="minimumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #0078D7; /* example blue, adapt as needed */
+    border-radius: 10px;       /* adjust for desired corner radius */
+    color: white;
+    padding: 5px;             /* optional, for spacing around the text */
+    border: none;             /* remove default border if you like */
+}
+QPushButton:hover {
+    background-color: #0089F0; /* slightly lighter/darker for hover */
+}
+QPushButton:pressed {
+    background-color: #005AB3; /* darker when pressed */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="m_pushButtonTop">
+        <property name="minimumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #0078D7; /* example blue, adapt as needed */
+    border-radius: 10px;       /* adjust for desired corner radius */
+    color: white;
+    padding: 5px;             /* optional, for spacing around the text */
+    border: none;             /* remove default border if you like */
+}
+QPushButton:hover {
+    background-color: #0089F0; /* slightly lighter/darker for hover */
+}
+QPushButton:pressed {
+    background-color: #005AB3; /* darker when pressed */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="m_pushButtonTopRight">
+        <property name="minimumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #0078D7; /* example blue, adapt as needed */
+    border-radius: 10px;       /* adjust for desired corner radius */
+    color: white;
+    padding: 5px;             /* optional, for spacing around the text */
+    border: none;             /* remove default border if you like */
+}
+QPushButton:hover {
+    background-color: #0089F0; /* slightly lighter/darker for hover */
+}
+QPushButton:pressed {
+    background-color: #005AB3; /* darker when pressed */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="m_pushButtonLeft">
+        <property name="minimumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #0078D7; /* example blue, adapt as needed */
+    border-radius: 10px;       /* adjust for desired corner radius */
+    color: white;
+    padding: 5px;             /* optional, for spacing around the text */
+    border: none;             /* remove default border if you like */
+}
+QPushButton:hover {
+    background-color: #0089F0; /* slightly lighter/darker for hover */
+}
+QPushButton:pressed {
+    background-color: #005AB3; /* darker when pressed */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="m_pushButtonRight">
+        <property name="minimumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #0078D7; /* example blue, adapt as needed */
+    border-radius: 10px;       /* adjust for desired corner radius */
+    color: white;
+    padding: 5px;             /* optional, for spacing around the text */
+    border: none;             /* remove default border if you like */
+}
+QPushButton:hover {
+    background-color: #0089F0; /* slightly lighter/darker for hover */
+}
+QPushButton:pressed {
+    background-color: #005AB3; /* darker when pressed */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="m_pushButtonBottomLeft">
+        <property name="minimumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #0078D7; /* example blue, adapt as needed */
+    border-radius: 10px;       /* adjust for desired corner radius */
+    color: white;
+    padding: 5px;             /* optional, for spacing around the text */
+    border: none;             /* remove default border if you like */
+}
+QPushButton:hover {
+    background-color: #0089F0; /* slightly lighter/darker for hover */
+}
+QPushButton:pressed {
+    background-color: #005AB3; /* darker when pressed */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="m_pushButtonBottom">
+        <property name="minimumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #0078D7; /* example blue, adapt as needed */
+    border-radius: 10px;       /* adjust for desired corner radius */
+    color: white;
+    padding: 5px;             /* optional, for spacing around the text */
+    border: none;             /* remove default border if you like */
+}
+QPushButton:hover {
+    background-color: #0089F0; /* slightly lighter/darker for hover */
+}
+QPushButton:pressed {
+    background-color: #005AB3; /* darker when pressed */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="m_pushButtonBottomRight">
+        <property name="minimumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #0078D7; /* example blue, adapt as needed */
+    border-radius: 10px;       /* adjust for desired corner radius */
+    color: white;
+    padding: 5px;             /* optional, for spacing around the text */
+    border: none;             /* remove default border if you like */
+}
+QPushButton:hover {
+    background-color: #0089F0; /* slightly lighter/darker for hover */
+}
+QPushButton:pressed {
+    background-color: #005AB3; /* darker when pressed */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QFrame" name="frame_2">
+        <property name="minimumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>90</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <layout class="QVBoxLayout" name="m_centerLayout"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

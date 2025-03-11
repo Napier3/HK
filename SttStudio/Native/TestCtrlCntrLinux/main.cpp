@@ -1,9 +1,10 @@
 #include "SttTestCntrFrameLinux.h"
 #include "SttTestCntrApplication.h"
+#include "hkmainwindow.h"
 #include <QTextCodec>
 #include <QSharedMemory>
 #include <QMessageBox>
-#include<QDebug>
+#include <QDebug>
 #include "../../../Module/API/GlobalConfigApi.h"
 #include "../../../Module/OSInterface/QT/XMessageBox.h"
 #include "../../../Module/XLanguage/XLanguageMngr.h"
@@ -16,48 +17,16 @@
 #include "../../Module/RecordTest/UI/SttIecRecordDetectWidget.h"
 #include "../../Module/RecordTest/UI/MUTest/SttMUTestIecCbSelWidget.h"
 
-//  #ifndef _PSX_QT_LINUX_
-//  #include "../../../Module/XMinidmp/XMinidmp.h"
-//  #endif
-
-//2022-9-23  lijunqing
 #include "../../Module/HtmlReport/IECTest/SttIecTestHtmlRptGenFactory.h"
 #include "../../Module/SttTestCtrl/SttArgcArgvParser.h"
-// extern bool g_bIsOpenMacroFromMain;
-
-//2022-10-8  lijunqing
 #include "../../Module/SmartTestInterface/QT/PpSttIotEngineDebugWidget.h"
-
 #include "../../Module/UI/SttTestCntrCmdDefine.h"
 #include "../../Module/UI/Module/CommonCtrl_QT/QSttProgDlg.h"
 #include "../../../Module/OSInterface/QT/CDateTime_QT.h"
 #include"../../../AutoTest/Module/Characteristic/CharInterfaceVariable.h"
 
-#ifdef _PSX_OS_CENTOS_
-#include "QX11Info"
-#endif
-
 QSttEventFilter *g_pSttEventFilter = NULL;
 QSttProgDlg *g_pSttGlobalProgDlg = NULL;
-
-
-//t2022-12-02  lijunqing
-//macrotest macro_id=MUAccuracyTest;assist=admutest;iec=1;meas_svr=0;macro_file=AdmuTest;
-//macrotest macro_id=MUAccuracyTest;assist=mutest;iec=1;meas_svr=0;macro_file=MuTest;
-//macrotest macro_id=MUAccurAutoTest;assist=mutest;iec=1;meas_svr=1;macro_file=MuTest;
-//open_dialog dialog_id=IecCapDialog;assist=relaytest;iec=0;meas_svr=0;
-//open_dialog dialog_id=PpIotEngineClient;assist=relaytest;iec=0;meas_svr=0;
-//open_dialog dialog_id=CommConfig;assist=relaytest;iec=0;meas_svr=0;
-//macrotest macro_id=ManualTest;macro_file=RelayTest;assist=RelayTest;iec=0;meas_svr=0;
-//macrotest macro_id=RemoteCtrlTest;macro_file=RemoteCtrlTest;assist=remotectrltest;iec=0;meas_svr=0;
-//macrotest macro_id=RemoteMeasTest;macro_file=RelayTest;assist=RelayTest;iec=0;meas_svr=0;
-//macrotest macro_id=DistSearchOneTest;macro_file=RelayTest;assist=RelayTest;iec=0;meas_svr=0;
-//macrotest macro_id=ManualTest;sscl_path=D:/11/PONOVO/PONOVO.sscl;iec=0;meas_svr=0;macro_file=RelayTest;assist=RelayTest;
-//macrotest macro_id=MUTimingAccurTest;assist=mutest;iec=1;meas_svr=0;macro_file=MuTest;
-//macrotest macro_id=DistanceTest_I;macro_file=RelayTest;assist=RelayTest;iec=0;meas_svr=0;
-//macrotest macro_id=IecCapTest;iec=1;meas_svr=0;macro_file=MuTest;assist=ieccaptest;
-
-
 
 #include "../../Module/UI/SttTestCntrThread.h"
 
@@ -113,7 +82,8 @@ int main(int argc, char *argv[])
 	strDialogID = oParser.m_strDialogID;
 	oSttTestCntrApplication.SetCurrTestMacroUI(strMacroID);
     CSttMacroParaEditViewMngr::Create();
-    QSttTestCntrFrameLinux oSttTestCntrFrameLinux;
+    //sun QSttTestCntrFrameLinux oSttTestCntrFrameLinux;
+    HKMainWindow testHKMainWindow;
 	CString strFrameConfigPath;
     stt_xml_serialize_write_LineVolGradientTest();
 	if (!oParser.m_strMacroFile.IsEmpty())
@@ -129,19 +99,18 @@ int main(int argc, char *argv[])
 	{
 		pSttTestCtrlCntrNative->m_oSclStation.OpenSclStationFile(oParser.m_strSsclFilePath);
 	}
- 	oSttTestCntrFrameLinux.InitFrame(strFrameConfigPath);
- 	oSttTestCntrFrameLinux.SetTestCtrlCntrBase(oSttTestCntrApplication.m_pTestCtrlCntr);
+    //sun oSttTestCntrFrameLinux.InitFrame(strFrameConfigPath);
+    //sun oSttTestCntrFrameLinux.SetTestCtrlCntrBase(oSttTestCntrApplication.m_pTestCtrlCntr);
 
 	if (oParser.m_strCmdID == ARGV_CMD_ID_MACROTEST)
     {
         g_nTimeOut_Ats = 8000;
-        oSttTestCntrFrameLinux.setWindowFlags(oSttTestCntrFrameLinux.windowFlags()
-                                              | Qt::WindowStaysOnTopHint);
-		oSttTestCntrFrameLinux.show();
-        oSttTestCntrFrameLinux.raise();
-        oSttTestCntrFrameLinux.activateWindow();
+        //sun oSttTestCntrFrameLinux.setWindowFlags(oSttTestCntrFrameLinux.windowFlags() | Qt::WindowStaysOnTopHint);
+        testHKMainWindow.show();
+        testHKMainWindow.raise();
+        testHKMainWindow.activateWindow();
         oTickCount.DoEvents(50);//zhouhj 2024.3.22 解决打开界面后,只显示进度条,不显示主窗口问题
-		oSttTestCntrFrameLinux.OpenMacroTestUI_Test(oSttTestCntrApplication.m_pTestMacroUI, "", "");
+        //sun oSttTestCntrFrameLinux.OpenMacroTestUI_Test(oSttTestCntrApplication.m_pTestMacroUI, "", "");
 #ifdef _PSX_QT_LINUX_
 		g_pSttEventFilter = new QSttEventFilter();
 		oSttTestCntrApplication.installEventFilter(g_pSttEventFilter);
@@ -172,7 +141,7 @@ qDebug() << "Debug sun: from TestCtrlCntrLinux!!!! S";
 	}
 	else if (oParser.m_strCmdID == ARGV_CMD_ID_OPENFILE)
     {////2022-10-5  lijunqing open auto test file : gbxml, gbrpt
-		oSttTestCntrFrameLinux.SetAddMacroEnable(false);
+        //sun oSttTestCntrFrameLinux.SetAddMacroEnable(false);
 
 		if (g_pSttGlobalProgDlg)
 		{
@@ -186,7 +155,7 @@ qDebug() << "Debug sun: from TestCtrlCntrLinux!!!! S";
 		{
 			g_pSttGlobalProgDlg->Stop();
 		}
-		oSttTestCntrFrameLinux.OpenDialog(oParser.m_strDialogID);
+        //sun oSttTestCntrFrameLinux.OpenDialog(oParser.m_strDialogID);
 	}
 	else
 	{
@@ -195,7 +164,7 @@ qDebug() << "Debug sun: from TestCtrlCntrLinux!!!! S";
 		{
 			g_pSttGlobalProgDlg->Stop();
 		}
-		oSttTestCntrFrameLinux.SetAddMacroEnable(true);
+        //sun oSttTestCntrFrameLinux.SetAddMacroEnable(true);
 	}
 
 //	CXMessageBox::information(NULL,"042","000000" );

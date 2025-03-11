@@ -35,6 +35,7 @@ DESTDIR = "/home/uisrc/HK/Stt/Bin"
 
 
 SOURCES += main.cpp\
+    ../../../HKWidgets/HKToggleButton/hktogglebutton.cpp \
     ../../../HKWidgets/hkgridbuttons.cpp \
     ../../Module/SttCmdToolMngr.cpp \
     ../../Module/SttTestSysGlobalPara.cpp \
@@ -1213,10 +1214,12 @@ SOURCES += main.cpp\
     ../../Module/UI/TransPlay/SttReplayDigitalMoudleWidget.cpp \
  #   ../../Module/UI/TransPlay/SttReplayWeekModuleChWidget .cpp
     ../../Module/UI/TransPlay/SttReplayWeekModuleChWidget.cpp \
-    ../../../Module/Expression/XExprRangeEx.cpp
+    ../../../Module/Expression/XExprRangeEx.cpp \
+    hkmainwindow.cpp
 
 
 HEADERS  += \
+    ../../../HKWidgets/HKToggleButton/hktogglebutton.h \
     ../../../HKWidgets/hkgridbuttons.h \
     ../../Module/SttCmdToolMngr.h \
     ../../Module/SttGlobalDef.h \
@@ -2427,7 +2430,8 @@ HEADERS  += \
     ../../Module/UI/TransPlay/SttReplayDigitalMoudleWidget.h \
   #  ../../Module/UI/TransPlay/SttReplayWeekModuleChWidget .h
     ../../Module/UI/TransPlay/SttReplayWeekModuleChWidget.h \
-    ../../../Module/Expression/XExprRangeEx.h
+    ../../../Module/Expression/XExprRangeEx.h \
+    hkmainwindow.h
 
 FORMS += \
     ../../../HKWidgets/hkgridbuttons.ui \
@@ -2493,7 +2497,8 @@ FORMS += \
     ../../Module/TestUI/Distance/DistanceItemParaEditWidget.ui \
     ../../Module/TestUI/Distance/DistanceResultEstimateDlg.ui \
     ../../Module/UI/TransPlay/SttReplayBoutModuleChWidget.ui \
-    ../../Module/UI/TransPlay/SttReplayParaSetWidget.ui
+    ../../Module/UI/TransPlay/SttReplayParaSetWidget.ui \
+    hkmainwindow.ui
 
 RESOURCES += \
     TestCtrlCntrLinux.qrc

@@ -1,31 +1,19 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2022-01-09T11:03:48
-#
-#-------------------------------------------------
 
-#QT       += core gui webkit network xml webkitwidgets
 QT       += core gui widgets network xml
 
-DEFINES +=_PSX_IDE_QT_  _QT_IN_LINUX_ OS_QT_LINUX _PSX_QT_LINUX_ USE_Custom_CDateTime
-DEFINES += XML_USE_PUGIXML   NO_XDbBaseLib _CHAR_LIB_DEV_ # USE_IN_Astra_LINUX
-DEFINES +=CURLINUX NOT_USE_GB_SCRIPT #_PSX_OS_CENTOS_
-DEFINES +=DEBUG_MODE _PSX_QT_SRCFILE_GBK_
-DEFINES +=_USE_SMARTTEST_INTERFACE_STT_ _USE_SMARTTEST_INTERFACE_ENGINE_STT_ _STT_NOT_IN_TEST_SERVER_
-DEFINES +=STT_CMD_PARAS_HAS_GUIDEBOOK
-DEFINES +=_SCRIPT_USE_XVM JSON_USE_ _not_use_CTCtrlCntrConfig
-DEFINES += MMS_LITE
-DEFINES += _USE_IN_IED_QT5
+CONFIG += c++17
+DEFINES += \
+    _PSX_IDE_QT_ \
+    _QT_IN_LINUX_ \
+    OS_QT_LINUX \
+    _PSX_QT_LINUX_ \
+    USE_Custom_CDateTime \
+    _USE_IN_IED_QT5
 
 INCLUDEPATH += ../../../Module/BaseClass
 INCLUDEPATH += ../../../Module/OSInterface
 INCLUDEPATH += ../../../Module/OSInterface/QT
 INCLUDEPATH += ../../../61850/mmslite/inc
-
-#INCLUDEPATH += /usr/local/qwt-6.1.2/include
-#LIBS += -L "/usr/local/qwt-6.1.2/lib/" -lqwt
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = SttNativeMain
 OBJECTS_DIR = ./ObjectFiles
