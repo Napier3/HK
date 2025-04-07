@@ -10,12 +10,12 @@
 static QString tabTitle(ExtraTabPage page)
 {
     switch (page) {
-    case ExtraTabPage::ThreeState:  return QStringLiteral("3态");
-    case ExtraTabPage::FourState:   return QStringLiteral("4态");
-    case ExtraTabPage::FiveState:   return QStringLiteral("5态");
-    case ExtraTabPage::SixState:    return QStringLiteral("6态");
-    case ExtraTabPage::SevenState:  return QStringLiteral("7态");
-    case ExtraTabPage::EightState:  return QStringLiteral("8态");
+    case ExtraTabPage::ThreeState:  return QString::fromLocal8Bit("3态");
+    case ExtraTabPage::FourState:   return QString::fromLocal8Bit("4态");
+    case ExtraTabPage::FiveState:   return QString::fromLocal8Bit("5态");
+    case ExtraTabPage::SixState:    return QString::fromLocal8Bit("6态");
+    case ExtraTabPage::SevenState:  return QString::fromLocal8Bit("7态");
+    case ExtraTabPage::EightState:  return QString::fromLocal8Bit("8态");
     }
     return QStringLiteral("Unknown");
 }
@@ -36,6 +36,10 @@ HKMainWindow::HKMainWindow(QWidget *parent)
     , ui(new Ui::HKMainWindow)
 {
     ui->setupUi(this);
+    if (!g_pSoftKeyBoard)
+    {
+            g_pSoftKeyBoard = new QSoftKeyBoard();
+    }
     InitUI();
     InitSignalConnection();
     connect(ui->m_buttonClose, &QPushButton::clicked, this, &QMainWindow::close);
@@ -53,11 +57,62 @@ void HKMainWindow::InitUI()
     ui->m_currentToggle->setOffText("6I");
     SwitchParameters(true);
     CreateTabCornerWidget();
+    InitComboBox();
+    AttachKeyboard();
 }
 
 void HKMainWindow::InitSignalConnection()
 {
     connect(ui->m_currentToggle, &HKToggleButton::toggled, this, &HKMainWindow::SwitchParameters);
+}
+
+void HKMainWindow::InitComboBox()
+{
+    ui->m_comboTrigger->addItem(QString::fromLocal8Bit("手动"));
+    ui->m_comboTrigger->addItem(QString::fromLocal8Bit("时间"));
+    ui->m_comboTrigger->addItem(QString::fromLocal8Bit("开入量"));
+    ui->m_comboStep1->addItem(QString::fromLocal8Bit("幅值"));
+    ui->m_comboStep1->addItem(QString::fromLocal8Bit("相位"));
+    ui->m_comboStep1->addItem(QString::fromLocal8Bit("频率"));
+    ui->m_comboStep2->addItem(QString::fromLocal8Bit("幅值"));
+    ui->m_comboStep2->addItem(QString::fromLocal8Bit("相位"));
+    ui->m_comboStep2->addItem(QString::fromLocal8Bit("频率"));
+    ui->m_comboVariable1->addItem(QString::fromLocal8Bit("1UA"));
+    ui->m_comboVariable1->addItem(QString::fromLocal8Bit("1UB"));
+    ui->m_comboVariable1->addItem(QString::fromLocal8Bit("1UC"));
+    ui->m_comboVariable1->addItem(QString::fromLocal8Bit("1UA,B"));
+    ui->m_comboVariable1->addItem(QString::fromLocal8Bit("1UB,C"));
+    ui->m_comboVariable1->addItem(QString::fromLocal8Bit("1UA,C"));
+    ui->m_comboVariable1->addItem(QString::fromLocal8Bit("1UABC"));
+    ui->m_comboVariable1->addItem(QString::fromLocal8Bit("1IA"));
+    ui->m_comboVariable1->addItem(QString::fromLocal8Bit("1IB"));
+    ui->m_comboVariable1->addItem(QString::fromLocal8Bit("1IC"));
+    ui->m_comboVariable1->addItem(QString::fromLocal8Bit("1IABC"));
+    ui->m_comboVariable1->addItem(QString::fromLocal8Bit("1负序电压"));
+    ui->m_comboVariable1->addItem(QString::fromLocal8Bit("1阻抗三项"));
+    ui->m_comboVariable1->addItem(QString::fromLocal8Bit("Udc"));
+    ui->m_comboVariable2->addItem(QString::fromLocal8Bit("通道一"));
+    ui->m_comboVariable2->addItem(QString::fromLocal8Bit("通道二"));
+    ui->m_comboVariable2->addItem(QString::fromLocal8Bit("通道三"));
+    ui->m_comboVariable2->addItem(QString::fromLocal8Bit("通道四"));
+    ui->m_comboVariable3->addItem(QString::fromLocal8Bit("1UA"));
+    ui->m_comboVariable3->addItem(QString::fromLocal8Bit("1UB"));
+    ui->m_comboVariable3->addItem(QString::fromLocal8Bit("1UC"));
+    ui->m_comboVariable3->addItem(QString::fromLocal8Bit("1UA,B"));
+    ui->m_comboVariable3->addItem(QString::fromLocal8Bit("1UB,C"));
+    ui->m_comboVariable3->addItem(QString::fromLocal8Bit("1UA,C"));
+    ui->m_comboVariable3->addItem(QString::fromLocal8Bit("1UABC"));
+    ui->m_comboVariable3->addItem(QString::fromLocal8Bit("1IA"));
+    ui->m_comboVariable3->addItem(QString::fromLocal8Bit("1IB"));
+    ui->m_comboVariable3->addItem(QString::fromLocal8Bit("1IC"));
+    ui->m_comboVariable3->addItem(QString::fromLocal8Bit("1IABC"));
+    ui->m_comboVariable3->addItem(QString::fromLocal8Bit("1负序电压"));
+    ui->m_comboVariable3->addItem(QString::fromLocal8Bit("1阻抗三项"));
+    ui->m_comboVariable3->addItem(QString::fromLocal8Bit("Udc"));
+    ui->m_comboVariable4->addItem(QString::fromLocal8Bit("通道一"));
+    ui->m_comboVariable4->addItem(QString::fromLocal8Bit("通道二"));
+    ui->m_comboVariable4->addItem(QString::fromLocal8Bit("通道三"));
+    ui->m_comboVariable4->addItem(QString::fromLocal8Bit("通道四"));
 }
 
 void HKMainWindow::CreateTabCornerWidget()
@@ -150,4 +205,24 @@ void HKMainWindow::SwitchParameters(bool checked)
     ui->m_labelCurAmplitude->setHidden(checked);
     ui->m_labelCurPhase->setHidden(checked);
     ui->m_labelCurFrequency->setHidden(checked);
+}
+
+void HKMainWindow::AttachKeyboard()
+{
+    QList<QSpinBox*> spinList = this->findChildren<QSpinBox*>();
+    for (QSpinBox *spin : spinList)
+    {
+        // You already set "NoButtons" in .ui (spin->setButtonSymbols(QAbstractSpinBox::NoButtons))
+        // Make sure spin has focus policy so that the user can click it
+        spin->setFocusPolicy(Qt::StrongFocus);
+        // Ensure the internal line-edit is actually created
+        spin->setAttribute(Qt::WA_InputMethodEnabled, true);
+
+        // 1) Get the internal QLineEdit
+        if (QLineEdit *spinLineEdit = spin->findChild<QLineEdit*>())
+        {
+            // 2) Attach the soft keyboard to that line-edit
+            QSoftKeyBoard::AttachObj(spinLineEdit, Keyboard::ONLYNUMBER);
+        }
+    }
 }

@@ -86,6 +86,11 @@ background-color: #D5ECFF
        </property>
        <item>
         <widget class="QTabWidget" name="m_stateTab">
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
+         </property>
          <property name="currentIndex">
           <number>0</number>
          </property>
@@ -164,7 +169,7 @@ background-color: #D5ECFF
                  </size>
                 </property>
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="page_7">
                  <layout class="QHBoxLayout" name="horizontalLayout_9">
@@ -197,6 +202,11 @@ background-color: #D5ECFF
                       <height>30</height>
                      </size>
                     </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>15</pointsize>
+                     </font>
+                    </property>
                     <property name="text">
                      <string>幅值(V)</string>
                     </property>
@@ -219,6 +229,11 @@ background-color: #D5ECFF
                       <height>30</height>
                      </size>
                     </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>15</pointsize>
+                     </font>
+                    </property>
                     <property name="text">
                      <string>相位(°)</string>
                     </property>
@@ -240,6 +255,11 @@ background-color: #D5ECFF
                       <width>120</width>
                       <height>30</height>
                      </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>15</pointsize>
+                     </font>
                     </property>
                     <property name="text">
                      <string>频率(Hz)</string>
@@ -272,15 +292,20 @@ background-color: #D5ECFF
                    <widget class="QLabel" name="m_labelVolAmplitude">
                     <property name="minimumSize">
                      <size>
-                      <width>45</width>
+                      <width>60</width>
                       <height>30</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>50</width>
+                      <width>60</width>
                       <height>30</height>
                      </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>15</pointsize>
+                     </font>
                     </property>
                     <property name="text">
                      <string>幅值(V)</string>
@@ -291,15 +316,20 @@ background-color: #D5ECFF
                    <widget class="QLabel" name="m_labelVolPhase">
                     <property name="minimumSize">
                      <size>
-                      <width>45</width>
+                      <width>60</width>
                       <height>30</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>50</width>
+                      <width>60</width>
                       <height>30</height>
                      </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>15</pointsize>
+                     </font>
                     </property>
                     <property name="text">
                      <string>相位(°)</string>
@@ -310,15 +340,20 @@ background-color: #D5ECFF
                    <widget class="QLabel" name="m_labelVolFrequency">
                     <property name="minimumSize">
                      <size>
-                      <width>45</width>
+                      <width>60</width>
                       <height>30</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>50</width>
+                      <width>60</width>
                       <height>30</height>
                      </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>15</pointsize>
+                     </font>
                     </property>
                     <property name="text">
                      <string>频率(Hz)</string>
@@ -345,15 +380,20 @@ background-color: #D5ECFF
                    <widget class="QLabel" name="m_labelCurPhase">
                     <property name="minimumSize">
                      <size>
-                      <width>45</width>
+                      <width>60</width>
                       <height>30</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>50</width>
+                      <width>60</width>
                       <height>30</height>
                      </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>15</pointsize>
+                     </font>
                     </property>
                     <property name="text">
                      <string>相位(°)</string>
@@ -364,15 +404,20 @@ background-color: #D5ECFF
                    <widget class="QLabel" name="m_labelCurAmplitude">
                     <property name="minimumSize">
                      <size>
-                      <width>45</width>
+                      <width>60</width>
                       <height>30</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>50</width>
+                      <width>60</width>
                       <height>30</height>
                      </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>15</pointsize>
+                     </font>
                     </property>
                     <property name="text">
                      <string>幅值(I)</string>
@@ -383,15 +428,20 @@ background-color: #D5ECFF
                    <widget class="QLabel" name="m_labelCurFrequency">
                     <property name="minimumSize">
                      <size>
-                      <width>45</width>
+                      <width>60</width>
                       <height>30</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>50</width>
+                      <width>60</width>
                       <height>30</height>
                      </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>15</pointsize>
+                     </font>
                     </property>
                     <property name="text">
                      <string>频率(Hz)</string>
@@ -409,6 +459,11 @@ background-color: #D5ECFF
                   <width>16777215</width>
                   <height>30</height>
                  </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>15</pointsize>
+                 </font>
                 </property>
                 <property name="text">
                  <string>输出模式：模拟量</string>
@@ -476,6 +531,11 @@ background-color: #D5ECFF
                    <width>40</width>
                    <height>30</height>
                   </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
                  </property>
                  <property name="text">
                   <string>UX</string>
@@ -553,6 +613,11 @@ background-color: #D5ECFF
                    <height>30</height>
                   </size>
                  </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>UC</string>
                  </property>
@@ -590,6 +655,11 @@ background-color: #D5ECFF
                    <width>40</width>
                    <height>30</height>
                   </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
                  </property>
                  <property name="text">
                   <string>UA</string>
@@ -666,6 +736,11 @@ background-color: #D5ECFF
                    <width>40</width>
                    <height>30</height>
                   </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
                  </property>
                  <property name="text">
                   <string>UB</string>
@@ -800,6 +875,11 @@ background-color: #D5ECFF
                    <height>30</height>
                   </size>
                  </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>IB</string>
                  </property>
@@ -818,6 +898,11 @@ background-color: #D5ECFF
                    <width>40</width>
                    <height>30</height>
                   </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
                  </property>
                  <property name="text">
                   <string>IC</string>
@@ -856,6 +941,11 @@ background-color: #D5ECFF
                    <width>40</width>
                    <height>30</height>
                   </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
                  </property>
                  <property name="text">
                   <string>IA</string>
@@ -990,6 +1080,11 @@ background-color: #D5ECFF
                    <height>30</height>
                   </size>
                  </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>1UA</string>
                  </property>
@@ -1072,6 +1167,11 @@ background-color: #D5ECFF
                    <height>30</height>
                   </size>
                  </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>1IA</string>
                  </property>
@@ -1147,6 +1247,11 @@ background-color: #D5ECFF
                    <width>50</width>
                    <height>30</height>
                   </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
                  </property>
                  <property name="text">
                   <string>1UB</string>
@@ -1224,6 +1329,11 @@ background-color: #D5ECFF
                    <height>30</height>
                   </size>
                  </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>1IB</string>
                  </property>
@@ -1300,6 +1410,11 @@ background-color: #D5ECFF
                    <height>30</height>
                   </size>
                  </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>1UC</string>
                  </property>
@@ -1375,6 +1490,11 @@ background-color: #D5ECFF
                    <width>50</width>
                    <height>30</height>
                   </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
                  </property>
                  <property name="text">
                   <string>1IC</string>
@@ -1471,6 +1591,11 @@ background-color: #D5ECFF
                    <height>30</height>
                   </size>
                  </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>2UA</string>
                  </property>
@@ -1546,6 +1671,11 @@ background-color: #D5ECFF
                    <width>50</width>
                    <height>30</height>
                   </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
                  </property>
                  <property name="text">
                   <string>2IA</string>
@@ -1623,6 +1753,11 @@ background-color: #D5ECFF
                    <height>30</height>
                   </size>
                  </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>2UB</string>
                  </property>
@@ -1698,6 +1833,11 @@ background-color: #D5ECFF
                    <width>50</width>
                    <height>30</height>
                   </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
                  </property>
                  <property name="text">
                   <string>2IB</string>
@@ -1775,6 +1915,11 @@ background-color: #D5ECFF
                    <height>30</height>
                   </size>
                  </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>2UC</string>
                  </property>
@@ -1850,6 +1995,11 @@ background-color: #D5ECFF
                    <width>50</width>
                    <height>30</height>
                   </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
                  </property>
                  <property name="text">
                   <string>2IC</string>
@@ -1952,6 +2102,11 @@ background-color: #D5ECFF
              </item>
              <item>
               <widget class="QLabel" name="label_24">
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>直流</string>
                </property>
@@ -1984,6 +2139,11 @@ background-color: #D5ECFF
              </item>
              <item>
               <widget class="QLabel" name="label_25">
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>Udc</string>
                </property>
@@ -2010,6 +2170,11 @@ background-color: #D5ECFF
              </item>
              <item>
               <widget class="QLabel" name="label_26">
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>V</string>
                </property>
@@ -2037,6 +2202,11 @@ background-color: #D5ECFF
              </item>
              <item>
               <widget class="QLabel" name="label_42">
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>切换通道</string>
                </property>
@@ -2089,9 +2259,9 @@ background-color: #D5ECFF
        <item>
         <layout class="QGridLayout" name="gridLayout_15">
          <property name="spacing">
-          <number>0</number>
+          <number>6</number>
          </property>
-         <item row="1" column="0">
+         <item row="3" column="0">
           <widget class="QPushButton" name="pushButton_23">
            <property name="minimumSize">
             <size>
@@ -2105,55 +2275,12 @@ background-color: #D5ECFF
              <height>40</height>
             </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
-           </property>
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
-          <widget class="QPushButton" name="pushButton_21">
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2">
+         <item row="0" column="0">
           <widget class="QPushButton" name="pushButton_20">
            <property name="minimumSize">
             <size>
@@ -2167,179 +2294,12 @@ QPushButton:pressed {
              <height>40</height>
             </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
-           </property>
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
-         <item row="0" column="0">
-          <widget class="QPushButton" name="pushButton_18">
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="2">
-          <widget class="QPushButton" name="pushButton_25">
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QPushButton" name="pushButton_24">
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="2">
-          <widget class="QPushButton" name="pushButton_26">
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QPushButton" name="pushButton_19">
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
+         <item row="2" column="1">
           <widget class="QToolButton" name="toolButton_31">
            <property name="minimumSize">
             <size>
@@ -2358,75 +2318,127 @@ QPushButton:pressed {
            </property>
           </widget>
          </item>
+         <item row="2" column="2">
+          <widget class="QPushButton" name="pushButton_21">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QPushButton" name="pushButton_26">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QPushButton" name="pushButton_25">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QPushButton" name="pushButton_18">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QPushButton" name="pushButton_19">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="pushButton_24">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item>
         <layout class="QGridLayout" name="gridLayout_16">
          <property name="spacing">
-          <number>0</number>
+          <number>6</number>
          </property>
-         <item row="0" column="2">
-          <widget class="QPushButton" name="pushButton_33">
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="2">
-          <widget class="QPushButton" name="pushButton_32">
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>100</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="1">
           <widget class="QPushButton" name="pushButton_30">
            <property name="minimumSize">
@@ -2441,17 +2453,24 @@ QPushButton:pressed {
              <height>40</height>
             </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QPushButton" name="pushButton_31">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
            </property>
            <property name="text">
             <string/>
@@ -2472,23 +2491,13 @@ QPushButton:pressed {
              <height>40</height>
             </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-</string>
-           </property>
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
-         <item row="1" column="0">
-          <widget class="QPushButton" name="pushButton_28">
+         <item row="0" column="2">
+          <widget class="QPushButton" name="pushButton_32">
            <property name="minimumSize">
             <size>
              <width>100</width>
@@ -2501,25 +2510,13 @@ QPushButton:pressed {
              <height>40</height>
             </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
-           </property>
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
-         <item row="2" column="0">
-          <widget class="QPushButton" name="pushButton_31">
+         <item row="2" column="2">
+          <widget class="QPushButton" name="pushButton_33">
            <property name="minimumSize">
             <size>
              <width>100</width>
@@ -2532,24 +2529,12 @@ QPushButton:pressed {
              <height>40</height>
             </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
-           </property>
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
+         <item row="3" column="1">
           <widget class="QPushButton" name="pushButton_34">
            <property name="minimumSize">
             <size>
@@ -2563,24 +2548,12 @@ QPushButton:pressed {
              <height>40</height>
             </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
-           </property>
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
-         <item row="2" column="2">
+         <item row="3" column="2">
           <widget class="QPushButton" name="pushButton_35">
            <property name="minimumSize">
             <size>
@@ -2594,25 +2567,13 @@ QPushButton:pressed {
              <height>40</height>
             </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
-           </property>
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
-         <item row="1" column="1">
-          <widget class="QPushButton" name="pushButton_42">
+         <item row="2" column="1">
+          <widget class="QPushButton" name="pushButton_36">
            <property name="minimumSize">
             <size>
              <width>100</width>
@@ -2625,17 +2586,24 @@ QPushButton:pressed {
              <height>40</height>
             </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0089F0; /* example blue, adapt as needed */
-    border-radius: 10px;       /* adjust for desired corner radius */
-    color: yellow;
-    padding: 5px;             /* optional, for spacing around the text */
-    border: none;             /* remove default border if you like */
-}
-QPushButton:pressed {
-    background-color: #005AB3; /* darker when pressed */
-}</string>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QPushButton" name="pushButton_37">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
            </property>
            <property name="text">
             <string/>
@@ -2684,15 +2652,20 @@ background-color: #1670B7 ;
         <widget class="QPushButton" name="pushButton_4">
          <property name="minimumSize">
           <size>
-           <width>80</width>
+           <width>90</width>
            <height>40</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>80</width>
+           <width>90</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton {
@@ -2723,6 +2696,11 @@ QPushButton:pressed {
            <width>80</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton {
@@ -2755,6 +2733,11 @@ QPushButton:pressed {
            <height>40</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton {
     background-color: #0089F0; /* example blue, adapt as needed */
@@ -2785,6 +2768,11 @@ QPushButton:pressed {
            <width>80</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton {
@@ -3281,6 +3269,11 @@ background-color: #D5ECFF
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <widget class="QTabWidget" name="tabWidget_2">
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
+         </property>
          <property name="currentIndex">
           <number>0</number>
          </property>
@@ -3303,7 +3296,7 @@ background-color: #D5ECFF
                 </size>
                </property>
                <property name="currentIndex">
-                <number>1</number>
+                <number>2</number>
                </property>
                <widget class="QWidget" name="page_11">
                 <layout class="QHBoxLayout" name="horizontalLayout_14">
@@ -3351,15 +3344,20 @@ background-color: #D5ECFF
                   <widget class="QLabel" name="label_54">
                    <property name="minimumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
                    </property>
                    <property name="text">
                     <string>开入1</string>
@@ -3395,15 +3393,20 @@ background-color: #D5ECFF
                   <widget class="QLabel" name="label_55">
                    <property name="minimumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
                    </property>
                    <property name="text">
                     <string>开入2</string>
@@ -3439,15 +3442,20 @@ background-color: #D5ECFF
                   <widget class="QLabel" name="label_56">
                    <property name="minimumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
                    </property>
                    <property name="text">
                     <string>开入3</string>
@@ -3483,15 +3491,20 @@ background-color: #D5ECFF
                   <widget class="QLabel" name="label_57">
                    <property name="minimumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
                    </property>
                    <property name="text">
                     <string>开入4</string>
@@ -3556,6 +3569,11 @@ background-color: #D5ECFF
                      <height>30</height>
                     </size>
                    </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>开入5</string>
                    </property>
@@ -3599,6 +3617,11 @@ background-color: #D5ECFF
                      <width>50</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
                    </property>
                    <property name="text">
                     <string>开入6</string>
@@ -3644,6 +3667,11 @@ background-color: #D5ECFF
                      <height>30</height>
                     </size>
                    </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>开入7</string>
                    </property>
@@ -3688,8 +3716,130 @@ background-color: #D5ECFF
                      <height>30</height>
                     </size>
                    </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>开入8</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="page_22">
+                <layout class="QHBoxLayout" name="horizontalLayout_26">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_86">
+                   <property name="minimumSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QCheckBox::indicator {
+    width: 30px;
+    height: 30px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_249">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>开入1</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_85">
+                   <property name="minimumSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QCheckBox::indicator {
+    width: 30px;
+    height: 30px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_248">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>开入2</string>
                    </property>
                   </widget>
                  </item>
@@ -3698,9 +3848,12 @@ background-color: #D5ECFF
               </widget>
              </item>
              <item>
-              <widget class="QToolButton" name="toolButton_43">
+              <widget class="QToolButton" name="m_switchInput2">
                <property name="text">
                 <string>...</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
@@ -3720,7 +3873,7 @@ background-color: #D5ECFF
                 </size>
                </property>
                <property name="currentIndex">
-                <number>1</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="page_9">
                 <property name="maximumSize">
@@ -3774,15 +3927,20 @@ background-color: #D5ECFF
                   <widget class="QLabel" name="label_50">
                    <property name="minimumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
                    </property>
                    <property name="text">
                     <string>开入A</string>
@@ -3818,15 +3976,20 @@ background-color: #D5ECFF
                   <widget class="QLabel" name="label_51">
                    <property name="minimumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
                    </property>
                    <property name="text">
                     <string>开入B</string>
@@ -3862,15 +4025,20 @@ background-color: #D5ECFF
                   <widget class="QLabel" name="label_52">
                    <property name="minimumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
                    </property>
                    <property name="text">
                     <string>开入C</string>
@@ -3906,15 +4074,20 @@ background-color: #D5ECFF
                   <widget class="QLabel" name="label_53">
                    <property name="minimumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>30</width>
+                     <width>50</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
                    </property>
                    <property name="text">
                     <string>开入D</string>
@@ -3985,6 +4158,11 @@ background-color: #D5ECFF
                      <height>30</height>
                     </size>
                    </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>开入E</string>
                    </property>
@@ -4028,6 +4206,11 @@ background-color: #D5ECFF
                      <width>50</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
                    </property>
                    <property name="text">
                     <string>开入F</string>
@@ -4073,6 +4256,11 @@ background-color: #D5ECFF
                      <height>30</height>
                     </size>
                    </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>开入G</string>
                    </property>
@@ -4117,8 +4305,130 @@ background-color: #D5ECFF
                      <height>30</height>
                     </size>
                    </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>开入H</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="page_21">
+                <layout class="QHBoxLayout" name="horizontalLayout_25">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_87">
+                   <property name="minimumSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QCheckBox::indicator {
+    width: 30px;
+    height: 30px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_251">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>开入A</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_88">
+                   <property name="minimumSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QCheckBox::indicator {
+    width: 30px;
+    height: 30px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_250">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>开入B</string>
                    </property>
                   </widget>
                  </item>
@@ -4127,9 +4437,12 @@ background-color: #D5ECFF
               </widget>
              </item>
              <item>
-              <widget class="QToolButton" name="toolButton_44">
+              <widget class="QToolButton" name="m_switchInput1">
                <property name="text">
                 <string>...</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
@@ -4145,7 +4458,7 @@ background-color: #D5ECFF
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QComboBox" name="comboBox">
+              <widget class="QComboBox" name="m_comboTrigger">
                <property name="minimumSize">
                 <size>
                  <width>80</width>
@@ -4174,6 +4487,11 @@ background-color: #D5ECFF
                  <height>30</height>
                 </size>
                </property>
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>触发条件</string>
                </property>
@@ -4192,6 +4510,11 @@ background-color: #D5ECFF
                  <width>80</width>
                  <height>30</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
                </property>
                <property name="text">
                 <string>输出时间</string>
@@ -4251,6 +4574,11 @@ background-color: #D5ECFF
                      <height>30</height>
                     </size>
                    </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>变量1</string>
                    </property>
@@ -4273,6 +4601,11 @@ background-color: #D5ECFF
                      <height>30</height>
                     </size>
                    </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>步长</string>
                    </property>
@@ -4282,7 +4615,7 @@ background-color: #D5ECFF
                   </widget>
                  </item>
                  <item row="0" column="4">
-                  <widget class="QComboBox" name="comboBox_4">
+                  <widget class="QComboBox" name="m_comboVariable3">
                    <property name="minimumSize">
                     <size>
                      <width>80</width>
@@ -4298,7 +4631,7 @@ background-color: #D5ECFF
                   </widget>
                  </item>
                  <item row="0" column="5">
-                  <widget class="QComboBox" name="comboBox_5">
+                  <widget class="QComboBox" name="m_comboVariable4">
                    <property name="minimumSize">
                     <size>
                      <width>80</width>
@@ -4327,6 +4660,11 @@ background-color: #D5ECFF
                      <height>30</height>
                     </size>
                    </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>步长</string>
                    </property>
@@ -4336,7 +4674,7 @@ background-color: #D5ECFF
                   </widget>
                  </item>
                  <item row="1" column="5">
-                  <widget class="QComboBox" name="comboBox_7">
+                  <widget class="QComboBox" name="m_comboStep2">
                    <property name="minimumSize">
                     <size>
                      <width>80</width>
@@ -4352,7 +4690,7 @@ background-color: #D5ECFF
                   </widget>
                  </item>
                  <item row="0" column="2">
-                  <widget class="QComboBox" name="comboBox_3">
+                  <widget class="QComboBox" name="m_comboVariable2">
                    <property name="minimumSize">
                     <size>
                      <width>80</width>
@@ -4368,7 +4706,7 @@ background-color: #D5ECFF
                   </widget>
                  </item>
                  <item row="1" column="2">
-                  <widget class="QComboBox" name="comboBox_6">
+                  <widget class="QComboBox" name="m_comboStep1">
                    <property name="minimumSize">
                     <size>
                      <width>80</width>
@@ -4397,6 +4735,11 @@ background-color: #D5ECFF
                      <height>30</height>
                     </size>
                    </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>变量2</string>
                    </property>
@@ -4406,7 +4749,7 @@ background-color: #D5ECFF
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QComboBox" name="comboBox_2">
+                  <widget class="QComboBox" name="m_comboVariable1">
                    <property name="minimumSize">
                     <size>
                      <width>80</width>
@@ -4495,7 +4838,7 @@ background-color: #D5ECFF
                    </property>
                    <property name="sizeHint" stdset="0">
                     <size>
-                     <width>40</width>
+                     <width>90</width>
                      <height>20</height>
                     </size>
                    </property>
@@ -4562,7 +4905,7 @@ background-color: #D5ECFF
                    </property>
                    <property name="sizeHint" stdset="0">
                     <size>
-                     <width>40</width>
+                     <width>90</width>
                      <height>20</height>
                     </size>
                    </property>
@@ -4614,15 +4957,20 @@ background-color: #D5ECFF
                   <widget class="QLabel" name="label_66">
                    <property name="minimumSize">
                     <size>
-                     <width>80</width>
+                     <width>100</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>80</width>
+                     <width>100</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
                    </property>
                    <property name="text">
                     <string>故障前时间</string>
@@ -4636,15 +4984,20 @@ background-color: #D5ECFF
                   <widget class="QLabel" name="label_63">
                    <property name="minimumSize">
                     <size>
-                     <width>80</width>
+                     <width>100</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>80</width>
+                     <width>100</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
                    </property>
                    <property name="text">
                     <string>变化始值</string>
@@ -4658,15 +5011,20 @@ background-color: #D5ECFF
                   <widget class="QLabel" name="label_64">
                    <property name="minimumSize">
                     <size>
-                     <width>80</width>
+                     <width>100</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>80</width>
+                     <width>100</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
                    </property>
                    <property name="text">
                     <string>变化时间</string>
@@ -4680,15 +5038,20 @@ background-color: #D5ECFF
                   <widget class="QLabel" name="label_65">
                    <property name="minimumSize">
                     <size>
-                     <width>80</width>
+                     <width>100</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>80</width>
+                     <width>100</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
                    </property>
                    <property name="text">
                     <string>变化终值</string>
@@ -4702,15 +5065,20 @@ background-color: #D5ECFF
                   <widget class="QLabel" name="label_67">
                    <property name="minimumSize">
                     <size>
-                     <width>80</width>
+                     <width>100</width>
                      <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>80</width>
+                     <width>100</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
                    </property>
                    <property name="text">
                     <string>间断时间</string>
@@ -4823,6 +5191,11 @@ background-color: #D5ECFF
                  </item>
                  <item row="4" column="0">
                   <widget class="QLabel" name="label_73">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>R，X</string>
                    </property>
@@ -4837,6 +5210,11 @@ background-color: #D5ECFF
                  </item>
                  <item row="3" column="0">
                   <widget class="QLabel" name="label_72">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>Z，Phi</string>
                    </property>
@@ -4851,6 +5229,11 @@ background-color: #D5ECFF
                  </item>
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_68">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>短路计算</string>
                    </property>
@@ -4865,6 +5248,11 @@ background-color: #D5ECFF
                  </item>
                  <item row="2" column="3">
                   <widget class="QLabel" name="label_71">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>幅值</string>
                    </property>
@@ -4872,6 +5260,11 @@ background-color: #D5ECFF
                  </item>
                  <item row="4" column="3">
                   <widget class="QLabel" name="label_75">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>短路电压</string>
                    </property>
@@ -4892,6 +5285,11 @@ background-color: #D5ECFF
                  </item>
                  <item row="2" column="0">
                   <widget class="QRadioButton" name="radioButton">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>Z，Phi</string>
                    </property>
@@ -4899,6 +5297,11 @@ background-color: #D5ECFF
                  </item>
                  <item row="1" column="0">
                   <widget class="QLabel" name="label_69">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>故障类型</string>
                    </property>
@@ -4906,6 +5309,11 @@ background-color: #D5ECFF
                  </item>
                  <item row="3" column="3">
                   <widget class="QLabel" name="label_74">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>相角</string>
                    </property>
@@ -4920,6 +5328,11 @@ background-color: #D5ECFF
                  </item>
                  <item row="1" column="3">
                   <widget class="QLabel" name="label_70">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>零序补偿</string>
                    </property>
@@ -4927,6 +5340,11 @@ background-color: #D5ECFF
                  </item>
                  <item row="2" column="1">
                   <widget class="QRadioButton" name="radioButton_2">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>R，X</string>
                    </property>
@@ -4934,6 +5352,11 @@ background-color: #D5ECFF
                  </item>
                  <item row="5" column="3">
                   <widget class="QLabel" name="label_76">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>短路电流</string>
                    </property>
@@ -4941,6 +5364,11 @@ background-color: #D5ECFF
                  </item>
                  <item row="6" column="3">
                   <widget class="QPushButton" name="pushButton_8">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="styleSheet">
                     <string notr="true">QPushButton {
     background-color:  #0089F0;; /* example blue, adapt as needed */
@@ -4959,6 +5387,11 @@ QPushButton:pressed {
                  </item>
                  <item row="6" column="4">
                   <widget class="QPushButton" name="pushButton_9">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="styleSheet">
                     <string notr="true">QPushButton {
     background-color:  #0089F0;; /* example blue, adapt as needed */
@@ -4977,6 +5410,11 @@ QPushButton:pressed {
                  </item>
                  <item row="5" column="0">
                   <widget class="QLabel" name="label_77">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>计算模型</string>
                    </property>
@@ -4987,6 +5425,11 @@ QPushButton:pressed {
                  </item>
                  <item row="6" column="0">
                   <widget class="QLabel" name="label_78">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>阻抗倍数</string>
                    </property>

@@ -1,8 +1,5 @@
+#pragma once
 #include "Keyboard/Keyboard.h"
-#ifdef QT_USE_WEBKIT
-#include <QWebView>
-#include <QWebPage>
-#endif
 
 #define QModePair QPair<QWidget*, Keyboard::tagMode>
 
@@ -28,7 +25,6 @@
 #define  STT_KEYBOARD_PERCENTAGE_BTN8								_T("Percentage_btn8")
 #define  STT_KEYBOARD_PERCENTAGE_BTN9								_T("Percentage_btn9")
 #define  STT_KEYBOARD_PERCENTAGE_BTNDOT							    _T("Percentage_btndot")
-//#define  STT_KEYBOARD_PERCENTAGE_BTNMINUS						    _T("Percentage_btnminus")
 
 class QSoftKeyBoard : public QObject
 {
@@ -40,11 +36,7 @@ public:
 private:
 	QWidget* m_pMainWidget;
 	Keyboard* m_pKeyBoard;
-#ifdef QT_USE_WEBKIT
-        QWebFrame* m_pCurWebFrame;
-#endif
 	QTimer m_oTimer;
-
 	QVector<QModePair> m_vecModeStack;
 
 	void Release();
@@ -55,19 +47,10 @@ private:
 	void SetDefaultFunc();
 	void SetLanguageFunc();
 	void Attach(QWidget* pWidget, Keyboard::tagMode oDefault = Keyboard::NUMBER, bool bStack = true);
-#ifdef QT_USE_WEBKIT
-    void AttachWeb(QWebView* pWebView);
-    void AttachWeb(QWebPage* pWebPage);
-#endif
 	void ReAttach();
-	void SetUserFunc(bool bUserFun, const QString& strFun1 = "", 
-		const QString& strFun2 = "", const QString& strFun3 = "", const QString& strFun4 = "");
+	void SetUserFunc(bool bUserFun, const QString& strFun1 = "", const QString& strFun2 = "", const QString& strFun3 = "", const QString& strFun4 = "");
 	void SetMinusBtnText(QString strText);
-
-	//2023/8/21 wjs添加判断键盘类型给keyboard传值的函数
 	void SetSoftKeyBoardType(long nType);
-
-	
 
 protected:
 	bool eventFilter(QObject *watched, QEvent *event);
@@ -95,10 +78,6 @@ public slots:
 public:
 	//对外的绑定函数
 	static void AttachObj(QWidget* pWidget,Keyboard::tagMode oDefault = Keyboard::ONLYNUMBER);
-#ifdef QT_USE_WEBKIT
-    static void AttachObj(QWebView* pWebView);
-    static void AttachObj(QWebPage* pWebPage);
-#endif
 	static void ReAttachObj();
 	static void SetLanguageKeyboard();
 	static void SetDefaultKeyboard();

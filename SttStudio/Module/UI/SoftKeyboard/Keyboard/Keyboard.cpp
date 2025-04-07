@@ -120,9 +120,6 @@ void Keyboard::InitUI(tagMode oMode)
 	//Initialize WEB component judgment
 	m_bIsWebCtrl = false;
 	m_bSelectAll = false;
-#ifdef QT_USE_WEBKIT
-    m_pCurWebFrame = nullptr;
-#endif
 
 	//Default keyboard auto placement
 	m_bAuto = true;
@@ -151,21 +148,6 @@ void Keyboard::InitUI(tagMode oMode)
 	ui->widgetMain->setVisible(true);
 	ui->widgetTop->layout()->setContentsMargins(0, 4, 0, 0);
 	SetDefaultStyle();
-
-#ifdef _PSX_QT_WINDOWS_
-	QString strImg = _P_GetResourcePath();
-	QPixmap pixmap;
-	pixmap.load(strImg + "keyboard_upper.png");
-	m_icoUpper = QIcon(pixmap);
-	pixmap.load(strImg + "keyboard_chinese.png");
-	m_icoChinese = QIcon(pixmap);
-	pixmap.load(strImg + "keyboard_english.png");
-	m_icoEnglish = QIcon(pixmap);
-	pixmap.load(strImg + "keyboard_number.png");
-	m_icoNumber = QIcon(pixmap);
-	pixmap.load(strImg + "keyboard_symbol.png");
-	m_icoSymbol = QIcon(pixmap);
-#else
    QPixmap pixmap;
    pixmap.load(":/ctrls/images/keyboard_upper.png");
    m_icoUpper = QIcon(pixmap);
@@ -177,16 +159,12 @@ void Keyboard::InitUI(tagMode oMode)
    m_icoNumber = QIcon(pixmap);
    pixmap.load(":/ctrls/images/keyboard_symbol.png");
    m_icoSymbol = QIcon(pixmap);
-#endif
 
 	m_bPreSmooth = false;
     m_pPreSmoothObj = nullptr;
 
 	SetInputType(oMode);
-	/*
-	Initialize the input method//english -- English mode//chinese -- Chinese mode//char -- symbol mode//number -- number mode
-*/
-	
+
 	//Load Google Chinese Character Library
 	QString strBinPath = _P_GetBinPath();
 #ifndef _NOT_USE_GOOGLE_PINYIN_
@@ -958,18 +936,8 @@ void Keyboard::HidePanel()
 		{
 			emit sig_clickEnter();
 		}
-		if(m_bIsWebCtrl)
-		{
-#ifdef QT_USE_WEBKIT
-            QString strScript = "document.activeElement.blur()";
-            m_pCurWebFrame->evaluateJavaScript(strScript);
-#endif
-		}
-		else
-		{
-			KillFocusBorder();
-			UpdateFocus();
-		}
+        KillFocusBorder();
+        UpdateFocus();
 		setVisible(false);
 		SetDefaultFunc();
 //		qDebug() << "KeyboardHide";
@@ -1085,76 +1053,6 @@ void Keyboard::ShowWebPanel(const QString& strValue)
 	}
 }
 
-#ifdef QT_USE_WEBKIT
-QVariant Keyboard::GetAttrVariant(QWebFrame* pFrame, const QString& strAttr)
-{
-    QString strScript = QString("document.activeElement.attributes.%1.value").arg(strAttr);
-    QVariant var = pFrame->evaluateJavaScript(strScript);
-    return var;
-}
-
-void Keyboard::GetAttrVariantValue(QWebFrame* pFrame, const QString& strAttr, long& nValue, bool& bEnable)
-{
-    QVariant var = GetAttrVariant(pFrame, strAttr);
-    if(var.type() != QVariant::Invalid)
-    {
-        bEnable = true;
-        nValue = var.toInt();
-    }
-    else
-    {
-        bEnable = false;
-        nValue = 0;
-    }
-}
-
-void Keyboard::GetAttrVariantValue(QWebFrame* pFrame, const QString& strAttr, float& fValue, bool& bEnable)
-{
-    QVariant var = GetAttrVariant(pFrame, strAttr);
-    if(var.type() != QVariant::Invalid)
-    {
-        bEnable = true;
-        fValue = var.toFloat();
-    }
-    else
-    {
-        bEnable = false;
-        fValue = 0;
-    }
-}
-
-void Keyboard::GetAttrVariantValue(QWebFrame* pFrame, const QString& strAttr, QString& strValue, bool& bEnable)
-{
-    QVariant var = GetAttrVariant(pFrame, strAttr);
-
-    if(var.type() != QVariant::Invalid)
-    {
-        bEnable = true;
-        strValue = var.toString();
-    }
-    else
-    {
-        bEnable = false;
-        strValue = "";
-    }
-}
-
-void Keyboard::SetWebAttribute(QWebFrame* pFrame, const QString& strID)
-{
-    m_pCurWebFrame = pFrame;
-
-    if(m_strCurWebCtrlID.length() && m_strCurWebCtrlID != strID)
-    {
-        CheckWebAttribute();
-    }
-
-    m_strCurWebCtrlID = strID;
-    GetAttrVariantValue(pFrame, "max", m_unAttri.m_fMax, m_unEnAttri.m_bMax);
-    GetAttrVariantValue(pFrame, "min", m_unAttri.m_fMin, m_unEnAttri.m_bMin);
-    GetAttrVariantValue(pFrame, "size", m_unAttri.m_nSize, m_unEnAttri.m_bSize);
-}
-#endif
-
 void Keyboard::btnClicked_Web()
 {
 
@@ -1177,94 +1075,6 @@ bool Keyboard::IsSameWebCtrlID(const QString &strCtrlID)
 
 void Keyboard::CheckWebAttribute()
 {
-#ifdef QT_USE_WEBKIT
-    if(!m_pCurWebFrame)
-    {
-        return;
-    }
-
-    QString strScript = QString("document.getElementById(\"%1\").value").arg(m_strCurWebCtrlID);
-    QVariant var = m_pCurWebFrame->evaluateJavaScript(strScript);
-    QString strValue = var.toString();
-
-    strScript = strScript + "= '%1'";
-
-    QVariant varCur;
-    if(m_unEnAttri.m_bMax)
-    {
-        float fValue = var.toFloat();
-        if(fValue > m_unAttri.m_fMax)
-        {
-            varCur = m_pCurWebFrame->evaluateJavaScript(strScript.arg(m_unAttri.m_fMax));
-        }
-    }
-
-    if(m_unEnAttri.m_bMin)
-    {
-        float fValue = var.toFloat();
-        if(fValue < m_unAttri.m_fMin)
-        {
-            varCur = m_pCurWebFrame->evaluateJavaScript(strScript.arg(m_unAttri.m_fMin));
-        }
-    }
-
-    if(m_unEnAttri.m_bSize)
-    {
-        if(varCur.type() == QVariant::String)
-        {
-            strValue = varCur.toString();
-        }
-
-        if(m_unAttri.m_nSize == 0)
-        {
-            //存在size属性但值为0
-            long nIndex = strValue.indexOf(".");
-            if(nIndex != -1)
-            {
-                strValue = strValue.left(strValue.indexOf("."));
-                m_pCurWebFrame->evaluateJavaScript(strScript.arg(strValue));
-            }
-        }
-        else
-        {
-            long nIndex = strValue.indexOf(".");
-            if(nIndex == -1)
-            {
-                strValue = strValue + ".";
-                for (int i = 0; i < m_unAttri.m_nSize; i++)
-                {
-                    strValue += "0";
-                }
-                m_pCurWebFrame->evaluateJavaScript(strScript.arg(strValue));
-                return;
-            }
-            else if(nIndex == 0)
-            {
-                //小数点之前没有数值,补0
-                strValue = "0" + strValue;
-            }
-
-            long nLength = strValue.length() - 1;
-            long nOffset = nLength - m_unAttri.m_nSize - nIndex;
-
-            if(nOffset > 0)
-            {
-                strValue = strValue.left(strValue.length() - nOffset);
-                m_pCurWebFrame->evaluateJavaScript(strScript.arg(strValue));
-            }
-            else if(nOffset < 0)
-            {
-                for (int i = 0; i < qAbs(nOffset); i++)
-                {
-                    strValue = strValue + "0";
-                }
-                m_pCurWebFrame->evaluateJavaScript(strScript.arg(strValue));
-            }
-        }
-    }
-
-    m_pCurWebFrame = nullptr;
-#endif
 	m_strCurWebCtrlID = "";
 }
 

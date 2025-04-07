@@ -1,14 +1,7 @@
-﻿#ifndef KEYBOARD_H
-#define KEYBOARD_H
+﻿#pragma once
 
 #include <QtGui>
-#if (QT_VERSION > QT_VERSION_CHECK(5,0,0))
 #include <QtWidgets>
-#endif
-
-#ifdef QT_USE_WEBKIT
-#include <QWebFrame>
-#endif
 #ifndef _NOT_USE_GOOGLE_PINYIN_
 #include "googlepinyin.h"
 #endif
@@ -51,7 +44,6 @@ public:
 	CString m_strPercentageBtn8;
 	CString m_strPercentageBtn9;
 	CString m_strPercentageBtnDot;
-//	CString m_strPercentageBtnMinus;
 
 	float*	m_pfVNom;			//额定线电压正常100V
 	float*	m_pfINom;            //额定电流正常1A
@@ -73,7 +65,7 @@ public:
 		SYMBOL,
 		CHINESE,
 		ONLYNUMBER,
-		PERCENTAGE //2023/8/16 wjs 加入百分比键盘
+        PERCENTAGE
 	};
 
 	QString m_strOriginalText;//刚弹出键盘时的原始字符内容
@@ -104,15 +96,6 @@ private:
 
 	bool m_bPreSmooth;				//界面准备滑动,取消焦点
 	QObject* m_pPreSmoothObj;		//滑动前最后的焦点obj
-
-// 	union unCurrentCtrl
-// 	{
-// 		QLineEdit *m_pCurrentLineEdit;	
-// 		QTextEdit *m_pCurrentTextEdit;	
-// 		QPlainTextEdit *m_pCurrentPlain;
-// 		QTextBrowser *m_pCurrentBrowser;
-// 	};
-// 	unCurrentCtrl* m_pCurrentCtrl;
 
 	bool m_bIsDialog;				//对象窗口是否是dialog
 	Qt::WindowFlags m_flagPre;
@@ -196,11 +179,8 @@ private:
 	void DealBtnEnter(const QString& strText);
 	void DealBtnDefault(QString strText);
 
-	//2023/8/16 wjs 添加Func1的处理函数
 	void DealBtnFunEx_Persent();//切换到扩展键盘-百分比
-	//2023/8/16 wjs 将点击的百分比*额定的电压/电流，传给界面
 	QString SetPercentTextValue(QString strText);
-	//2023/8/16 wjs 获取键盘的类型
 	long m_nCurrVolKeyBoardType;//电压电流键盘类别
 //	QString m_strKeyBoardType;
 public:
@@ -255,9 +235,7 @@ private:
 		float m_fMin;
 		long m_nSize;
 	}m_unAttri;
-#ifdef QT_USE_WEBKIT
-        QWebFrame* m_pCurWebFrame;
-#endif
+
 	QString m_strCurWebCtrlID;
 	bool m_bIsWebCtrl;
 	bool m_bSelectAll;
@@ -268,19 +246,11 @@ signals:
 private:
 	void DeleteValue_Web();
 	void InsertValue_Web(const QString &v);
-#ifdef QT_USE_WEBKIT
-        QVariant GetAttrVariant(QWebFrame* pFrame, const QString& strAttr);
-    void GetAttrVariantValue(QWebFrame* pFrame, const QString& strAttr, long& nValue, bool& bEnable);
-    void GetAttrVariantValue(QWebFrame* pFrame, const QString& strAttr, float& fValue, bool& bEnable);
-    void GetAttrVariantValue(QWebFrame* pFrame, const QString& strAttr, QString& strValue, bool& bEnable);
-#endif
+
 public:
 	bool GetSelectAll();
 	void btnClicked_Web();
 	void ShowWebPanel(const QString& strValue);
-#ifdef QT_USE_WEBKIT
-        void SetWebAttribute(QWebFrame* pFrame, const QString& strID);
-#endif
     void CheckWebAttribute();
 	bool IsSameWebCtrlID(const QString &strCtrlID);
 //*******************************************
@@ -293,5 +263,3 @@ protected:
 };
 
 extern Stt_KeyboardBtnDescs g_oKeyBoardBtnDescs;
-
-#endif // KEYBOARD_H

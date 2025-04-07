@@ -4,6 +4,8 @@
 #include <QPushButton>
 #include <QList>
 
+#include "../../UI/SoftKeyboard/SoftKeyBoard.h"
+
 namespace Ui {
 class HKMainWindow;
 }
@@ -39,8 +41,10 @@ public:
 
 private slots:
     void InsertOneTab();
+    void InitComboBox();
     void RemoveOneTab();
     void SwitchParameters(bool checked);
+    void AttachKeyboard();
 
 private:
     Ui::HKMainWindow *ui;
