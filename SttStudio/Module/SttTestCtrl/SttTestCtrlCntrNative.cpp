@@ -1539,11 +1539,13 @@ BOOL CSttTestCtrlCntrNative::IsHasTestTask()
 
 BOOL CSttTestCtrlCntrNative::StartTest(CDataGroup *pCurrentUIParas)
 {
+    qDebug()<< "!!!!!!!!!!!!!!!!!!!!!! 1" ;
 	if (! m_oSttAtsClient.ConnectAtsTestServer())
 	{
+        qDebug()<< "!!!!!!!!!!!!!!!!!!!!!! 2" ;
 		return FALSE;
 	}
-
+qDebug()<< "!!!!!!!!!!!!!!!!!!!!!! 3" ;
 	CSttMacroTestUI_TestMacroUI *pTestMacroUI = g_pTheSttTestApp->m_pTestMacroUI;
 	CString strDvmFile,strPpXmlFile;
 	strDvmFile = _T("");
@@ -1603,9 +1605,10 @@ BOOL CSttTestCtrlCntrNative::StartTest(CDataGroup *pCurrentUIParas)
 			return Stt_Is_ExecStatus_Success(nRet);
 		}
 	}
-	
+    qDebug()<< "!!!!!!!!!!!!!!!!!!!!!! 4" ;
 	//增加判断执行结果逻辑 zhouhj 2024.3.25
     long nRet = m_oSttAtsClient.Ats_StartTest(nullptr, nullptr, nullptr, nullptr,TRUE,nullptr,strDvmFile,strPpXmlFile, nTestMode);
+    qDebug()<< "!!!!!!!!!!!!!!!!!!!!!! 5" ;
 	return Stt_Is_ExecStatus_Success(nRet);
 }
 

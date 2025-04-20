@@ -243,6 +243,7 @@ BOOL CSttTestAppConfigTool::Local_ConnectServer(CSttTestAppCfg *pSttTestAppCfg, 
 	long nExecStatus = m_pClientEngine->System_Login(TRUE, &oRetData);
 	if (nExecStatus != STT_CMD_ExecStatus_SUCCESS)
 	{
+        qDebug()<< "login failed with code %d" << nExecStatus;
 		bRet = FALSE;
 		CLogPrint::LogFormatString(XLOGLEVEL_INFOR,_T("LoginÊ§°Ü"));
 	}

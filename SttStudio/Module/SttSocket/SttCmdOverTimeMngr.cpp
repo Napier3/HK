@@ -52,7 +52,7 @@ void stt_cmd_info::OnSendCmdStatusChanged(long nExecState,CSttSysState &oSysStat
 	pSysState->AppendEx(oSysState);
 	oSysState.RemoveAll();
 
-/*
+
 	if(nExecState == STT_CMD_ExecStatus_ACK)
 	{
         CLogPrint::LogFormatString(XLOGLEVEL_INFOR,_T("%s Cmd :  Ack"),pszCmdID);
@@ -65,7 +65,7 @@ void stt_cmd_info::OnSendCmdStatusChanged(long nExecState,CSttSysState &oSysStat
 	{
         CLogPrint::LogFormatString(XLOGLEVEL_INFOR,_T("%s Cmd :  Success"),pszCmdID);
 	}
-*/
+
 
 	if (nMode == STT_CMD_Send_Async)
 	{//只有异步发送命令，直接删除队列

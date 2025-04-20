@@ -1,16 +1,17 @@
-#ifndef CSTTCLIENTSOCKET_H
-#define CSTTCLIENTSOCKET_H
+#pragma once
 
 #include "../SttClientSocketBase.h"
 #include <QTcpSocket>
 
 class CSttClientSocket : public QObject, public CSttClientSocketBase
 {
+    Q_OBJECT
 public:
 	CSttClientSocket();
 	virtual ~CSttClientSocket();
 
     QTcpSocket *m_pSocket;
+    bool m_bConnectSucc;
 
 public:
         virtual BOOL ConnectServer(const char *pszIP, int nPort);
@@ -28,4 +29,3 @@ public slots:
 
 };
 
-#endif

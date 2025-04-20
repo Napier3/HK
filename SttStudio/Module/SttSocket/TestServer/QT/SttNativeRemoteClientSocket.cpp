@@ -2,6 +2,7 @@
 
 #include "SttNativeRemoteClientSocket.h"
 #include "../../../Engine/SttTestEngineBase.h"
+#include "../../../Engine/SttClientTestEngine.h"
 #include "QHostAddress"
 
 #ifdef _DEBUG
@@ -25,14 +26,14 @@ CSttNativeRemoteClientSocket::~CSttNativeRemoteClientSocket()
 
 void CSttNativeRemoteClientSocket::Connected_Qt()
 {
-    //sun g_pSttTestEngine->SetRefSocket(this);
+    g_pSttTestEngine->SetRefSocket(this);
 	connect(m_pSocket,SIGNAL(disconnected()),this,SLOT(CloseSocket_Qt()));
 	connect(m_pSocket,SIGNAL(readyRead()),this,SLOT(ReceiveBuffer_Qt()));
 }
 
 void CSttNativeRemoteClientSocket::CloseSocket_Qt()
 {
-    //sun g_pSttTestEngine->CloseSocket(this);
+    g_pSttTestEngine->CloseSocket(this);
 }
 
 void CSttNativeRemoteClientSocket::ReceiveBuffer_Qt()

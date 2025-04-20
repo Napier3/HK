@@ -34,6 +34,22 @@ OBJECTS_DIR = ./ObjectFiles
 DESTDIR = "/home/uisrc/HK/Stt/Bin"
 
 
+################################
+####---for gui debug---#####
+QT_DECLARATIVE_DEBUG
+DEFINES += _Develop_Debug_
+TEMPLATE =app
+unix{
+#target.path = /home/root/hk330_app_xu/Stt/Bin # path on device
+#target.path = /home/root/hk330_app/Stt/Bin # path on device    ok
+target.path = /home/root/Bin # path on device                     ok
+
+    INSTALLS += target
+}
+QMAKE_CFLAGS += -O2 -mcpu=cortex-a9
+################################
+
+
 SOURCES += main.cpp\
     ../../Module/SttCmdToolMngr.cpp \
     ../../Module/SttTestSysGlobalPara.cpp \
@@ -110,7 +126,8 @@ SOURCES += main.cpp\
     ../../Module/SttSocket/SttSocketDataBase_File.cpp \
     ../../Module/SttSocket/SttCmdOverTimeMngr.cpp \
     ../../Module/SttSocket/TestTerminal/SttClientSocketBase.cpp \
-    ../../Module/SttSocket/TestTerminal/QT/SttClientSocket.cpp \
+    #../../Module/SttSocket/TestTerminal/QT/SttClientSocket.cpp \
+    ../../Module/SttSocket/TestTerminal/VC/SttClientSocket.cpp \
     ../../Module/SttSocket/TestServer/SttNativeRemoteClientSocketBase.cpp \
     ../../Module/SttSocket/TestServer/SttServerClientSocketBase.cpp \
     ../../Module/SttSocket/TestServer/SttTestServerSocketBase.cpp \
@@ -1298,7 +1315,8 @@ HEADERS  += \
     ../../Module/SttSocket/SttSocketDataBase_File.h \
     ../../Module/SttSocket/SttCmdOverTimeMngr.h \
     ../../Module/SttSocket/TestTerminal/SttClientSocketBase.h \
-    ../../Module/SttSocket/TestTerminal/QT/SttClientSocket.h \
+    #../../Module/SttSocket/TestTerminal/QT/SttClientSocket.h \
+    ../../Module/SttSocket/TestTerminal/VC/SttClientSocket.h \
     ../../Module/SttSocket/TestServer/SttNativeRemoteClientSocketBase.h \
     ../../Module/SttSocket/TestServer/SttServerClientSocketBase.h \
     ../../Module/SttSocket/TestServer/SttTestServerSocketBase.h \

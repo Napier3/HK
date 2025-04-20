@@ -46,7 +46,7 @@ typedef struct stt_cmd_info
 	long nMode;			//如果不是文件命令，0表示同步发送，1表示异步发送
 	LPVOID pSocketRef;
 	CSttCmdOverTimeMsgRcv *pSttCmdOverTimeMsgRcv;
-	volatile long m_nCmdExecState;//运行状态0,1：ack,2:fail,3:success,4;timeout
+    volatile long m_nCmdExecState{};//运行状态0,1：ack,2:fail,3:success,4;timeout
 	CExBaseList *pSysState;//应答结果指针
 
 	void SetUsed(DWORD nUsed){m_nUse = nUsed;}

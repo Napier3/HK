@@ -185,6 +185,7 @@ BOOL CSttAtsTestClient::ConnectAtsTestServer(const CString &strIP,long nPort,con
 	}
 	else
 	{
+        qDebug()<< "!!!!!!!!!!!!!!!!!!!!!!BOOL CSttAtsTestClient::ConnectAtsTestServer(const CString &strIP,long nPort,const CString &strSoftID) failed";
 		CLogPrint::LogFormatString(XLOGLEVEL_ERROR, strText2.GetString());
 	}
 #endif
@@ -194,8 +195,10 @@ BOOL CSttAtsTestClient::ConnectAtsTestServer(const CString &strIP,long nPort,con
 
 BOOL CSttAtsTestClient::ConnectAtsTestServer(const CString &strTestAppIP)
 {
+    qDebug()<< "!!!!!!!!!!!!!!!!!!!!!!From BOOL CSttAtsTestClient::ConnectAtsTestServer(const CString &strTestAppIP) ip is %s" << strTestAppIP;
 	if (IsConnectSuccess())
 	{
+         qDebug()<< "!!!!!!!!!!!!!!!!!!!!!!connection ok";
 		return TRUE;
 	}
 
@@ -224,6 +227,7 @@ BOOL CSttAtsTestClient::ConnectAtsTestServer(const CString &strTestAppIP)
     //stt_net_get_deviceip(strIP, strMask);
     stt_net_get_ip(&strIP);
 #endif
+    qDebug()<< "!!!!!!!!!!!!!!!!!!!!!!try to connect, ip is %s port is %d" <<strIP<<nPort;
     m_bTestAppConnect = ConnectAtsTestServer(strIP,nPort, STT_SOFT_ID_ATS);
 	return m_bTestAppConnect;
 }

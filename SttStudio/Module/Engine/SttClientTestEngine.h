@@ -18,6 +18,8 @@
 //4=测试异常：【界面的“开始”使能，“停止”按钮变灰】
 //0=关闭设备（CloseDevice），返回初始状态
 
+extern class CSttClientTestEngine* g_pSttTestEngine;
+
 class CSttClientTestEngine : public CSttTestEngineBase, public CSttTestEngineClientData
 {
 public:

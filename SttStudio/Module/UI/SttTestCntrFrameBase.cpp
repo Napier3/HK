@@ -545,7 +545,7 @@ QSttTestCntrFrameBase::QSttTestCntrFrameBase(QWidget *parent)
     m_pManualTriggerBtn = nullptr;
     m_pExitBtn = nullptr;
     m_pMenu_FrameButton = nullptr;
-    //sun CLogPrint::Create();
+    CLogPrint::Create(this);
     m_pStatusBar = nullptr;
     m_pResultBarUI = nullptr;
     m_pResultWidget = nullptr;
@@ -554,7 +554,7 @@ QSttTestCntrFrameBase::QSttTestCntrFrameBase(QWidget *parent)
 
     m_pCurrEditMacroItems = nullptr;
     m_pTestCtrlCntrBase = nullptr;
-    //sun m_pEngineClientWidget = nullptr;
+    //m_pEngineClientWidget = nullptr;
 	m_bIsRunningStartStopCmd = FALSE;
 
 //	m_pSttTestResource = nullptr;

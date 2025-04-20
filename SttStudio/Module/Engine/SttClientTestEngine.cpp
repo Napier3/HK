@@ -1,7 +1,8 @@
 #include "stdafx.h"
 #include "SttClientTestEngine.h"
 #include "../SttCmd/SttTestCmd.h"
-#include "../SttSocket/TestTerminal/QT/SttClientSocket.h"
+//#include "../SttSocket/TestTerminal/QT/SttClientSocket.h"
+#include "../SttSocket/TestTerminal/VC/SttClientSocket.h"
 
 #include "../../../Module/Socket/XPing.h"
 
@@ -18,6 +19,7 @@ static char THIS_FILE[]=__FILE__;
 #define new DEBUG_NEW
 #endif
 
+CSttClientTestEngine* g_pSttTestEngine = nullptr; // definition
 
 CSttClientTestEngine::CSttClientTestEngine()
 {
@@ -33,7 +35,7 @@ BOOL CSttClientTestEngine::ConnectServer(const CString &strIPServer, long nPort)
 {
 	if (m_pSttClientSocket == NULL)
 	{
-		m_pSttClientSocket = new CSttClientSocket();
+        m_pSttClientSocket = new CSttClientSocket();
 
 		m_oCurrUser.SetRefSttSckt(m_pSttClientSocket);
 		m_pSttClientSocket->SetTestEngine(this);
@@ -64,6 +66,7 @@ BOOL CSttClientTestEngine::ConnectServer(const CString &strIPServer, long nPort)
     bRet = m_pSttClientSocket->ConnectServer(strIPServer, nPort);
 	if (!bRet)
 	{
+        qDebug()<<"from BOOL CSttClientTestEngine::ConnectServer(const CString &strIPServer, long nPort) false";
 		delete m_pSttClientSocket;
 		m_pSttClientSocket = NULL;
 	}
@@ -144,6 +147,7 @@ long CSttClientTestEngine::Process_SysState_System(CSttSocketDataBase *pClientSo
 	}
 	
 	long nCmdExecState = oSysState.Get_ExecStatus();
+    qDebug()<<"i am from line 149";
 	CSttCmdOverTimeTool::OnSocketReceive_FixedCmd(m_pSttClientSocket,oSysState,nCmdExecState);
 
 	return nRet;

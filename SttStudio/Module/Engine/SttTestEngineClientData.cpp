@@ -297,6 +297,7 @@ long CSttTestEngineClientData::SendCmdSync(CSttCmdBase *pCmd,long nTimeOut,CSttC
 {
 	if (m_pSttClientSocket == NULL)
 	{
+        qDebug()<<"!!!!!!!!!!!!!long CSttTestEngineClientData::SendCmdSync, m_pSttClientSocket is nullptr";
 		return 0;
 	}
 
@@ -388,6 +389,8 @@ long CSttTestEngineClientData::System_Login(BOOL bDoEvents,CSttCmdData *pRetData
 {
 	if (m_pSttClientSocket == NULL)
 	{
+        qDebug()<<"!!!!!!!!!!!!!m_pSttClientSocket is nullptr";
+
 		return 0;
 	}
 	m_bHasLogin = FALSE;
@@ -2031,10 +2034,11 @@ long CSttTestEngineClientData::On_SysState_Test(CSttSysState &oSysState)
 
 	if (!Stt_Is_ExecStatus_Success(nCmdExecState))
 	{
+        qDebug()<<"i am from line 2037";
 		CSttCmdOverTimeTool::OnSocketReceive_FixedCmd(m_pSttClientSocket,oSysState,nCmdExecState);
 		return nCmdExecState;
 	}
-
+qDebug()<<"i am from line 2041";
 	On_SysState_Test_UpdateTestGlobalParas(oSysState);
 	CSttCmdOverTimeTool::OnSocketReceive_FixedCmd(m_pSttClientSocket,oSysState,nCmdExecState);
 
@@ -2083,6 +2087,7 @@ long CSttTestEngineClientData::On_SysState_Test(CSttSysState &oSysState)
 
 long CSttTestEngineClientData::On_SysState_Ats(CSttSysState &oSysState)
 {
+    qDebug()<<"i am from line 2090";
 	long nCmdExecState = oSysState.Get_ExecStatus();
 	CSttCmdOverTimeTool::OnSocketReceive_FixedCmd(m_pSttClientSocket,oSysState,nCmdExecState);
 
@@ -2130,6 +2135,7 @@ long CSttTestEngineClientData::On_SysState_Ats(CSttSysState &oSysState)
 long CSttTestEngineClientData::On_SysState_Adjust(CSttSysState &oSysState)
 {
 	long nCmdExecState = oSysState.Get_ExecStatus();
+    qDebug()<<"i am from line 2138";
 	CSttCmdOverTimeTool::OnSocketReceive_FixedCmd(m_pSttClientSocket,oSysState,nCmdExecState);
 
 	if (!Stt_Is_ExecStatus_Success(nCmdExecState))
@@ -2164,7 +2170,7 @@ long CSttTestEngineClientData::On_SysState_IOT(CSttSysState &oSysState)
 	}
 
 	long nCmdExecState = oSysState.Get_ExecStatus();
-
+qDebug()<<"i am from line 2173";
 	if (nCmdExecState == 0)
 	{
 		return nCmdExecState;
@@ -2352,6 +2358,7 @@ void CSttTestEngineClientData::OnLogout()
 
 void CSttTestEngineClientData::On_SysState_Debug(CSttSysState &oSysState)
 {
+    qDebug()<<"i am from line 2361";
 	long nCmdExecState = oSysState.Get_ExecStatus();
 	CSttCmdOverTimeTool::OnSocketReceive_FixedCmd(m_pSttClientSocket,oSysState,nCmdExecState);
 

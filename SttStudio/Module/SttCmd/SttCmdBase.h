@@ -110,5 +110,9 @@ public:
 	void PraseCmdBuf(char *pBuf,long nLen, char *pszDestBuffer, UINT nFormatType=_PUGI_XML_TYPE_);
 
 	virtual void SetParameter(const CString &strMacroID, CDataGroup *pParas);
+
+signals:
+    // Emitted when we detect that m_nCmdExecState is success/failure or socket closed
+    void commandFinished();
 };
 

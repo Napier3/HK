@@ -1,4 +1,5 @@
 #include "SttOutPutWidget.h"
+#include <QDebug>
 #include "../../../../Module/OSInterface/OSInterface.h"
 
 QSttOutPutWidget::QSttOutPutWidget(QWidget *parent) :
@@ -69,6 +70,7 @@ void QSttOutPutWidget::slot_refreshOutput(long nLevel,QString strLog)
  	}
 
 	textEdit->append(time);
+    qDebug()<< time;
 	cursor.movePosition(QTextCursor::End);
 	textEdit->setTextCursor(cursor);
 

@@ -19,6 +19,9 @@
 #define new DEBUG_NEW
 #endif
 
+#include <QEventLoop>
+#include <QTimer>
+
 CString g_strIDSoft = _T("");
 
 CSttCmdBase::CSttCmdBase()
@@ -350,76 +353,71 @@ DWORD CSttCmdBase::GetIDTest()
 
 long CSttCmdBase::DoWait(CSttSocketDataBase_File *pSocket,STT_CMD_INFO *pCmdInfo,long nTimeOut,CSttCmdData *pRetData,BOOL bDoEvents)
 {
-	long nExecStatus = STT_CMD_ExecStatus_NULL;
+    long nExecStatus = STT_CMD_ExecStatus_NULL;
 
-// 	STT_CMD_INFO *pCmdInfo = CSttCmdOverTimeTool::AddSttCmd(pSocket,m_nType_Cmd,m_strID,0, 0, NULL);
-// 	if (pCmdInfo == NULL)
-// 	{
-// 		return nExecStatus;
-// 	}
+    //pCmdInfo = CSttCmdOverTimeTool::AddSttCmd(pSocket,m_nType_Cmd,m_strID,0, 0, NULL);
+    //if (pCmdInfo == NULL)
+    //{
+    //    return nExecStatus;
+    //}
 
-	CTickCount32 oTickCount32;
-	long nTickCountLong = 0;
+    CTickCount32 oTickCount32;
+    long nTickCountLong = 0;
+    CTickCount32 oTick(FALSE);
 
+    while(TRUE)
+    {
+        if (pCmdInfo->pSocketRef == NULL)
+        {
+            nExecStatus = STT_CMD_ExecStatus_SocketClose;
+            break;
+        }
+        if (pCmdInfo->IsCmdExecState_Failure() || pCmdInfo->IsCmdExecState_Success())
+        {
+            nExecStatus = pCmdInfo->m_nCmdExecState;
+            qDebug()<< "inside dowait() 5";
+            if ((pCmdInfo->pSysState != NULL) && (pRetData != NULL))
+            {
+                qDebug()<< "inside dowait() 6";
+                pRetData->AppendEx(*pCmdInfo->pSysState);
+                pRetData->InitAfterRead();
+                pCmdInfo->pSysState->RemoveAll();
+            }
 
-	while(TRUE)
-	{
-		if (pCmdInfo->pSocketRef == NULL)
-		{
-			nExecStatus = STT_CMD_ExecStatus_SocketClose;
-	
-			break;
-		}
+            nTickCountLong = oTickCount32.GetTickCountLong(FALSE);
 
-		if (pCmdInfo->IsCmdExecState_Failure() 
-			|| pCmdInfo->IsCmdExecState_Success())
-		{
-			nExecStatus = pCmdInfo->m_nCmdExecState;
+            break;
+        }
+        if (bDoEvents)
+        {
+            oTick.DoEvents(5);
+        }
+        else
+        {
+          Sleep(5);
+        }
 
-			if ((pCmdInfo->pSysState != NULL) && (pRetData != NULL))
-			{
-				pRetData->AppendEx(*pCmdInfo->pSysState);
-				pRetData->InitAfterRead();
-				pCmdInfo->pSysState->RemoveAll();
-			}
-
-			nTickCountLong = oTickCount32.GetTickCountLong(FALSE);
-
-			break;
-		}
-
-		if (bDoEvents)
-		{
-			CTickCount32 oTick(FALSE);
-			oTick.DoEvents(5);
-		}
-		else
-		{
-			Sleep(5);
-		}
-		
-		if (nTimeOut > 0)
-		{
-			nTickCountLong = oTickCount32.GetTickCountLong(FALSE);
-
-			if (nTickCountLong >= nTimeOut)
-			{
-				nExecStatus = STT_CMD_ExecStatus_TIMEOUT;
+        if (nTimeOut > 0)
+        {
+            nTickCountLong = oTickCount32.GetTickCountLong(FALSE);
+            if (nTickCountLong >= nTimeOut)
+            {
+                nExecStatus = STT_CMD_ExecStatus_TIMEOUT;
 #ifdef NOT_USE_XLANGUAGE
-				CLogPrint::LogFormatString(XLOGLEVEL_INFOR,_T("%s√¸¡Ó£∫≥¨ ±"),m_strID.GetString());
+                CLogPrint::LogFormatString(XLOGLEVEL_INFOR,_T("%s√¸¡Ó£∫≥¨ ±"),m_strID.GetString());
 
 #else
-				CLogPrint::LogFormatString(XLOGLEVEL_INFOR,g_sLangTxt_Native_CommandTimeout.GetString(),m_strID.GetString());
-                        
+                CLogPrint::LogFormatString(XLOGLEVEL_INFOR,g_sLangTxt_Native_CommandTimeout.GetString(),m_strID.GetString());
+
 #endif
-				break;
-			}
-		}
-	}
+                break;
+            }
+        }
+    }
+qDebug()<< "inside dowait() 10";
+    pCmdInfo->SetUsed(0);
 
-	pCmdInfo->SetUsed(0);
-
-	return nExecStatus;
+    return nExecStatus;
 }
 
 void CSttCmdBase::PraseCmdBuf(char *pBuf,long nLen, char *pszDestBuffer,const CString &strFormat)

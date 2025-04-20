@@ -2,7 +2,8 @@
 #include "SttRemoteClientTestEngine.h"
 #include "../SttAuthority/SttTestRemoteRegister.h"
 #include "../SttCmd/SttTestCmd.h"
-#include "../SttSocket/TestTerminal/QT/SttClientSocket.h"
+//#include "../SttSocket/TestTerminal/QT/SttClientSocket.h"
+#include "../SttSocket/TestTerminal/VC/SttClientSocket.h"
 
 #ifdef _DEBUG
 #undef THIS_FILE
@@ -79,6 +80,7 @@ long CSttRemoteClientTestEngine::Process_SysState_System(CSttSocketDataBase *pCl
 	}
 	
 	long nCmdExecState = oSysState.Get_ExecStatus();
+    qDebug()<<"i am from line 82";
 	CSttCmdOverTimeTool::OnSocketReceive_FixedCmd(m_pSttClientSocket,oSysState,nCmdExecState);
 
 	return nRet;
@@ -102,6 +104,7 @@ long CSttRemoteClientTestEngine::Process_SysState_Remote(CSttSocketDataBase *pCl
 	}
 
 	long nCmdExecState = oSysState.Get_ExecStatus();
+    qDebug()<<"i am from line 106";
 	CSttCmdOverTimeTool::OnSocketReceive_FixedCmd(m_pSttClientSocket,oSysState,nCmdExecState);
 
 	return nRet;

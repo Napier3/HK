@@ -2,7 +2,8 @@
 
 #include "ComtradeBufMngr.h"
 #include "BigComtradeFileRead.h"
-#include "../SttSocket/TestTerminal/QT/SttClientSocket.h"
+//#include "../SttSocket/TestTerminal/QT/SttClientSocket.h"
+#include "../SttSocket/TestTerminal/VC/SttClientSocket.h"
 #include "ComtradeSendSocket.h"
 #include "../SttTestAppConfig/SttTestAppCfg.h"
 //#include "../Engine/SttTestEngineBase.h"

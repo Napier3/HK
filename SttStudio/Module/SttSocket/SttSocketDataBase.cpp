@@ -62,17 +62,21 @@ long CSttSocketDataBase::SendCmd(CSttCmdBase *pCmd,BOOL bCompress,BOOL bReset)
 
 long CSttSocketDataBase::SendCmdSync(CSttCmdBase *pCmd,long nTimeOut,CSttCmdData *pRetData,BOOL bDoEvents,BOOL bCompress,BOOL bReset)
 {
-	long nExecStatus = 0;
+    qDebug()<<"SendCmdSync "<< pCmd->m_strID;
+    long nExecStatus = 0;
 	//命令发送之前添加到超时链表
 	STT_CMD_INFO *pCmdInfo = CSttCmdOverTimeTool::AddSttCmd(this,pCmd->m_nType_Cmd,pCmd->m_strID,0, 0, NULL,STT_CMD_Send_Sync);
 	if (pCmdInfo == NULL)
 	{
+        qDebug()<<"long CSttSocketDataBase::SendCmdSync, pCmdInfo is null ";
 		return nExecStatus;
 	}
 	long nRet = SendCmd(pCmd,bCompress,bReset);
 	if (nRet > 0)
 	{
-        //debug sun wait nExecStatus = pCmd->DoWait(this,pCmdInfo,nTimeOut,pRetData,bDoEvents);
+        qDebug()<<"long CSttSocketDataBase::SendCmdSync, before wait";
+        nExecStatus = pCmd->DoWait(this,pCmdInfo,nTimeOut,pRetData,bDoEvents);
+        qDebug()<<"long CSttSocketDataBase::SendCmdSync, after wait, status is "<<nExecStatus;
 	}
 	else
 	{
