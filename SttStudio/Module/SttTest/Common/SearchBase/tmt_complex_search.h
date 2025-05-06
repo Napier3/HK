@@ -16,7 +16,7 @@ public:
 	float m_fAngle;
 //	BOOL  m_bCurrSearchSwitch;	//当前动作的是起始值还是终止值,该参数未用到,删除	
 
-	//2021-9-16  lijunqing
+	//2021-9-16  Eric
 	double m_fScanFromR, m_fScanFromX;
 	double m_fScanToR, m_fScanToX;
 	double m_fCurrR, m_fCurrX;

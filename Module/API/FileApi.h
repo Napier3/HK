@@ -76,7 +76,7 @@ BOOL X_DeleteFile(const CString &strFile);
 BOOL GetFileVersion(const CString &filePath,unsigned int &nFileVersionMS, unsigned int &nFileVersionLS)  ;
 BOOL GetFileVersion(const CString& strFile,CString &strVersion);	//取得文件版本
 
-//2021-1-2  lijunqing
+//2021-1-2  Eric
 void path_CheckSeparater(CString &strPath);
 
 #endif//_FILE_API_H__

@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //TestMacroGlobal.cpp
@@ -22,7 +22,7 @@ long g_nResetDatas = 1;   //是否重置参数，将参数值重置为缺省值  shaolei 2022-1-1
 
 CTestMacroXmlRWKeys::CTestMacroXmlRWKeys()
 {
-	//macro-include  2021-8-14  lijunqing  充电桩自动测试，多仪器功能文件的扩充
+	//macro-include  2021-8-14  Eric  充电桩自动测试，多仪器功能文件的扩充
 	m_strCTestMacrosIncludeKey = L"macros-include"; 
 	m_strCTestMacroConfigKey = L"macro-test-config";
 	m_strCTestMacroConfigsKey = L"macro-test-configs";

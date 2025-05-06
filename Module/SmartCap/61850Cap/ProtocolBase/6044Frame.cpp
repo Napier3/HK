@@ -127,7 +127,7 @@ long C6044Frame::ParseOwn(PEPBUFFERPOS pBufferPos, CFrameDetail *pDetailList)
 		
 		while (TRUE)
 		{
-			if (! Ep_IsBufferEnough(pBufferPos, nLen))//2020-07-15  lijunqing  数据的长度足够
+			if (! Ep_IsBufferEnough(pBufferPos, nLen))//2020-07-15  Eric  数据的长度足够
 			{
 				return -1;
 			}

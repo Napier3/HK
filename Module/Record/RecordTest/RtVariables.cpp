@@ -434,7 +434,7 @@ long GetLenFromCurrPosToFillPos(long nCurrPos, long nDataFillPos, long nDataLen,
 
 BOOL CRtVariables::GetFrequencyCalPos2(PRECORD_CAL_LEN_PARA pCalLenPara, long &nCalBuffer1Pos, long &nCalBuffer1Len , long &nCalBuffer2Pos, long &nCalBuffer2Len,long nBegin)
 {
-	//ASSERT (FALSE);   //2021-3-9  lijunqing
+	//ASSERT (FALSE);   //2021-3-9  Eric
 #ifdef _CAL_USE_REF_VARIABLE_
 	nCalBuffer1Pos = -1;
 	nCalBuffer2Pos = -1;
@@ -1082,7 +1082,7 @@ void CRtVariables::CalValuesRealTimeEx(PRECORD_CAL_LEN_PARA pCalLenPara, DWORD n
 	double dAngle2 = 0;
 	nPrevHdIndex = -1;
 
-	//2022-4-23  lijunqing 缓冲计算结果数据
+	//2022-4-23  Eric 缓冲计算结果数据
 	PSTTVARIABLESRTVALUES pSttRtVarValues = g_oStttVariablesRtValueBuffer.GetCurrForWrite();
 	pSttRtVarValues->nCount=0;
 	pVariableRef = NULL;
@@ -1152,7 +1152,7 @@ void CRtVariables::CalValuesRealTimeEx(PRECORD_CAL_LEN_PARA pCalLenPara, DWORD n
 		CalValuesRealTimeEx_Adj_Ang(pVariable->m_oCurrValue.dFundValue, pVariable->m_oCurrValue.dFundPhase);
 		CalValuesRealTimeEx_Adj_Ang(pVariable->m_oCurrValue.dEffecValue, pVariable->m_oCurrValue.dEffecPhase);
 
-		//2022-5-4  lijunqing  总有效值相位暂时等于基波相位
+		//2022-5-4  Eric  总有效值相位暂时等于基波相位
 		//pVariable->m_oCurrValue.dEffecPhase = pVariable->m_oCurrValue.dFundPhase;
 
 		if (pSttRtVarValues->nCount < XCYCLE_VARS_COUNT)
@@ -1214,13 +1214,13 @@ void CRtVariables::CalValuesRealTimeEx(CRtVariable * pdVariable, PRECORD_CAL_LEN
 	}
 
 	if (g_nEnableCal_Root == 0)
-	{//2022-5-3  lijunqing 不计算任何参数数据
+	{//2022-5-3  Eric 不计算任何参数数据
 		pdVariable->m_nAttrCalBeginPos = pdVariable->m_nRefBufFillBeginPos;
 		pdVariable->m_nFrequencyCalBeginPos = pdVariable->m_nRefBufFillBeginPos;
 		return;
 	}
 	
-	//2022-4-22  lijunqing
+	//2022-4-22  Eric
 	//计算的同时，缓冲区还在填充，会导致不同的通道数据计算时不对齐
 	//pdVariable->InitCalPos();
 
@@ -1396,7 +1396,7 @@ BOOL CRtVariables::ValidateVariableRecordBuffer(BOOL bCalUseRecordBuffer)
 BOOL CRtVariables::CalValues(PRECORD_CAL_LEN_PARA pCalLenPara, long nBeginPos, DWORD dwSampleRate, BOOL bCalUseRecordBuffer, BOOL bCalOtherValues)
 {
 //lbl_CalValues:
-	//ASSERT (FALSE);   //2021-3-9  lijunqing
+	//ASSERT (FALSE);   //2021-3-9  Eric
 #ifdef _CAL_USE_REF_VARIABLE_
 	if (m_pRefVariable == NULL)
 	{
@@ -1618,7 +1618,7 @@ BOOL CRtVariables::CalValuesFnom_Quick(PRECORD_CAL_LEN_PARA pCalLenPara, long nB
 		m_pRefBuffer = m_pRefVariable->m_pAttachRecordBuffer;
 	}
 
-	//2020-12-19  lijunqing  开放Qucik计算的功能，修改SmartCap的时候屏蔽的
+	//2020-12-19  Eric  开放Qucik计算的功能，修改SmartCap的时候屏蔽的
 #ifndef _CAL_USE_REF_VARIABLE_
 	DWORD m_nXRefBufLen;
 	DWORD m_nXRefBufFillBeginPos;
@@ -1698,7 +1698,7 @@ BOOL CRtVariables::CalValuesFnom_Quick(PRECORD_CAL_LEN_PARA pCalLenPara, long nB
 
 BOOL CRtVariables::CalValues_PeakVellay(PRECORD_CAL_LEN_PARA pCalLenPara, long nBeginPos, long nUseLength, DWORD dwSampleRate, BOOL bCalUseRecordBuffer, BOOL bCalOtherValues)
 {
-	//ASSERT (FALSE);   //2021-3-9  lijunqing
+	//ASSERT (FALSE);   //2021-3-9  Eric
 #ifdef _CAL_USE_REF_VARIABLE_
 	if (bCalUseRecordBuffer)
 	{
@@ -4239,7 +4239,7 @@ CRtSingleVariable* CRtVariables::GetFirstSingleWithUseState()
 
 void CRtVariables::CalBeginPosByStartupPos(long nStartupPos, DWORD nSampleGap, DWORD dwSampleRate)
 {
-	//ASSERT (FALSE);   //2021-3-9  lijunqing
+	//ASSERT (FALSE);   //2021-3-9  Eric
 #ifdef _CAL_USE_REF_VARIABLE_
 	m_nStartupPos = nStartupPos;
 	

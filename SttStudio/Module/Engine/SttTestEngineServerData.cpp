@@ -9,7 +9,7 @@
 // #include "SttTestServerBase.h"
 // #include "../SttDevice/SttDeviceBase.h"
 
-//2020-10-27  lijunqing
+//2020-10-27  Eric
 #include "../API/NetworkInterface.h"
 
 #ifdef _DEBUG
@@ -18,7 +18,7 @@ static char THIS_FILE[]=__FILE__;
 #define new DEBUG_NEW
 #endif
 
-//2020-10-19  lijunqing  Server只有一个，所以定义一个全局变量，方便访问
+//2020-10-19  Eric  Server只有一个，所以定义一个全局变量，方便访问
 CSttTestEngineServerData *g_theSttTestEngineServer = NULL;
 CSttSocketDataBase *g_pReplayTestSocket = NULL;
 long g_nCheckAuthority = 0;
@@ -27,7 +27,7 @@ long g_nCheckAuthority = 0;
 //
 CSttTestEngineServerData::CSttTestEngineServerData()
 {
-    //2020-10-19  lijunqing  Server只有一个，所以定义一个全局变量，方便访问
+    //2020-10-19  Eric  Server只有一个，所以定义一个全局变量，方便访问
     g_theSttTestEngineServer = this;
     m_pServerSocket = NULL;
 	m_pReplaySocket = NULL;
@@ -39,7 +39,7 @@ CSttTestEngineServerData::~CSttTestEngineServerData()
     ASSERT (m_pServerSocket == NULL);
 }
 
-//2022-2-12  lijunqing
+//2022-2-12  Eric
 void CSttTestEngineServerData::DispatchMsg(unsigned char *pBuf, long nLen)
 {
     CSttTestClientUser *pUser = NULL;
@@ -223,7 +223,7 @@ CSttTestClientUser* CSttTestEngineServerData::User_Login(CSttSocketDataBase *pCl
 
     CSttSocketDataBase *pPrevSocket = NULL;
 
-    //2020-11-29   lijunqing
+    //2020-11-29   Eric
     //严重逻辑错误，测试端，如果同时使用Debug和测试端，就会导致之前的连接被断开
     //正确逻辑：nIDTester + strSoftID  唯一
     pUser = m_pSttTestClientUserMngr->FindByIDTest(nIDTester, strSoftID);
@@ -513,7 +513,7 @@ long CSttTestEngineServerData::Process_Cmd_System_LiveUpdate(CSttSocketDataBase 
     oSysState.UpdateSysStateHead(&oSysCmd);
     oSysState.m_strRetType = SYS_STATE_RETTYPE_REPLY;
 
-    //2020-10-31  lijunqing 将更新部分的代码集中到liveupdate模块下面
+    //2020-10-31  Eric 将更新部分的代码集中到liveupdate模块下面
     //避免liveupdate模块修改对基础模块的修改
     BOOL bRet = stt_validate_cmd_liveupdate(pParas);
     if (bRet)
@@ -538,7 +538,7 @@ long CSttTestEngineServerData::Process_Cmd_System_LiveUpdate(CSttSocketDataBase 
     return 1;
 }
 
-//2020-12-05  lijunqing add
+//2020-12-05  Eric add
 BOOL CSttTestEngineServerData::Cmd_System_GetFilePath(CSttSystemCmd &oSysCmd, CString &strFullPath, CString &strRelPath)
 {
     CSttParas *pSttParas = oSysCmd.GetSttParas();
@@ -738,7 +738,7 @@ long CSttTestEngineServerData::ProcessCmd_GetSysConfig(CSttSocketDataBase *pClie
     </paras>
 </sys-cmd>
 */
-// 	//2022-3-23  lijunqing
+// 	//2022-3-23  Eric
 // #define STT_CMD_PARA_FILE_RootPath             _T("RootPath")
 // #define STT_CMD_PARA_FILE_GetSubDirs             _T("GetSubDirs")
 // #define STT_CMD_PARA_FILE_GetFiles             _T("GetFiles")
@@ -791,7 +791,7 @@ void CSttTestEngineServerData::LogDebugInfor(const CString &strInfor)
 
 long CSttTestEngineServerData::Process_Debug_ConfigDebug(CSttSocketDataBase *pClientSocket, CSttDebugCmd &oDebugCmd)
 {
-    //兼容 两个设置关键字 2020-10-18  lijunqing
+    //兼容 两个设置关键字 2020-10-18  Eric
     oDebugCmd.GetParasDataValueByID(STT_CMD_PARA_LogServerDebugInfor,  g_nSttLogServerDebugInfor);
     oDebugCmd.GetParasDataValueByID(STT_CMD_PARA_LogDebugInfor,  g_nSttLogServerDebugInfor);
     oDebugCmd.GetParasDataValueByID(STT_CMD_PARA_LogServerSpyAllCmd,  g_nSttLogServerSpyAllCmd);

@@ -53,7 +53,7 @@ protected:
 //	CXDrawLine *m_pCurrTestPointLine;
 
 public:
-	//2021-9-15  lijunqing
+	//2021-9-15  Eric
 	//CXDrawList *m_pOtherDrawList;
 
 	float m_fZoomCoef;

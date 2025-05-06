@@ -72,7 +72,7 @@ CSmartCapCtrl::~CSmartCapCtrl(void)
 {
 }
 
-void CSmartCapCtrl::CreateAt02dCmdThread()   //lijunqing 2022-4-8
+void CSmartCapCtrl::CreateAt02dCmdThread()   //Eric 2022-4-8
 {
 #ifndef  _PSX_IDE_QT_
 	m_pThread = AfxBeginThread(At02dCmdThread, this);
@@ -603,7 +603,7 @@ BOOL CSmartCapCtrl::LoadIecCfgFile(const CString &strIecCfgFile)
 	m_strIecCfgFile = strIecCfgFile;
 	BOOL bRet = m_oIecCfgDevice.OpenIecCfgFile(strIecCfgFile);
 
-	//载入同名的设备数据模型文件  lijunqing 2020-6-18
+	//载入同名的设备数据模型文件  Eric 2020-6-18
 	CString strDvmFile/*, strPath*/;
 	//strDvmFile = GetFileNameFromFilePath(strIecCfgFile);
 	strDvmFile = ChangeFilePostfix(strIecCfgFile, _T("xml"));
@@ -626,7 +626,7 @@ BOOL CSmartCapCtrl::LoadIecCfgFile(const CString &strIecCfgFile)
 		m_pXSttCap_61850->Init_GS_Channels();
 	}
 
-	//2020-06-23  lijunqing   添加报告数据集，事件数据集保存于g_pSmartCapSoeCycleArray
+	//2020-06-23  Eric   添加报告数据集，事件数据集保存于g_pSmartCapSoeCycleArray
 	g_pSmartCapSoeCycleArray->SetMaxCount(1000);
 	g_pSmartCapBinCycleArray->SetMaxCount(1000);
 
@@ -2109,7 +2109,7 @@ void CSmartCapCtrl::LOG_DEBUG_INFOR()
 	m_pXSttCap_61850->LOG_DEBUG_INFOR();
 }
 
-//2022-5-2  lijunqing 
+//2022-5-2  Eric 
 void CSmartCapCtrl::InitSmartCapCtrl()
 {
 	m_pXSttCap_61850->ClearCap();

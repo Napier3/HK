@@ -16,10 +16,10 @@ public://CXCapPkgTransInterface
 	virtual CXSmMemBufferMngr* GetXSmMemBufferMngr();
 	virtual void ReadHexTestFile(const CString &strFile);
 	virtual void AttachPkgTransDest(CXSmMemBufferMngr *pDestBuffer);
-	virtual void ResetBuffer();  //2022-4-20  lijunqing
+	virtual void ResetBuffer();  //2022-4-20  Eric
 
 	void SetRingMemBuf(CRingMemBuf *pRingMemBuf);
-	virtual void LogBufferPos();   //2022-4-21  lijunqing 监视缓冲区位置：填充位置和解析位置
+	virtual void LogBufferPos();   //2022-4-21  Eric 监视缓冲区位置：填充位置和解析位置
 
 protected:
 	void TransCapPkg_DebugHead();

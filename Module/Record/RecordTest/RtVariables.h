@@ -334,7 +334,7 @@ BOOL GetAttrCalPos(long nBeginPos, long nBufferLen, long nDataLen, PRTATTRIBUTEC
 
 extern CString g_strWriteRecordData_VariableID;
 
-//2022-4-23  lijunqing 批量数据缓冲，解决多线程访问计算结果数据问题
+//2022-4-23  Eric 批量数据缓冲，解决多线程访问计算结果数据问题
 #define XCYCLE_VARS_COUNT  128
 #define XCYCLE_MAX_COUNT  16
 

@@ -114,7 +114,7 @@ CString VariantToString(_variant_t var);
 #endif
 
 
-//char* <<==>> wchar*  2019-12-1   lijunqing
+//char* <<==>> wchar*  2019-12-1   Eric
 int str_char_to_wchar(wchar_t **ppwszDest, const char *pszSrc, long nLen=-1);
 int str_char_to_wchar(wchar_t *pwszDest, const char *pszSrc, long nLen=-1);
 int str_wchar_to_char(char **ppszDest, const wchar_t *pwszSrc, long nLen=-1);
@@ -146,7 +146,7 @@ inline int str_n_compare(const CString &str1, const CString &str2, int nLen)
 void charUtf8_to_wcharGBK(char *pszUtf8,long nSrcLen,wchar_t **ppwszGbk,long &nDestLen);
 void charUtf8_to_wcharGBK(char *pszUtf8,long nSrcLen,wchar_t *pwszGbk,long &nDestLen);
 void charUtf8_to_charGBK(char *pszUtf8,long nSrcLen,char **ppszGbk,long &nDestLen);
-void charUtf8_to_charGBK(char *pszUtf8,long nSrcLen,char *pszGbk,   long &nDestLen);  //2021-12-30  lijunqing
+void charUtf8_to_charGBK(char *pszUtf8,long nSrcLen,char *pszGbk,   long &nDestLen);  //2021-12-30  Eric
 void charGBK_to_charUtf8(char *pszGbk,long nSrcLen,char **ppszUtf8,long &nDestLen);
 void wchar_to_charUtf8(wchar_t *pwszGbk,long nSrcLen,char **ppszUtf8,long &nDestLen);
 void charGBK_to_charUtf8(char *pszGbk,long nSrcLen,char *pszUtf8,long &nDestLen);

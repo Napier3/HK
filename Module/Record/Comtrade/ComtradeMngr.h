@@ -193,7 +193,7 @@ private:
  	BOOL m_bCreateBuffer;
 
 public:
-	void CalMinMaxValue();//2021-9-20  lijunqing
+	void CalMinMaxValue();//2021-9-20  Eric
 	void ResetCoefZeroValue();//20230519 zhouhj  恢复模拟量通道系数及零值
 	void UpdateCoef_SpecialSmpRate();//对于包含每周波1个点或2个点的数据对象,防止从有效值转换为最大值时,越限,调整对应的系数值
 
@@ -229,7 +229,7 @@ public:
 //	double CalComtradeFileSumTime();
 	void CalUIMax(double &fUMax,double &fIMax);
 
-//2021-2-17  lijunqing  同一个文件被多个地方访问、释放，避免删除导致其他的引用异常
+//2021-2-17  Eric  同一个文件被多个地方访问、释放，避免删除导致其他的引用异常
 public:
 	void AddRef();
 	void Release();

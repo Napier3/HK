@@ -1,6 +1,6 @@
 #pragma once
 
-//2022-12-02  lijunqing  
+//2022-12-02  Eric  
 #include "../../../Assist/SttAssistGlobalApi.h"
 #include "../../../../../Module/SmartCap/61850Cap/CapDevice/CapDeviceBase.h"
 
@@ -10,7 +10,7 @@
 #define STT_MUTEST_CHSSET_MODIFY_TYPE_RateAccLevelDesc                1  //只修改了变比,准确级,描述,选择状态
 #define STT_MUTEST_CHSSET_MODIFY_TYPE_ChTypeMap                       2  //修改了通道类型和通道映射
 
-class CSttIecRecordCbInterface :public CSttWndAssistInterface  //2022-12-02 lijunqing 测试助手相关的接口
+class CSttIecRecordCbInterface :public CSttWndAssistInterface  //2022-12-02 Eric 测试助手相关的接口
 {
 public:
 	CSttIecRecordCbInterface(void);

@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //Characteristic.h  CCharacteristic
@@ -91,11 +91,11 @@ public:
 	void AddTestLines(CXDrawData_Line *pValRange, double dLenStep);
 	void AddTestLine(CXDrawData_Line *pCurrValLine);
 
-	//2020-08-07  lijunqing
+	//2020-08-07  Eric
 	CXDrawList* InitCharDrawElement_ForDraw();
 	CXDrawList* InitCharDrawElement_ForCalOnly();
 
-	//2022-7-24  lijunqing
+	//2022-7-24  Eric
 	void InitAllMacroTestLinesID();
 	CCharElementTestLine* FindTestLine(const CString &strID);
 };

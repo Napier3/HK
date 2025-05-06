@@ -171,7 +171,7 @@ public:
 	virtual void FreeRWObj();
 	virtual BOOL GetXml(CString &strXML);
 	virtual long GetXml(char **ppszRetBuffer, long nOffset);
-	virtual long GetXml_ASCII(char **ppszRetBuffer, long nOffset);	//lijunqing 2022-3-11
+	virtual long GetXml_ASCII(char **ppszRetBuffer, long nOffset);	//Eric 2022-3-11
 
 	virtual BOOL SetXml(BSTR strXML);
     virtual BOOL SetXml_ASCII(char *strXML,long nLen);

@@ -23,7 +23,7 @@
 
 class CRulerAxis : public CAxisInterface
 {
-//2021-1-16  lijunqing
+//2021-1-16  Eric
 public:
 	virtual void LogicPointToDevicePoint(double x, double y, CPoint *pPoint, long nAxisIndex=0);
 	virtual void DevicePointToLogicPoint(const CPoint &point ,double *x,double *y, long nAxisIndex=0);

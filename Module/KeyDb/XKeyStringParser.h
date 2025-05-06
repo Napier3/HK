@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //XKeyBase.h  CXKeyBase
@@ -65,7 +65,7 @@ public:
 
 	static bool g_bRemoveSubKeys;
 
-	//2022-5-10  lijunqing
+	//2022-5-10  Eric
 	static void SetRemoveSubKeys(bool b)	{	g_bRemoveSubKeys = b;	}
 
 public:
@@ -97,7 +97,7 @@ protected:
 };
 
 
-//2023-2-7  lijunqing
+//2023-2-7  Eric
 class CXCharNumConfig : public CXKeyMngr
 {
 private:

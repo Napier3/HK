@@ -117,7 +117,7 @@ long CSttTestAppCfg::Save()
 	return 1;
 }
 
-//2021-8-12  lijunqing
+//2021-8-12  Eric
 CString CSttTestAppCfg::GetSttCfgFile()
 {
 	CString strFile;
@@ -197,7 +197,7 @@ void CSttTestAppCfg::SttSetXml(const CString &strXml)
 	}
 }
 
-//2021-8-13   lijunqing ?????????????????    暂时不考虑放到基类，后续在设计和考虑
+//2021-8-13   Eric ?????????????????    暂时不考虑放到基类，后续在设计和考虑
 void CSttTestAppCfg::SttSetXml_UTF8(const CString &strXml)
 {
 	const char *pszXml = strXml.GetString();
@@ -234,7 +234,7 @@ void CSttTestAppCfg::SttSetXml_UTF8(char *pszBuffer, long nLen)
 	}
 }
 
-//2021-8-13   lijunqing ?????????????????    暂时不考虑放到基类，后续在设计和考虑
+//2021-8-13   Eric ?????????????????    暂时不考虑放到基类，后续在设计和考虑
 BOOL CSttTestAppCfg::stt_xml_serialize(CSttXmlSerializeBase *pXmlSierialize, long nIndex)
 {
 	CSttXmlSerializeBase *pSerialize =pXmlSierialize->xml_serialize(stt_ParaGroupKey(), nIndex, "test-app config", "test-app", "test-app");
@@ -375,7 +375,7 @@ void CSttTestApps::Release()
 
 	if (g_nSttTestAppsRef == 0)
 	{
-		//2021-8-14  lijunqing  不要保存
+		//2021-8-14  Eric  不要保存
 		//g_pSttTestApps->Save();
 		delete g_pSttTestApps;
 		g_pSttTestApps = NULL;
@@ -515,7 +515,7 @@ long CSttTestApps::Open()
 }
 
 
-//2021-8-13   lijunqing ?????????????????    暂时不考虑放到基类，后续在设计和考虑
+//2021-8-13   Eric ?????????????????    暂时不考虑放到基类，后续在设计和考虑
 void CSttTestApps::SttSetXml_UTF8(const CString &strXml)
 {
 	const char *pszXml = strXml.GetString();
@@ -523,7 +523,7 @@ void CSttTestApps::SttSetXml_UTF8(const CString &strXml)
 	SttSetXml_UTF8((char*)pszXml, strXml.GetLength());
 }
 
-//2021-8-13   lijunqing ?????????????????    暂时不考虑放到基类，后续在设计和考虑
+//2021-8-13   Eric ?????????????????    暂时不考虑放到基类，后续在设计和考虑
 void CSttTestApps::SttSetXml_UTF8(char *pszBuffer, long nLen)
 {
 	CSttXmlSerializeTool oTool;

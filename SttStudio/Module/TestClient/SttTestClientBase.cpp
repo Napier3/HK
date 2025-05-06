@@ -1,4 +1,4 @@
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttTestClientBase.cpp  CSttTestClientBase
@@ -8,7 +8,7 @@
 #include "SttTestClientBase.h"
 
 /*
-//2020-10-27  lijunqing
+//2020-10-27  Eric
 //LINUX  只处理单测试仪的测试
 #ifndef _PSX_QT_LINUX_
 #include "SttTestClientTimer.h"
@@ -58,7 +58,7 @@ CSttTestClientBase::CSttTestClientBase()
 	m_nSttClientTimerID = -1;
 	m_oTestAppCfg.SttOpen(_T(""));
 
-	//2021-9-2  lijunqing
+	//2021-9-2  Eric
 	CreateXTimer();
 }
 
@@ -130,7 +130,7 @@ void CSttTestClientBase::CloseDevice(const CString &strDeviceSN)
 	m_pXClientEngine->Test_CloseDevice();
 }
 
-//2022-10-23  lijunqing
+//2022-10-23  Eric
 void CSttTestClientBase::SetSttCmdDataFormat(long nSttCmdDataFormat)
 {
 	if (m_pXClientEngine != NULL)
@@ -365,7 +365,7 @@ long CSttTestClientBase::SendTestCmd(BYTE *pBuf, long nLen)
 //////////////////////////////////////////////////////////////////////////
 //
 //system command
-//lijunqing 2021-8-14  将System_Login 从 SttMacroTest 移到此处，便于封装
+//Eric 2021-8-14  将System_Login 从 SttMacroTest 移到此处，便于封装
 long CSttTestClientBase::System_LoginEx()
 {
 	if (m_oTestAppCfg.IsLocal())
@@ -700,7 +700,7 @@ long CSttTestClientBase::Adjust_WriteFile(BOOL bSendCmdAsync, BOOL bDoEvents)
 }
 
 
-//2021-9-30  lijunqing
+//2021-9-30  Eric
 long CSttTestClientBase::Meas_Read(BOOL bSendCmdAsync, BOOL bDoEvents)
 {
 	if (m_pXClientEngine == NULL)
@@ -712,7 +712,7 @@ long CSttTestClientBase::Meas_Read(BOOL bSendCmdAsync, BOOL bDoEvents)
 }
 
 
-//2020-10-09 文件处理  lijunqing
+//2020-10-09 文件处理  Eric
 //读文件 strRealFilePath，目标文件相对路径，例如："Config/DeviceSystemParas.xml"  strDestFilePath,本地绝对路径
 long CSttTestClientBase::ReadFile(const CString &strSrcFileRealPath, const CString &strDestFilePath,CSttSocketFileTransferProgress *pProgress)
 {
@@ -1108,7 +1108,7 @@ long CSttTestClientBase::Debug_ConfigDebug(long nLogDataBind,long nLogPkgDataInf
 	return m_pXClientEngine->Debug_ConfigDebug(nLogDataBind, nLogPkgDataInfor, nLogPkg, nLogDebugInfor, nNoChangeWhenSame, nSpyCmd);
 }
 
-//2020-12-04  lijunqing add spy-cmd
+//2020-12-04  Eric add spy-cmd
 long CSttTestClientBase::Debug_ConfigDebug(const CString &strDebugParaID, long nValue)
 {
 	if (m_pXClientEngine == NULL)
@@ -1152,7 +1152,7 @@ void CSttTestClientBase::OnXTimer(DWORD dwTimerID)
 void CSttTestClientBase::CreateSttTimer()
 {
 /*
-//2020-10-27  lijunqing
+//2020-10-27  Eric
 //LINUX  只处理单测试仪的测试
 #ifdef _PSX_QT_LINUX_
     m_nSttClientTimerID = stt_test_singleclient_timer_create(5000);
@@ -1162,14 +1162,14 @@ void CSttTestClientBase::CreateSttTimer()
     g_theSttTestClientTimer->AddSttTestClientBase(this);
 #endif
 	*/
-	//2021-9-2  lijunqing
+	//2021-9-2  Eric
 	m_nSttClientTimerID = CXTimer::SetXTimer(1, 5000);
 }
 
 void CSttTestClientBase::KillSttTimer()
 {
 /*
-//2020-10-27  lijunqing
+//2020-10-27  Eric
 //LINUX  只处理单测试仪的测试
 #ifdef _PSX_QT_LINUX_
     stt_test_singleclient_timer_free(m_nSttClientTimerID);
@@ -1178,7 +1178,7 @@ void CSttTestClientBase::KillSttTimer()
     g_theSttTestClientTimer->RemoveSttTestClientBase(this);
 #endif
 */
-	//2021-9-2  lijunqing
+	//2021-9-2  Eric
 	CXTimer::KillXTimer(1);
 }
 

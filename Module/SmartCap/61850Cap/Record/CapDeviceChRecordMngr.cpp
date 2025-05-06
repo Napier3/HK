@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //CapDeviceChRecordMngr.cpp  CCapDeviceChRecordMngr
@@ -207,7 +207,7 @@ void CCapDeviceChRecordMngr::InitRecordTest()
 		pVariable = (CRtVariable *)m_pRecordTest->m_pVariables->GetNext(pos);
 		pVariable->SetVariableUseState(1);
 
-		//lijunqing 2020-6-13
+		//Eric 2020-6-13
 		if (pVariable->m_strID.GetLength() == 0)
 		{
 			pVariable->m_strID.Format(_T("%CH%d"), nIndex+1);
@@ -514,7 +514,7 @@ CRtSingleVariable* CCapDeviceChRecordMngr::InitAnalogVariable(CCapDeviceSmvChRec
 	m_pRecordTest->m_pVariables->AddNewChild(pVariable);
 	pVariable->m_pAttachRecordBuffer = pAnalog->GetRecordBuffer();
 	pVariable->Set_ChIndex(nIndex);
-	pVariable->m_strID		= pAnalog->m_strID;  //关联和绑定配置文件的ID  2020-06-13 lijunqing
+	pVariable->m_strID		= pAnalog->m_strID;  //关联和绑定配置文件的ID  2020-06-13 Eric
 	pVariable->m_strName    = pAnalog->m_strName;
 	InitVariablePhaseID(pVariable);
 	pVariable->m_strDCAC    = g_pszKeyVariableACDC;

@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //XLanguage.cpp  CXLanguage
@@ -378,7 +378,7 @@ CXLangItem* CXLanguage::AddString(const CString &strID, const CString &strString
 	pItem->m_strID = strID;
 	pItem->m_strTranslation = strString;
 
-#ifndef _PSX_QT_LINUX_   //2023-2-28  lijunqing  LINUX下，提高加载的效率
+#ifndef _PSX_QT_LINUX_   //2023-2-28  Eric  LINUX下，提高加载的效率
 	pItem->m_strSrcText = strString;
 #endif
 

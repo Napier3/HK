@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //IecCfgDatasBase.cpp  CIecCfgDatasBase
@@ -1256,7 +1256,7 @@ BOOL CIecCfgDatasBase::HasCfgDataValue(CIecCfgDataBase *pCfgData, long nDataID, 
 	 return bFind;
  }
 
- //2021-6-21  lijunqing
+ //2021-6-21  Eric
  CIecCfgDataBase* CIecCfgDatasBase::FindCfgData(long nDataID, VARIANT &vValue)
  {
 	 long nCount = GetCfgDataCount();

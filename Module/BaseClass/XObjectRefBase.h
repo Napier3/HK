@@ -27,7 +27,7 @@ public:
 	long GetRefCount();
 };
 
-//2021-7-17  lijunqing
+//2021-7-17  Eric
 typedef CXObjectRefBase* (P_FUNC_CREATE_XOBJECT)();
 
 //////////////////////////////////////////////////////////////////////////
@@ -61,7 +61,7 @@ public:
 public:
 	virtual ~CXObjectRefDriver();
 
-//2021-7-17  lijunqing
+//2021-7-17  Eric
 protected:
 	P_FUNC_CREATE_XOBJECT *m_pFuncCreate;
 
@@ -70,11 +70,11 @@ public:
 	virtual void AddRef();
 	virtual void Release();
 
-	//2022-10-19 lijunqing
+	//2022-10-19 Eric
 	virtual CXObjectRefDriver* Clone();
 };
 
-//2021-7-21  lijunqing
+//2021-7-21  Eric
 /*
 后续可以考虑将CXObjectRefDriver做成模板类，这样在使用的时候就不需要做类型强制性转换，例如：
 现在是这样使用：

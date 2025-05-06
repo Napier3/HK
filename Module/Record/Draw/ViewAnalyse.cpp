@@ -418,7 +418,7 @@ LRESULT CViewAnalyse::XOnTimeCursorPositionChange(WPARAM wParam, LPARAM lParam)
 
 #ifdef _SHOW_PARA
 		CalParaRect();
-		CalDrawParasValue();  //2022-9-1  lijunqing
+		CalDrawParasValue();  //2022-9-1  Eric
 
 		CParaSortMngr oParaSortMngr(this,m_rcWaveDraw);
 		m_pParentWnd->Invalidate(FALSE);
@@ -448,7 +448,7 @@ LRESULT CViewAnalyse::XOnTimeCursorSelectChange(WPARAM wParam, LPARAM lParam)
 
 #ifdef _SHOW_PARA
 		CalParaRect();
-		CalDrawParasValue();  //2022-9-1  lijunqing
+		CalDrawParasValue();  //2022-9-1  Eric
 		CParaSortMngr oParaSortMngr(this,m_rcWaveDraw);
 #else
 		m_pParentWnd->InvalidateRect(rcNew, FALSE);
@@ -1707,7 +1707,7 @@ void CViewAnalyse::CalParaRect()
 		{
 			CDrawAnalogVariable* pAnalog = (CDrawAnalogVariable*)pVariable;
 
-			//2022-9-1  lijunqing
+			//2022-9-1  Eric
 			pAnalog->GetTimeCursorPos(nPos, m_pRecordTest->MR1200_DFT_CAL_LEN);
 			//pAnalog->GetTimeCursorPos(nPos, RT_FREQUENCY_CAL_LEN + RT_FREQUENCY_CAL_LEN_ADD*2);
 		}
@@ -1920,7 +1920,7 @@ void CViewAnalyse::WaveAnalyse()
 #ifdef _CAL_USE_REF_VARIABLE_
 	long nPoints = pRtVariables->GetRefBufDataLen();
 #else
-	long nPoints = -1;  //2020-12-19  lijunqing 10000 ==>> -1
+	long nPoints = -1;  //2020-12-19  Eric 10000 ==>> -1
 #endif
 	long nCmpIndex = 0;
 	long nRecordTestIndex = 0;

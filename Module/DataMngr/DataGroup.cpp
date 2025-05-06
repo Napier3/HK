@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //DataGroup.cpp  CDataGroup
@@ -61,7 +61,7 @@ long CDataGroup::XmlWriteOwn(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oElement
 {
     CDataMngrXmlRWKeys *pXmlKeys = (CDataMngrXmlRWKeys*)pXmlRWKeys;
 
-    //2020-11-30  lijunqing
+    //2020-11-30  Eric
     if (pXmlKeys->m_nXmlOnlyWrite_Id_Value >= 1)
     {
 		if (pXmlKeys->m_nXmlOnlyWrite_Id_Value > 0xFFFF)
@@ -201,7 +201,7 @@ CExBaseObject* CDataGroup::CreateNewChild(const CString &strClassID, BOOL &bAddT
 		pNew = new CDataGroup();
 	}
 	//else if (strClassID == pXmlKeys->m_strCLongDatasKey)
-	//{//2021-1-17  lijunqing  基本没有使用场合，注释掉
+	//{//2021-1-17  Eric  基本没有使用场合，注释掉
 	//	pNew = new CLongDatas();
 	//}
 	else if (strClassID == pXmlKeys->m_strCShortDatasKey)
@@ -224,7 +224,7 @@ CExBaseObject* CDataGroup::CreateNewChild(const CString &strClassID, BOOL &bAddT
 // 		pNew = new CShortData();
 // 	}
 
-	//2021-1-17  lijunqing  基本没有使用场合，注释掉
+	//2021-1-17  Eric  基本没有使用场合，注释掉
 	//else if (strClassID == pXmlKeys->m_strCLongDataKey)
 	//{
 	//	pNew = new CLongData();
@@ -243,7 +243,7 @@ CExBaseObject* CDataGroup::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/)
 		pNew = new CDataGroup();
 	}
 	//else if (nClassID == DTMCLASSID_CLONGDATAS)
-	//{//2021-1-17  lijunqing  基本没有使用场合，注释掉
+	//{//2021-1-17  Eric  基本没有使用场合，注释掉
 	//	pNew = new CLongDatas();
 	//}
 	else if (nClassID == DTMCLASSID_CSHORTDATAS)
@@ -251,7 +251,7 @@ CExBaseObject* CDataGroup::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/)
 		pNew = new CShortDatas();
 	}
 	//else if (nClassID == DTMCLASSID_CLONGDATA)
-	//{//2021-1-17  lijunqing  基本没有使用场合，注释掉
+	//{//2021-1-17  Eric  基本没有使用场合，注释掉
 	//	pNew = new CLongData();
 	//}
 	else if (nClassID == DTMCLASSID_CSHORTDATA)
@@ -498,7 +498,7 @@ void CDataGroup::SelectAllGroups(CExBaseList &listDataGroup, const CString &strD
 		if (p->GetClassID() == DTMCLASSID_CDATAGROUP)
 		{
 			if (strDataType.GetLength() == 0)
-			{//2021-5-3  lijunqing  如果传入的参数为空字符串，表示所有的Group
+			{//2021-5-3  Eric  如果传入的参数为空字符串，表示所有的Group
 				listDataGroup.AddTail(p);
 				continue;
 			}
@@ -574,7 +574,7 @@ void CDataGroup::ResetDatas(CExBaseList &listDatas)
 	}
 }
 
-//2021-8-15  lijunqing
+//2021-8-15  Eric
 void CDataGroup::ResetDatas()
 {
 	POS pos = GetHeadPosition();
@@ -824,7 +824,7 @@ CDvmData* CDataGroup::AddNewData(const CString &strID, const CString &strValue)
 	return AddNewData(strID, strID, _T("string"), strValue);
 }
 
-//2021-9-5 lijunqing 简单新建Data函数
+//2021-9-5 Eric 简单新建Data函数
 CDvmData* CDataGroup::AddNewData(const CString &strID,float fValue)
 {
 	CString strValue;
@@ -965,7 +965,7 @@ CDataGroup* CDataGroup::AddNewGroup(const CString &strName, const CString &strID
 	return pNew;
 }
 
-//2020-10-13 lijunqing
+//2020-10-13 Eric
 CDvmData* CDataGroup::FindDataByValue(const CString &strValue)
 {
 	POS pos = GetHeadPosition();
@@ -1019,7 +1019,7 @@ void CDataGroup::ShortData_to_DvmData()
 }
 
 // 获取当前节点子节点的数量 - data的数量 mym add 2020-10-8
-//2021-5-3  lijunqing 修改名字
+//2021-5-3  Eric 修改名字
 long CDataGroup::GetChildCount(const CString &strDataType)
 {
 	POS pos = GetHeadPosition();
@@ -1070,7 +1070,7 @@ long CDataGroup::GetChildCount(UINT nClassID)
 	return nNodeCnt;
 }
 
-//2020-10-27  lijunqing
+//2020-10-27  Eric
 //shaolei 2022-1-18 增加类型判断
 BOOL CDataGroup::GetDataValue(const CString &strID, CString &strValue, UINT nClassID)
 {
@@ -1150,7 +1150,7 @@ BOOL CDataGroup::GetDataType( const CString &strID, CString &strDataType, UINT n
 	return TRUE;
 }
 
-//2021-8-2  lijunqing
+//2021-8-2  Eric
 void CDataGroup::SetDataValue(const CString &strID, const CString &strValue, BOOL bAddNewNotExist, UINT nClassID)
 {
 	CExBaseObject *pFind = FindByID(strID);
@@ -1242,7 +1242,7 @@ void CDataGroup::InitNameByID(const CString &strName,const CString &strID)
 	}
 }
 
-//2022-8-11 lijunqing 根据查询的条件对象，判断当前数据对象是否包含数据，默认使用CDvmData
+//2022-8-11 Eric 根据查询的条件对象，判断当前数据对象是否包含数据，默认使用CDvmData
 BOOL CDataGroup::Match(CDataGroup *pQuery)
 {
 	POS pos = pQuery->GetHeadPosition();
@@ -1401,7 +1401,7 @@ long CDataGroup::SelectDatas_IDHas(const CString &strIDHas, CExBaseList &oListDa
 	return oListDatas.GetCount();
 }
 
-//2021-5-5  lijunqing 
+//2021-5-5  Eric 
 CDataGroup* dvm_FindDataGroupByValue(CExBaseList &listGroup, const CString &strValue)
 {
 	POS pos = listGroup.GetHeadPosition();
@@ -1427,7 +1427,7 @@ CDataGroup* dvm_FindDataGroupByValue(CExBaseList &listGroup, const CString &strV
 	return pFind;
 }
 
-//2022-4-13  lijunqing 从SttParas移动到此处，更加方便使用
+//2022-4-13  Eric 从SttParas移动到此处，更加方便使用
 
 //////////////////////////////////////////////////////////////////////////
 //
@@ -1459,7 +1459,7 @@ BOOL stt_GetDataValueByID(CExBaseList *pList, const CString &strValueID, CString
 {
 	CExBaseObject *pData = pList->FindByID(strValueID);
 
-	//2021-9-1  lijunqing
+	//2021-9-1  Eric
 	//pList的子对象可能是CShortData， 有可能是CDvmData
 	if (pData != NULL)
 	{
@@ -1533,7 +1533,7 @@ BOOL stt_GetDataValueByID(CExBaseList *pList, const CString &strValueID, float &
 	return bRet;
 }
 
-//2021-9-1  lijunqing
+//2021-9-1  Eric
 BOOL stt_GetDataValueByID(CExBaseList *pList, const CString &strValueID, short &nValue)
 {
 	CString strValue;
@@ -1566,7 +1566,7 @@ long stt_SetDataValueByID(CExBaseList *pList, const CString &strValueID, const C
 	return TRUE;
 }
 
-//2022-9-12  lijunqing
+//2022-9-12  Eric
 void dvm_SetDvmX_Value(CExBaseObject *pData, long nValue)
 {
 	switch (pData->GetClassID())

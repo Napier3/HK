@@ -337,7 +337,7 @@ public:
 
 };
 
-//2021-9-18  lijunqing
+//2021-9-18  Eric
 class CRgn : public QRegion
 {
 public:
@@ -543,7 +543,7 @@ public:
     }
     void Polyline(CPoint *pPoints, int nPoints)
     {
-		//2021-9-20  lijunqing
+		//2021-9-20  Eric
 		//void drawPolyline(const QPoint *points, int pointCount);
 		  drawPolyline((QPoint *)pPoints, nPoints);
     }

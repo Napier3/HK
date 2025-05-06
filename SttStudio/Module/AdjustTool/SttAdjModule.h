@@ -1,4 +1,4 @@
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttAdjModule.h  CSttAdjModule
@@ -51,7 +51,7 @@ public:
 	CDataGroup* AddNewGear_AllChnel(	 const CString &strTrangeID);
 	CDataGroup* AddNewGear_SingleChnel( const CString &strTrangeID , const CString &strChannelID);
 
-	//2021-5-3 lijunqing
+	//2021-5-3 Eric
 	CDataGroup* AddNewGear_AllChannel(CDataGroup *pTrange, CDataGroup *pAdjParas, const CString &strWaveID, CDataGroup *pSrcGear=NULL);
 	CDataGroup* AddNewGear_SingleChannel(CDataGroup *pAdjParas, const CString &strWaveID, CDataGroup *pSrcGear=NULL);
 
@@ -60,7 +60,7 @@ public:
 	CDataGroup* DeleteGear_SingleGear( const CString &strTrangeID, const CString &strChannelID, const CString &strCurID, int &nIndex);
 	CDataGroup* DeleteGear_AllGear( const CString &strTrangeID, int &nCmbChannelIndex, int &nCmbWaveIndex, const CString &strCurID, int &nIndex);
 
-	//2021-5-3 lijunqing
+	//2021-5-3 Eric
 	BOOL DeleteGear(CDataGroup *pParent, const CString &strGearID);	
 	BOOL DeleteGear_AllChannel(CDataGroup *pTrange, CDataGroup *pAdjParas, const CString &strWaveID, const CString &strGearID);
 	BOOL DeleteGear_SingleChannel(CDataGroup *pAdjParas, const CString &strWaveID, const CString &strGearID);
@@ -98,7 +98,7 @@ public:
 	BOOL  GetModulePos(long &nModulePos);
 	BOOL  GetModule_Pos_Index(CString &strModulePos, long &nModulePos,  long &nModuleIndex);
 
-	//2021-5-4  lijunqing  将模块类型由整数转换为字符串，兼容老版本校准系数文件
+	//2021-5-4  Eric  将模块类型由整数转换为字符串，兼容老版本校准系数文件
 	void TransModuleTypeFromLongToString();
 
 public:
@@ -120,7 +120,7 @@ protected:
 	BOOL m_bModifiedFlag;
 
 };
-//2021-11-01  lijunqing
+//2021-11-01  Eric
 long stt_adj_HdChDef_GetNum(CDataGroup *pHdChDefine);
 CString stt_adj_HdChDef_GetEeType(CDataGroup *pHdChDefine);
 BOOL stt_adj_HdChDef_Is_Voltage(CDataGroup *pHdChDefine);

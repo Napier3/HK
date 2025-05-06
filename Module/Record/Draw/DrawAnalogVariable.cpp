@@ -194,7 +194,7 @@ void CDrawAnalogVariable::Draw(CDC *pDC, double fZoomRatio,const CPoint &ptOffse
 
 		if (m_pptAttachDrawBuffer != NULL)
 		{
-			long nWaveLength = m_pptAttachDrawBuffer->GetCurrUseLength();// -  1;  //2021-2-19  lijunqing 少了一个点
+			long nWaveLength = m_pptAttachDrawBuffer->GetCurrUseLength();// -  1;  //2021-2-19  Eric 少了一个点
 
 			if (MrDraw::g_dwAnalogDrawMode == ANALOG_DRAW_MODE_LINE)
 			{
@@ -257,7 +257,7 @@ void CDrawAnalogVariable::LogicPointToDevicePoint(double dCoefY, double dOffsetY
 	//dDrawCoef *= *m_dCoefValue;
 
 	if (m_pnAttachBuffer != NULL)
-	{//2021-10-29  lijunqing
+	{//2021-10-29  Eric
 		if (is_mem_buffer_ushort(m_pnAttachBuffer))
 		{
 			m_pptAttachDrawBuffer->CalValueY(dDrawCoef,dOffset,(CMemBuffer_UShort*)m_pnAttachBuffer,nBuf1BeginPos,nBuf1EndPos,
@@ -278,7 +278,7 @@ void CDrawAnalogVariable::LogicPointToDevicePoint(double dCoefY, double dOffsetY
 		}
 	}
 	else if (m_pfAttachBuffer != NULL)
-	{//float 类型的缓冲区   //2021-10-29  lijunqing
+	{//float 类型的缓冲区   //2021-10-29  Eric
 		m_pptAttachDrawBuffer->CalValueY(dDrawCoef,dOffset,m_pfAttachBuffer,nBuf1BeginPos,nBuf1EndPos,
 			nBuf2BeginPos,nBuf2EndPos,nGap);
 	}
@@ -401,7 +401,7 @@ void CDrawAnalogVariable::SetRange(double dRange)
 {
 	if (dRange <= 0.0001)
 	{
-		dRange = 0.01; //2022-6-12  lijunqing
+		dRange = 0.01; //2022-6-12  Eric
 	}
 
 	dRange *= 1.1;

@@ -79,7 +79,7 @@
 #define STT_CNTR_CMD_ImportDvmFile         "ImportDvmFile" //导入模型文件，模型替换  shaolei 2023-8-14
 #define STT_CNTR_CMD_Minimize				"Minimize"//最小化 zhouyangyong 2024-2-26
 
-//2023-2-21  lijunqing 被测装置通信后台
+//2023-2-21  Eric 被测装置通信后台
 #define STT_CNTR_CMD_PpIotEngineClient           "PpIotEngineClient" //装置通讯
 
 //2023.11.15 lichao PNS331 新增
@@ -90,7 +90,7 @@
 #define STT_CNTR_CMD_RemoteCtrl			        "RemoteCtrl"  //显示遥控功能界面
 
 
-//2023-3-5  lijunqing  设置IP地址，用于自动测试
+//2023-3-5  Eric  设置IP地址，用于自动测试
 #define STT_CNTR_CMD_NetworkConfig          "NetworkConfig"
 
 //Original Test Macro
@@ -193,12 +193,12 @@
 #define STT_DEBUG_GenTemplate     "debugGenTemplate"
 #define STT_DEBUG_SaveAsSysFiles     "debugSaveAsSysFiles"
 
-//2022-1-21  lijunqing
+//2022-1-21  Eric
 #define STT_TEST_STATE_TESTTING	    "Testing"
 #define STT_TEST_STATE_TEST_STOPED    "TestStoped"
 #define STT_TEST_STATE_TEST_FINISHED    "TestFinished"
 
-//2022-4-10  lijunqing  IecDetect,IecRecord  保留用
+//2022-4-10  Eric  IecDetect,IecRecord  保留用
 #define STT_CNTR_CMD_IecDetect			"IecDetect"
 #define STT_CNTR_CMD_IecRecord			"IecRecord"
 #define STT_CNTR_CMD_IecCap			    "IecCap"
@@ -208,7 +208,7 @@
 
 #define STT_CNTR_CMD_CustomSet                  "CustomSet"   //自定义设置按钮
 
-//2022-12-02  lijunqing  测试助手
+//2022-12-02  Eric  测试助手
 #define STT_CNTR_CMD_Assist     "Assist"
 
 //主框架程序发送给助手的事件定义

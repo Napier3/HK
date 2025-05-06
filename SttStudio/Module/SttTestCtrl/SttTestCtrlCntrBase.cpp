@@ -67,7 +67,7 @@ void CSttTestCtrlCntrBase::GetAllItemsByID(const CString &strItemID, CExBaseList
 
 }
 
-//2022-3-29  lijunqing
+//2022-3-29  Eric
 long CSttTestCtrlCntrBase::TestItem(const CString &strItemPath)
 {
 	return 0;
@@ -102,7 +102,7 @@ void CSttTestCtrlCntrBase::OpenMacroTestUI(CSttMacroTestUI_TestMacroUI *pTestMac
         //stt_ui_OpenParasFile(pTestMacroUI->m_strUI_ParaFile, &m_oTestMacroUI_Paras);
 		if (g_nLogDebugInfor == 1)		CLogPrint::LogString(XLOGLEVEL_TRACE, "***** end  OpenParasFile >>");
 
-		//2023-2-7  lijunqing 根据装置模型智能生成模板参数
+		//2023-2-7  Eric 根据装置模型智能生成模板参数
         //sun if (g_theGbWzdAiTool != nullptr)
         //sun {
         //sun 	CString strAiFile = stt_ui_GetParasAiFile(pTestMacroUI->m_strUI_ParaFile);
@@ -249,7 +249,7 @@ long CSttTestCtrlCntrBase::Ats_SetParameter(const CString &strMacroID, CDataGrou
 	return 0;
 }
 
-//2022-3-29  lijunqing
+//2022-3-29  Eric
 long CSttTestCtrlCntrBase::Ats_NewItems(CExBaseList *pParent, CExBaseObject *pItems)
 {
 	return 0;
@@ -321,7 +321,7 @@ long CSttTestCtrlCntrBase::Ats_GenerateItems_AddSafety(CDataGroup *pParas, CExBa
 {
 	return 0;
 }
-//模板、报告数据等相关的接口  2022-3-14  lijunqing
+//模板、报告数据等相关的接口  2022-3-14  Eric
 CString CSttTestCtrlCntrBase::SaveTestFile(const CString &strRealPath, const CString &strTemplateFileName)
 {
 	return "";
@@ -366,7 +366,7 @@ BOOL CSttTestCtrlCntrBase::ClearReportsRslts(CDataGroup *pParas)
 	return FALSE;
 }
 
-//2022-4-14 lijunqing
+//2022-4-14 Eric
 void CSttTestCtrlCntrBase::Ats_IecDetect(long bEnable)
 {
 	
@@ -378,7 +378,7 @@ void CSttTestCtrlCntrBase::Ats_IecRecord(CDataGroup *pIecRecordParas)
 }
 
 
-//2022-3-11 lijunqing
+//2022-3-11 Eric
 void CSttTestCtrlCntrBase::OpenMacroTestUI_ParaFile(long nFileIndex)
 {
     if (m_pCurrTestMacroUI == nullptr)

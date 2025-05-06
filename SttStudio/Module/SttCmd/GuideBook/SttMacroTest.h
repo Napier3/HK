@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttMacroTest.h  CSttMacroTest
@@ -58,7 +58,7 @@ public:
 	long  m_nRepeatTimes;
 	CString  m_strReportMode;
 	long  m_nReportFillUseNoRepeat;
-	CString m_strMacroID;   //2022-4-14  lijunqing
+	CString m_strMacroID;   //2022-4-14  Eric
 
 protected:
 	CSttMacroTestPara* m_pPara;

@@ -71,7 +71,7 @@ typedef struct epAnalysisResult
 	//vector <EP_ANALYSIS_ERR> m_vErr;
 }EP_ANALYSIS_RESULT ,*PEP_ANALYSIS_RESULT;
 
-//lijunqing 2020-6-19   初始化分析结果结构体
+//Eric 2020-6-19   初始化分析结果结构体
 inline void ep_protocol_analysis_init(EP_ANALYSIS_RESULT &oResult)
 {
 	oResult.nErrorFlag = 0;
@@ -101,7 +101,7 @@ void ep_protocol_analysis92(PEPCAPPARSEDATAS pPrevData,  PEPCAPPARSEDATAS pDatas
 void ep_protocol_analysisGS(PEPCAPPARSEDATAS pPrevData,  PEPCAPPARSEDATAS pDatas, PEP_ANALYSIS_RESULT pResult);
 
 //////////////////////////////////////////////////////////////////////////
-//2022-5-31  lijunqing  开关量变位列表
+//2022-5-31  Eric  开关量变位列表
 typedef struct ep_gs_binary_turn
 {
 	DWORD nChType;

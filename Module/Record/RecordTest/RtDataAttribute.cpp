@@ -374,7 +374,7 @@ void CRtDataAttribute::CalFaultValues(long nBeginPos, long nLen, long nCyclePoin
 		pSrcNext++;
 	}
 
-	//处理最后一些点  //2020-12-19  lijunqing
+	//处理最后一些点  //2020-12-19  Eric
 	float fLast = *(pFaultCurr - 1);
 	while (nIndex < nEnd)
 	{

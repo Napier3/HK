@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //DvmDevice.cpp  CDvmDevice
@@ -180,7 +180,7 @@ void CDvmDevice::InitAfterRead()
 
 void CDvmDevice::InitFormatUseMode()
 {
-	//2023-4-21  lijunqing 增加Data数据对象对formart属性的使用模式
+	//2023-4-21  Eric 增加Data数据对象对formart属性的使用模式
 	CDvmData *pFind = (CDvmData*)m_pDeviceAttr->FindByID(DVM_FORMART_USE_MODE_KEY);
 	m_nFormatUseMode = DVM_FORMART_USE_MODE_VAL;
 
@@ -399,7 +399,7 @@ CDvmDataset* CDvmDevice::GetDeviceAttrs()
 
 
 //////////////////////////////////////////////////////////////////////////
-//2020-6-18  lijunqing  增加通用的功能
+//2020-6-18  Eric  增加通用的功能
 CDvmDataset* CDvmDevice::FindDataset(const CString &strDatasetID)
 {
 	CDvmDataset *pFind = NULL;
@@ -420,7 +420,7 @@ CDvmDataset* CDvmDevice::FindDataset(const CString &strDatasetID)
 	return pFind;
 }
 
-//2022-11-21 lijunqing
+//2022-11-21 Eric
 CDvmDataset* CDvmDevice::FindDatasetByPath(const CString &strDatasetIDPath)
 {
 	long nSepPos = strDatasetIDPath.Find('$');	
@@ -514,7 +514,7 @@ CDvmDataset* CDvmDevice::GetDataset(const CString &strLdID, const CString &strDs
 	}
 }
 
-//2023-4-18  lijunqing
+//2023-4-18  Eric
 long CDvmDevice::GetDatasetCount()
 {
 	POS pos = GetHeadPosition();

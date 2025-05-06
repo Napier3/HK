@@ -67,7 +67,7 @@ public:
 	virtual void Config();//页面功能配置
 	virtual void UpdateChName();//更新通道名称 2023.6.25 zhouhj
 
-	//2022-5-28  lijunqing
+	//2022-5-28  Eric
 	//数据集下以DvmData展示的控制块分析结果：根据CapDevice，获取DvmData
 	BOOL FindDvmDataForCtrl(CCapDeviceBase *pCapDevice, const CString &strDatasetID, CDvmDataset **ppDsRet, CDvmData **ppDataRet);
 

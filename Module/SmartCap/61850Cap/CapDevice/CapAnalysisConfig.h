@@ -25,7 +25,7 @@ public:
 	bool m_bSmv_Power;   //是否更新功率数据集
 	bool m_bSmv_Vector;  //是否更新矢量图数据集
 
-	bool m_bUseCapRecord;  //2022-6-19  lijunqing 是否使用录波数据：即CapRecord是否起作用
+	bool m_bUseCapRecord;  //2022-6-19  Eric 是否使用录波数据：即CapRecord是否起作用
 
 // 	double m_dCT_PrimaryValue;//A//20220612 增加用于设置未进行IEC配置映射的变比
 // 	double m_dCT_SecondValue;//A
@@ -88,7 +88,7 @@ extern CCapAnalysisConfig g_oCapAnalysisConfig;
 extern BOOL g_bSmartCap_RecordNow; 
 extern BOOL g_bIsParsingPkg;
 
-//2022-5-3  lijunqing enable harm cal  functions
+//2022-5-3  Eric enable harm cal  functions
 extern long g_nEnableCal_Root;//  = 1 ;
 
 extern long g_nEnableCal_Harm02Value;//  = 1 ;

@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //DvmValue.cpp  CDvmValue
@@ -8,7 +8,7 @@
 #include "stdafx.h"
 #include "DvmValue.h"
 #include "DvmData.h"
-//2021-5-18  shaolei,lijunqing 
+//2021-5-18  shaolei,Eric 
 //AtsWorkBench：可能是61850的代码与CValue存在冲突，导致编译出错
 //因此将CValue改为CXValue，同时保持兼容性
 #ifdef _use_cxvalue_
@@ -62,7 +62,7 @@ long CDvmValue::XmlWriteOwn(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oElement,
 {
 	CDataMngrXmlRWKeys *pXmlKeys = (CDataMngrXmlRWKeys*)pXmlRWKeys;
 
-    //2020-11-30  lijunqing
+    //2020-11-30  Eric
     if (pXmlKeys->m_nXmlOnlyWrite_Id_Value >= 1)
     {
 		if (pXmlKeys->m_nXmlOnlyWrite_Id_Value > 0xFFFF)
@@ -404,7 +404,7 @@ BOOL CDvmValue::UpdateChildValue(CDvmValue *pSrcParentValue, BOOL bIsNew)
 	return bRet;
 }
 
-//2021-10-22  lijunqing
+//2021-10-22  Eric
 void CDvmValue::InitByValues(CExBaseList *pValues)
 {
 	CString strID = GetIDPath_Root_Dataset();
@@ -524,7 +524,7 @@ void CDvmValue::InitValueByData(CDvmValue *pData)
 }
 
 
-//2022-5-13  lijunqing
+//2022-5-13  Eric
 CDvmValue* dvm_FindByID_Has(CExBaseList *pParent, const CString &strValueID)
 {
 	CDvmValue *pDvmValue = NULL;

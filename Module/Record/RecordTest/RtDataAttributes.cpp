@@ -229,7 +229,7 @@ void CRtDataAttributes::CalFrequncy(PRTATTRIBUTECALBUFFERPOS pRtAttrCalBufPos, B
 {
 	if (*m_paDataAttributes != NULL)
 	{
-		//2022-5-5  lijunqing : reset value
+		//2022-5-5  Eric : reset value
 		*((*m_paDataAttributes)->m_oCalFuncPara.pnFreqZeroPosCount) = 0;
 
 		(*m_paDataAttributes)->CalValues(pRtAttrCalBufPos, TRUE, bCalUseRecordBuffer);

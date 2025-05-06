@@ -39,7 +39,7 @@ CEquationKey::CEquationKey(const CString &strKeyName,const CString &strValue)
 CEquationKey::CEquationKey(const char *pszKeyNameBegin,const char *pszKeyNameEnd
 			 ,const char *pszValueBegin,const char *pszValueEnd)
 {
-	//2021-1-3  lijunqing 考虑末尾没有分隔符号的特殊情况
+	//2021-1-3  Eric 考虑末尾没有分隔符号的特殊情况
 	if (pszKeyNameBegin == NULL || pszKeyNameEnd == NULL
 		|| pszValueBegin == NULL) //|| pszValueEnd == NULL)
 		return;
@@ -54,7 +54,7 @@ CEquationKey::CEquationKey(const char *pszKeyNameBegin,const char *pszKeyNameEnd
 	m_pszKeyName = pTemp;
 	delete pTemp;
 	
-	//2021-1-3  lijunqing 考虑末尾没有分隔符号的特殊情况
+	//2021-1-3  Eric 考虑末尾没有分隔符号的特殊情况
 	if (pszValueEnd != NULL)
 	{
 		lLen = pszValueEnd - pszValueBegin + 1;

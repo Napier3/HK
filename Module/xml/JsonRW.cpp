@@ -1338,7 +1338,7 @@ long CJsonRWDoc::GetXml(char **ppszRetBuffer, long nOffset)
 	return (strlen(*ppszRetBuffer + nOffset) + nOffset);
 }
 
-//lijunqing 2022-3-11
+//Eric 2022-3-11
 long CJsonRWDoc::GetXml_ASCII(char **ppszRetBuffer, long nOffset)
 {
     if (m_pJsonDoc == nullptr)

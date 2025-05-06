@@ -31,7 +31,7 @@
 #define POLARAXISDRAW_CIRCLEUNIT		0x00000080	
 #define POLARAXISDRAW_CIRCLEUNITTEXT	0x00001000	
 
-//2022-5-14 lijunqing 
+//2022-5-14 Eric 
 typedef struct _polar_vector_
 {
 public:
@@ -383,7 +383,7 @@ public:
 	void	DrawTheVector(CDC*pDC,int iCircleUnitIndex,double fRadius1,double fAngle1,double fRadius2,double fAngle2,CString strVectorName,COLORREF crVector=RGB(0,0,0),int iLineWidth=1,unsigned int uiLineStyle=PS_SOLID,int iArrowLen=10,COLORREF crVectorTitle=RGB(0,0,0));//绘制一矢量图
 	void	DrawTheVector(CDC*pDC,int iCircleUnitIndex,double fRadius1,double fAngle1,double fRadius2,double fAngle2,double *fRadiusL,double *fAngleL,CString strVectorName,COLORREF crVector=RGB(0,0,0),int iLineWidth=1,unsigned int uiLineStyle=PS_SOLID,int iArrowLen=10,COLORREF crVectorTitle=RGB(0,0,0));//绘制一矢量图
 
-	//2022-5-14  lijunqing
+	//2022-5-14  Eric
 	void   DrawTheVector(CDC *pDC, int iCircleUnitIndex, POLAR_VECTOR *pVector);
 	void   DrawTheVector(CDC *pDC, POLAR_VECTORS *pVectors);
 	void   DrawTheVector(CDC *pDC, POLAR_VECTORS_MNGR *pVectorsMngr);

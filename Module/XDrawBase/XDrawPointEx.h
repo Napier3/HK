@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //XDrawPoint.h  CXDrawPoint_Ex
@@ -10,7 +10,7 @@
 
 #include "XDrawBase.h"
 
-//2021-9-7  lijunqing
+//2021-9-7  Eric
 //不能保存数据，总是动态创建
 class CXDrawPoint_Ex : public CXDrawBase, public CXDrawData_Point_Ex
 {

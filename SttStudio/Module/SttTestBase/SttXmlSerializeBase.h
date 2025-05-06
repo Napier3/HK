@@ -106,7 +106,7 @@ public:
 	virtual CSttXmlSerializeBase* xml_serialize(const char *pszName,const char *pszID, const char *pszDataTypeID, BSTR bstrElementKey = NULL);
 	virtual CSttXmlSerializeBase* xml_serialize(const char *pszName,const char *pszID, long nIndex, const char *pszDataTypeID, BSTR bstrElementKey = NULL);
 
-	//2021-6-1  lijunqing : use bstrElementKey and nIndex 
+	//2021-6-1  Eric : use bstrElementKey and nIndex 
 	virtual CSttXmlSerializeBase* xml_serialize(BSTR bstrElementKey, long nIndex, const char *pszName,const char *pszID, const char *pszDataTypeID) ;
 
 	//增加用于电压电流幅值、频率比对系统参数串行化
@@ -142,8 +142,8 @@ protected:
 	CSttXmlSerializeRead()	{		}
 
 	CXmlRWElementBase* FindElement(const char *pszID, BSTR bstrElementKey);
-	CXmlRWElementBase* FindElement(BSTR bstrElementKey, long nIndex);  //2021-6-1  lijunqing
-	CXmlRWElementBase* FindElement(BSTR bstrElementKey, BSTR bstrAttrID, const char *pszAttrValue,   long nIndex);  //2021-6-5  lijunqing
+	CXmlRWElementBase* FindElement(BSTR bstrElementKey, long nIndex);  //2021-6-1  Eric
+	CXmlRWElementBase* FindElement(BSTR bstrElementKey, BSTR bstrAttrID, const char *pszAttrValue,   long nIndex);  //2021-6-5  Eric
 
 public:
 	virtual CSttXmlSerializeBase* create_new(CXmlRWDocBase *pXmlDoc, CXmlRWElementBase *pElement, BOOL bAddChild)
@@ -182,7 +182,7 @@ public:
 	virtual CSttXmlSerializeBase* xml_serialize(const char *pszName,const char *pszID, const char *pszDataTypeID, BSTR bstrElementKey = NULL);
 	virtual CSttXmlSerializeBase* xml_serialize(const char *pszName,const char *pszID, long nIndex, const char *pszDataTypeID, BSTR bstrElementKey = NULL);
 	
-	//2021-6-1  lijunqing : use bstrElementKey and nIndex 
+	//2021-6-1  Eric : use bstrElementKey and nIndex 
 	virtual CSttXmlSerializeBase* xml_serialize(BSTR bstrElementKey, long nIndex, const char *pszName,const char *pszID, const char *pszDataTypeID);
 };
 
@@ -226,7 +226,7 @@ public:
 	virtual CSttXmlSerializeBase* xml_serialize(const char *pszName,const char *pszID, const char *pszDataTypeID, BSTR bstrElementKey = NULL);
 	virtual CSttXmlSerializeBase* xml_serialize(const char *pszName,const char *pszID, long nIndex, const char *pszDataTypeID, BSTR bstrElementKey = NULL);
 
-	//2021-6-1  lijunqing : use bstrElementKey and nIndex 
+	//2021-6-1  Eric : use bstrElementKey and nIndex 
 	virtual CSttXmlSerializeBase* xml_serialize(BSTR bstrElementKey, long nIndex, const char *pszName,const char *pszID, const char *pszDataTypeID);
 	//增加用于电压电流幅值、频率比对系统参数串行化
 	virtual BOOL xml_serialize_sys_pata(const char *pszName,const char *pszID,const char *pszUnit,const char *pszDataTypeID,
@@ -337,7 +337,7 @@ public:
 	virtual CSttXmlSerializeBase* xml_serialize(const char *pszName,const char *pszID, const char *pszDataTypeID, BSTR bstrElementKey = NULL);
 	virtual CSttXmlSerializeBase* xml_serialize(const char *pszName,const char *pszID, long nIndex, const char *pszDataTypeID, BSTR bstrElementKey = NULL);
 
-	//2021-6-1  lijunqing : use bstrElementKey and nIndex 
+	//2021-6-1  Eric : use bstrElementKey and nIndex 
 	virtual CSttXmlSerializeBase* xml_serialize(BSTR bstrElementKey, long nIndex, const char *pszName,const char *pszID, const char *pszDataTypeID);
 
 	CDataGroup m_oSysParasList;//存放当前被读取的xml内的系统参数和当前实际的系统参数
@@ -395,7 +395,7 @@ public:
 	virtual CSttXmlSerializeBase* xml_serialize(const char *pszName,const char *pszID, const char *pszDataTypeID, BSTR bstrElementKey = NULL);
 	virtual CSttXmlSerializeBase* xml_serialize(const char *pszName,const char *pszID, long nIndex, const char *pszDataTypeID, BSTR bstrElementKey = NULL);
 
-	//2021-6-1  lijunqing : use bstrElementKey and nIndex 
+	//2021-6-1  Eric : use bstrElementKey and nIndex 
 	virtual CSttXmlSerializeBase* xml_serialize(BSTR bstrElementKey, long nIndex, const char *pszName,const char *pszID, const char *pszDataTypeID);
 };
 

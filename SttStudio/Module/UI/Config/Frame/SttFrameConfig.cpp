@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttFrameConfig.cpp  CSttFrameConfig
@@ -18,7 +18,7 @@
 #define new DEBUG_NEW
 #endif
 
-long g_nComBoxItemHeight = 50;  //2023-1-4  lijunqing
+long g_nComBoxItemHeight = 50;  //2023-1-4  Eric
 long g_nTableVertScrollWidth = 30;  //Table垂直滚动条宽度
 long g_nTableHorizontalScrollHeight = 30; //Table水平滑动块宽度
 long g_nTreeVertScrollWidth = 30; //Tree垂直滚动条宽度
@@ -243,7 +243,7 @@ void CSttFrameConfig::InitAfterRead()
 // 		m_pResultBar = (CSttFrame_ResultBar*)AddNewChild(new CSttFrame_ResultBar());
 // 	}
 
-	//2023-1-4  lijunqing
+	//2023-1-4  Eric
 	g_nComBoxItemHeight = GetComBoxItemHeight();
 	g_nTableVertScrollWidth = GetTableVertScrollWidth();
 	g_nTableHorizontalScrollHeight =GetTableHorizontalScrollHeight();

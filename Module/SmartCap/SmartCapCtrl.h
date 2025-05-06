@@ -16,11 +16,11 @@
 #define WM_CAP_CFG_MSG  (WM_USER+2333)
 #define WM_BEGIN_CAP_MSG  (WM_USER+2334)
 
-//2022-11-12  lijunqing
+//2022-11-12  Eric
 //PxiEngineGlobal.h(6) : error C2011: “_tagEngineSystemDefine”: “enum”类型重定义
 #include "../../Protocol/Module/PxiEngine/PxiEngineGlobal.h"
 // enum _tagEngineSystemDefine2
-// {//2020-5-21  lijunqing
+// {//2020-5-21  Eric
 // 	engineConnectDeviceFailed= 1, //0,
 // 	engineConnectDeviceSuccessful=2, //1,
 // 	engineCommError = 3, //2,
@@ -95,7 +95,7 @@ public:
 	unsigned long  m_hSysMsgWnd;
 	unsigned long  m_nSysMsg;
 
-	void CreateAt02dCmdThread();   //lijunqing 2022-4-8
+	void CreateAt02dCmdThread();   //Eric 2022-4-8
 
 	//通讯命令执行
 	void ReadAin();               //读测量值
@@ -200,7 +200,7 @@ public:
 	void SetCurrTestStr(const CString &strCurrTest)	{	m_strCurrTest = strCurrTest;	};
 	void AttachSttTestAppCfg(CSttTestAppCfg *p)	{	m_pSttTestAppCfg = p;	}
 
-	//2022-5-2  lijunqing 
+	//2022-5-2  Eric 
 	void InitSmartCapCtrl();
 
 };

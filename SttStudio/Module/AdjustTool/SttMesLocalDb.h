@@ -1,4 +1,4 @@
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttMesLocalDb.h  CSttMesLocalDb
@@ -23,7 +23,7 @@ private:
 
 	CDataGroup *m_pSttMesLocalDB;
 
-	//2021-5-5  lijunqing  已经打开的模块类型系数文件
+	//2021-5-5  Eric  已经打开的模块类型系数文件
 	CExBaseList m_listModuleClassOpened;
 private:
 	CDataType m_oHdGearType;
@@ -80,7 +80,7 @@ public:
 	static CDataGroup* OpenSttModuleClass(CDataGroup *pModuleClass);
 	static BOOL SaveSttModuleClassFile(CDataGroup *pModuleClass);
 
-	//2020-10-13 lijunqing
+	//2020-10-13 Eric
 	static CDvmData* FindModuleTypeData(const CString &strModuleType);
 	static CDvmData* FindModuleTypeData(long nModuleType);
 	static CString GetModuleType_ChID_Desc(const CString &strModuleType);

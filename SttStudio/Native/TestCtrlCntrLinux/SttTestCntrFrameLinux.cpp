@@ -36,11 +36,11 @@ extern QSttEventFilter *g_pSttEventFilter;
 //2022-12-02 修改功能ID，导致所有的都要编译，效率低下，所以从头文件中去掉，在任何需要包含的地方进行包含
 #include "../../Module/UI/SttTestCntrCmdDefine.h" 
 
-//2023-2-21  lijunqing
+//2023-2-21  Eric
 //#include "../../../AutoTest/Module/GbItemsGen/GbSmartGenWzd/GbWzdAi/GbWzdAiTool.h"
 #include "../../Module/UI/Module/CommonCtrl_QT/QSttProgDlg.h"
 
-//2023-3-6  lijunqing  设置装置IP地址
+//2023-3-6  Eric  设置装置IP地址
 #include "../../Module/UI/Controls/NetworkConfig/qnetworkconfigwidget.h"
 
 extern QSttProgDlg *g_pSttGlobalProgDlg;
@@ -57,9 +57,9 @@ QSttTestCntrFrameLinux::QSttTestCntrFrameLinux(QWidget *parent) :
 	m_pToolBar = NULL;
 	m_pMenuWidget = NULL;
 
-//sun	m_pEngineClientWidget = NULL;   //2023-2-20  lijunqing
+//sun	m_pEngineClientWidget = NULL;   //2023-2-20  Eric
 
-    //2023-03-01  lijunqing : 首先创建输出窗口用于监视提示信息
+    //2023-03-01  Eric : 首先创建输出窗口用于监视提示信息
     //输出视图一直存在
     m_pOutputWidget = new QSttOutPutWidget(this);
     m_pOutputWidget->hide();
@@ -69,7 +69,7 @@ QSttTestCntrFrameLinux::QSttTestCntrFrameLinux(QWidget *parent) :
 QSttTestCntrFrameLinux::~QSttTestCntrFrameLinux()
 {
     //sun if (m_pEngineClientWidget != NULL)
-    //sun {//2023-2-20  lijunqing
+    //sun {//2023-2-20  Eric
     //sun 	delete m_pEngineClientWidget;
     //sun 	m_pEngineClientWidget = NULL;
     //sun }
@@ -998,7 +998,7 @@ void QSttTestCntrFrameLinux::OnCmd_AddMacro(BOOL bUseNameID)
 
 void QSttTestCntrFrameLinux::OnCmd_PpIotEngineClient()
 {
-	//2023-03-01 lijunqing 为了提高程序启动速度，和通信相关的，打开通信界面的时候在启动初始化
+    //2023-03-01 Eric 为了提高程序启动速度，和通信相关的，打开通信界面的时候在启动初始化
 	g_pTheSttTestApp->IinitGbWzdAiTool();
 
     //CreateEngineClientWidget();

@@ -120,7 +120,7 @@ public:
 	virtual BOOL CopyOwn(CBaseObject* pDest);
 
 public:
-	//2021-1-18  lijunqing
+	//2021-1-18  Eric
 	BOOL IsAnalogU();
 	BOOL IsAnalogI();
 	BOOL IsAnalogUData()	{	return IsAnalogU();	}
@@ -131,7 +131,7 @@ public:
 
 	void WriteAnalogDatas(const CString &strFileHeadName = _T(""));//zhouhj 打印通道数据
 
-	//2021-2-19 lijunqing
+	//2021-2-19 Eric
 	double CalValue(short vValue)
 	{
 		return vValue * m_dCoefValue + m_dZeroValue;

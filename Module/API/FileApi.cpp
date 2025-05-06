@@ -150,7 +150,7 @@ CString GetFileTitleFromFilePath(const CString &strFilePath, char ch)
 		nPos +=1;
 	}
 	else
-	{//2022-9-4  lijunqing 兼容没有文件路径的情况，例如：A.txt
+	{//2022-9-4  Eric 兼容没有文件路径的情况，例如：A.txt
 		nPos = 0;
 	}
 
@@ -319,7 +319,7 @@ BOOL IsFileExist2(const CString &strFile)
 }
 
 
-//2021-1-2  lijunqing
+//2021-1-2  Eric
 void path_CheckSeparater(CString &strPath)
 {
 	if (strPath.GetLength() == 0)

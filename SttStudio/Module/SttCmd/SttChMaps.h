@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttChMaps.h  CSttChMaps
@@ -62,7 +62,7 @@ public:
 	BOOL HasMapHdResource(long nHasAnalog,long nHasDigital,long nHasWeek);//根据当前选择的输出类型，判断该通道是否应该存在软件资源
 	BOOL GetMaxValue_WeekRates(double &dMaxVol,double &dMaxCur);
 
-	//2022-9-19  lijunqing
+	//2022-9-19  Eric
 	BOOL SetChMapsString(const CString &strChMaps);
 	long GetChNum(const CString &strChID);//获取电压或电流通道的数量
 	void UpdateWeekRateValue();//弱信号一次值或二次值修改后,更新其比例系数(网页界面下处理)

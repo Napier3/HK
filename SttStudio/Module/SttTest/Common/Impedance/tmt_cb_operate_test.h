@@ -255,7 +255,7 @@ public:
 
 	void init()
 	{
-		init_head(); //2021-9-13  lijunqing
+		init_head(); //2021-9-13  Eric
 		strcpy(m_pszMacroID, STT_MACRO_ID_PsuCBOperate);
 		strcpy(m_szName, "Z = 1.900¦¸, A-E, Ë²Ê±");
 		m_nVersion = 0x00010001;

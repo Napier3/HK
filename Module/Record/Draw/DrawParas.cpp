@@ -346,7 +346,7 @@ void CDrawParas::SetParaRect(CRect rcPara)
 	}
 }
 
-//2022-9-1  lijunqing
+//2022-9-1  Eric
 void CDrawParas::CalValue()
 {
 	POS pos = GetHeadPosition();

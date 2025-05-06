@@ -266,7 +266,7 @@ CFrameBase* C61850ParseFrameList::Parse(PEPBUFFERPOS pBufferPos)
 	memcpy(pItemData->addr_61850.srcMac, pHeader->ether_shost, 6);
 	memcpy(pItemData->addr_61850.dstMac, pHeader->ether_dhost, 6);
 
-	//2020-06-27 lijunqing
+	//2020-06-27 Eric
 	memcpy(pBufferPos->pDatas->srcMAC, pHeader->ether_shost, 6);
 	memcpy(pBufferPos->pDatas->destMAC, pHeader->ether_dhost, 6);
 	WORD wPri = 0,wVID = 0;
@@ -298,7 +298,7 @@ CFrameBase* C61850ParseFrameList::Parse(PEPBUFFERPOS pBufferPos)
 	//APPID
 	nAPPID = Ep_BufferReadWord2(pBufferPos);
 	pItemData->addr_61850.APPID = nAPPID;
-	pBufferPos->pDatas->APPID = nAPPID;   //2020-06-27 lijunqing
+	pBufferPos->pDatas->APPID = nAPPID;   //2020-06-27 Eric
 
 	//Length
 	WORD nLength = Ep_BufferReadWord2(pBufferPos);
@@ -389,7 +389,7 @@ long match_61850(BYTE *pBuffer, long nLen)
 	//memcpy(pItemData->addr_61850.srcMac, pHeader->ether_shost, 6);
 	//memcpy(pItemData->addr_61850.dstMac, pHeader->ether_dhost, 6);
 
-	//2020-06-27 lijunqing
+	//2020-06-27 Eric
 	//memcpy(pBufferPos->pDatas->srcMAC, pHeader->ether_shost, 6);
 	//memcpy(pBufferPos->pDatas->destMAC, pHeader->ether_dhost, 6);
 
@@ -410,7 +410,7 @@ long match_61850(BYTE *pBuffer, long nLen)
 	//APPID
 	Ep_BufferReadWord2(&buf_pos);
 	//pItemData->addr_61850.APPID = nAPPID;
-	//pBufferPos->pDatas->APPID = nAPPID;   //2020-06-27 lijunqing
+	//pBufferPos->pDatas->APPID = nAPPID;   //2020-06-27 Eric
 
 	//Length
 	WORD nLength = Ep_BufferReadWord2(&buf_pos);

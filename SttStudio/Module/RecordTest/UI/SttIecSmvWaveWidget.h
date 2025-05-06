@@ -44,7 +44,7 @@ public://CSttIecRcdFuncInterface
 
 	LRESULT OnVariableAddRemoved(WPARAM wParam, LPARAM lParam);
 	void IecRcdInitFromRecordTest();
-	virtual void InitTimeAxis();  //2022-4-24  lijunqing 初始化时间坐标，可被重载设置个性化
+	virtual void InitTimeAxis();  //2022-4-24  Eric 初始化时间坐标，可被重载设置个性化
 
 	BOOL m_bInitTimeAxis;
 	BOOL m_bUpdateFlag;
@@ -54,7 +54,7 @@ protected:
 	void CalIndex_NextPage();
 	void CalIndex_PrevPage();
 
-	//2022-6-12  lijunqing 当前CapDevice的录波通道
+	//2022-6-12  Eric 当前CapDevice的录波通道
 	CExBaseList m_listRcdVariable;
 	void GetCurrDeviceAllRcdVariables();
 	void UpdateDrawVariablesRange();

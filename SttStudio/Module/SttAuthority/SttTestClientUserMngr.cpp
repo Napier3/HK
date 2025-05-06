@@ -95,7 +95,7 @@ CSttTestClientUser *CSttTestClientUserMngr::FindByIDTest(DWORD nID_Test)
 	return NULL;
 }
 
-//2020-11-29   lijunqing
+//2020-11-29   Eric
 CSttTestClientUser *CSttTestClientUserMngr::FindByIDTest(DWORD nID_Test, const CString &strSoftID)
 {
 	POS pos = GetHeadPosition();
@@ -316,7 +316,7 @@ void CSttTestClientUserMngr::RestartRecvHeartbeatTickCount(DWORD nID_Test)
 	pFind->m_pRefSttSckt->RestartRecvHeartbeatTickCount();
 }
 
-//2020-11-29  lijunqing
+//2020-11-29  Eric
 //根据软件ID返回报文
 void CSttTestClientUserMngr::SendToAllUser(const CString &strSoftID, BYTE *pBuf,long nLen)
 {
@@ -341,7 +341,7 @@ void CSttTestClientUserMngr::SendToAllUser(const CString &strSoftID, BYTE *pBuf,
     }
 }
 
-//2020-11-29  lijunqing
+//2020-11-29  Eric
 void CSttTestClientUserMngr::SendSysState(CSttSocketDataBase *pCurrSocket, CSttSysState *pSysState, BOOL bSpyAllCmd)
 {
     BYTE *pSendBuf = NULL;
@@ -373,7 +373,7 @@ void CSttTestClientUserMngr::SendSysState(CSttSocketDataBase *pCurrSocket, CSttS
     delete pSendBuf;
 }
 
-//2020-12-08  lijunqing
+//2020-12-08  Eric
 void CSttTestClientUserMngr::SendCmd(CSttSocketDataBase *pCurrSocket, CSttCmdBase *pSttCmd, BOOL bSpyAllCmd)
 {
     BYTE *pSendBuf = NULL;

@@ -7,7 +7,7 @@
 
 CPsuCharDrawView::CPsuCharDrawView(void)
 {
-	//2021-9-15  lijunqing
+	//2021-9-15  Eric
 	//m_pOtherDrawList = NULL;
 //	m_pCurrTestPointLine = NULL;
 	m_fZoomCoef = 1;
@@ -48,7 +48,7 @@ CPsuCharDrawView::~CPsuCharDrawView(void)
 void CPsuCharDrawView::InitCharDrawView(CCharacteristic *pCharTemp, CWnd *pParentWnd)
 {
 	CCharacterDrawView::InitCharDrawView(pCharTemp,pParentWnd);
-	//2021-9-15  lijunqing
+	//2021-9-15  Eric
 	//m_pOtherDrawList = new CXDrawList;
 	//m_pXDrawMngr_Axis->AddNewChild(m_pOtherDrawList);
 
@@ -76,7 +76,7 @@ void CPsuCharDrawView::InitCharDrawView(CCharacteristic *pCharTemp, CWnd *pParen
 
 CXDrawPoint* CPsuCharDrawView::CreateNewTestPoint(const double &dR,const double &dX)
 {
-	//2021-9-15  lijunqing
+	//2021-9-15  Eric
 // 	ASSERT(m_pOtherDrawList);
 // 	if (m_pOtherDrawList == NULL)
 // 	{
@@ -94,13 +94,13 @@ CXDrawPoint* CPsuCharDrawView::CreateNewTestPoint(const double &dR,const double 
 // 	pXPoint->m_pXDrawDataRef = NULL;
 // 	return pXPoint;
 
-	//2021-9-15  lijunqing
+	//2021-9-15  Eric
 	return NULL;
 }
 
 void CPsuCharDrawView::DeleteTestPoint(CXDrawPoint *pTestPoint)
 {
-	//2021-9-15  lijunqing
+	//2021-9-15  Eric
 // 	if (m_pOtherDrawList != NULL)
 // 	{
 // 		m_pOtherDrawList->Delete(pTestPoint);

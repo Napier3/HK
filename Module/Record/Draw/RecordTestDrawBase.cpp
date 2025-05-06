@@ -60,7 +60,7 @@ CRecordTestDrawBase::~CRecordTestDrawBase()
 
 	m_pRecordTest = NULL;
 
-	//2023-7-22  lijunqing 从CXRecordDrawBase移动过来
+	//2023-7-22  Eric 从CXRecordDrawBase移动过来
 	if (m_pRcdComtradeFile != NULL)
 	{
 		CRcdComtradeFileMngr::CloseComtradeFile(m_pRcdComtradeFile);

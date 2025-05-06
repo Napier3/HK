@@ -15,6 +15,8 @@
 #include "../../../Module/OSInterface/QT/CDateTime_QT.h"
 #endif
 
+#include "hkmain.h"
+
 int main(int argc, char *argv[])
 {
     QSharedMemory *shareMem = new QSharedMemory(QString("HKMain"));
@@ -37,12 +39,12 @@ int main(int argc, char *argv[])
 #endif
     HKMainApplication oHKMainApplication(argc,argv);
     oHKMainApplication.InitApplication(new CXLangResource_SttNativeMain());
-    HKMainFrameLinux oHKMainFrameLinux;
-    g_pHKWgtCmdExecTool->m_oStartTickCount.Enter();
+    //HKMainFrameLinux oHKMainFrameLinux;
+    HKMain oHKMainFrameLinux;
+    //g_pHKWgtCmdExecTool->m_oStartTickCount.Enter();
     QApplication::setOverrideCursor(Qt::BlankCursor);
     oHKMainFrameLinux.show();
     oHKMainApplication.exec();
-
     if(shareMem->isAttached())
     {
         shareMem->detach();

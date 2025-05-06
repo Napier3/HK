@@ -24,7 +24,7 @@ public://CXCapPkgTransInterface
 	virtual CXSmMemBufferMngr* GetXSmMemBufferMngr();
 	virtual void ReadHexTestFile(const CString &strFile);
 	virtual void AttachPkgTransDest(CXSmMemBufferMngr *pDestBuffer);
-	virtual void ResetBuffer();  //2022-4-20  lijunqing
+	virtual void ResetBuffer();  //2022-4-20  Eric
 	virtual void LogBufferPos();
 
 public:

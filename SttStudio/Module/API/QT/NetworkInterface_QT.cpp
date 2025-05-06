@@ -173,7 +173,7 @@ void stt_net_get_deviceip(CString &strIP, CString &strMask)
 	}
     }
 
-    //2020-12-04  lijunqing   如果没找到对应的IP，则默认使用第一个设置的IP
+    //2020-12-04  Eric   如果没找到对应的IP，则默认使用第一个设置的IP
     stt_net_get_deviceip_ex(strIP, strMask);
 }
 

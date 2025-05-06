@@ -15,7 +15,7 @@
 
 
 //???????????????????????????????????????
-//2022-6-9  lijunqing 此部分应该放到配置文件中，动态加载
+//2022-6-9  Eric 此部分应该放到配置文件中，动态加载
 //因为不同的产品可能需要的图标是不一样的。
 struct QSttButtonIconMngr
 {
@@ -246,7 +246,7 @@ class QSttBatteryButton : public QSttToolButtonBase
 public:
     QSttBatteryButton(CExBaseObject *pCfgData,QFont font,QWidget *parent=0);
     virtual void SetPic(int nState);
-	virtual void UpdateState(CDataGroup *pDataGroup);  //2022-6-9  lijunqing
+	virtual void UpdateState(CDataGroup *pDataGroup);  //2022-6-9  Eric
 
 	long m_nBatCapValue;
 	long m_nPowerAC;
@@ -295,7 +295,7 @@ public:
 	QSttGpsButton(CExBaseObject *pCfgData,QFont font,QWidget *parent=0);
 	virtual void SetPic(int nState);
 
-	virtual void UpdateState(CDataGroup *pDataGroup);  //2022-6-9  lijunqing
+	virtual void UpdateState(CDataGroup *pDataGroup);  //2022-6-9  Eric
 
 };
 
@@ -325,7 +325,7 @@ class QSttBlueToothButton : public QSttToolButtonBase
 public:
 	QSttBlueToothButton(CExBaseObject *pCfgData,QFont font,QWidget *parent=0);
 	virtual void SetPic(int nState);
-	virtual void UpdateState(CDataGroup *pDataGroup);  //2022-6-10  lijunqing
+	virtual void UpdateState(CDataGroup *pDataGroup);  //2022-6-10  Eric
 };
 
 class QSttBarDataBtnsMngr : public QList<QSttToolButtonBase *>

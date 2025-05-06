@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //ShortDatas.h  CShortDatas
@@ -62,10 +62,10 @@ public:
 // 	virtual void SetXml(BSTR strXml);
 	virtual void Parser(CEquationBuffer *pEquation);
 
-	//2021-8-10  lijunqing
+	//2021-8-10  Eric
 	void InitDatasValue(CShortDatas *pSrcDatas);
 
-	//2021-10-13  lijunqing
+	//2021-10-13  Eric
 	void SetDataValue(const CString &strID, const CString &strValue, BOOL bAddNew=TRUE);
 };
 

@@ -1964,7 +1964,7 @@ double CBigComtradeFileRead::CalInsertOffsetTime()
 //从原始数据文件中读取原始数据
 BOOL CBigComtradeFileRead::GenerateComtradeChDataFromDataFile(BOOL bSeekToBegin,BOOL bResetCoef)
 {
-	//2021-9-20  lijunqing
+	//2021-9-20  Eric
 	BOOL bRet = FALSE;
 
 	if (bResetCoef)
@@ -1981,7 +1981,7 @@ BOOL CBigComtradeFileRead::GenerateComtradeChDataFromDataFile(BOOL bSeekToBegin,
 		bRet = GenerateComtradeChDataFromDataFile_ASIIMode(bSeekToBegin);
 	}
 	
-	//2021-9-20  lijunqing
+	//2021-9-20  Eric
 	m_oSrcComtradeFile.	CalMinMaxValue();
 
 	return bRet;

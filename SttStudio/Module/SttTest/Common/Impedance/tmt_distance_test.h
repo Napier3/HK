@@ -134,7 +134,7 @@ public:
 
 		m_oDistanceParas.init();
 		m_oDistanceResults.init();
-//		init_head(); //2021-9-13  lijunqing
+//		init_head(); //2021-9-13  Eric
 	}
 
 	tmt_distance_test(){	init();}
@@ -156,7 +156,7 @@ public:
 
         m_oDistanceParas.init();
         m_oDistanceResults.init();
-//		init_head(); //2021-9-13  lijunqing
+//		init_head(); //2021-9-13  Eric
     }
 
     tmt_distance_test_I(){	init();}

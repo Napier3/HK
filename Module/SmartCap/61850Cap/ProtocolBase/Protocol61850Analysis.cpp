@@ -3,7 +3,7 @@
 
 #include <math.h>
 
-//2022-11-13  lijunqing
+//2022-11-13  Eric
 //vector <EP_ANALYSIS_RESULT> g_AnalysisResult;
 /*
 当控制块是9-2时候：
@@ -190,7 +190,7 @@ void ep_protocol_analysis92(PEPCAPPARSEDATAS pPrevData,  PEPCAPPARSEDATAS pDatas
 				}
 			}
 
-			if (pDatas->pDatas[nIndex].dwValue2 != 0)  //2022-6-19  lijunqing 四个字节进行判断，等效于直接使用dwValue2进行判断
+			if (pDatas->pDatas[nIndex].dwValue2 != 0)  //2022-6-19  Eric 四个字节进行判断，等效于直接使用dwValue2进行判断
 			{
 				//zhouhj 2023.9.9 检修状态不按通道标记,按报文帧统计
 				if ((pDatas->pDatas[nIndex].dwValue2 & 0x0800)&&(!bHasTestStatus))
@@ -220,7 +220,7 @@ void ep_protocol_analysis92(PEPCAPPARSEDATAS pPrevData,  PEPCAPPARSEDATAS pDatas
 	}	
 
 /*
-	//2022-6-19 lijunqing 简化计算，发现time, time2;没有用到
+	//2022-6-19 Eric 简化计算，发现time, time2;没有用到
 	CTime time, time2;
 	ep_n64_time_to_ctime(pPrevData->n64Time, time);
 	ep_n64_time_to_ctime(pDatas->n64Time, time2);

@@ -1,6 +1,6 @@
 #pragma once
 
-//2021-5-30  lijunqing
+//2021-5-30  Eric
 #include "../tmt_manu_test.h"
 #include "../tmt_system_config.h"
 

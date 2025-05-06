@@ -108,7 +108,7 @@ private:
 
 	QTimer m_oTimerIecRcdUpdate;
 
-	//2022-4-25  lijunqing 功能能之间的互斥处理
+	//2022-4-25  Eric 功能能之间的互斥处理
 	//例如：上页下页等导致绘图元素变化
 	//例如：切换选择功能导致与定时器的冲突等
 	CAutoCriticSection m_oFuncCriticSection;

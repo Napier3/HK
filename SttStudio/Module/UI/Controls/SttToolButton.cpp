@@ -37,12 +37,12 @@ QSttToolButton::QSttToolButton(CExBaseObject *pCfgData,QFont font,QWidget *paren
     {
         if(pParent->m_strIconPos != "None" && pParent->m_strIconPos != "")
         {
-			//2022-12-02  lijunqing
+			//2022-12-02  Eric
 			if (pButton->m_strName.GetLength() > 0)
 			{//ÓÐÃû³Æ
 				//QPixmap pixmap(pButton->m_strIcon);
 				//this->setIcon(pixmap);
-				SetBtnIcon(pButton);   //2022-12-02  lijunqing
+				SetBtnIcon(pButton);   //2022-12-02  Eric
 	     
 				if(pParent->m_strIconPos == "top")
 				{
@@ -56,7 +56,7 @@ QSttToolButton::QSttToolButton(CExBaseObject *pCfgData,QFont font,QWidget *paren
 			else
 			{
 				this->setToolButtonStyle(Qt::ToolButtonIconOnly);
-				FillBtnIcon(pButton);   //2022-12-02  lijunqing
+				FillBtnIcon(pButton);   //2022-12-02  Eric
 			}
         }
         else

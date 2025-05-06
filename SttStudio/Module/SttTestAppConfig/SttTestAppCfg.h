@@ -8,7 +8,7 @@
 #define STT_TEST_APP_TYPE_REMOTE	_T("remote")
 
 /*
-2021-8-12  lijunqing  考虑到连接多台测试仪，不能使用全局的CSttTestAppConfigTool
+2021-8-12  Eric  考虑到连接多台测试仪，不能使用全局的CSttTestAppConfigTool
 和CSttTestAppCfg，因此作出此次的修改。
 同时为了兼容物联测试平台的规范，CSttTestAppCfg采用DataGroup模式进行重新设计
 为了兼容之前的版本，新的配置文件名称为“TestAppConfig.xml",区别于老的配置文件【SttTestAppCfg.xml】
@@ -80,8 +80,8 @@ public:
 	void SetFileName(const CString &strFile)	{	m_strFile = strFile;	}
 
 public:
-	//2021-8-12  lijunqing
-	//2021-8-13   lijunqing ?????????????????    暂时不考虑放到基类，后续在设计和考虑
+	//2021-8-12  Eric
+	//2021-8-13   Eric ?????????????????    暂时不考虑放到基类，后续在设计和考虑
 	CString GetSttCfgFile();
 	CString GetOldCfgFile();
 	BOOL SttOpen(const CString &strFile);
@@ -147,7 +147,7 @@ public:
 	long Save();
 	long Open();
 
-	//2021-8-13   lijunqing ?????????????????    暂时不考虑放到基类，后续在设计和考虑
+	//2021-8-13   Eric ?????????????????    暂时不考虑放到基类，后续在设计和考虑
 	void SttSetXml_UTF8(const CString &strXml);
 	void SttSetXml_UTF8(char *pszBuffer, long nLen);
 

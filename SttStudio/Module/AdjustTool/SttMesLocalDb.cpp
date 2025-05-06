@@ -1,4 +1,4 @@
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttMesLocalDb.cpp  CSttMesLocalDb
@@ -347,7 +347,7 @@ BOOL CSttMesLocalDb::OpenSttModuleClass(CDataGroup *pNew, const CString &strSttM
 	return bRet;
 }
 
-//2021-5-5  lijunqing  
+//2021-5-5  Eric  
 CDataGroup* CSttMesLocalDb::CreateSttModuleClass(const CString &strSttModuleClass)
 {
 	CDataGroup *pFind = new CDataGroup();
@@ -438,7 +438,7 @@ BOOL CSttMesLocalDb::SaveSttModuleClassFile(CDataGroup *pModuleClass)
 
 	BOOL bRet = pModuleClass->SaveXmlFile(strFile, CDataMngrXmlRWKeys::g_pXmlKeys);
 
-	//2022-2-8  lijunqing 添加到ModuleClass中
+	//2022-2-8  Eric 添加到ModuleClass中
 	CDvmData *pModel = oModule.GetModel();
 	CDataGroup *pClasses = GetSttModuleClasses();
 	CDataGroup *pFind = (CDataGroup*)pClasses->FindByID(strModuleClass);
@@ -470,7 +470,7 @@ BOOL CSttMesLocalDb::SaveSttModuleClassFile(CDataGroup *pModuleClass)
 	return bRet;
 }
 
-//2020-10-13 lijunqing
+//2020-10-13 Eric
 CDvmData* CSttMesLocalDb::FindModuleTypeData(const CString &strModuleType)
 {
 	CDataGroup *pModuleTypeDb = GetSttModuleTypes();
@@ -554,7 +554,7 @@ CDvmData* CSttMesLocalDb::AddNewModuleType(CDataGroup *pModuleType)
 	long nDataCnt  = pModuleType->GetChildCount(DVMCLASSID_CDVMDATA);
 	CString strName,  strID,  strDataType = _T(""),  strValue;
 	strName = "新模块类型" ; 
-	strID = "VOLTAGE";  //2021-5-4  lijunqing  新模块类型，缺省为电压模块
+	strID = "VOLTAGE";  //2021-5-4  Eric  新模块类型，缺省为电压模块
 	strValue.Format(_T("%d"),  nDataCnt );
 
 	CDvmData *pNew = pModuleType->AddNewData(strName,  strID,  strDataType, strValue);
@@ -575,7 +575,7 @@ CDataGroup* CSttMesLocalDb::AddNewModuleClass(CDataGroup *pModuleClass)
 {
 	CDataGroup *pClass = pModuleClass->AddNewGroup(_T("模块"),  _T("Moule"),  _T("Moule"));
 
-	//2021-5-4  lijunqing  "Type" >> "ModuleType"
+	//2021-5-4  Eric  "Type" >> "ModuleType"
 	pClass->AddNewData(_T("模块类型"), _T("ModuleType"), _T("ModuleType"), _T("0"));
 	pClass->AddNewData(_T("模块硬件位置"), _T("Pos"), _T("long"), _T("2500"));
 	pClass->AddNewData(_T("频率"), _T("Freq"), _T("float"), _T("2500"));
@@ -588,7 +588,7 @@ CDataGroup* CSttMesLocalDb::AddNewModuleClass(CDataGroup *pModuleClass)
 	return pClass;
 }
 
-//2022-2-8  lijunqing
+//2022-2-8  Eric
 CDataGroup* CSttMesLocalDb::AddNewModuleClass2(CDataGroup *pSrcModuleClass)
 {
 	CDataGroup *pModuleClasses = GetSttModuleClasses();

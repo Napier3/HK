@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //IecCfgData92.h  CIecCfgData92
@@ -47,7 +47,7 @@ public:
 	long  m_nCurrRate;
 
 
-	//2020-6-29 lijunqing 增加点长度，有字符串转换的时候避免内存溢出
+	//2020-6-29 Eric 增加点长度，有字符串转换的时候避免内存溢出
 	BYTE m_byteDestAddress[10];
 	BYTE m_byteSrcAddresss[10];
 

@@ -55,7 +55,7 @@ public:
 
 	QPushButton* m_pBtnEditState;//状态编辑按钮
 
-	//2023-2-3  lijunqing 避免初始化时多次调用  slot_StatesIndexChanged
+	//2023-2-3  Eric 避免初始化时多次调用  slot_StatesIndexChanged
 	bool m_bEnable_slot_StatesIndexChanged;
 };
 extern QFont *g_pSttGlobalFont;  

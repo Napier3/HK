@@ -244,7 +244,7 @@ QGV_ITEM* QExBaseListGridBase::AddItem(int nRow, int nCol,const CString &strText
 
 	FreeExBaseCellData(pItem);
 
-	//2022-3-20  lijunqing 后面还要调用，在此不调用，提高效率
+	//2022-3-20  Eric 后面还要调用，在此不调用，提高效率
 	//setItem(nRow,nCol,pItem);
 	return pItem;
 }

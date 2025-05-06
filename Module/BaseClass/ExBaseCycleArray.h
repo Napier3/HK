@@ -27,7 +27,7 @@ protected:
 	long m_nCurrReadIndex;  //当前读取数据的位置
 	long m_nCurrFreeIndex;  //当前释放缓存的位置
 
-// 	BOOL m_bAddNewExBaseObject;   //2023-3-8  lijunqing 此种模式使用不方便，去掉
+// 	BOOL m_bAddNewExBaseObject;   //2023-3-8  Eric 此种模式使用不方便，去掉
 	void Free();
 
 public:
@@ -87,7 +87,7 @@ public:
 	virtual CExBaseObject* AddExBaseObject(CExBaseObject *pObj, BOOL bDeleteCurr=FALSE);
 	virtual void AddExBaseObjects(CExBaseList *pList, BOOL bDeleteCurr=FALSE);
 
-	//2022-10-19  lijunqing
+	//2022-10-19  Eric
 	CExBaseObject* ReadCurr(int nOffsetIndex=1, BOOL bSetNull = FALSE);
 
 	//nFrom < 0，表示使用自身Read；返回当前的位置

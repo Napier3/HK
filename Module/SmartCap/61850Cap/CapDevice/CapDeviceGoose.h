@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //CapDeviceGoose.h  CCapDeviceGoose
@@ -30,7 +30,7 @@ public:
 	long m_dwNdsCom;
 	double m_dTime;
 	
-	//2022-5-31  lijunqing 每个goose设备，单独分析
+	//2022-5-31  Eric 每个goose设备，单独分析
 	CEpGooseBinaryTurns m_oBinaryTurns;
 	CWnd *m_pXWndInterface;  //绘图监视窗口指针
 
@@ -48,7 +48,7 @@ public:
 	virtual void InitDevice(CIecCfgDataBase *pIecCfgData);
 	virtual void GetOriginalDatas(EPCAPPARSEDATAS* pParseDatas);
 
-	//2020-6-20  lijunqing  分析突变或者变化量
+	//2020-6-20  Eric  分析突变或者变化量
 	virtual void AnalysisData(PEPCAPPARSEDATAS pDatas,BYTE* pBuferHead = NULL,long nBufferLenth = 0);
 	virtual BOOL IsDataRcvOverTime();
 

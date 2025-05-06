@@ -20,7 +20,7 @@ public:
 	CSttCapThread(void);
 	virtual ~CSttCapThread(void);
 
-	//2022-3-6 lijunqing 此处采用接口的方式，方便做数字化录波的通用化处理
+	//2022-3-6 Eric 此处采用接口的方式，方便做数字化录波的通用化处理
 	//例如：AT02D是将AT02D的报文转换为数字报文；330脱机为共享内存模式；上位机软件为录波通道传输的数字报文
 	//CSttRcdMemBufferMngr *m_pSttRcdMemBufferMngr;
 	CXCapPkgBufferMngrInterface *m_pSttRcdMemBufferMngr;

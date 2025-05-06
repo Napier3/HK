@@ -16,12 +16,12 @@ QSttToolButtonBase::~QSttToolButtonBase()
 
 }
 
-//2022-6-9  lijunqing
+//2022-6-9  Eric
 void QSttToolButtonBase::UpdateState(CDataGroup *pDataGroup)
 {
 	if (pDataGroup == NULL)
 	{
-		//初始状态，永远设置为0  2022-6-10  lijunqing
+		//初始状态，永远设置为0  2022-6-10  Eric
 		SetPic(0);
 		return ;
 	}
@@ -40,7 +40,7 @@ void QSttToolButtonBase::UpdateState(CDvmData *pData)
 	if (pData->m_strID != m_pCfgData->m_strID)
 	{
 		if (pData->m_strID.CompareNoCase(m_pCfgData->m_strID) != 0)
-		{//2022-6-10  lijunqing 兼容大小写：配置文件和测试仪底层上送的数据，大小写不一致
+		{//2022-6-10  Eric 兼容大小写：配置文件和测试仪底层上送的数据，大小写不一致
 			return;
 		}
 	}

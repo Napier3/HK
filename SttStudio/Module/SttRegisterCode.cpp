@@ -2,7 +2,7 @@
 #include "SttRegisterCode.h"
 
 
-//20200827  lijunqing
+//20200827  Eric
 #ifdef _PSX_QT_LINUX_
 
 //#include "../../Module/Socket/SocketApi_linux.h"

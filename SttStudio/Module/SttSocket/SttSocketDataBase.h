@@ -5,7 +5,7 @@
 #include "../SttCmd/SttSysState.h"
 
 
-//2022-2-12  lijunqing 报文转发,例如：自动测试控制服务，收到的测试仪事件报文，通过自动测试控制通信通道转发给上位机软件
+//2022-2-12  Eric 报文转发,例如：自动测试控制服务，收到的测试仪事件报文，通过自动测试控制通信通道转发给上位机软件
 #include "../SttPkgDispatchInterface.h"
 
 class CSttTestEngineBase;
@@ -31,7 +31,7 @@ public:
 ***************/
 	int m_nSocketType;
 
-	//2022-10-22  lijunqing 命令数据的格式，根据接收的报文自动识别
+	//2022-10-22  Eric 命令数据的格式，根据接收的报文自动识别
 	long m_nSttCmdDataFormat; 
 
 public:
@@ -63,7 +63,7 @@ public:
 
 
 protected:
-	//2020-1-10  lijunqing
+	//2020-1-10  Eric
 	//Socket关联的引擎，考虑到Local端，有可能同时控制多台测试仪
 	//因此每一个Socket都关联自身的Engine对象
 	CSttTestEngineBase *m_pTestEngine;
@@ -81,6 +81,6 @@ public:
 
 BOOL stt_pkg_get_cmd_id(char *pPkgBuf,long nPktLen,long &nCmdType,char *pszCmdID,char *pszTestor, char *pszRetCmdType);
 
-//2022-10-22  lijunqing  函数增加格式，没有采用缺省值，编译的时候会导致语法错误，从强制修改，实现代码的统一
+//2022-10-22  Eric  函数增加格式，没有采用缺省值，编译的时候会导致语法错误，从强制修改，实现代码的统一
 void stt_InitSendBuf_Cmd(BYTE **ppszSendBuf,long &nSendBufLen, CSttCmdBase *pCmd, BOOL bCompress, long nSttCmdDataFormat);
 void stt_InitRetSendBuf(BYTE **ppszSendBuf,long &nSendBufLen,CSttSysState *pSysState, BOOL bCompress, long nSttCmdDataFormat);

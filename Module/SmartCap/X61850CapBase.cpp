@@ -17,7 +17,7 @@
 // #define CT 2500
 
 
-//2020-06-21  lijunqing  设备数据模型访问互斥对象，避免程序崩溃
+//2020-06-21  Eric  设备数据模型访问互斥对象，避免程序崩溃
 CAutoCriticSection g_oCapDvmAutoCriticSection;
 _61850CapMUErrorRanges g_oMuErrorRanges;//合并单元测试角差、比差、复合误差的合格判据
 _61850CapMUErrorRanges g_oADMUErrorRanges;//admu自动测试角差、比差的合格判据
@@ -339,7 +339,7 @@ void CX61850CapBase::RecordDevice_Reset()
 	m_oCapDeviceChRecordMngr.RemoveAll();
 }
 
-//2022-4-14  lijunqing
+//2022-4-14  Eric
 void CX61850CapBase::GetSttCapParas(CDataGroup *pSttParas, BOOL bUseSmv, BOOL bUseGoose,BOOL bUseFT3)
 {
 	m_oCapDeviceAll.GetSttCapParas(pSttParas, bUseSmv, bUseGoose,bUseFT3);
@@ -364,7 +364,7 @@ void CX61850CapBase::InitCapSmDb()
 }
 #endif
 
-//2022-5-2  lijunqing  清空Cap相关的内容
+//2022-5-2  Eric  清空Cap相关的内容
 void CX61850CapBase::ClearCap()
 {
 	::memset(m_dwDvmSvChannels, 0x0, sizeof(DWORD) * MAX_RTVARIABLES);
@@ -539,7 +539,7 @@ void CX61850CapBase::InitDvmDevice(CCapDeviceBase *pCapDevice)
 
 /*
 	if (pDataset->GetCount() == pCapDevice->GetCount())
-	{//2022-5-7  lijunqing  去掉通道不相等的判断  可能会有问题
+	{//2022-5-7  Eric  去掉通道不相等的判断  可能会有问题
 		//即：实际的通道与配置的通道不一致
 		return;
 	}
@@ -1110,7 +1110,7 @@ void CX61850CapBase::AttachDatasets()
 	// mym add 20202-6-29 GOOSE同步差；
 	DvmFindDataset(CAP_DATASET_MAP_ID_GSSYN, &m_pDataset_GSSyncDelt);
 
-	//lijunqing 2020-07-25  控制块的连接状态
+	//Eric 2020-07-25  控制块的连接状态
 	DvmFindDataset(CAP_DATASET_MAP_ID_LinkState, &m_pDataset_LinkState);
 
 	DvmFindDataset(CAP_DATASET_MAP_ID_RcdStep6U6I, &m_pDataset_RcdStep6U6I);
@@ -1140,11 +1140,11 @@ void CX61850CapBase::DvmFindDataset(const CString &strDatasetID, CDvmDataset **p
 }
 
 
-//更新DvmDevice的数据  lijunqing 2020-6-17
+//更新DvmDevice的数据  Eric 2020-6-17
 void CX61850CapBase::UpdateDvmDeviceDatas()
 {
 #ifndef _PSX_QT_LINUX_
-	//数据访问的互斥  2020-06-21  lijunqing
+	//数据访问的互斥  2020-06-21  Eric
 	CAutoSimpleLock Lock(g_oCapDvmAutoCriticSection);
 #endif
 
@@ -1158,7 +1158,7 @@ void CX61850CapBase::UpdateDvmDeviceDatas()
 
 void CX61850CapBase::UpdateDvmDeviceDatas_Analysis()
 {
-	//2020-07-25  lijunqing  链接状态
+	//2020-07-25  Eric  链接状态
 	UpdateDvmDeviceDatas_LinkState();
 
 	//离散度检验；
@@ -2638,7 +2638,7 @@ void CX61850CapBase::Analysis_Add_Atrri_Error(CCapDeviceBase *pCapDevice,  CDvmD
 }
 
 
-//加载配置文件，复位故障计算以及报文分析  lijunqing 2020-6-17
+//加载配置文件，复位故障计算以及报文分析  Eric 2020-6-17
 void CX61850CapBase::ResetRecord()
 {
 }
@@ -6664,10 +6664,10 @@ void CX61850CapBase::IecAnalysis_AddDataset_SV(CDvmLogicDevice *pLogicDevice, CD
 	IecAnalysis_AddDataset_SV_Vector(pLogicDevice, pDsSv, oIecDatasetMatch);
 	IecAnalysis_AddDataset_SV_AD(pLogicDevice, pDsSv);
 
-	//2022-5-25  lijunqing 报文分析：一致性
+	//2022-5-25  Eric 报文分析：一致性
 	IecAnalysis_AddDataset_SV_PkgAnalyze(pLogicDevice, pDsSv);
 
-	//2022-5-28  lijunqing 异常分析
+	//2022-5-28  Eric 异常分析
 	IecAnalysis_AddDataset_SV_PkgError(pLogicDevice, pDsSv);
 
 	//20220820 zhouhj 添加SV延时
@@ -7096,7 +7096,7 @@ void CX61850CapBase::IecAnalysis_AddDataset_SV_X_NewCh_Attr(CDvmValue *pCh, cons
 	pCh->AddNewChild(pNew);
 }
 
-//2022-5-25  lijunqing
+//2022-5-25  Eric
 void CX61850CapBase::IecAnalysis_AddDataset_SV_PkgAnalyze(CDvmLogicDevice *pLogicDevice, CDvmDataset *pDsSv)
 {
 	CDvmData *pSvData = NULL;
@@ -7256,7 +7256,7 @@ void IecAnalysis_AddDataset_SV_PkgAnalyze_Iecfg_val(CDvmData *pSvData, char *psz
 //SV报文一致性测试：初始化IEC配置的数据
 void CX61850CapBase::IecAnalysis_AddDataset_SV_PkgAnalyze_Iecfg(CDvmData *pSvData, CIecCfgDataBase *pIecCfgData)
 {
-// 	//2022-5-26  lijunqing
+// 	//2022-5-26  Eric
 // #define IEC_PkgAnalyze_ID_TestPos			"TestPos"
 // #define IEC_PkgAnalyze_ID_DevVersion		"DevVersion"
 // #define IEC_PkgAnalyze_ID_PDUlength		"PDUlength"
@@ -7284,7 +7284,7 @@ void CX61850CapBase::IecAnalysis_AddDataset_SV_PkgAnalyze_Iecfg(CDvmData *pSvDat
 
 //////////////////////////////////////////////////////////////////////////
 //
-//2022-5-28  lijunqing  分析功能，控制块作为数据集的data对象，记录具体分析功能
+//2022-5-28  Eric  分析功能，控制块作为数据集的data对象，记录具体分析功能
 void CX61850CapBase::IecAnalysis_AddDataset_Ctrl_ForData(CDvmLogicDevice *pLogicDevice, CDvmDataset *pDsSv
 														 , CDvmDataset **ppDsRet, CDvmData **ppDataRet
 														, const CString &strDataSetID, const CString &strAnalyzeCfgFile)
@@ -7316,7 +7316,7 @@ void CX61850CapBase::IecAnalysis_AddDataset_Ctrl_ForData(CDvmLogicDevice *pLogic
 
 //////////////////////////////////////////////////////////////////////////
 //
-//2022-5-28  lijunqing 异常分析
+//2022-5-28  Eric 异常分析
 void CX61850CapBase::IecAnalysis_AddDataset_SV_PkgError(CDvmLogicDevice *pLogicDevice, CDvmDataset *pDsSv)
 {
 	CDvmData *pSvData = NULL;

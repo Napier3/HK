@@ -3,7 +3,7 @@
 #include "tmt_common_def.h"
 #include"../../SttTestBase/SttXmlSerialize.h"
 
-//2021-5-30  lijunqing
+//2021-5-30  Eric
 #include "tmt_test_paras_head.h"
 
 

@@ -238,7 +238,7 @@ void CSttTestServerBase::OnTimer()
 
         if(pCurrTest !=NULL)
 		{
-			//2020-10-26  lijunqing  使用公共的接口来进行判断，不要使用具体的功能ID判断
+			//2020-10-26  Eric  使用公共的接口来进行判断，不要使用具体的功能ID判断
 			//这样通用性不好，后续如果出现一些功能不需要判断，例如模拟量录波，
 			//就又要返回这里进行代码的修改
 			// 		if((pCurrTest->m_strID != _T("SttReplayTest"))
@@ -295,7 +295,7 @@ void CSttTestServerBase::OnTimer()
 		}
 	}
 
-	//2020-10-23  lijunqing
+	//2020-10-23  Eric
 	//只有在不实时上报时间的时候，才能定时上报事件，在一定程度上避免重复上报
     if (!stt_test_event_set_is_lock())
 	{
@@ -374,7 +374,7 @@ void CSttTestServerBase::CheckHeartbeatOverTime()
 		return;
 #endif
 #endif
-	//2021-8-20  lijunqing  use timer-count
+	//2021-8-20  Eric  use timer-count
 	//long nTimeGap = pFind->m_pRefSttSckt->m_oRecvHeartbeatTick.GetTickCountLong(FALSE);
 	long nTimeGap = pSocket->m_nRecvHeartbeatCounter++;
 
@@ -495,7 +495,7 @@ void CSttTestServerBase::ReturnTestEvents()
 	CSttSysState oSysState;
 	CSttXmlSerializeBase *pParasRegister = NULL;
 
-	//2020-10-24 lijunqing 返回事件的时候，使用空的ID
+	//2020-10-24 Eric 返回事件的时候，使用空的ID
     CSttTestCmd *pTempCmd = (CSttTestCmd*)m_oSttTestCmd.CloneEx();
 	pTempCmd->m_strID = _T("");
 
@@ -710,7 +710,7 @@ void CSttTestServerBase::CheckStopTestAfterRelease(CSttSocketDataBase *pClientSo
 
 long CSttTestServerBase::ReturnSysState(long nCmdExecStatus,CSttCmdData *pRetData)
 {
-	//2020-10-20  lijunqing
+	//2020-10-20  Eric
 	return CSttTestEngineBase::ReturnSysState(&m_oSttTestCmd, nCmdExecStatus, pRetData);
 
 	/*
@@ -1522,7 +1522,7 @@ void CSttTestServerBase::Ret_Test_SysState(CSttSysState &oSysState, CSttSocketDa
 	Ret_SysState(oSysState, pSttSocketDataBase, oSttXmlSerializeTool);
 }
 
-//2020-10-22  lijunqing
+//2020-10-22  Eric
 void CSttTestServerBase::Ret_Test_SysState(CSttSysState &oSysState, CSttSocketDataBase *pSttSocketDataBase
 		, BOOL bBasic, BOOL bParas, BOOL bReport, BOOL bSearchResult
 		, char *strRetType, PSTT_TIME pTime, bool bWithEvent)
@@ -1854,7 +1854,7 @@ long CSttTestServerBase::Process_Cmd_Adjust_Adjust(CSttSocketDataBase *pClientSo
 	oEventSysState.SetEvent();
 
 	//返回测试开始事件
-	//两个事件不能用同一个CSttXmlSerializeTool  lijunqing 2020-10-24
+	//两个事件不能用同一个CSttXmlSerializeTool  Eric 2020-10-24
 	CSttXmlSerializeTool *pXmlRptStart = new CSttXmlSerializeTool();
 	oEventSysState.GetSttMacro(FALSE, FALSE);
     oEventSysState.m_strID=SYS_STATE_EVENT_OnTestStarted;

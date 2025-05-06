@@ -37,7 +37,7 @@
 #include "../SttTestCtrl/SttTestAppBase.h"
 #include "../SttTestAppConfig/SttTestAppCfg.h"
 #include "../RecordTest/UI/SttIecRecordMainWidget.h"
-//#include "Module/CharLibWidget/CharLibWidget.h"   //2022-9-3  lijunqing  
+//#include "Module/CharLibWidget/CharLibWidget.h"   //2022-9-3  Eric  
 #include "Module/CharLibWidget/CharEditMainWidget.h"
 #include "../LiveUpdate/UpdateConfig/VerUpdateCfgMngr.h"
 #include "../SttSocket/TestTerminal/SttClientSocketBase.h"
@@ -52,7 +52,7 @@
 
 #include "../SttCmd/GuideBook/SttContents.h"
 
-//2022-12-02  lijunqing  
+//2022-12-02  Eric  
 #include "../Assist/SttAssistGlobalApi.h"
 #include "Module/CharLibWidget/QCharactWidgetForTest.h"
 #include "Module/CharLibWidget/QCharTestPointsGrid.h"
@@ -64,7 +64,7 @@
 
 
 class QSttTestCntrFrameBase : public QMainWindow, public CLogBase, CSttTestCtrlCntrMsgInterface,
-	public CSttWndAssistInterface  //2022-12-02 lijunqing 测试助手相关的接口
+	public CSttWndAssistInterface  //2022-12-02 Eric 测试助手相关的接口
 {
     Q_OBJECT
 
@@ -97,7 +97,7 @@ public:
 	virtual void PromptToSave(CExBaseObject *pSelObj, BOOL bIsItemSame = FALSE);
 	virtual BOOL IsUiParasChanged(BOOL &bChanged, CDataGroup *pParas);
 
-	//2022-10-16  lijunqing 记录和保存当前页面设置的值：设置为默认值
+	//2022-10-16  Eric 记录和保存当前页面设置的值：设置为默认值
 	virtual void SaveUIParaFile(CDataGroup *pParas);
 public:
 	virtual long OnUpdateSyncTime(CDataGroup *pRtSyncTime);
@@ -113,7 +113,7 @@ public:
 	virtual void OnAtsGenerateItems(CExBaseObject *pItems, BOOL bUpdateParent=FALSE);
 	virtual void OnAtsGenerateItems_CmdWzd(CExBaseList *pCmdGrp);
 	virtual void OnAtsGenerateItems_ImportDvm(CExBaseList *pItemsList);
-	virtual void OnAtsQueryItem(CExBaseObject *pItemPara);  //2022-9-13  lijunqing
+	virtual void OnAtsQueryItem(CExBaseObject *pItemPara);  //2022-9-13  Eric
 	virtual void OnInputData(CSttParas *pParas,CExBaseList *pMsgs);  //SHAOLEI  2023-7-21
 	virtual void OnTestDisconnected(); //shaolei 2023-9-19 断链
 
@@ -130,7 +130,7 @@ public:
     void InitConfig(const CString &strFrameCfgFile);//初始化配置
     void ReleaseConfig();
 	void GetCharacteristicsFile(CSttMacroTestUI_TestMacroUI *pTestMacroUI, CString &strFile);
-	void InitCharacteristics(CSttContents *pContents);  //2022-9-4  lijunqing
+	void InitCharacteristics(CSttContents *pContents);  //2022-9-4  Eric
 
 	//zhouhj 传参标识是否为测试项切换的停止,测试项切换时,不需要停止矢量图和功率图
 	void OnViewTestStop_Common(BOOL bItemChanged = FALSE);//zhouhj 2023.8.31 中断公共视图部分
@@ -167,10 +167,10 @@ public:
 	virtual void OnDeleteCurr(CExBaseObject *pCurrObj);
 	virtual void OnSaveCurr(CExBaseObject *pCurrObj);
 
-	//2022-9-11  lijunqing
+	//2022-9-11  Eric
 	virtual void ViewCmdEditWidget(CExBaseObject *pSelObj);
-	virtual void ViewMacroEditWidget(CExBaseObject *pSelObj);//2022-9-13  lijunqing
-	virtual void SaveMacroParasToCurrWzd(CDataGroup *pCommCmd);  //2022-9-12 lijunqing
+	virtual void ViewMacroEditWidget(CExBaseObject *pSelObj);//2022-9-13  Eric
+	virtual void SaveMacroParasToCurrWzd(CDataGroup *pCommCmd);  //2022-9-12 Eric
 
 	virtual BOOL OpenSclFile();
 	virtual CString SelIedFromScl();
@@ -228,7 +228,7 @@ public://界面
 	//第二个参数设置能否点击，第三个参数设置是否显示
 	virtual void UpdateButtonStateByID(const CString &strID,bool bState,bool bShow = true);
 	virtual void UpdateEnableState(const CString &strState);
-	virtual void SetAddMacroEnable(bool bShow);   //2023-2-26  lijunqing  SetSelectEnable函数名非常不合理，做了修改
+	virtual void SetAddMacroEnable(bool bShow);   //2023-2-26  Eric  SetSelectEnable函数名非常不合理，做了修改
 	virtual void EndBinStateOnStarting();
 	virtual CSttMacroParaEditInterface* CreateSttMacroParaEditView(const CString &strMacroID,const CString &strGridFile, BOOL bUseExist=TRUE);
 	bool m_bInited;
@@ -316,7 +316,7 @@ protected:
 	CDataGroup *m_pTestMacroUI_Paras;  //当前测试功能页面的参数
 	CExBaseObject *m_pCurrEditMacroItems;   //当前测试功能对应的测试项目或者是测试项目分类
     CSttMacroParaEditInterface* m_pMacroEditView;		//测试功能参数编辑
-    //sun QSttMacroParaEditViewHtml* m_pSysParaEditView;  //参数编辑视图  2022-3-18  lijunqing
+    //sun QSttMacroParaEditViewHtml* m_pSysParaEditView;  //参数编辑视图  2022-3-18  Eric
 	//CExBaseObject* m_pItemState;//临时存放多线程传递的ItemState，后替换为循环缓存
 	CTxRingPtrBuffer<CExBaseObject> m_oItemStateList;
 
@@ -346,7 +346,7 @@ protected:
 
 
 	//特性曲线图
-	//2022-9-3  lijunqing
+	//2022-9-3  Eric
 	QCharEditMainWidget* m_pCharLibWidget;	//QCharLibWidget* m_pCharLibWidget;
 	QCharactWidgetForTest *m_pCharactWidgetForTest;//20230310 用于测试过程中显示特性曲线图 zhouhj
 	QCharTestPointsGrid *m_pCharTestPointsGrid;//20230316 用于测试过程中显示特性曲线中的全部测试点 zhouhj
@@ -439,7 +439,7 @@ public:
 	void SetCharChanged(bool bCharChanged);
 	void UpdateCharScriptByUIParas(CDataGroup *pCurrentUIParas);//根据界面参数更新特性曲线中的脚本计算内容  20221022 zhouhj
 	virtual bool GenerateTemplate(CExBaseObject *pParentItems, const CString &strItemsName, const CString &strItemsID, long nRepeatTimes=1
-		, long nRptTitle=0, long nTitleLevel=1);  //2022-3-27  lijunqing 修改为虚函数，Win版本和LINUX版本处理模式不一致
+		, long nRptTitle=0, long nTitleLevel=1);  //2022-3-27  Eric 修改为虚函数，Win版本和LINUX版本处理模式不一致
 
 	virtual void InitStateMonitor(bool bIsEx = false, QWidget* pParent = NULL);
 	virtual void InitStateMonitor(int nChannel, int type, bool bStart, QWidget* pPlotExWidget = NULL);
@@ -590,15 +590,15 @@ public:
 	void OnCmd_DebugGenForDebug();
 	void OnCmd_DebugGenTemplate();
 	void OnCmd_DebugSaveAsSysFiles();
-	virtual void OnCmd_IecCap(); //2022-4-10  lijunqing
-	virtual void OnCmd_IecCapWriteFile(); //2022-6-13  lijunqing
-	virtual void OnCmd_IecCapDebugHead(); //2022-6-19  lijunqing
+	virtual void OnCmd_IecCap(); //2022-4-10  Eric
+	virtual void OnCmd_IecCapWriteFile(); //2022-6-13  Eric
+	virtual void OnCmd_IecCapDebugHead(); //2022-6-19  Eric
 	void OnCmd_ScreenShot();//截屏命令
-	void OnCmd_Assist();	//2022-12-02  lijunqing
+	void OnCmd_Assist();	//2022-12-02  Eric
 
 	void OnCmd_FAParasSetDialog(); //FA参数设置Dialog  xueyangfan 2024-1-23
 
-	virtual void InitIecCapTest(bool bActiveIecCap, bool bStartDetect,bool bShowMenuBtns = true);//2022-12-27  lijunqing  //参数3为是否显示菜单等按钮,IEC探测时,不需要显示
+	virtual void InitIecCapTest(bool bActiveIecCap, bool bStartDetect,bool bShowMenuBtns = true);//2022-12-27  Eric  //参数3为是否显示菜单等按钮,IEC探测时,不需要显示
 
 	void OnCmd_FileMngr();
 
@@ -705,7 +705,7 @@ public:
 
 extern QSttTestCntrFrameBase *g_theTestCntrFrame;
 extern long g_nLogDebugInfor;
-extern QFont *g_pSttGlobalFont;  //2022-9-16  lijunqing
+extern QFont *g_pSttGlobalFont;  //2022-9-16  Eric
 extern double g_dUIShowCoef; // 界面显示缩放比例
 
 

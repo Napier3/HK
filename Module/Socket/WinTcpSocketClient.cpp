@@ -97,7 +97,7 @@ long CWinTcpSocketClient::OnReceive(BYTE *pRcvBuf, int iLen)
 	return 0;
 }
 
-#ifndef _PSX_QT_LINUX_  //2022-12-24  lijunqing，LINUX和Windows线程都单独写，简单处理
+#ifndef _PSX_QT_LINUX_  //2022-12-24  Eric，LINUX和Windows线程都单独写，简单处理
 UINT TcpClientThread(LPVOID pData)
 {
 	CWinTcpSocketClient::InitSocket();

@@ -294,7 +294,7 @@ void CSttIecRcdFuncInterface::UpdateChName()
 }
 
 
-//2022-5-28  lijunqing
+//2022-5-28  Eric
 //数据集下以DvmData展示的控制块分析结果：根据CapDevice，获取DvmData
 BOOL CSttIecRcdFuncInterface::FindDvmDataForCtrl(CCapDeviceBase *pCapDevice, const CString &strDatasetID, CDvmDataset **ppDsRet, CDvmData **ppDataRet)
 {

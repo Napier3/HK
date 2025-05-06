@@ -32,7 +32,7 @@ CXRecordDrawBase::CXRecordDrawBase()
 	m_pRangeStateAxis->SetColor(RGB(0, 0, 255));
 	m_crForeColor               = RGB(255, 255, 255);
 	m_nMaxGapValue          = MAX_DRAWGAP1;
-	m_nSamRateForDraw				= 100000;//MR1200_SAMPLE_RATE;  //2020-06-22 lijunqing
+	m_nSamRateForDraw				= 100000;//MR1200_SAMPLE_RATE;  //2020-06-22 Eric
 	m_pRangeStateAxis->SetMinLength(40);
 
 	m_pRefBuffer = NULL;
@@ -76,7 +76,7 @@ CXRecordDrawBase::~CXRecordDrawBase()
 // 		g_theRecordApp.Delete(m_pRecordTest);
 // 	}
 
-/*//2023-7-22  lijunqing 移动到子类中
+/*//2023-7-22  Eric 移动到子类中
 	if (m_pRcdComtradeFile != NULL)
 	{
 		CRcdComtradeFileMngr::CloseComtradeFile(m_pRcdComtradeFile);
@@ -1330,7 +1330,7 @@ void CXRecordDrawBase::DibDraw(CDibDraw &oDibDraw, DWORD dwDrawFlag)
 	hdc = oDibDraw.GetDrawDC();
 	oDC.Attach(hdc);
 	DrawMainEx(&oDC, 1, CPoint(0,0), TRUE, dwDrawFlag);
-	DrawElements(&oDC, 1, CPoint(0,0), TRUE, dwDrawFlag);	//2021-1-17  lijunqing
+	DrawElements(&oDC, 1, CPoint(0,0), TRUE, dwDrawFlag);	//2021-1-17  Eric
 	oDC.Detach();
 
 	g_crRecordBackColor = crRecordBackColor;
@@ -1390,7 +1390,7 @@ void CXRecordDrawBase::AttatchAxisX(CRulerAxis *pAxis)
 }
 
 #ifdef _SHOW_PARA
-//2022-9-1  lijunqing
+//2022-9-1  Eric
 void CXRecordDrawBase::CalDrawParasValue()
 {
 	CDrawVariable *pDraw = NULL;

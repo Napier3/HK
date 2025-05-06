@@ -186,7 +186,7 @@ CSttXmlSerializeBase* CSttXmlSerializeTool::CreateXmlSerializeRegister(CExBaseOb
 	return m_pSttXmlSerialize;
 }
 
-//2021-5-30  lijunqing
+//2021-5-30  Eric
 CSttXmlSerializeBase* CSttXmlSerializeTool::CreateXmlSerializeWrite(BSTR bstrXmlRootKey)
 {
 	Release();
@@ -219,7 +219,7 @@ CSttXmlSerializeBase* CSttXmlSerializeTool::CreateXmlSerializeRegister(BSTR bstr
 }
 
 
-//2021-8-12  lijunqing
+//2021-8-12  Eric
 CSttXmlSerializeBase* CSttXmlSerializeTool::CreateXmlSerializeRead(const CString &strFile)
 {
 	if (!IsFileExist(strFile))

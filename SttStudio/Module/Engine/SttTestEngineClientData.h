@@ -27,9 +27,9 @@ extern long g_nTimeOut_Ats;
 extern long g_nTimeOut_Debug;
 extern long g_nTimeOut_Remote;
 extern long g_nTimeOut_Adjust;
-extern long g_nTimeOut_Meas; //2021-9-30  lijunqing
+extern long g_nTimeOut_Meas; //2021-9-30  Eric
 
-extern long g_nAtsGenTemplateForDebug;  //2022-3-14  lijunqing
+extern long g_nAtsGenTemplateForDebug;  //2022-3-14  Eric
 
 class CSttTestEngineClientData
 {
@@ -44,7 +44,7 @@ public:
 	void SetTestEventInterface(CTestEventBaseInterface *pTestEventRcv);//	{	m_pTestEventRcv  = pTestEventRcv;	}
 	CExBaseList* GetTestGlobalParas(){return &m_oTestGlobalParas;}
 
-	//2022-10-23  lijunqing
+	//2022-10-23  Eric
 	void SetSttCmdDataFormat(long nSttCmdDataFormat);
 
 public:
@@ -123,7 +123,7 @@ public:
 	long System_Logout(BOOL bDoEvents=TRUE,CSttCmdData *pRetData = NULL);
 	long System_Request(const CString &strAuthorityID, long nAuthorityVal,BOOL bDoEvents=TRUE,CSttCmdData *pRetData = NULL);
 	long System_Authority(const CString &strAuthorityID, long nAuthorityVal,BOOL bDoEvents=TRUE,CSttCmdData *pRetData = NULL);
-	//2022-3-23  lijunqing
+	//2022-3-23  Eric
 	long System_GetDirs(CDataGroup *pParas, BOOL bDoEvents=TRUE,CSttCmdData *pRetData = NULL);
 	long System_DownFile(CDataGroup *pParas, BOOL bDoEvents=TRUE,CSttCmdData *pRetData = NULL);
 	
@@ -148,10 +148,10 @@ public:
 	long Adjust_ReadDeviceParameter(CStringArray &astrTypes, BOOL bDoEvents=TRUE,CSttCmdData *pRetData = NULL,BOOL bSendCmdAsync=FALSE);
 	long Adjust_WriteFile(BOOL bSendCmdAsync=FALSE, BOOL bDoEvents=TRUE);
 
-	//2021-9-30  lijunqing
+	//2021-9-30  Eric
 	long Meas_Read(BOOL bSendCmdAsync=FALSE, BOOL bDoEvents=TRUE);
 
-	//2020-10-09 文件处理  lijunqing
+	//2020-10-09 文件处理  Eric
 	//读文件 strRealFilePath，目标文件相对路径，例如："Config/DeviceSystemParas.xml"  strDestFilePath,本地绝对路径
 	long ReadFile(const CString &strSrcFileRealPath, const CString &strDestFilePath,CSttSocketFileTransferProgress *pProgress);
 	//写文件：strSrcFilePath，本地绝对路径；strSrcFileRealPath目标文件相对路径
@@ -207,7 +207,7 @@ public:
 		, long nRepeatTimes, long nRptTitle, long nTitleLevel, long nSynMode, bool bDoEvents=TRUE,CSttCmdData *pRetData = NULL);
     long Ats_SetItemPara(const CString &strItemPath, const CString& strMacroID, CDataGroup *pItemParas,bool bDoEvents=TRUE,CSttCmdData *pRetData = NULL, const CString &strContents=_T(""), const CString &strRsltExpr=_T(""));
 	long Ats_AddMacro(const CString &strParentItemPath, const CString &strItemName, const CString &strItemID, const CString& strMacroID, const CString &strItemParas,bool bDoEvents=TRUE,CSttCmdData *pRetData = NULL);
-	//2022-3-23  lijunqing
+	//2022-3-23  Eric
 	long Ats_SaveTemplate(const CString &strPath, const CString& strFileName, CDataGroup *pMacroTestUI, CDataGroup *pUIParas, bool bDoEvents, CSttCmdData *pRetData, long nSynMode = STT_CMD_Send_Sync);
 	long Ats_SaveTest(const CString &strPath, const CString& strFileName, CDataGroup *pMacroTestUI, CDataGroup *pUIParas, bool bDoEvents, CSttCmdData *pRetData, long nSynMode = STT_CMD_Send_Sync);
 	long Ats_ExportWordRpt(const CString &strPath, const CString& strFileName, CDataGroup *pParas, bool bDoEvents, CSttCmdData *pRetData);
@@ -239,7 +239,7 @@ public:
 	long Debug_ConfigDebug(CSttDebugCmd *pCmd,BOOL bDoEvents=TRUE,CSttCmdData *pRetData = NULL);
 	long Debug_ConfigDebug(long nLogDataBind,long nLogPkgDataInfor,long nLogPkg
 		,long nLogDebugInfor,long nNoChangeWhenSame, long nSpyCmd);
-	long Debug_ConfigDebug(const CString &strDebugParaID, long nValue); //2020-12-04  lijunqing add spy-cmd
+	long Debug_ConfigDebug(const CString &strDebugParaID, long nValue); //2020-12-04  Eric add spy-cmd
 
 	//////////////////////////////////////////////////////////////////////////
 	//命令返回信息处理
@@ -257,7 +257,7 @@ public:
 	virtual long Process_SysState_System_GetSysConfig(CSttSysState &oSysState);
 	virtual long Process_SysState_System_SetSysConfig(CSttSysState &oSysState);
 	virtual long Process_SysState_BroadcastUserMngr(CSttSysState &oSysState);
-	virtual long Process_SysState_System_ReadMeas(CSttSysState &oSysState); //2021-10-2  lijunqing
+	virtual long Process_SysState_System_ReadMeas(CSttSysState &oSysState); //2021-10-2  Eric
 	virtual long Process_SysState_System_LiveUpdate(CSttSysState &oSysState);
 	void OnLogout();
 
@@ -282,7 +282,7 @@ public:
 	virtual void OnSendHeartbeatTimer();
 	virtual void OnSendHeartbeatTimer_NotCheakAuthority();//20220713 zhouhj 单机软件发送心跳不检查test权限
 
-    //2022-2-12  lijunqing
+    //2022-2-12  Eric
     virtual void AddPkgDispatch(CSttPkgDispatchInterface *pPkgDispatch){};
 	virtual void RemovePkgDispatch(CSttPkgDispatchInterface *pPkgDispatch){};
 };

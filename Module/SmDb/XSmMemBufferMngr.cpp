@@ -217,7 +217,7 @@ CXSmMemBuffer* CXSmMemBufferMngr::AddFrameBuffer(const BYTE *pBuffer, long nLen,
 		m_pdwXSmMemBuffer[m_nCurrIndex] = (DWORD)pFrameBuffer;
 	}
 
-	//lijunqing 2020-6-17  一次性分配一块大的缓存，避免频繁分配
+	//Eric 2020-6-17  一次性分配一块大的缓存，避免频繁分配
 	if (m_pBuffer != NULL)
 	{
 		BYTE *p = AllocBuffer(nLen);

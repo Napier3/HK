@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //DvmData.cpp  CDvmData
@@ -10,7 +10,7 @@
 #include "../MemBuffer/StringToSystimeBuffer.h"
 
 #include "../API/MathApi.h"
-//2021-5-18  shaolei,lijunqing 
+//2021-5-18  shaolei,Eric 
 //AtsWorkBench：可能是61850的代码与CValue存在冲突，导致编译出错
 //因此将CValue改为CXValue，同时保持兼容性
 #ifdef _use_cxvalue_
@@ -1804,7 +1804,7 @@ void CDvmData::ResetData()
 }
 
 
-//2021-10-13 lijunqing
+//2021-10-13 Eric
 CString CDvmData::GetIDPath_Root_Dataset(const CString &strPathSp)
 {
 	CExBaseObject *pDataset = (CExBaseObject*)GetParent();
@@ -1836,7 +1836,7 @@ CString CDvmData::GetIDPath_Root_Dataset(const CString &strPathSp)
 	return strID;
 }
 
-void CDvmData::InitByValues(CExBaseList *pValues) //2021-10-22  lijunqing
+void CDvmData::InitByValues(CExBaseList *pValues) //2021-10-22  Eric
 {
 	CString strID = GetIDPath_Root_Dataset();
 	CValue *pValue = (CValue*)pValues->FindByID(strID);

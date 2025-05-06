@@ -550,7 +550,7 @@ void CLogPrint::LogFormatString(LPVOID pPara, long nLevel, const char *strFormat
 	}
 }
 
-//2020-06-24  lijunqing
+//2020-06-24  Eric
 void CLogPrint::LogBuffer(BYTE *pBuffer, long nBeginIndex, long nCount)
 {
 #ifdef _PSX_IDE_QT_

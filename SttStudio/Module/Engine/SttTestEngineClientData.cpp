@@ -19,9 +19,9 @@ long g_nTimeOut_Ats = 5000;
 long g_nTimeOut_Debug = 3000;
 long g_nTimeOut_Remote = 3000;
 long g_nTimeOut_Adjust = 3000;
-long g_nTimeOut_Meas = 3000; //2021-9-30  lijunqing
+long g_nTimeOut_Meas = 3000; //2021-9-30  Eric
 
-//2022-3-14  lijunqing  生成模板的时候，带调试信息，例如：返回默认报告数据用于调试报告填写等
+//2022-3-14  Eric  生成模板的时候，带调试信息，例如：返回默认报告数据用于调试报告填写等
 long g_nAtsGenTemplateForDebug = 0;
 
 //////////////////////////////////////////////////////////////////////////
@@ -73,7 +73,7 @@ void CSttTestEngineClientData::SetTestEventInterface(CTestEventBaseInterface *pT
 	m_pTestEventRcv  = pTestEventRcv;
 }
 
-//2022-10-23  lijunqing
+//2022-10-23  Eric
 void CSttTestEngineClientData::SetSttCmdDataFormat(long nSttCmdDataFormat)
 {
 	if (m_pSttClientSocket != NULL)
@@ -356,7 +356,7 @@ long CSttTestEngineClientData::System_GetSysConfig(BOOL bDoEvents,CSttCmdData *p
 	return SendCmdSync(&oSysCmd,g_nTimeOut_System,pRetData,bDoEvents);
 }
 
-//2022-3-23  lijunqing
+//2022-3-23  Eric
 long CSttTestEngineClientData::System_GetDirs(CDataGroup *pParas, BOOL bDoEvents, CSttCmdData *pRetData)
 {
 	if (m_pSttClientSocket == NULL)
@@ -694,7 +694,7 @@ long CSttTestEngineClientData::Test_GetSystemState(CStringArray &astrTypes, BOOL
 		return 0;
 	}
 
-	CSttSystemCmd oTestCmd; //2021-10-6  lijunqing  由TestCmd改为SystemCmd
+	CSttSystemCmd oTestCmd; //2021-10-6  Eric  由TestCmd改为SystemCmd
 	oTestCmd.m_strID = STT_CMD_TYPE_SYSTEM_GetSystemState;
 	CSttParas *pParas = oTestCmd.GetSttParas();
 	pParas->AddDatas(astrTypes);
@@ -778,7 +778,7 @@ long CSttTestEngineClientData::Adjust_WriteFile(BOOL bSendCmdAsync, BOOL bDoEven
 	return SendCmdSync(&oAdjustCmd,g_nTimeOut_Adjust, NULL, bDoEvents);
 }
 
-//2021-9-30  lijunqing
+//2021-9-30  Eric
 long CSttTestEngineClientData::Meas_Read(BOOL bSendCmdAsync, BOOL bDoEvents)
 {
 	if (m_pSttClientSocket == NULL)
@@ -1341,14 +1341,14 @@ long CSttTestEngineClientData::Ats_GenerateTemplate(CDataGroup *pTestMacroUI, CD
 
 	CSttParas *pParas = oAtsCmd.GetSttParas();
 	pParas->AddNewData(STT_CMD_PARA_TtRetMode, strRetMode);
-	pParas->AddNewData(STT_CMD_PARA_HasDigital, nHasDigital);  //2022-2-26 lijunqing
+	pParas->AddNewData(STT_CMD_PARA_HasDigital, nHasDigital);  //2022-2-26 Eric
 	pParas->AddNewData(STT_CMD_PARA_DvmFile, strDvmFile/*_T("SttIecRecordDetectDvm.xml")*/);  //20221011 zhouhj 暂时先直接赋值,后期考虑改进传参方式,或增加成员变量方式处理
 	pParas->AddNewData(XPARA_ID_PPXMLFILE, strPpXmlFile);  
 
 	
 	if (g_nAtsGenTemplateForDebug == 1)
 	{
-		pParas->AddNewData(STT_CMD_PARA_GenForDebug, g_nAtsGenTemplateForDebug);  //2022-3-14 lijunqing
+		pParas->AddNewData(STT_CMD_PARA_GenForDebug, g_nAtsGenTemplateForDebug);  //2022-3-14 Eric
 	}
 	
 	if (pTestMacroUI != NULL && pUIParas != NULL)
@@ -1373,13 +1373,13 @@ long CSttTestEngineClientData::Ats_GenerateTemplate(CDataGroup *pGenParas, const
 
 	CSttParas *pParas = oAtsCmd.GetSttParas();
 	pParas->AddNewData(STT_CMD_PARA_TtRetMode, strRetMode);
-	pParas->AddNewData(STT_CMD_PARA_HasDigital, nHasDigital);  //2022-2-26 lijunqing
+	pParas->AddNewData(STT_CMD_PARA_HasDigital, nHasDigital);  //2022-2-26 Eric
 	pParas->AddNewData(STT_CMD_PARA_DvmFile, strDvmFile/*_T("SttIecRecordDetectDvm.xml")*/);  
 	pParas->AddNewData(XPARA_ID_PPXMLFILE, strPpXmlFile);  
 
 	if (g_nAtsGenTemplateForDebug == 1)
 	{
-		pParas->AddNewData(STT_CMD_PARA_GenForDebug, g_nAtsGenTemplateForDebug);  //2022-3-14 lijunqing
+		pParas->AddNewData(STT_CMD_PARA_GenForDebug, g_nAtsGenTemplateForDebug);  //2022-3-14 Eric
 	}
 
 	pParas->AppendCloneEx(*pGenParas, TRUE);
@@ -1403,7 +1403,7 @@ long CSttTestEngineClientData::Ats_GenerateItems(const CString &strItemParentPat
 
 	CSttParas *pParas = oAtsCmd.GetSttParas();
 	pParas->AddNewData(STT_CMD_PARA_TtRetMode, strRetMode);
-	pParas->AddNewData(STT_CMD_PARA_HasDigital, nHasDigital);  //2022-2-26 lijunqing
+	pParas->AddNewData(STT_CMD_PARA_HasDigital, nHasDigital);  //2022-2-26 Eric
 	pParas->AddNewData(STT_CMD_PARA_generate_items_ItemsName, strItemsName); 
 	pParas->AddNewData(STT_CMD_PARA_generate_items_ItemsID, strItemsID); 
 	pParas->AddNewData(STT_CMD_PARA_generate_items_RepeatTimes, nRepeatTimes);
@@ -1422,7 +1422,7 @@ long CSttTestEngineClientData::Ats_GenerateItems(const CString &strItemParentPat
 
 	if (g_nAtsGenTemplateForDebug == 1)
 	{
-		pParas->AddNewData(STT_CMD_PARA_GenForDebug, g_nAtsGenTemplateForDebug);  //2022-3-14 lijunqing
+		pParas->AddNewData(STT_CMD_PARA_GenForDebug, g_nAtsGenTemplateForDebug);  //2022-3-14 Eric
 	}
 
 	pParas->AddNewData(STT_CMD_PARA_ParentItemsPath, strItemParentPath);
@@ -2005,7 +2005,7 @@ long CSttTestEngineClientData::Debug_ConfigDebug(long nLogDataBind,long nLogPkgD
 	return SendCmdOnly(&oDebugCmd);
 }
 
- //2020-12-04  lijunqing add spy-cmd
+ //2020-12-04  Eric add spy-cmd
 long CSttTestEngineClientData::Debug_ConfigDebug(const CString &strDebugParaID, long nValue)
 {
 	if (m_pSttClientSocket == NULL)
@@ -2181,7 +2181,7 @@ qDebug()<<"i am from line 2173";
 	return nCmdExecState;
 }
 
-//2020-10-09 文件处理  lijunqing
+//2020-10-09 文件处理  Eric
 //读文件 strRealFilePath，目标文件相对路径，例如："Config/DeviceSystemParas.xml"  strDestFilePath,本地绝对路径
 long CSttTestEngineClientData::ReadFile(const CString &strSrcFileRealPath, const CString &strDestFilePath,CSttSocketFileTransferProgress *pProgress)
 {
@@ -2329,7 +2329,7 @@ long CSttTestEngineClientData::Process_SysState_System_GetSysConfig(CSttSysState
 	return nCmdExecState;
 }
 
-//2021-10-2  lijunqing
+//2021-10-2  Eric
 long CSttTestEngineClientData::Process_SysState_System_ReadMeas(CSttSysState &oSysState)
 {
 	return 0;
@@ -2388,7 +2388,7 @@ long CSttTestEngineClientData::Process_SysState_Report(CSttSocketDataBase *pClie
 		return 0;
 	}
 
-	//2022-1-15  lijunqing
+	//2022-1-15  Eric
 	CSttParas *pParas = oSysState.GetSttParas();
 
 	CString strTestID = _T(""),strItemID = _T("");

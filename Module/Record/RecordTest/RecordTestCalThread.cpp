@@ -116,7 +116,7 @@ void CRecordTestCalThread::OnCalValues(WPARAM wParam, LPARAM lParam)
 
 	if (m_pRecordTest != NULL)
 	{
-		//lijunqing  2020-6-18
+		//Eric  2020-6-18
 		if (lParam == 0)
 		{//录波器计算，每个通道的数据个数一致
 			m_pRecordTest->CalValues();

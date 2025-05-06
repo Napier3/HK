@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttMsg.cpp  CSttMsg
@@ -32,7 +32,7 @@ long CSttMsg::XmlReadOwn(CXmlRWNodeBase &oNode, CXmlRWKeys *pXmlRWKeys)
 {
 	CSttCmdDefineXmlRWKeys *pXmlKeys = (CSttCmdDefineXmlRWKeys*)pXmlRWKeys;
 
-    //2020-11-25  lijunqing
+    //2020-11-25  Eric
     xml_GetAttibuteValue(pXmlKeys->m_strIDKey, oNode, m_strID);
 	xml_GetAttibuteValue(pXmlKeys->m_strTimeKey, oNode, m_strTime);
 	xml_GetAttibuteValue(pXmlKeys->m_strLevelKey, oNode, m_nLevel);
@@ -47,7 +47,7 @@ long CSttMsg::XmlWriteOwn(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oElement, C
 {
 	CSttCmdDefineXmlRWKeys *pXmlKeys = (CSttCmdDefineXmlRWKeys*)pXmlRWKeys;
 
-    //2020-11-25  lijunqing
+    //2020-11-25  Eric
     xml_SetAttributeValue(pXmlKeys->m_strIDKey, oElement, m_strID);
 	xml_SetAttributeValue(pXmlKeys->m_strTimeKey, oElement, m_strTime);
 	xml_SetAttributeValue(pXmlKeys->m_strLevelKey, oElement, m_nLevel);

@@ -814,7 +814,7 @@ CExBaseObject* CExBaseList::FindByClassID(DWORD dwClassID)
 	return pFind;
 }
 
-//2023-3-28  lijunqing
+//2023-3-28  Eric
 CExBaseObject* CExBaseList::FindByClassID(DWORD dwClassID, long nIndex)
 {
 	CExBaseObject *p = NULL;

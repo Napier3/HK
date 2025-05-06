@@ -194,7 +194,7 @@ long CBaseObject::XmlReadChildren(CXmlRWNodeListBase &oNodes, CXmlRWKeys *pXmlRW
 	return 0;
 }
 
-//2020-12-1  lijunqing
+//2020-12-1  Eric
 long CBaseObject::XmlWriteEx(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oParent, CXmlRWKeys *pXmlRWKeys, CXmlRWElementBase* &pRetElement)
 {
 	BSTR pszElementKey = GetXmlElementKey();

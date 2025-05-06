@@ -13,7 +13,7 @@
 
 extern long g_nLogDebugInfor;
 
-//2022-3-20  lijunqing ×¢ÊÍ
+//2022-3-20  Eric ×¢ÊÍ
 //#pragma execution_character_set("utf-8")
 GoosePubWidget::GoosePubWidget(QGooseParaWidget *pParaWidget,QWidget *parent)
 	: QWidget(parent)

@@ -35,7 +35,7 @@ public:
 	virtual void OnAtsGenerateItems(CExBaseObject *pItems, BOOL bUpdateParent=FALSE) = 0;
 	virtual void OnAtsGenerateItems_CmdWzd(CExBaseList *pCmdGrp) = 0;
 	virtual void OnAtsGenerateItems_ImportDvm(CExBaseList *pItemsList) = 0;
-	virtual void OnAtsQueryItem(CExBaseObject *pItemPara) = 0;  //2022-9-13  lijunqing
+	virtual void OnAtsQueryItem(CExBaseObject *pItemPara) = 0;  //2022-9-13  Eric
 	virtual void OnInputData(CSttParas *pParas,CExBaseList *pMsgs) = 0;  //SHAOLEI  2023-7-21
 	virtual void OnTestDisconnected() = 0; //shaolei 2023-9-19 断链
 	virtual void OnSearchPointReport(const CString &strMacroID, CDataGroup *pSearchResults){};
@@ -60,7 +60,7 @@ public:
 	//add by shaolei 20220319  //根据项目ID，查找所有的项目
 	virtual void GetAllItemsByID(const CString &strItemID, CExBaseList &oItemList); 
 
-	//2022-3-29  lijunqing
+	//2022-3-29  Eric
 	virtual long TestItem(const CString &strItemPath);
 	virtual long TestFrom(const CString &strItemPath);
 
@@ -83,7 +83,7 @@ public:
 protected:
     CExBaseObject *m_pCurrTestItem;   //当前执行的测试项目
 	CSttTestCtrlCntrMsgInterface *m_pTestCtrlCntrMsg;
-	CSttMacroTestUI_TestMacroUI *m_pCurrTestMacroUI;  //2022-3-11  lijunqing  for debug
+	CSttMacroTestUI_TestMacroUI *m_pCurrTestMacroUI;  //2022-3-11  Eric  for debug
 
 public:
 	//测试功能参数编辑
@@ -118,7 +118,7 @@ public:
 	virtual long Ats_QueryItem(const CString &strItemPath);
 	virtual long Ats_SetParameter(const CString &strMacroID, CDataGroup *pParas);//2023.7.7 zhouhj 增加用于辅助直流设置
 
-	//2022-3-29  lijunqing
+	//2022-3-29  Eric
 	virtual long Ats_NewItems(CExBaseList *pParent, CExBaseObject *pItems);
 	virtual long Ats_EditItems(CExBaseList *pParent, CExBaseObject *pItems, const CString &strItemsID);
 	virtual long Ats_DeleteItems(CExBaseList *pParent, CExBaseObject *pItems);
@@ -141,7 +141,7 @@ public:
 	virtual long Ats_GenrateItems_CmdAdd(const CString &strParentItemPath, CDataGroup *pCommCmd, CSttContents *pContents);
 	virtual long Ats_GenerateItems_AddSafety(CDataGroup *pParas, CExBaseList *pListDatas, CExBaseList *pMsgs);
 
-	//模板、报告数据等相关的接口  2022-3-14  lijunqing
+	//模板、报告数据等相关的接口  2022-3-14  Eric
 	virtual CString SaveTestFile(const CString &strRealPath, const CString &strTemplateFileName);
 	virtual CString SaveSysTemplateFile(const CString &strTemplateFileName);
 	virtual CString SaveTemplateFile(const CString &strTemplateFileName);
@@ -154,12 +154,12 @@ public:
 
 	virtual void CloseTest(){	};//关闭测试前要干的活 sf 20220318
 
-	//2022-4-14 lijunqing
+	//2022-4-14 Eric
 	virtual void Ats_IecDetect(long bEnable);
 	virtual void Ats_IecRecord(CDataGroup *pIecRecordParas);
 
 public:
-	//2022-3-11 lijunqing
+	//2022-3-11 Eric
 	void OpenMacroTestUI_ParaFile(long nFileIndex);
 	void SaveMacroTestUI_ParaFile(const CString &strTitleAdd);
 

@@ -1,4 +1,4 @@
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttAdjDevice.cpp  CSttAdjDevice
@@ -73,7 +73,7 @@ BOOL CSttAdjDevice::OpenSttAdjFile(const CString &strFile)
 	return bRet;
 }
 
-//2021-5-4  lijunqing  将模块类型由整数转换为字符串，兼容老版本校准系数文件
+//2021-5-4  Eric  将模块类型由整数转换为字符串，兼容老版本校准系数文件
 void CSttAdjDevice::TransModuleTypeFromLongToString()
 {
 	CExBaseList oList;
@@ -130,7 +130,7 @@ CDataGroup* CSttAdjDevice::GetBoutTrunOnValueDef()
 	return m_pSttAdjRef->FindByDataType(STT_ADJ_DATA_TYPE_BoutTrunOnValueDef);
 }
 
-//2022-3-18  lijunqing
+//2022-3-18  Eric
 void CSttAdjDevice::GetDeviceVersioninfors(CDataGroup &oDeviceInfors) 
 {
 	CDataGroup *p = GetDeviceAttrs();
@@ -579,7 +579,7 @@ BOOL CSttAdjDevice::GetAllModules(CExBaseList *pCurModuleList)
 }
 
 
-//2022-2-9  lijunqing 
+//2022-2-9  Eric 
 void CSttAdjDevice::InitChannelsID()
 {
 	CExBaseList listModules;

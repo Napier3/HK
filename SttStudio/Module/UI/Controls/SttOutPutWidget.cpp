@@ -15,7 +15,7 @@ QSttOutPutWidget::QSttOutPutWidget(QWidget *parent) :
 	//消息打印
 	connect(this, SIGNAL(sig_refreshLog(long,QString)), this, SLOT(slot_refreshOutput(long,QString)));
 
-	//2022-10-15  lijunqing  Windows调试，增加行数
+    //2022-10-15  Eric  Windows调试，增加行数
 #ifdef _PSX_QT_LINUX_
 	textEdit->document()->setMaximumBlockCount(1000); 
 #else

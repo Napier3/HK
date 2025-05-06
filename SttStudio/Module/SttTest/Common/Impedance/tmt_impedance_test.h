@@ -257,7 +257,7 @@ public:
 	long m_nStateBOut[MAX_BINARYIN_COUNT];//用二进制标识各个开出状态
 	long m_nBinSelect;//开入量选择第几组   0-ABCD 1-EFGH 0
 
-	//2021-9-7  lijunqing
+	//2021-9-7  Eric
 	double m_fR, m_fX;  //阻抗平面的阻抗值，用于绘图
 
 	void CalRX()

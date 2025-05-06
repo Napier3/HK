@@ -17,6 +17,6 @@ public:
 	virtual long SendIotCmd(CSttIotCmd &oIotCmd);
 	virtual BOOL ConnectSttServer();
 
-	//2022-11-15  lijunqing
+	//2022-11-15  Eric
 	void InitSttTestDeviceCfg(const CString &strCfgFile);
 };

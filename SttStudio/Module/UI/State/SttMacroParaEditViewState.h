@@ -40,7 +40,7 @@ public:
 	virtual void GetDatas(CDataGroup *pParas);
 	virtual void SetDatas(CDataGroup *pDataset);
 
-	//2023-2-4  lijunqing 提高程序界面初始化打开的速度，将矢量图、状态图等的初始化放到线程
+	//2023-2-4  Eric 提高程序界面初始化打开的速度，将矢量图、状态图等的初始化放到线程
 	virtual void InitSpyToolWidget();
 
 	tmt_state_test m_oStateTest;

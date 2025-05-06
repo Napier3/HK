@@ -182,25 +182,25 @@
 #define STT_CMD_TYPE_TEST_SysDefaultOutput	_T("SystemDefaultOutput")
 #define STT_CMD_TYPE_TEST_TriggerTest	_T("TriggerTest")
 
-//2021-9-4  lijunqing
+//2021-9-4  Eric
 #define STT_CMD_TYPE_TEST_CreateDevice	_T("CreateDevice")
 #define STT_CMD_TYPE_TEST_ConfigDevice	_T("ConfigDevice")
 #define STT_CMD_TYPE_TEST_ConnectDevice	_T("ConnectDevice")
 #define STT_CMD_TYPE_TEST_GetDataset	_T("GetDataset")
 #define STT_CMD_TYPE_TEST_SetDataset	_T("SetDataset")
 
-//2022-8-1  lijunqing  for Record
+//2022-8-1  Eric  for Record
 #define STT_CMD_TYPE_TEST_Record	_T("Record")
 #define STT_CMD_TYPE_TEST_RecordBegin	_T("Begin")
 #define STT_CMD_TYPE_TEST_RecordFinish	_T("Finish")
 #define STT_CMD_TYPE_TEST_RecordCancel	_T("Cancel")
 #define STT_CMD_TYPE_TEST_RecordData	_T("Data")
 #define STT_CMD_TYPE_TEST_RecordCall	_T("Call")
-//2022-8-1  lijunqing
+//2022-8-1  Eric
 #define STT_CMD_TYPE_TEST_HeartBeat	_T("HeartBeat")
 #define STT_CMD_TYPE_TEST_QueryFile	_T("QueryFile")
 #define STT_CMD_TYPE_TEST_QueryDevice	_T("QueryDevice")
-//2022-8-5 lijunqing
+//2022-8-5 Eric
 #define STT_CMD_TYPE_TEST_Record_Send	_T("Send")
 #define STT_CMD_TYPE_TEST_Record_StopSend	_T("StopSend")
 
@@ -284,19 +284,19 @@
 #define STT_CMD_TYPE_ATS_AdjustReport		_T("AdjustReport")   //shaolei 调整报告  20230505
 #define STT_CMD_TYPE_ATS_ClearReportsRslts  _T("ClearReportsRslts")   //shaolei 清除报告数据 2023-7-17
 
-//lijunqing 2023-9-12  对于FLow模式，FlowSetBentch、StartTest、CloseTest组成一个流程步骤，整个流程结束使用ExitTest
+//Eric 2023-9-12  对于FLow模式，FlowSetBentch、StartTest、CloseTest组成一个流程步骤，整个流程结束使用ExitTest
 #define STT_CMD_TYPE_ATS_ExitTest  _T("ExitTest")
 
-//2020-12-01  lijunqing
+//2020-12-01  Eric
 #define STT_CMD_TYPE_ATS_QueryAtsFile	_T("QueryAtsFile")
 //2021-07-26  shaolei
 #define STT_CMD_TYPE_ATS_ExportReport		_T("ExportReport")
 #define STT_CMD_TYPE_ATS_SetItemsReport		_T("SetItemsReport")
 #define STT_CMD_TYPE_ATS_QueryItems	        _T("QueryItems")
-//2021-7-26  lijunqing
+//2021-7-26  Eric
 #define STT_CMD_TYPE_ATS_FlowSetBench	        _T("FlowSetBench")
 #define STT_CMD_TYPE_ATS_ConfigAtsService	        _T("ConfigAtsService")
-//2021-8-14  lijunqing
+//2021-8-14  Eric
 #define STT_CMD_TYPE_ATS_ConfigTest	        _T("ConfigTest")
 //shaolei 20210927
 #define STT_CMD_TYPE_ATS_UploadReportFinished	_T("UploadReportFinished")
@@ -316,14 +316,14 @@
 #define STT_CMD_TYPE_ATS_SetItemPara            _T("SetItemPara")
 //shaolei  2023-4-8  添加电气量项目。用于添加定点测试
 #define STT_CMD_TYPE_ATS_GenerateMacroTest          _T("GenerateMacroTest")
-//2022-3-23  lijunqing
+//2022-3-23  Eric
 #define STT_CMD_TYPE_ATS_SaveTemplate            _T("SaveTemplate")
 #define STT_CMD_TYPE_ATS_SaveTest            _T("SaveTest")
 #define STT_CMD_TYPE_ATS_OpenTemplate            _T("OpenTemplate")
 //shaolei  2023-6-25 
 #define STT_CMD_TYPE_ATS_ExportWordRpt            _T("ExportWordRpt")
 
-//2022-12-25  lijunqing
+//2022-12-25  Eric
 #define STT_CMD_TYPE_ATS_BeginRecord            _T("BeginRecord")
 #define STT_CMD_TYPE_ATS_StartDetect            _T("StartDetect")
 
@@ -370,7 +370,7 @@
 #define STT_CMD_PARA_FILE_STATE           _T("file-state")
 #define STT_CMD_PARA_FILE_PERMISSION   _T("permission")
 #define STT_CMD_PARA_FILE_NAME             _T("file-name")
-//2022-3-23  lijunqing
+//2022-3-23  Eric
 #define STT_CMD_PARA_FILE_RootPath             _T("RootPath")
 #define STT_CMD_PARA_FILE_GetSubDirs             _T("GetSubDirs")
 #define STT_CMD_PARA_FILE_GetFiles             _T("GetFiles")
@@ -423,7 +423,7 @@
 #define STT_CMD_PARA_OnlySelect _T("OnlySelect")
 #define STT_CMD_PARA_LoopTest _T("LoopTest")
 
-//2021-7-26  lijunqing
+//2021-7-26  Eric
 #define STT_CMD_PARA_BenchID  _T("BenchID")
 
 //20210727 shaolei
@@ -431,7 +431,7 @@
 //规则ID，指定创建哪个测试仪。
 //引擎ID，指定调用哪个接口程序。例如：IotVm.Engine，PonovoVm.Engine
 #define STT_CMD_PARA_EngineProgID _T("EngineProgID")
-//2023-8-17  lijunqing  为自动测试增加通信引擎模式
+//2023-8-17  Eric  为自动测试增加通信引擎模式
 #define STT_CMD_PARA_EngineMode            _T("EngineMode")
 #define STT_CMD_PARA_EngineMode_COM    _T("COM")
 #define STT_CMD_PARA_EngineMode_STT     _T("STT")
@@ -440,7 +440,7 @@
 //在引擎ID一致的情况下，创建不同的测试仪通讯对象，例如：IotVm.XLDL，IotVm.Simpac
 #define STT_CMD_PARA_ProtocolID _T("ProtocolID") 
 #define STT_CMD_PARA_MacroFile _T("MacroFile")
-//2021-8-2  lijunqing
+//2021-8-2  Eric
 #define STT_CMD_PARA_BenchSN  _T("BenchSN")
 #define STT_CMD_PARA_DeviceSN  _T("DeviceSN")
 //2021-8-3 shaolei
@@ -480,12 +480,12 @@
 #define STT_CMD_PARA_LIVEUPDATE_UPDATEINFO	 _T("updateinfo")	//上行状态参数
 #define STT_CMD_PARA_LIVEUPDATE_RESULT		 _T("result")		//上行状态参数：0-失败，1-成功
 
-//lijunqing 2020-9-18
+//Eric 2020-9-18
 #define STT_CMD_PARA_AutoSendSocket  _T("auto-send-socket")
 #define STT_CMD_PARA_AutoSendTest  _T("auto-send-test")
 #define STT_CMD_PARA_AutoSendDMP  _T("auto-send-dmp")
 
-//lijunqing 2020-10-22  for Adjust : ReadDeviceParameter
+//Eric 2020-10-22  for Adjust : ReadDeviceParameter
 #define STT_CMD_PARA_DeviceAttrs  _T("DeviceAttrs")
 #define STT_CMD_PARA_BoutTrunOnValueDef  _T("BoutTrunOnValueDef")
 #define STT_CMD_PARA_ModuleAttrs  _T("ModuleAttrs")
@@ -493,7 +493,7 @@
 #define STT_CMD_PARA_HdGears  _T("HdGears")
 #define STT_CMD_PARA_AdjustParas  _T("AdjustParas")
 
-//lijunqing 2020-10-22  for Test/ATS : GetSystemState
+//Eric 2020-10-22  for Test/ATS : GetSystemState
 #define STT_CMD_PARA_DeviceStatus  _T("DeviceStatus")
 #define STT_CMD_PARA_TestStatus  _T("TestStatus")
 #define STT_CMD_PARA_AtsStatus  _T("AtsStatus")
@@ -549,7 +549,7 @@
 //2023-7-19
 #define STT_CMD_PARA_SafetyDatas            _T("safety-datas")
 
-//2022-3-29  lijunqing 
+//2022-3-29  Eric 
 #define STT_CMD_PARA_generate_items  _T("generate-items")
 #define STT_CMD_PARA_ItemsID           _T("ItemsID")
 #define STT_CMD_PARA_generate_items_create             _T("create")
@@ -615,7 +615,7 @@
 //这个字段统一为   item-paras
 // #define STT_CMD_PARA_ItemPara            _T("item-para")
 
-//lijunqing 2022-9-12 智能生成向导
+//Eric 2022-9-12 智能生成向导
 #define STT_CMD_PARA_CmdGenParas         _T("cmd-gen-paras")
 #define STT_CMD_PARA_CmdGenCfg            _T("cmd-gen-cfg")
 #define STT_CMD_PARA_CMDSINGLE            _T("cmd-single")
@@ -647,10 +647,10 @@
 #define STT_CMD_PARA_TtRetMode_GBXML  _T("gbxml")    //模板返回模式：全模板
 #define STT_CMD_PARA_TtRetMode_DSCXML _T("dscxml")    //模板返回模式：模板概要信息
 #define STT_CMD_PATA_TestMode         _T("test-mode")  //测试模式：1-自动测试；0-单机测试
-//2022-3-14  lijunqing
+//2022-3-14  Eric
 #define STT_CMD_PARA_GenForDebug     _T("gen-for-debug")
 
-//2022-8-4  lijunqing  Record 相关参数
+//2022-8-4  Eric  Record 相关参数
 #define STT_CMD_PARA_RcdDataID _T("RcdDataID")  
 #define STT_CMD_PARA_TotalSize    _T("TotalSize")  
 #define STT_CMD_PARA_DataCount    _T("DataCount")  
@@ -728,7 +728,7 @@
 #define XPARA_ID_TOTALITEMS  _T("total-items")
 #define XPARA_ID_ELIGIBLEITEMS    _T("eligible-items")
 #define XPARA_ID_INLEGIBLEITEMS  _T("inlegible-items")
-//2023-9-13  lijunqing  导出报告的模式
+//2023-9-13  Eric  导出报告的模式
 #define XPARA_ID_Export_Mode  _T("ExportMode")
 #define XPARA_Val_Export_Mode_single  _T("single")
 #define XPARA_Val_Export_Mode_gbrpts  _T("gbrpts")
@@ -750,7 +750,7 @@
 #define XPARA_ID_TestApps   _T("TestApps")
 //end
 
-//2021-8-1  lijunqing
+//2021-8-1  Eric
 #define XPARA_ID_Remote_ip  _T("remote-ip")
 #define XPARA_ID_Remote_port  _T("remote-port")
 //2023-3-26  shaolei
@@ -819,7 +819,7 @@
 #define RUNPROCEDURE_EVENT_Exception					_T("Exception")
 #define RUNPROCEDURE_EVENT_CommOverTime					_T("CommOverTime")
 
-//2021-8-4  lijunqing
+//2021-8-4  Eric
 #define XPARA_ID_devices      _T("devices")
 #define XPARA_ID_device      _T("device")
 #define XPARA_ID_test_apps   _T("test-apps")
@@ -828,7 +828,7 @@
 #define XPARA_ID_devices_multi_test      _T("multi-test")
 
 
-//2021-9-1  lijunqing  用于总线设备的地址
+//2021-9-1  Eric  用于总线设备的地址
 #define XPARA_ID_Address  _T("address")
 
 //2021-11-04 sf
@@ -838,7 +838,7 @@
 #define XPARA_ID_Remote_StopBit  _T("remote-StopBit")
 #define XPARA_ID_Remote_Parity  _T("remote-Parity")
 
-//2022-4-9  lijunqing IEC部分
+//2022-4-9  Eric IEC部分
 #define XPARA_ID_IEC_CB _T("IEC_CB")
 #define XPARA_ID_Type _T("Type")
 #define XPARA_ID_Port _T("Port")
@@ -850,7 +850,7 @@
 #define XPARA_ID_SampleRate _T("SampleRate")
 #define XPARA_ID_OnePkgLen _T("OnePkgLen")
 #define XPARA_ID_STMode _T("STMode")
-//2022-6-11  lijunqing  探测返回通道数
+//2022-6-11  Eric  探测返回通道数
 #define XPARA_ID_ChCount _T("ChCount")
 
 #define XPARA_ID_TYPE_SMV92  _T("SMV92")
@@ -868,7 +868,7 @@
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
-//from SttSysState.h   2022-8-1  lijunqing
+//from SttSysState.h   2022-8-1  Eric
 
 //////////////////////////////////////////////////////////////////////////
 ////系统状态通用数据
@@ -923,7 +923,7 @@
 	</macro>
 	<paras name="" id="">	
 		<data id="" value="" />
-        <dataset id="" data-type=""/>    2020-5-19  lijunqing
+        <dataset id="" data-type=""/>    2020-5-19  Eric
 	</paras>
 <sys-state>
 */
@@ -996,7 +996,7 @@
 #define SYS_STATE_XEVENT_EVENTID_BOUT   _T("Event_Bout")
 #define SYS_STATE_XEVENT_EVENTID_SYNCTIME   _T("SyncTime")
 //yyj 20210806
-//2022-10-6  lijunqing 
+//2022-10-6  Eric 
 #define SYS_STATE_XEVENT_EVENTID_RtData   _T("Rtdata")
 
 //shaolei 20210926

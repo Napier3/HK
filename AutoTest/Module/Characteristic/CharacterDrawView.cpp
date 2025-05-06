@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //XScdDrawViewIedCfg.cpp  CXScdDrawViewIedCfg
@@ -124,7 +124,7 @@ DWORD CCharacterDrawView::XCreateElement(CExBaseObject *pData, CWnd *pParentWnd)
 		}
 	}
 
-	//2021-9-17  lijunqing  创建缺省的默认坐标系
+	//2021-9-17  Eric  创建缺省的默认坐标系
 	if (m_pXDrawMngr_Axis == NULL)
 	{
 		CreateXDrawMngr(m_strAxis);
@@ -266,7 +266,7 @@ void CCharacterDrawView::Draw(CDC *pDC, double fZoomRatio,const CPoint &ptOffset
 	m_oXDrawElementsForTemp.Draw(pDC, fZoomRatio, ptOffset);
 }
 
-//2021-9-7  lijunqing
+//2021-9-7  Eric
 void CCharacterDrawView::GetAxisInterface(CAxisInterface **ppAxisInterface)
 {
 	m_pXDrawMngr_Axis->GetAxisInterface(ppAxisInterface);
@@ -670,7 +670,7 @@ void CCharacterDrawView::MoveDown(double dCoef)
 	}
 }
 
-//2021-10-28  lijunqing   鼠标移动图形
+//2021-10-28  Eric   鼠标移动图形
 void CCharacterDrawView::MouseMove_SetBegin(CPoint &ptBegin)
 {
 	m_ptMouseMoveBegin = ptBegin;

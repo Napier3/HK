@@ -169,7 +169,7 @@ private:
 
 
 public:
-	//各通道独立计算  2020-6-17  lijunqing
+	//各通道独立计算  2020-6-17  Eric
 	__int64 m_n64AttrReadBeginPos;
 	DWORD m_nFrequencyCalBeginPos;          //频率计算的起始位置
 	DWORD m_nAttrCalBeginPos;               //属性计算的起始位置

@@ -99,7 +99,7 @@ void CComtradeAnalogData::CalMinMaxValue(long nPoints)
 void CComtradeAnalogData::CalMinMaxValue2(long nPoints)
 {
 	if (nPoints <= 0)
-	{//2021-2-18  lijunqing
+	{//2021-2-18  Eric
 		nPoints = m_nTotalPoints;
 	}
 
@@ -1661,7 +1661,7 @@ void CComtradeAnalogData::WriteAnalogDatas(const CString &strFileHeadName)
 	oFile.Close();
 }
 
-//2021-1-18  lijunqing
+//2021-1-18  Eric
 BOOL CComtradeAnalogData::IsAnalogU()
 {
 	//return ((m_strUnit.Find(_T("V")) >= 0) || (m_strUnit.Find(_T("v")) >= 0));

@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttCmdData.h  CSttCmdData
@@ -8,7 +8,7 @@
 
 #include "SttCmdDefineGlobal.h"
 #include "SttParas.h"
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
 #include "SttMacro.h"
 #endif
 #include "SttMsgs.h"
@@ -50,7 +50,7 @@ public:
 protected:
 	CSttParas *m_pSttParas;
 
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
 	CSttMacro *m_pSttMacro;
 #endif
 
@@ -64,12 +64,12 @@ protected:
 	//私有成员变量访问方法
 public:
 	CSttParas* GetSttParas();
-	BOOL HasSttParas();    //2023-3-12  lijunqing  为空命令的判断方法，用于Socket断开时等效close-device指令
+	BOOL HasSttParas();    //2023-3-12  Eric  为空命令的判断方法，用于Socket断开时等效close-device指令
 
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
 	CSttMacro* GetSttMacro(BOOL bInitParas=FALSE, BOOL bInitResults=FALSE,BOOL bInitSearchResults = FALSE);//zhouhj 20210925 增加搜索点结果
 	
-	//2023-6-18  lijunqing
+	//2023-6-18  Eric
 	BOOL HasSttMacro()	{	return m_pSttMacro != NULL;	} 
 	CSttMacro*SttMacro()	{	return m_pSttMacro;	}
 #endif
@@ -107,13 +107,13 @@ public:
     CDvmDataset* GetDataset();
 	CDvmDatasetGroup* GetDatasetGroup();
 
-	//2021-8-4  lijunqing
+	//2021-8-4  Eric
 	CExBaseObject *FindInParasByID(const CString &strID);
 
 	//20210902
 	BOOL SetParasDataValueByID(const CString &strValueID, const CString &strValue);
 
-	//2023-2-2  lijunqing
+	//2023-2-2  Eric
 	void AddMsg(const CString &strID, const CString &strMsg);
 };
 

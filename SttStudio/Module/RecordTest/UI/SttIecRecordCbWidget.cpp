@@ -371,7 +371,7 @@ void QSttIecRecordCbWidget::BtnBack()
 		}
 	}
 
-	g_bSmartCap_RecordNow = FALSE;  //2022-5-3  lijunqing stop record
+	g_bSmartCap_RecordNow = FALSE;  //2022-5-3  Eric stop record
 
 	Ats_IecRecord_Stop();
 	m_oTimerIecRcdUpdate.stop();
@@ -509,7 +509,7 @@ void QSttIecRecordCbWidget::Ats_IecRecord(BOOL bIsFromIecfgFile)
 	//if (bIsFromIecfgFile)
 	{
 		//如果是从配置文件导入，则立即录波
-		//2022-6-11 lijunqing 探测返回了通道数，任何情况下，立即录波
+		//2022-6-11 Eric 探测返回了通道数，任何情况下，立即录波
 		RecordCapDevice();
 	}
 
@@ -547,14 +547,14 @@ void QSttIecRecordCbWidget::InitIecRecordCb(const CString &strIecFunc)
 
 // void QSttIecRecordCbWidget::UpdateCapDevice(CCapDeviceBase *pCapDevice)
 // {//更新装置：如果当前装置是需要更新的装置，则更新
-// 	//2022-6-11  lijunqing 此函数设计的初期是因为探测的时候没有返回通道数
+// 	//2022-6-11  Eric 此函数设计的初期是因为探测的时候没有返回通道数
 // 	//所以要动态增加到RecordDevice中，新版本返回了通道数，此函数仅仅不做处理
 // 	//if (m_pCurrCapDevice == pCapDevice)
 // 	//{
 // 	//	RecordCapDevice(pCapDevice);
 // 	//}
 // 
-// 	//20022-6-11 lijunqing 后续是否考虑由于通道数不匹配的问题更新界面，在做修改
+// 	//20022-6-11 Eric 后续是否考虑由于通道数不匹配的问题更新界面，在做修改
 // 	//????????????????????????????????????????
 // }
 

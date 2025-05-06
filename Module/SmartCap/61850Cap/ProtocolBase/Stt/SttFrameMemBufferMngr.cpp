@@ -9,7 +9,7 @@ static char THIS_FILE[]=__FILE__;
 
 CSttFrameMemBufferMngr::CSttFrameMemBufferMngr(void)
 {
-	//lijunqing 2020-6-17
+	//Eric 2020-6-17
 	//一次性分配32M内存空间  16M=16777216  32M=33554432
 	SetBufferLength(33554432);
 }
@@ -62,7 +62,7 @@ CFrameMemBuffer* CSttFrameMemBufferMngr::AddFrameBuffer(const SST_AT02_PKT_HEAD 
 	long nLen = header->packet_len;
 	pFrameBuffer->m_n64FrameID = m_n64CapIndex;
 
-	//2020-6-17  lijunqing 
+	//2020-6-17  Eric 
 	if (m_pBuffer != NULL)
 	{
 		pFrameBuffer->AttachBuffer(AllocBuffer(nLen), nLen);
@@ -116,7 +116,7 @@ CFrameMemBuffer* CSttFrameMemBufferMngr::AddFrameBuffer(const BYTE *pBuffer, lon
 
 	pFrameBuffer->m_n64FrameID = m_n64CapIndex;
 
-	//2020-6-17  lijunqing 
+	//2020-6-17  Eric 
 	if (m_pBuffer != NULL)
 	{
 		pFrameBuffer->AttachBuffer(AllocBuffer(nLength), nLength);

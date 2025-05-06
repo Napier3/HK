@@ -60,7 +60,7 @@ CSttRcdMemBufferMngr::CSttRcdMemBufferMngr(void)
 	//数字化AT02每200ms上报一次，每次最多200K的，所以设计最大10分钟的临时缓存
 	SetMaxCount(3000);
 
-	//lijunqing 2020-6-17
+	//Eric 2020-6-17
 	//一次性分配16M内存空间  16M=16777216
 
 #ifdef _PSX_QT_LINUX_
@@ -90,7 +90,7 @@ CXSmMemBuffer* CSttRcdMemBufferMngr::AddFrameBuffer(const BYTE *pBuffer, long nL
 		m_pdwXSmMemBuffer[m_nCurrIndex] = (DWORD)pFrameBuffer;
 	}
 
-	//lijunqing 2020-6-17
+	//Eric 2020-6-17
 	if (m_pBuffer != NULL)
 	{
 		pFrameBuffer->AttachBuffer(AllocBuffer(nLen), nLen);
@@ -437,7 +437,7 @@ void CSttRcdMemBufferMngr::ParseSttRcdBuffer(CSttRcdMemBuffer *pRcdBuffer)
 
 void CSttRcdMemBufferMngr::ParseSttFrameBufferMngr()
 {
-	//lijunqing 2020-06-27
+	//Eric 2020-06-27
 	//to yyj : 局部变量不能用m_开头，拷贝、粘贴代码的时候也注意下规范
 	//C61850ParseFrameList m_o61850ParseFrameList;
 	C61850ParseFrameList o61850ParseFrameList;

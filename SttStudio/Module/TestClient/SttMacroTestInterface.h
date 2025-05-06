@@ -8,7 +8,7 @@
 
 class CTestEventBaseInterface
 {
-//2022-8-20  lijunqing
+//2022-8-20  Eric
 public:
 	virtual long Event_OnItemStateChanged(CSttParas *pSttParas){return 0;}
 	virtual long Event_OnTestFinished(CSttParas *pSttParas){return 0;}
@@ -116,14 +116,14 @@ public:
 	virtual void OnRecvSttDebugData(CSttSysState &oSysState){}
 	virtual BOOL OnRecvSttDebugData(BYTE *pBuf, long nLen, char *pszCmdID, char *pszTestor, char *pszRetCmdType)	{	return FALSE;	}
 
-	//2020-10-22  lijunqing 接收设备信息数据，例如：装置信息、模块信息等，以及系统的参数设置等
+	//2020-10-22  Eric 接收设备信息数据，例如：装置信息、模块信息等，以及系统的参数设置等
 	virtual void OnRecvSttDeviceData(CSttSysState &oSysState){}
 	virtual long OnDisConnect(){return 0;}
 
-	//2020-11-29 lijunqing 
+	//2020-11-29 Eric 
 	virtual void OnTestMsg(BYTE *pBuf, long nLen){}
 
-	//2022-01-18  lijunqing
+	//2022-01-18  Eric
 	virtual void On_Ats_Generate(const CString &strAtsCmd, CSttParas *pParas){};
 	//2022-04-18  shaolei
 	virtual void On_Ats_SaveTest(CSttSysState *pSysState){};
@@ -137,10 +137,10 @@ public:
 	//shaolei 20220812  处理REPLY应答
 	virtual void On_SysState_Test(CSttSysState *pSysState)	{	}
 
-	//2022-9-13  lijunqing
+	//2022-9-13  Eric
 	virtual void On_Ats_QueryItem(CSttSysState *pSysState){};
 	
-	//lijunqing 2022-10-8  处理REPLY应答-IOT
+	//Eric 2022-10-8  处理REPLY应答-IOT
 	virtual void On_SysState_IOT(CSttSysState *pSysState)	{	}
 };
 
@@ -462,11 +462,11 @@ public:
 	
 };
 
-//2022-1-14  lijunqing  为了使用的方便，增加自动测试的接口。CTestEventInterface以后可以考虑从下面的接口派生，双基类
+//2022-1-14  Eric  为了使用的方便，增加自动测试的接口。CTestEventInterface以后可以考虑从下面的接口派生，双基类
 class CAtsEventInterface
 {
 public:
-	//2022-6-9  lijunqing批注：OnUpdateGpsTime函数设计有严重的问题，此部分真是的含义是时间同步SyncTime
+	//2022-6-9  Eric批注：OnUpdateGpsTime函数设计有严重的问题，此部分真是的含义是时间同步SyncTime
 	//参数不能用这么多的参数变量，参考On_IecDetect，应该用DataGroup参数进行数据传递
 	//Error?????????????????
 	virtual long OnUpdateSyncTime(CDataGroup *pRtSyncTime)	{	return 0;	}//
@@ -491,7 +491,7 @@ public:
 	virtual void OnReport(const CString &strTestID, long nDeviceIndex, long nReportIndex, long nItemIndex, const CString & strItemID, long nState, CSttParas *pParas) = 0;
 	virtual void OnReport_ReadDevice(CDataGroup *pDeviceGroup){}
 
-	//2022-01-18  lijunqing
+	//2022-01-18  Eric
 	virtual void On_Ats_Generate(const CString &strAtsCmd, CSttParas *pParas) = 0;
 	//2022-04-18  shaolei
 	virtual void On_Ats_SaveTest(CSttSysState *pSysState) = 0;
@@ -502,13 +502,13 @@ public:
 	//2022-06-25  shaolei
 	virtual void On_Ats_ExportWordRpt(CSttSysState *pSysState) = 0;
 
-	//2022-4-13  lijunqing
+	//2022-4-13  Eric
 	virtual void On_IecDetect(CDataGroup *pIecCb) = 0;
 
-	//2022-9-13  lijunqing
+	//2022-9-13  Eric
 	virtual void On_Ats_QueryItem(CSttSysState *pSysState) = 0;
 
-	//2022-10-6  lijunqing
+	//2022-10-6  Eric
 	virtual long On_RtData(CDataGroup *pRtData)	{	return 0;	}
 
 };

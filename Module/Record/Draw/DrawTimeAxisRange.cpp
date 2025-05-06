@@ -157,7 +157,7 @@ void CDrawTimeAxisRange::Draw(CDC *pDC, double fZoomRatio,const CPoint &ptOffset
 		CString strTime;
 		LOGFONT lf = InitLogFont();
 
-		//2021-9-19  lijunqing  模块化软件上位机，绘图，VS2008编译 QT ，出现如下错误，换种模式
+		//2021-9-19  Eric  模块化软件上位机，绘图，VS2008编译 QT ，出现如下错误，换种模式
 		//error C2664: “strcpy”: 不能将参数 1 从“WCHAR [32]”转换为“char *”
 		//strcpy(lf.lfFaceName, "Tahoma");
 

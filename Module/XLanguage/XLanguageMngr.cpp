@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //XLanguageMngr.cpp  CXLanguageMngr
@@ -59,7 +59,7 @@ CXLanguageMngr* CXLanguageMngr::Create(CXLanguageResourceBase *pXLanguageResoure
 	return g_pXLanguageMngr;
 }
 
-//2022-3-25  lijunqing
+//2022-3-25  Eric
 void CXLanguageMngr::xlang_AddXLanguageRerouce(CXLanguageResourceBase *pXLanguageResoure, BOOL bUseCommonPath)
 {
 	pXLanguageResoure->InitLangTxt();
@@ -463,7 +463,7 @@ BOOL CXLanguageMngr::xlang_GetLgugStr(const CString &strID, CString &strLanguage
 
 const CString& CXLanguageMngr::xlang_GetLgugStr(const CString &strID)
 {
-//     //2022-3-25  lijunqing
+//     //2022-3-25  Eric
 //     CString strLanguageString;
 //     xlang_GetLgugStr(strID, strLanguageString);
 // 

@@ -178,7 +178,7 @@ long CXFileMngr::SetLibraryPath(const CString &strPath, BOOL bAddSubFiles, BOOL 
 	return 1;
 }
 
-//2022-3-23  lijunqing add bAddFiles
+//2022-3-23  Eric add bAddFiles
 void CXFileMngr::Research(BOOL bTraveSubFolder, BOOL bAddFiles) 
 {
 	m_pCurrSel = NULL;

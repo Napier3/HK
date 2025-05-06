@@ -23,7 +23,7 @@
 
 #include "../../XDrawBase/XDrawViewBase.h"
 
-//2023-7-22  lijunqing 移动到子类中
+//2023-7-22  Eric 移动到子类中
 //#include "../Comtrade/ComtradeMngr.h"
 
 //说明，m_listChild中有的只是通道对象
@@ -61,7 +61,7 @@ public:
 	long m_nMaxGapValue;
 	UINT m_nSamRateForDraw;//采样率
 
-	//2023-7-22  lijunqing 移动到子类中
+	//2023-7-22  Eric 移动到子类中
 	//CRcdComtradeFile *m_pRcdComtradeFile;
 	PRECORDDRAWOBJECTCONTROL m_pRecordDrawObjcontrol;
 	double m_dHeightRateOnSize;
@@ -226,13 +226,13 @@ protected:
 	void DibDraw(CDibDraw &oDibDraw, DWORD dwDrawFlag=0xFFFFFFFF);
 #endif
 
-	//2021-1-16  lijunqing
+	//2021-1-16  Eric
 	void AttatchAxisX();
 	void AttatchAxisX(CRulerAxis *pAxis);
 
 
 #ifdef _SHOW_PARA
-	//2022-9-1  lijunqing
+	//2022-9-1  Eric
 	void CalDrawParasValue();
 #endif
 

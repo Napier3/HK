@@ -62,7 +62,7 @@ void QSttIecSmvWaveWidget::IecRcdInitFromRecordTest()
 //	setAttribute(Qt::WA_OpaquePaintEvent);
 }
 
-////2022-6-12  lijunqing 当前CapDevice的录波通道
+////2022-6-12  Eric 当前CapDevice的录波通道
 void QSttIecSmvWaveWidget::GetCurrDeviceAllRcdVariables()
 {
 	m_pRecordTest = g_theXSmartCapMngr->GetRecordTest();
@@ -119,7 +119,7 @@ void QSttIecSmvWaveWidget::IecRcdFunc(CCapDeviceBase *pCapDevice)
 	UICreate(this);
 	CViewAnalyse::OnSizeEx(0, 0, 0);
 
-	GetCurrDeviceAllRcdVariables(); //2022-6-12  lijunqing
+	GetCurrDeviceAllRcdVariables(); //2022-6-12  Eric
 	OnVariableAddRemoved(0, 0);
 	IecRcdInitFromRecordTest();
 
@@ -220,7 +220,7 @@ void QSttIecSmvWaveWidget::CalIndex_NextPage()
 	BOOL bNeedAdjust = FALSE;
 
 	CDrawVariable *pDrawVariable = NULL;
-	//CRtVariables *pVariables = m_pRecordTest->m_pVariables;  //2022-6-12  lijunqing  只显示当前CapDevice的通道
+	//CRtVariables *pVariables = m_pRecordTest->m_pVariables;  //2022-6-12  Eric  只显示当前CapDevice的通道
 	CRtVariable* pVariable =NULL;
 	long nAnalogChanAmount = 0;
 	long nCurrentChans = 0;
@@ -228,7 +228,7 @@ void QSttIecSmvWaveWidget::CalIndex_NextPage()
 
 	for (nIndex=m_nCurrRcdChIndex; ; nIndex++)
 	{
-		//pVariable = (CRtVariable*)pVariables->GetAtIndex(nIndex);  //2022-6-12  lijunqing  只显示当前CapDevice的通道
+		//pVariable = (CRtVariable*)pVariables->GetAtIndex(nIndex);  //2022-6-12  Eric  只显示当前CapDevice的通道
 		pVariable = (CRtVariable*)m_listRcdVariable.GetAtIndex(nIndex);
 
 		if (pVariable == NULL)
@@ -250,7 +250,7 @@ void QSttIecSmvWaveWidget::CalIndex_NextPage()
 		}
 	}
 
-	//if (nIndex >= pVariables->GetCount()) //2022-6-12  lijunqing  只显示当前CapDevice的通道
+	//if (nIndex >= pVariables->GetCount()) //2022-6-12  Eric  只显示当前CapDevice的通道
 	if (nIndex >= m_listRcdVariable.GetCount())
 	{
 		m_nCurrRcdChIndex = 0;
@@ -269,7 +269,7 @@ void QSttIecSmvWaveWidget::CalIndex_PrevPage()
 	BOOL bNeedAdjust = FALSE;
 
 	CDrawVariable *pDrawVariable = NULL;
-	//CRtVariables *pVariables = m_pRecordTest->m_pVariables;  //2022-6-12  lijunqing  只显示当前CapDevice的通道
+	//CRtVariables *pVariables = m_pRecordTest->m_pVariables;  //2022-6-12  Eric  只显示当前CapDevice的通道
 	CRtVariable* pVariable =NULL;
 	long nAnalogChanAmount = 0;
 	long nCurrentChans = 0;
@@ -277,7 +277,7 @@ void QSttIecSmvWaveWidget::CalIndex_PrevPage()
 
 	if (m_nCurrRcdChIndex == 0)
 	{
-		//nIndex = pVariables->GetCount()-1;  //2022-6-12  lijunqing  只显示当前CapDevice的通道
+		//nIndex = pVariables->GetCount()-1;  //2022-6-12  Eric  只显示当前CapDevice的通道
 		nIndex = m_listRcdVariable.GetCount()-1;
 	}
 	else
@@ -287,7 +287,7 @@ void QSttIecSmvWaveWidget::CalIndex_PrevPage()
 
 	while (TRUE)
 	{
-		//pVariable = (CRtVariable*)pVariables->GetAtIndex(nIndex);  //2022-6-12  lijunqing  只显示当前CapDevice的通道
+		//pVariable = (CRtVariable*)pVariables->GetAtIndex(nIndex);  //2022-6-12  Eric  只显示当前CapDevice的通道
 		pVariable = (CRtVariable*)m_listRcdVariable.GetAtIndex(nIndex);
 
 		if (pVariable == NULL)
@@ -440,7 +440,7 @@ LRESULT QSttIecSmvWaveWidget::OnVariableAddRemoved(WPARAM wParam, LPARAM lParam)
 	m_oVariableMngr.DeleteAll();
 	CDrawVariable *pDrawVariable = NULL;
 	CCapDeviceChBase *pCh = NULL;
-	//CRtVariables *pVariables = m_pRecordTest->m_pVariables;  //2022-6-12  lijunqing  只显示当前CapDevice的通道
+	//CRtVariables *pVariables = m_pRecordTest->m_pVariables;  //2022-6-12  Eric  只显示当前CapDevice的通道
 	CRtVariable* pVariable =NULL;
 	long nAnalogChanAmount = 0;
 	long nCurrentChans = 0;
@@ -448,7 +448,7 @@ LRESULT QSttIecSmvWaveWidget::OnVariableAddRemoved(WPARAM wParam, LPARAM lParam)
 
 	for (nIndex=m_nCurrRcdChIndex; ; nIndex++)
 	{
-		//pVariable = (CRtVariable*)pVariables->GetAtIndex(nIndex);//2022-6-12  lijunqing  只显示当前CapDevice的通道
+		//pVariable = (CRtVariable*)pVariables->GetAtIndex(nIndex);//2022-6-12  Eric  只显示当前CapDevice的通道
 		pVariable = (CRtVariable*)m_listRcdVariable.GetAtIndex(nIndex);
 
 		if (pVariable == NULL)
@@ -552,7 +552,7 @@ void QSttIecSmvWaveWidget::InitTimeAxis()
 	double dMax = 0;
 	double dMin = 0;
 //for debug====  8000 修改显示波形的总长度
-    long nDataLen = 8000; //m_pRefBuffer->GetDataLength();  //2022-4-24  lijunqing 用固定时间长度
+    long nDataLen = 8000; //m_pRefBuffer->GetDataLength();  //2022-4-24  Eric 用固定时间长度
 	dMax = nDataLen;
 	dMax /=  m_nSamRateForDraw;
 

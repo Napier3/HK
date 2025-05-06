@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //TestMacro.h  CTestMacro
@@ -55,7 +55,7 @@ private:
 	CTmFaultParasEx *m_pFaultParasEx;
 	CTmResultParasEx *m_pResultsEx;
 
-	//2021-8-15  lijunqing批注：参数按照remark进行分类管理，老版本需求
+	//2021-8-15  Eric批注：参数按照remark进行分类管理，老版本需求
 	CExBaseList m_listFaultParasGroup;
 	CExBaseList m_listSysParasGroup;
 
@@ -81,7 +81,7 @@ public:
 	virtual void OnSetParaValue(CShortData *pPara, CExBaseList &listNew, CExBaseList &listDelete);
 	virtual void OnSetParaValue(const CString &sttrIDPath, const CString &strValue, CExBaseList &listNew, CExBaseList &listDelete, CExBaseList &listChanged);
 
-	//lijunqing 2021-8-15  
+	//Eric 2021-8-15  
 	CDataGroup* GetFaultParas_Dvm()	{	return m_pFaultParas_Dvm;	}
 	CDataGroup* GetResults_Dvm()	{	return m_pResults_Dvm;	}
 
@@ -96,7 +96,7 @@ public:
 
 	void GetParasValues(CValues *pValues);
 
-	//2020-10-06  lijunqing
+	//2020-10-06  Eric
 	void GetTestMacroParas(CDataGroup *pParas, CDataGroup *pResults);
 	void GetTestMacroParas_Fault(CDataGroup *pParas);
 	void GetTestMacroParas_Result(CDataGroup *pResults);

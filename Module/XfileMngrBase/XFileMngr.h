@@ -38,7 +38,7 @@ public:
 	long SetLibraryPath(const CString &strPath, BOOL bTraveSubFolder=TRUE);
 	long SetLibraryPath(const CString &strPath, BOOL bAddSubFiles, BOOL bAddSubFolders,BOOL bSearchSubFolders);//20220702 zhouhj 是否添加子文件、是否添加子文件夹、是否检索子文件夹
 	long InitLibraryPath();
-	void Research(BOOL bTraveSubFolder=TRUE, BOOL bAddFiles = TRUE); ////2022-3-23  lijunqing add bAddFiles
+	void Research(BOOL bTraveSubFolder=TRUE, BOOL bAddFiles = TRUE); ////2022-3-23  Eric add bAddFiles
 	void YunSearch();
 
 	CXFile* GetCurrSelFile();

@@ -63,7 +63,7 @@ void CBufferBase::Init()
     m_bFormartAllChar = true;
 }
 
-//2021-5-16  lijunqing 
+//2021-5-16  Eric 
 void CBufferBase::Attatch(char *pszBuff)
 {
 	Release();
@@ -600,7 +600,7 @@ void CBufferBase::Release()
     m_pPointer = NULL;
 
 	if (m_bAttatch)
-	{//2021-5-16  lijunqing
+	{//2021-5-16  Eric
 		m_pBuffer = NULL;
 	}
 	else

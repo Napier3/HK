@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/5GOff.png</file>
+        <file>icons/5GOn.png</file>
+        <file>icons/batteryLow.png</file>
+        <file>icons/batteryMid.png</file>
+        <file>icons/bluetoothOff.png</file>
+        <file>icons/bluetoothOn.png</file>
+        <file>icons/logo.png</file>
+        <file>icons/UsbOff.png</file>
+        <file>icons/UsbOn.png</file>
+        <file>icons/WifiOff.png</file>
+        <file>icons/WifiOn.png</file>
+        <file>icons/batteryHigh.png</file>
+        <file>icons/functionTest.png</file>
+        <file>icons/generalTest.png</file>
+        <file>icons/specificTest.png</file>
+        <file>icons/systemSetting.png</file>
+        <file>icons/1.png</file>
+        <file>icons/2.png</file>
+        <file>icons/3.png</file>
+        <file>icons/4.png</file>
+        <file>icons/5.png</file>
+        <file>icons/6.png</file>
+        <file>icons/7.png</file>
+        <file>icons/8.png</file>
+        <file>icons/9.png</file>
+    </qresource>
+</RCC>

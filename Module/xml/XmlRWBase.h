@@ -121,7 +121,7 @@ public:
 	virtual BOOL xml_GetElementText(const BSTR strAttrName, SYSTEMTIME &tmSys);
 #endif
 
-    //2022-12-14  lijunqing
+    //2022-12-14  Eric
     BOOL xml_GetElementText(const CString &strAttrName, CString &strAttrVal)
     {
         BSTR bstr = strAttrName.AllocSysString();
@@ -245,7 +245,7 @@ public:
 	virtual CXmlRWNodeBase* GetDocNode();
 	virtual CXmlRWNodeBase* GetFirstRootNode()	{	return NULL;	}
 	virtual CXmlRWElementBase* CreateElement(BSTR bstElementKey,CXmlRWElementBase *pParent);
-	virtual CXmlRWElementBase* CreateElement(const CString &stElementKey,CXmlRWElementBase *pParent);  //2022-12-13  lijunqing
+	virtual CXmlRWElementBase* CreateElement(const CString &stElementKey,CXmlRWElementBase *pParent);  //2022-12-13  Eric
 	virtual BOOL AppendChild(CXmlRWElementBase &oRWElement);
 	virtual BOOL CreateInstruction(const CString &strVersion,const CString &strEncode);
 	virtual CXmlRWElementBase* GetDocElement(){ASSERT(FALSE);return NULL;}
@@ -262,7 +262,7 @@ public:
 	//xxy 20200516
 	virtual long GetXml_wchar(wchar_t **ppzszRetBuffer, long nOffset);
 
-	//lijunqing 2022-3-11
+	//Eric 2022-3-11
 	virtual long GetXml_ASCII(char **ppszRetBuffer, long nOffset);
 };
 

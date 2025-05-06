@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttCmdBase.cpp  CSttCmdBase
@@ -49,7 +49,7 @@ CSttCmdBase::CSttCmdBase()
     m_bCreateMacroChild = true;
     m_bXml_Pkg_With_Name  = FALSE;
 
-	//2021-8-3  lijunqing
+	//2021-8-3  Eric
 	m_pCmmOptrInterface = NULL;
 }
 

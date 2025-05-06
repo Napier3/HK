@@ -266,7 +266,7 @@ typedef struct RtChannelAttrValue
 	double dNegativeSequencePhase;
 	double dZeroSequencePhase;
 
-	double dTHD; //lijunqing 2020-06-23 畸变率
+	double dTHD; //Eric 2020-06-23 畸变率
 	double dReserveValue[10];
 }* PRTCHANNELATTRVALUE, RTCHANNELATTRVALUE;
 
@@ -275,7 +275,7 @@ typedef struct RtChannelAttrValue MULTICHANNELVALUE;
 typedef struct RtChannelAttrValue *PSINGLECHANNELV;
 typedef struct RtChannelAttrValue SINGLECHANNELVALUE;
 
-//2020-12-18  lijunqing
+//2020-12-18  Eric
 /* //DEFINE IN MemBufferDef.h
 typedef struct rt_mem_buffer_data_pos
 {
@@ -319,7 +319,7 @@ typedef struct RtAttributeCalFuncPara : public RTATTRIBUTECALBUFFERPOS
 	long *pnBuffer_long;       //缓冲区
 	float          *pfBuffer;
 
-	//2020-12-18   lijunqing
+	//2020-12-18   Eric
 /*
 	long nBufFillIndex;
 	long nDataLength;    //pnBuffer、pfBuffer的数据总长度

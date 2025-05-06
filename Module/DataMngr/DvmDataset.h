@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //DvmDataset.h  CDvmDataset
@@ -71,14 +71,14 @@ public:
 		, const CString &strUnit=_T(""), const CString &strMin=_T(""), const CString &strMax=_T(""), const CString &strStep=_T(""));
 	CDvmData* AddNewDataEx(const CString &strName, const CString &strID, const CString &strDataType, const CString &strValue
 		, const CString &strUnit=_T(""), const CString &strMin=_T(""), const CString &strMax=_T(""), const CString &strStep=_T(""));
-	CDvmData* AddNewDataEx(CDvmData *pSrc);   //2023-2-18  lijunqing
+	CDvmData* AddNewDataEx(CDvmData *pSrc);   //2023-2-18  Eric
 	CDvmData* AddNew2(const CString &strName,const CString &strID, const CString &strUnit, const CString &strDataTypeID
 		, const CString &strValue, const CString &strFormat,BOOL bAddSame=TRUE);
 
 	long ClearByReserved(DWORD dwReserved);
 
 	//选择性复制，保证子对象没有重复的Name和ID shaolei 2019.07.06
-	//2021-8-4  lijunqing CDvmDataset *pDatasetSrc ==>> CExBaseList *pListSrc
+	//2021-8-4  Eric CDvmDataset *pDatasetSrc ==>> CExBaseList *pListSrc
 	void AppendCloneWithoutRepeat(CExBaseList *pListSrc); 
 
 //直接的二进制串行化功能
@@ -96,10 +96,10 @@ public:
 	//shaolei  20200613
 	virtual BOOL UpdateDataValue(CDvmDataset *pSrcDataset, BOOL bIsNew = FALSE);
  
-	//2021-1-3 lijunqing
+	//2021-1-3 Eric
 	void ResetDvmDataValues();
 
-	//2023-3-11  lijunqing
+	//2023-3-11  Eric
 	void SetDataChange(long nChange=0);
 
 	CValues* GetValues();

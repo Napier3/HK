@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //CapDeviceMngr.h  CCapDeviceMngr
@@ -71,18 +71,18 @@ public:
 	//验证ST口模式是否正确
 	BOOL ValidSTMode();
 
-	//开始抓包，复位之前的状态  2020-06-19  lijunqing
+	//开始抓包，复位之前的状态  2020-06-19  Eric
 	void Reset();  
 
-	//定期更新装置链接状态  2020-06-27  lijunqing
+	//定期更新装置链接状态  2020-06-27  Eric
 	void UpdateDeviceLinkState();
 	void SelectDevicesByLink(CExBaseList &list, UINT nClassID, BOOL bLink);
 
-	//2022-5-3  lijunqing
+	//2022-5-3  Eric
 	void ClearCap();
 	void ClearPara();
 
-	//2022-12-25  lijunqing
+	//2022-12-25  Eric
 	CCapDeviceBase* GetSelectDevice();
 	long GetSelectDeviceCount(UINT uClassID = 0);
 };

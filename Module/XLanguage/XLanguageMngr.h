@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //XLanguageMngr.h  CXLanguageMngr
@@ -32,7 +32,7 @@ public:
 	static CString xlang_GetLanguagePath();
 	static BOOL xlang_IsUseXLangCommonPath();
 
-    //2022-3-25  lijunqing
+    //2022-3-25  Eric
     static void xlang_AddXLanguageRerouce(CXLanguageResourceBase *pXLanguageResoure, BOOL bUseCommonPath);
 
 public:
@@ -74,7 +74,7 @@ private:
 	CXLanguage *m_pCurrLanguage;
 	CXLanguageResourceBase *m_pXLanguageResoure;
 
-    //2022-3-25  lijunqing 对于集成了通信规约、测试仪配置等各种功能的自动测试
+    //2022-3-25  Eric 对于集成了通信规约、测试仪配置等各种功能的自动测试
     //需要多种资源对象，即同时夹在多种资源，虽然有点浪费，但是暂时这么处理
     CExBaseList m_listXLanguageResoure;
 

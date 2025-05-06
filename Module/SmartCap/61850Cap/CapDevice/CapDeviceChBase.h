@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //CapDeviceChBase.h  CCapDeviceChBase
@@ -44,7 +44,7 @@
 #define  CAP_DATASET_MAP_ID_SVCSTC           _T("dsSVCstc")
 #define  CAP_DATASET_MAP_ID_SVHis            _T("dsSVHis")//zhouhj 2023.10.13 历史数据
 
-//lijunqing 2022-5-8  lijunqing
+//Eric 2022-5-8  Eric
 #define  CAP_DATASET_MAP_ID_Power           _T("Power")
 #define  CAP_DATASET_MAP_ID_Vector           _T("Vector")
 #define  CAP_DATASET_MAP_ID_AD				_T("AD")
@@ -72,7 +72,7 @@
 
 
 
-//2022-5-26  lijunqing
+//2022-5-26  Eric
 #define IEC_PkgAnalyze_ID_Test			"Test"
 #define IEC_PkgAnalyze_ID_DevVersion		"DevVersion"
 #define IEC_PkgAnalyze_ID_PDUlength		"PDUlength"

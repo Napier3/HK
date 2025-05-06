@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //CapDeviceSmvBase.h  CCapDeviceSmvBase
@@ -9,7 +9,7 @@
 #include "CapDeviceBase.h"
 #include "CapDeviceSmvCh.h"
 
-//2020-07-25  lijunqing
+//2020-07-25  Eric
 #define STT_CAP_RCD_SMV_DATA_MAX_COUNT           400
 #define STT_CAP_RCD_SMV_DISCRET_MAX_COUNT          7
 
@@ -34,7 +34,7 @@ public:
 
 	CString m_strDataSet;				//数据集定义
 
-	//2020-07-25  lijunqing  用于记录和保存输出波形文件的临时数据
+	//2020-07-25  Eric  用于记录和保存输出波形文件的临时数据
 	double m_dSttCapRcdData[STT_CAP_RCD_SMV_DATA_MAX_COUNT];
 //重载函数
 public:

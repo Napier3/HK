@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttCmdDefineGlobal.cpp
@@ -168,7 +168,7 @@ CSttCmdDefineXmlRWKeys::CSttCmdDefineXmlRWKeys()
 	m_strYMinKey = L"y-min";
 	m_strYMaxKey = L"y-max";
 
-	//2022-7-24  lijunqing
+	//2022-7-24  Eric
 	m_strCMacroCharItemLineDefKey = L"char-item-line";
 	m_strAxisModeKey = L"axis-mode";   //Axis mode:x-y; r-angle
 	m_strParaIdXbKey = L"x-b";
@@ -257,7 +257,7 @@ void CSttCmdDefineXmlRWKeys::Release()
 	}
 }
 
-//2022-3-24  lijunqing
+//2022-3-24  Eric
 void CSttCmdDefineXmlRWKeys::stt_Inc_GuideBookUseItemKey(CSttCmdDefineXmlRWKeys *pXmlKeys)
 {
 	if (pXmlKeys == NULL)

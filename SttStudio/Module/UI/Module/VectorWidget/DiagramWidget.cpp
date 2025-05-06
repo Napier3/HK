@@ -799,7 +799,7 @@ void Diagram::drawVector(QPainter * painter)
 	if(m_infoList.count()==0)
 	{
 		painter->restore();
-        gDiagramMutex.unlock();  //2022-3-27  lijunqing lock任何时候都应该有unlock与之对应
+        gDiagramMutex.unlock();  //2022-3-27  Eric lock任何时候都应该有unlock与之对应
 		return;
 	}
 

@@ -613,7 +613,7 @@ void QSttTestCntrFrameBase::InitFrame(const CString &strFrameCfgFile)
     //sun QSoftKeyBoard::AttachObj(this);
 #endif
 
-	//2022-2-26  lijunqing  如果文件不存在，输出提示信息的时候窗口还没创建成功，程序崩溃
+	//2022-2-26  Eric  如果文件不存在，输出提示信息的时候窗口还没创建成功，程序崩溃
 	//g_oSttTestResourceMngr.LoadDefaultIec61850Config(FILENAME_STTIECCONCFIG);
 // 
 // 	//项目列表视图
@@ -1359,7 +1359,7 @@ void QSttTestCntrFrameBase::UpdateRptHtml()
 
 	if (nLen > 0)
 	{
-		//2022-4-6  lijunqing
+		//2022-4-6  Eric
 		//m_pSttReportViewHtml->UpdateRptHtml("", strMacroID, strReport);	
 		//delete strReport;
         //if (m_pSttReportViewHtml)
@@ -1421,7 +1421,7 @@ long QSttTestCntrFrameBase::OnTestFinished()
 		return 0;
 	}
 
-	//2022-12-02  lijunqing
+	//2022-12-02  Eric
     assist_event(Event_ID_OnTestFinished, nullptr);
 
 	EndBinStateOnStarting();
@@ -1435,7 +1435,7 @@ long QSttTestCntrFrameBase::OnTestFinished()
 long QSttTestCntrFrameBase::OnTestStarted()
 {
 //	CLogPrint::LogFormatString(XLOGLEVEL_RESULT,_T("OnTestStarted[++++]."));
-	//2022-12-02  lijunqing
+	//2022-12-02  Eric
     assist_event(Event_ID_OnTestStarted, nullptr);
 
 //	UpdateCmdButtonsState(STT_TEST_STATE_TESTTING);
@@ -1780,7 +1780,7 @@ void QSttTestCntrFrameBase::OnAtsGenerateItems_ImportDvm(CExBaseList *pItemsList
 
 }
 
-//2022-9-13  lijunqing
+//2022-9-13  Eric
 void QSttTestCntrFrameBase::OnAtsQueryItem(CExBaseObject *pItemPara)
 {
 
@@ -1890,7 +1890,7 @@ void QSttTestCntrFrameBase::AddMacroTestReport(CSttMacroTestUI_TestMacroUI *pTes
 	} 
 
 	GetMacroItemsXml(strItemsID,&strReport, nLen,strParentPath);
-	//2022-4-6  lijunqing
+	//2022-4-6  Eric
 	//m_pSttReportViewHtml->AddMacroTestReport("", pTestMacroUI->m_strID, pTestMacroUI, strReport);
 
     //if (m_pSttReportViewHtml)
@@ -2049,7 +2049,7 @@ void QSttTestCntrFrameBase::OpenMacroTestUI(CSttMacroTestUI_TestMacroUI *pTestMa
 	//第一步：创建参数编辑页面、加载报告html页面
 	m_pTestCtrlCntrBase->OpenMacroTestUI(pTestMacroUI);
 
-	//2022-3-27  lijunqing  创建参数编辑窗口
+	//2022-3-27  Eric  创建参数编辑窗口
 	CreateSttMacroParaEditView(pTestMacroUI);
 
 	if (g_nLogDebugInfor == 1)	{		CLogPrint::LogString(XLOGLEVEL_TRACE, ">> begin OpenMacroTestUI 2 >>");	}
@@ -2072,7 +2072,7 @@ void QSttTestCntrFrameBase::OpenMacroTestUI(CSttMacroTestUI_TestMacroUI *pTestMa
 
 	InitAfterCreateSttMacroPara();
 
-	if (pTestMacroUI->HasCharLib()) //2022-6-30  lijunqing
+	if (pTestMacroUI->HasCharLib()) //2022-6-30  Eric
 	{
 		g_theTestCntrFrame->InitCharLibWidget();
 	}
@@ -2123,7 +2123,7 @@ void QSttTestCntrFrameBase::OpenMacroTestUI(CSttMacroTestUI_TestMacroUI *pTestMa
 	}
 
 	//发送特性曲线改变事件
-	if (pTestMacroUI->HasCharLib()) //2022-6-30  lijunqing
+	if (pTestMacroUI->HasCharLib()) //2022-6-30  Eric
 	{
 		m_pCharLibWidget->InitCharacteristicsLib(pTestMacroUI->m_strUI_ID,pTestMacroUI->m_strCharlibFile);
 		m_pCharLibWidget->GroupDatasToChar(m_pTestMacroUI_Paras);
@@ -2181,7 +2181,7 @@ void QSttTestCntrFrameBase::OpenMacroTestUI_Test(CSttMacroTestUI_TestMacroUI *pT
 
 	//第一步：创建参数编辑页面、加载报告html页面
 	m_pTestCtrlCntrBase->OpenMacroTestUI(pTestMacroUI);
-	//2022-3-27  lijunqing  创建参数编辑窗口
+	//2022-3-27  Eric  创建参数编辑窗口
 	CreateSttMacroParaEditView(pTestMacroUI);
 
 	if (pTestMacroUI->IsUIOriginal())
@@ -2200,7 +2200,7 @@ void QSttTestCntrFrameBase::OpenMacroTestUI_Test(CSttMacroTestUI_TestMacroUI *pT
 		g_theTestCntrFrame->ClearInfoWidget();	
 	}
 	InitAfterCreateSttMacroPara();
-	if (pTestMacroUI->HasCharLib()) //2022-6-30  lijunqing
+	if (pTestMacroUI->HasCharLib()) //2022-6-30  Eric
 	{
 		g_theTestCntrFrame->InitCharLibWidget();
 	}
@@ -2248,7 +2248,7 @@ void QSttTestCntrFrameBase::OpenMacroTestUI_Test(CSttMacroTestUI_TestMacroUI *pT
     }
 
 	//发送特性曲线改变事件
-	if (pTestMacroUI->HasCharLib()) //2022-6-30  lijunqing
+	if (pTestMacroUI->HasCharLib()) //2022-6-30  Eric
 	{
 		m_pCharLibWidget->InitCharacteristicsLib(pTestMacroUI->m_strUI_ID,pTestMacroUI->m_strCharlibFile);
 		m_pCharLibWidget->GroupDatasToChar(m_pTestMacroUI_Paras);
@@ -2435,7 +2435,7 @@ void QSttTestCntrFrameBase::OpenMacroTestUI(CSttTestMacroUiParas *pUIParas, CStt
 	m_pTestCtrlCntrBase->SetCurrTestMacroUI(pTestMacroUI);//2023.3.23 zhouhj
     SetActiveWidget(nullptr);
 
-	//2022-3-27  lijunqing  创建参数编辑窗口
+	//2022-3-27  Eric  创建参数编辑窗口
 	CreateSttMacroParaEditView(pTestMacroUI, TRUE);
 
 	if (g_nLogDebugInfor == 1)	{		CLogPrint::LogString(XLOGLEVEL_TRACE, ">> begin OpenMacroTestUI 2 >>");	}
@@ -2583,19 +2583,19 @@ void QSttTestCntrFrameBase::OnSaveCurr(CExBaseObject *pCurrObj)
 {
 
 }
-//2022-9-11  lijunqing
+//2022-9-11  Eric
 void QSttTestCntrFrameBase::ViewCmdEditWidget(CExBaseObject *pSelObj)
 {
 
 }
 
-//2022-9-13  lijunqing
+//2022-9-13  Eric
 void QSttTestCntrFrameBase::ViewMacroEditWidget(CExBaseObject *pSelObj)
 {
 	
 }
 
-//2022-9-12 lijunqing
+//2022-9-12 Eric
 void QSttTestCntrFrameBase::SaveMacroParasToCurrWzd(CDataGroup *pCommCmd)
 {
 
@@ -2656,7 +2656,7 @@ void QSttTestCntrFrameBase::GetCharacteristicsFile(CSttMacroTestUI_TestMacroUI *
 		return;
 	}
 
-	//2022-9-4  lijunqing 缺省、默认的特性曲线，保存到和测试参数相同的路径，文件名后面增加_Char
+	//2022-9-4  Eric 缺省、默认的特性曲线，保存到和测试参数相同的路径，文件名后面增加_Char
     //sun CString strTitle;
     //sun strTitle = GetFileTitleFromFilePath(g_pTheSttTestApp->m_pTestMacroUI->m_strUI_ParaFile);
     //sun strTitle += _T("_Char");
@@ -2664,7 +2664,7 @@ void QSttTestCntrFrameBase::GetCharacteristicsFile(CSttMacroTestUI_TestMacroUI *
     //sun strFile = ChangeFileName(strFile, strTitle);
 }
 
-//2022-9-4  lijunqing
+//2022-9-4  Eric
 void QSttTestCntrFrameBase::InitCharacteristics(CSttContents *pContents)
 {
     if (m_pCharacteristics == nullptr || pContents == nullptr)
@@ -2855,7 +2855,7 @@ void QSttTestCntrFrameBase::InitPinyinLib()
 
 }
 
-//2022-9-16  lijunqing
+//2022-9-16  Eric
 QFont *g_pSttGlobalFont = nullptr;
 
 void QSttTestCntrFrameBase::InitUI()
@@ -2876,7 +2876,7 @@ void QSttTestCntrFrameBase::InitUI()
         m_gFont.setPixelSize(12);  // pick a reasonable default
         m_gFont.setBold(false);
     }
-	g_pSttGlobalFont = &m_gFont;   //2022-9-16  lijunqing
+	g_pSttGlobalFont = &m_gFont;   //2022-9-16  Eric
 
 // 	CSttFrame_ToolBar *pToolBarParas = m_pSttFrameConfig->GetToolBar();
 // 	CSttFrame_StatusBar *pStatusBarParas = m_pSttFrameConfig->GetStatusBar();
@@ -3022,7 +3022,7 @@ BOOL QSttTestCntrFrameBase::IsUiParasChanged(BOOL &bChanged, CDataGroup *pParas)
 	return TRUE;
 }
 
-//2022-10-16  lijunqing 记录和保存当前页面设置的值：设置为默认值
+//2022-10-16  Eric 记录和保存当前页面设置的值：设置为默认值
 void QSttTestCntrFrameBase::SaveUIParaFile(CDataGroup *pParas)
 {
 	//shaolei  2023-4-6   暂时屏蔽
@@ -3514,7 +3514,7 @@ void QSttTestCntrFrameBase::InitCharLibWidget(QWidget* pParent)
 {
     if (m_pCharLibWidget == nullptr)
 	{
-		//2022-9-3  lijunqing
+		//2022-9-3  Eric
 		m_pCharLibWidget = new QCharEditMainWidget(pParent);   //new QCharLibWidget(pParent);
 		m_pCharLibWidget->setParent(this);
 	}	
@@ -3740,7 +3740,7 @@ void QSttTestCntrFrameBase::UpdateEnableState(const CString &strState)
 void QSttTestCntrFrameBase::slot_MenuButtonClick(QString strID)
 {
 	if (IsHtmlParasEditOpen())
-	{//如果打开了参数编辑网页，则不处理任何按钮操作事件  lijunqing  2022-3-10
+	{//如果打开了参数编辑网页，则不处理任何按钮操作事件  Eric  2022-3-10
 
 		if (strID == STT_CNTR_CMD_Exit)
 		{
@@ -4086,7 +4086,7 @@ void QSttTestCntrFrameBase::slot_MenuButtonClick(QString strID)
 		OnCmd_CustomSet();
 	}
 	else if (strID == STT_CNTR_CMD_Assist)
-	{//2022-12-02  lijunqing
+	{//2022-12-02  Eric
 		OnCmd_Assist();
 	}
 	else if (strID == STT_CNTR_CMD_SelSCLFile)
@@ -4798,7 +4798,7 @@ tmt_BinaryConfig* QSttTestCntrFrameBase::GetBinaryConfig()
 	return &m_pTestCtrlCntrBase->m_oBinaryConfig;
 }
 
-//2022-4-3  lijunqing 暂时不考虑不使用的情况
+//2022-4-3  Eric 暂时不考虑不使用的情况
 void QSttTestCntrFrameBase::UpdateToolButtons()
 {
 	if (g_nLogDebugInfor == 1)	{		CLogPrint::LogString(XLOGLEVEL_TRACE, ">> begin UpdateToolButtons -  >>");	}
@@ -4867,7 +4867,7 @@ void QSttTestCntrFrameBase::Ats_UpdateParameter()
 	CDataGroup oRetParas;
 
 	m_pMacroEditView->GetDatas(&oRetParas);
-	SaveUIParaFile(&oRetParas);	//2022-10-16  lijunqing 记录和保存当前页面设置的值：设置为默认值
+	SaveUIParaFile(&oRetParas);	//2022-10-16  Eric 记录和保存当前页面设置的值：设置为默认值
 
 	InitCommonParasByDatas(&oRetParas);
 	//比较oRetParas 与 m_pTestMacroUI_Paras
@@ -5238,13 +5238,13 @@ void QSttTestCntrFrameBase::OnCmd_ScreenShot()
 	delete pPixMainScreen;
 }
 
-//2022-12-02  lijunqing
+//2022-12-02  Eric
 void QSttTestCntrFrameBase::OnCmd_Assist()
 {
 	assist_show_menu();
 }
 
-//2022-12-27  lijunqing
+//2022-12-27  Eric
 void QSttTestCntrFrameBase::InitIecCapTest(bool bActiveIecCap, bool bStartDetect,bool bShowMenuBtns)
 {
 	if (!bShowMenuBtns)
@@ -5458,7 +5458,7 @@ void QSttTestCntrFrameBase::OnCmd_StartTest()
 		return;
 	}
 
-	//2022-12-02  lijunqing 触发助手开始测试事件，判断是否可以开始测试
+	//2022-12-02  Eric 触发助手开始测试事件，判断是否可以开始测试
     if (!assist_event(STT_CNTR_CMD_StartTest, nullptr))
 	{
 		return;
@@ -5488,7 +5488,7 @@ void QSttTestCntrFrameBase::OnCmd_StartTest()
 	}
 	
 	InitCommonParasByDatas(&oRetParas);
-	SaveUIParaFile(&oRetParas);	//2022-10-16  lijunqing 记录和保存当前页面设置的值：设置为默认值
+	SaveUIParaFile(&oRetParas);	//2022-10-16  Eric 记录和保存当前页面设置的值：设置为默认值
 
 //	CLogPrint::LogFormatString(XLOGLEVEL_TRACE,_T("解除禁用"));
 
@@ -5579,7 +5579,7 @@ void QSttTestCntrFrameBase::OnCmd_AddMacro(BOOL bUseNameID)
 	}
 
 	QSttAddMacroWidget dlg(m_gFont,this);
-	dlg.Use_Name_ID(bUseNameID);  //lijunqing 2022-6-24  lijunqing LINUX 不使用Name
+	dlg.Use_Name_ID(bUseNameID);  //Eric 2022-6-24  Eric LINUX 不使用Name
 	dlg.m_pCurrentSelGbItem = (CExBaseList *)m_pSttGbTreeView->GetCurrSelectGbItem();
 //	connect(&dlg,SIGNAL(sig_TreeItemSelect(CSttMacroTestUI_TestMacroUIRef *)),this,
 //		SLOT(slot_SelectTestMacro(CSttMacroTestUI_TestMacroUIRef *)));
@@ -5934,7 +5934,7 @@ void QSttTestCntrFrameBase::OnCmd_CharDrawView()
 		return;
 	}
 
-	//2022-6-30  lijunqing
+	//2022-6-30  Eric
 	if (! g_pTheSttTestApp->m_pTestMacroUI->HasCharLib())
 	{
 		return;
@@ -6213,7 +6213,7 @@ void QSttTestCntrFrameBase::OnCmd_SaveTemplate()
 	}
 
 	m_pMacroEditView->GetDatas(&oRetParas);
-	SaveUIParaFile(&oRetParas);	//2022-10-16  lijunqing 记录和保存当前页面设置的值：设置为默认值
+	SaveUIParaFile(&oRetParas);	//2022-10-16  Eric 记录和保存当前页面设置的值：设置为默认值
 
 	CString strFileName, strPath;
 	strFileName.Format(_T("%s.gbxml"), g_pTheSttTestApp->m_pTestMacroUI->m_strID.GetString());
@@ -6348,7 +6348,7 @@ void QSttTestCntrFrameBase::OnCmd_SaveAsTemplate()
 	}
 
 	m_pMacroEditView->GetDatas(&oRetParas);
-	SaveUIParaFile(&oRetParas);	//2022-10-16  lijunqing 记录和保存当前页面设置的值：设置为默认值
+	SaveUIParaFile(&oRetParas);	//2022-10-16  Eric 记录和保存当前页面设置的值：设置为默认值
 
 	CString strFileName, strPath;
 #ifdef _PSX_QT_LINUX_
@@ -6417,7 +6417,7 @@ void QSttTestCntrFrameBase::OnCmd_SaveTest()
 	}
 
 	m_pMacroEditView->GetDatas(&oRetParas);
-	SaveUIParaFile(&oRetParas);	//2022-10-16  lijunqing 记录和保存当前页面设置的值：设置为默认值
+	SaveUIParaFile(&oRetParas);	//2022-10-16  Eric 记录和保存当前页面设置的值：设置为默认值
 
 	CString strFileName, strPath;
 	strFileName.Format(_T("%s.gbrpt"), g_pTheSttTestApp->m_pTestMacroUI->m_strID.GetString());
@@ -6578,7 +6578,7 @@ void QSttTestCntrFrameBase::OnCmd_SaveAsTest()
 	}
 
 	m_pMacroEditView->GetDatas(&oRetParas);
-	SaveUIParaFile(&oRetParas);	//2022-10-16  lijunqing 记录和保存当前页面设置的值：设置为默认值
+	SaveUIParaFile(&oRetParas);	//2022-10-16  Eric 记录和保存当前页面设置的值：设置为默认值
 
 	CString strFileName, strPath;
 #ifdef _PSX_QT_LINUX_
@@ -7174,7 +7174,7 @@ void QSttTestCntrFrameBase::slot_OnUpdateRtSyncTime(CDataGroup *pRtSycTime)
 // 		}
  	}
 
-	//2022-6-10  lijunqing 整体更新对象，不处理个性化时间
+	//2022-6-10  Eric 整体更新对象，不处理个性化时间
 	m_oDataBtnsMngr.UpdataDataButtons(pRtSycTime);
 
 	//由于电源信息是一个group,需要特殊处理
@@ -7705,7 +7705,7 @@ void QSttTestCntrFrameBase::SaveCharacteristicsData(CString strFile)
 		return ;
 	}
 
-	//2022-9-3  lijunqing
+	//2022-9-3  Eric
 	//2022-9-8 yizejun 在已经打开一个配置文件时切换功能会因为m_pTestMacroUI中获取的新名称而覆盖新功能的配置文件
 	//所以在切换功能时传入旧的文件名来保存旧模块的配置
 	if(!strFile.GetLength())

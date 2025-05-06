@@ -7,7 +7,7 @@
 #define RCD_PARSE_BUFFER_MAX_LEN   81920
 #define RCD_LEFT_BUFFER_MAX_LEN     4096
 
-//2022-4-6  lijunqing
+//2022-4-6  Eric
 //报文转换接口，例如将AT02D报文转换为纯数字报文
 //对于数字化录波，有各种不同的情况，各种情况都必须将协议报文转换为数字化报文
 class CXCapPkgBufferMngrInterface
@@ -20,8 +20,8 @@ public:
 	virtual void ReadHexTestFile(const CString &strFile) = 0;
 	virtual void AttachPkgTransDest(CXSmMemBufferMngr *pDestBuffer) = 0;
 
-	virtual void ResetBuffer() = 0;  //2022-4-20  lijunqing
-	virtual void LogBufferPos(){}   //2022-4-21  lijunqing 监视缓冲区位置：填充位置和解析位置
+	virtual void ResetBuffer() = 0;  //2022-4-20  Eric
+	virtual void LogBufferPos(){}   //2022-4-21  Eric 监视缓冲区位置：填充位置和解析位置
 
 public:
 	CXCapPkgBufferMngrInterface()
@@ -53,7 +53,7 @@ protected:
 	void ParseSttRcdBufferEx(long nBufLen);
 	void ParseSttRcdBuffer(BYTE *pBuffer, long nLenCopyLeft);
 
-//2022-6-19  lijunqing
+//2022-6-19  Eric
 // 很容易出现丢包的情况，为了排除是因为应用程序消耗资源比较大的情况，只做
 // AT02D报文头分析。
 protected:

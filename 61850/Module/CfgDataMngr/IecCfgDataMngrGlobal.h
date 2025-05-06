@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //IecCfgDataMngrGlobal.h
@@ -1418,7 +1418,7 @@ extern long g_nIecCfgGinMaxNum;
 extern const CString g_strSmvCurrentRateID[SMV_RATE_MAX_NUM];
 extern const CString g_strSmvVolRateID[SMV_RATE_MAX_NUM];
 
-//2023-4-17  lijunqing
+//2023-4-17  Eric
 inline BOOL iecfg_IsDatas(UINT nClassID)
 {
 	if (nClassID == CFGCLASSID_CIECCFGDATASGIN)

@@ -4,7 +4,7 @@
 #include <QWidget>
 #include "SttAssistWndDynEffectBase.h"
 
-//2022-12-26  lijunqing  暂时实现
+//2022-12-26  Eric  暂时实现
 
 namespace Ui {
 class QSttAssistTipsShowWidget;

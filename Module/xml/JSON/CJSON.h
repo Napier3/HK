@@ -75,7 +75,7 @@ typedef struct CJSON_Hooks {
 /* Supply malloc, realloc and free functions to CJSON */
 extern void CJSON_InitHooks(CJSON_Hooks* hooks);
 
-//2022-6-23  lijunqing open json text file 
+//2022-6-23  Eric open json text file 
 extern CJSON *CJSON_Open_File(const char *strFile);
 extern long CJSON_Write_File(CJSON *item, const char *strFile);
 
@@ -173,7 +173,7 @@ extern int CJSON_GetSameItemCount(CJSON *pNode,const char *string);
 //合并相同项为数组
 extern void CJSON_MergeSameItemToArray(CJSON *pNode);
 
-//lijunqing 2022-6-23 
+//Eric 2022-6-23 
 extern long json_is_object_or_array(CJSON *item);
 extern long json_cmp_object(CJSON *p1, CJSON *p2);
 extern CJSON* CJSON_Copy(CJSON *pSrc);

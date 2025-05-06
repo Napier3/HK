@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //XDrawList.h  CXDrawList
@@ -51,7 +51,7 @@ public:
 	virtual void Pick(const CPoint &point, CExBaseList &oList);
 	virtual void GetLogicBorder(double &fMinX,double &fMinY,double &fMaxX,double &fMaxY);
 
-	//2021-2-19  lijunqing
+	//2021-2-19  Eric
 	CXDrawPoint* AddPoint(double x, double y);
 	CXDrawText* AddText(double x, double y, double w, double h, const CString &strText);
 	void InitDrawLineColor(const COLORREF &oColor);//zhouhj 20210202 初始化链表中线条设置的颜色

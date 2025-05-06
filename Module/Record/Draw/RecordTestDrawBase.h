@@ -13,7 +13,7 @@
 #include "../RecordTest/RecordTest.h"
 #include "../Draw/DrawSysTime.h"
 
-//2023-7-22  lijunqing 从CXRecordDrawBase移动过来
+//2023-7-22  Eric 从CXRecordDrawBase移动过来
 #include "../Comtrade/ComtradeMngr.h"
 
 #define VER_MOVE_ONCE 1  //通道垂直一次移动5个像素
@@ -50,7 +50,7 @@ public:
 	double m_dDrawBeginTime;
 	double m_dDrawEndTime;
 
-	//2023-7-22  lijunqing 从CXRecordDrawBase移动过来
+	//2023-7-22  Eric 从CXRecordDrawBase移动过来
 	CRcdComtradeFile *m_pRcdComtradeFile;
 	CRecordTest *m_pRecordTest;
 

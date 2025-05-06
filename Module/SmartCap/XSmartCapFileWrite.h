@@ -5,7 +5,7 @@
 #include "61850Cap/ProtocolBase/Stt/SttFrameMemBufferMngr.h"
 
 
-//2022-6-13  lijunqing
+//2022-6-13  Eric
 class CXSmartCapFileWrite
 {
 private:

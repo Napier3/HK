@@ -92,7 +92,7 @@ public:
     virtual long WriteChar(char ch);
     virtual long WriteWChar(wchar_t wch);
 
-    //2020-12-27 lijunqing
+    //2020-12-27 Eric
     //»º³åÇø¶Á·½·¨
     virtual long ReadString(char *pstrData);
 

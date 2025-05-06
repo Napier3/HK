@@ -120,7 +120,7 @@ public:
 	void CalXPosByTimeAxis(double dMax=-1, double dMin=-1);
 	void InitDrawVariablesByRecordTest();
 	void CreateMemDC();				//创建绘图缓存
-	virtual void InitTimeAxis();  //2022-4-24  lijunqing 初始化时间坐标，可被重载设置个性化
+	virtual void InitTimeAxis();  //2022-4-24  Eric 初始化时间坐标，可被重载设置个性化
 	
 	void SetTimeMoveCursor(HCURSOR hCursor) {	m_pTimeCursorDraw->SetMoveCursor(hCursor);	}
 

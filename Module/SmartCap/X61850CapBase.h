@@ -200,7 +200,7 @@ public:
 #ifdef _XSmartCap_use_SmDb_
 	virtual void InitCapSmDb();
 #endif
-	virtual void ClearCap(); //2022-5-2  lijunqing  清空Cap相关的内容
+	virtual void ClearCap(); //2022-5-2  Eric  清空Cap相关的内容
 	void ClearPara();
 
 	void RecordDevice(CCapDeviceBase *pDevice);
@@ -220,7 +220,7 @@ public:
 	void RecordAllDevice(BOOL bRcdGoose=FALSE);
 	void ChangeChRecordState(CCapDeviceChBase *pCh, long nState);
 	void RecordDevice_Reset();
-	void GetSttCapParas(CDataGroup *pSttParas, BOOL bUseSmv, BOOL bUseGoose,BOOL bUseFT3);  //2022-4-14  lijunqing
+	void GetSttCapParas(CDataGroup *pSttParas, BOOL bUseSmv, BOOL bUseGoose,BOOL bUseFT3);  //2022-4-14  Eric
 
 	void InitMuErrorRangesBydsCurrErrorRange();//根据当前测试项数据集,初始化误差判断标准
 	void InitMuErrorRangesByCurrErrorRange(CDvmData *pCurrMuErrorData);//根据当前测试项数据对象,初始化误差判断标准结构体
@@ -295,12 +295,12 @@ protected:
 	//报文
 	CSmDbConfig m_oSmDbConfig; //历史报文索引配置文件
 	CCapFrameDbFile *m_pCapFrameDbFileServer;
-	CCapFrameDbArea *m_pCapFrameDbFileClient; //2020-06-12  lijunqing
+	CCapFrameDbArea *m_pCapFrameDbFileClient; //2020-06-12  Eric
 #endif
 
 	//索引表
 
-//lijunqing 2020-6-17  将杨一军写在CProtocol61850的代码移植到此处
+//Eric 2020-6-17  将杨一军写在CProtocol61850的代码移植到此处
 //CProtocol61850功能单一，属于规约解析的部分，测试仪配置的代码位于CProtocol61850不合理
 protected:
 	CIecCfgDevice *m_pIecCfgDevice;
@@ -324,7 +324,7 @@ public:
 	CCapDeviceBase* GetMUTestCapDevice();
 
 public:
-	//更新DvmDevice的数据  lijunqing 2020-6-17
+	//更新DvmDevice的数据  Eric 2020-6-17
 	void UpdateDvmDeviceDatas();
 	//void UpdateDvmDeviceDatas_RecordTest();
 	void UpdateDvmDeviceDatas_Analysis();
@@ -334,7 +334,7 @@ public:
 	//初始化通道映射关系：波形计算和设备数据模型
 	void Init_SV_Channels();
 	void Init_GS_Channels();
-	//加载配置文件，复位故障计算以及报文分析  lijunqing 2020-6-17
+	//加载配置文件，复位故障计算以及报文分析  Eric 2020-6-17
 	void ResetRecord();
 	BOOL UpdateMUTimeRlt(CDataGroup *pRtSycTime);
 	void UpdateFirstCyclePoints();//根据当前输出电压电流，更新首周波输入波形
@@ -410,7 +410,7 @@ protected:
 
 	char  m_destIn[100];
 	unsigned char m_destOut[50];
-	//SOE  lijunqing 2020-6-20
+	//SOE  Eric 2020-6-20
 	CExBaseCycleArray m_oSoeCycleArray;
 	CExBaseCycleArray m_oBinCycleArray;
 
@@ -488,7 +488,7 @@ protected:
 
 	void CalCompErrValue(CCapDevice6044 *pDevice6044,double dCompRelAng);
 //////////////////////////////////////////////////////////////////////////
-//lijunqing 2020-6-23
+//Eric 2020-6-23
 public:
 	void WriteRecordDataFile();
 
@@ -498,7 +498,7 @@ protected:
 		double dFreq,double &dMUTimeDataRelAngle,double &dFirstPointCalAngle);
 
 
-//2020-07-18  lijunqing  将数据集更新的功能做成一个单独的线程，避免主框架消息被堵住
+//2020-07-18  Eric  将数据集更新的功能做成一个单独的线程，避免主框架消息被堵住
 public:
 	void CreateUpdateDvmDeviceDatasThread();
 
@@ -508,7 +508,7 @@ protected:
 
 	long m_nHasUpdateSVDelayData;
 
-//2022-5  lijunqing
+//2022-5  Eric
 //创建IEC分析相关的数据集
 public:
 	CXKeyDB *m_pKeyDB;
@@ -557,12 +557,12 @@ private:
 	void IecAnalysis_AddDataset_SV_X_NewCh_Attr(CDvmData *pSrcData, CDvmValue *pCh, const CString &strAttrID);
 	void IecAnalysis_AddDataset_SV_X_NewCh_Attr(CDvmValue *pCh, const CString &strAttrID);
 
-	//2022-5-28  lijunqing  分析功能，控制块作为数据集的data对象，记录具体分析功能
+	//2022-5-28  Eric  分析功能，控制块作为数据集的data对象，记录具体分析功能
 	void IecAnalysis_AddDataset_Ctrl_ForData(CDvmLogicDevice *pLogicDevice, CDvmDataset *pDsSv
 		, CDvmDataset **ppDsRet, CDvmData **ppDataRet
 		, const CString &strDataSetID, const CString &strAnalyzeCfgFile);
 
-	//2022-5-25  lijunqing
+	//2022-5-25  Eric
 	void IecAnalysis_AddDataset_SV_PkgAnalyze(CDvmLogicDevice *pLogicDevice, CDvmDataset *pDsSv);
 	void IecAnalysis_AddDataset_SV_PkgAnalyze_Iecfg(CDvmData *pSvData, CIecCfgDataBase *pIecCfgData);
 	//zhouhj 2023.10.13
@@ -571,7 +571,7 @@ private:
 	//20220820 zhouhj  SV延时
 	void IecAnalysis_AddDataset_SV_Delay(CDvmLogicDevice *pLogicDevice, CDvmDataset *pDsSv);
 
-	//2022-5-28  lijunqing  报文异常分析
+	//2022-5-28  Eric  报文异常分析
 	void IecAnalysis_AddDataset_SV_PkgError(CDvmLogicDevice *pLogicDevice, CDvmDataset *pDsSv);
 
 	//////////////////////////////////////////////////////////////////////////
@@ -584,7 +584,7 @@ private:
 
 };
 
-//2020-06-21  lijunqing  设备数据模型访问互斥对象，避免程序崩溃
+//2020-06-21  Eric  设备数据模型访问互斥对象，避免程序崩溃
 extern CAutoCriticSection g_oCapDvmAutoCriticSection;
 extern CString g_strListChannelGroupName[12];
 extern CString g_strListChannelName[12];

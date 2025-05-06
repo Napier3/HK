@@ -26,5 +26,5 @@ extern long g_nSttLogServerDebugInfor;
 //监视服务端所有的命令报文
 extern long g_nSttLogServerSpyAllCmd;
 
-//2020-12-08  lijunqing
+//2020-12-08  Eric
 extern long g_nCloseTestWhenDisconnect;

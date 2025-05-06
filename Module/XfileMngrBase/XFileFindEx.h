@@ -47,7 +47,7 @@ public:
 
     virtual void ClearFileFilters();
     virtual void AddFileFilter(const CString &strFilter);
-//2020-12-1  lijunqing  
+//2020-12-1  Eric  
 public:
 	CXFileFindBase *m_pContext;
 };

@@ -59,7 +59,7 @@ typedef struct stt_cmd_info
 		}
 
 		if (dwCmdSendTime > dwCurTime)
-		{//2021-8-20  lijunqing long==>> overflow
+		{//2021-8-20  Eric long==>> overflow
 			dwCmdSendTime = dwCurTime;
 		}
 
@@ -135,7 +135,7 @@ void *ProcessTimeOutProc(LPVOID lParam);
 //调试的时候，是否需要判断超时，内存中将变量的值修改为0即可
 extern long g_nSttCmdOverTimeEnable;
 
-//2023-5-18  lijunqing 方便调试的时候显示命令的一些信息
+//2023-5-18  Eric 方便调试的时候显示命令的一些信息
 extern long g_nSttCmdOverTimeViewLog;
 
 

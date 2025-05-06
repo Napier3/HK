@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //XKeyBase.cpp  CXKeyBase
@@ -58,7 +58,7 @@ wchar_t xkey_get_x_char(const CString &strText, long nPos)
 	{
 		wch2 =  (unsigned char)strText.GetAt(nPos + 1);
 		//wch = wch | (wch2 << 8);
-		wch = wch2 | (wch << 8); //lijunqing 2022-6-27  高字节在前，低字节在后
+		wch = wch2 | (wch << 8); //Eric 2022-6-27  高字节在前，低字节在后
 	}
 #endif
 
@@ -93,7 +93,7 @@ long xkey_is_wchar_chn(const CString &strText, long &nPos)
 	//00000000h: C1E3 D2BB B6FE C8FD CBC4 CEE5 C1F9 C6DF ; 零一二三四五六七
 	//00000010h: B0CB BEC5 CAAE B0D9                         ; 八九十百
 	
-	// //lijunqing 2022-6-27  高字节在前，低字节在后
+	// //Eric 2022-6-27  高字节在前，低字节在后
 	//static wchar_t g_ChnNum[20] = {0xE3C1, 0XBBD2, 0XFEB6, 0XFDC8, 0XC4CB, 0XCEE5, 0XF9C1, 0XDFC6, 0XCBB0, 0XC5BE, 0XAECA, 0XD9B0 };
 	//static wchar_t g_ChnNum[20] = {'零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '百' };
 	wchar_t  *pChnNum = CXCharNumConfig::GetChn(); 

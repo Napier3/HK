@@ -159,7 +159,7 @@ UINT ParseThread(LPVOID pParam)
 		}
 
 		g_bIsParsingPkg = TRUE;
-		//2020-07-17  lijunqing 在此进行分帧，避免堵塞底层
+		//2020-07-17  Eric 在此进行分帧，避免堵塞底层
 		pSttRcdMemBufferMngr->TransCapPkg();
 
 		if (pThis->MemBufferMngrParse() > 0)

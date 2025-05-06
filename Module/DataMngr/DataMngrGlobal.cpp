@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //DataMngrGlobal.cpp
@@ -233,7 +233,7 @@ void CDataMngrXmlRWKeys::DecIsEqualOwn_Id_Value(CDataMngrXmlRWKeys *pXmlKeys, lo
 	}
 }
 
-//lijunqing 2023-2-28  lijunqing 只读取主属性，针对data，不读取min、max、unit、step、time、change等
+//Eric 2023-2-28  Eric 只读取主属性，针对data，不读取min、max、unit、step、time、change等
 void CDataMngrXmlRWKeys::IncXmlOnlyRead_MainAttr(CDataMngrXmlRWKeys *pXmlKeys, long nAdd)
 {
 	if (pXmlKeys == NULL)
@@ -398,7 +398,7 @@ BOOL dvm_IsValueEqual(BSTR strValue1, BSTR strValue2)
 #endif
 
 
-//lijunqing 2021-8-11
+//Eric 2021-8-11
 void dvm_IncGroupUseDvmData(CDataMngrXmlRWKeys *pXmlKeys)
 {
 	if (pXmlKeys == NULL)

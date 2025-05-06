@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //Values.h  CValues
@@ -8,7 +8,7 @@
 
 #include "DataMngrGlobal.h"
 
-//2021-5-18  shaolei,lijunqing 
+//2021-5-18  shaolei,Eric 
 //AtsWorkBench：可能是61850的代码与CValue存在冲突，导致编译出错
 //因此将CValue改为CXValue，同时保持兼容性
 #ifdef _use_cxvalue_

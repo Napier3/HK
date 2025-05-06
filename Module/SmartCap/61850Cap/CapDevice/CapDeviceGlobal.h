@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //CapDeviceGlobal.h
@@ -89,5 +89,5 @@ inline CString ep_Get61850ProtocolType(UINT nType)
 
 #define WM_ADDCAPDEVICE				(WM_USER+1144)
 #define WM_UPDATECAPDEVICE		(WM_USER+1145)
-//2022-5-31  lijunqing
+//2022-5-31  Eric
 #define WM_UPDATE_GOOSE_SPY		(WM_USER+1146)

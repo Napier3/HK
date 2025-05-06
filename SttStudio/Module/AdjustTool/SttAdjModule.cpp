@@ -1,4 +1,4 @@
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttAdjModule.cpp  CSttAdjModule
@@ -240,7 +240,7 @@ CDataGroup* CSttAdjModule::GetAdjTRange(const CString &strT_Range)
 		return NULL;
 	}
 
-	//2021-5-3  lijunqing
+	//2021-5-3  Eric
 	CDataGroup *pTrange = (CDataGroup*)pAdjustParas->FindByID(strT_Range);
 
 	if (pTrange != NULL)
@@ -954,7 +954,7 @@ CDataGroup* CSttAdjModule::AddNewGear(const CString &strT_Range, const CString &
 	return pNew;
 }
 
-//2021-5-3  lijunqing
+//2021-5-3  Eric
 CDataGroup* CSttAdjModule::AddNewGear(CDataGroup *pSrcGear, CDataGroup *pParent)
 {
 	CDataGroup *pNew =  (CDataGroup*)pSrcGear->Clone();
@@ -1007,7 +1007,7 @@ CDataGroup* CSttAdjModule::AddNewGear_SingleChnel( const CString &strTrangeID , 
 }
 
 //////////////////////////////////////////////////////////////////////////
-//2021-5-3  lijunqing
+//2021-5-3  Eric
 CDataGroup* CSttAdjModule::AddNewGear_AllChannel(CDataGroup *pTrange, CDataGroup *pAdjParas, const CString &strWaveID, CDataGroup *pSrcGear)
 {
 	if (pAdjParas->m_strDataType != STT_ADJ_DATA_TYPE_ChannelAdj)
@@ -1174,7 +1174,7 @@ CDataGroup* CSttAdjModule::DeleteGear( const CString &strTrangeID,  const CStrin
 }
 
 
-//2021-5-3 lijunqing
+//2021-5-3 Eric
 BOOL CSttAdjModule::DeleteGear(CDataGroup *pParent, const CString &strGearID)
 {
 	CExBaseObject *pFind =  pParent->FindByID(strGearID);
@@ -1240,7 +1240,7 @@ BOOL CSttAdjModule::DeleteGear_SingleChannel(CDataGroup *pAdjParas, const CStrin
 }
 
 
-//2021-5-4  lijunqing  将模块类型由整数转换为字符串，兼容老版本校准系数文件
+//2021-5-4  Eric  将模块类型由整数转换为字符串，兼容老版本校准系数文件
 void CSttAdjModule::TransModuleTypeFromLongToString()
 {
 	CDvmData *pModuleType = GetModuleType();

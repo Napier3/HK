@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttCmdData.cpp  CSttCmdData
@@ -20,7 +20,7 @@ CSttCmdData::CSttCmdData()
 
 	//初始化成员变量
 	m_pSttParas = NULL;
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
 	m_pSttMacro = NULL;
 #endif
 	m_pSttMsgs = NULL;
@@ -38,7 +38,7 @@ void CSttCmdData::Free()
 {
 	DeleteAll();
 	m_pSttParas = NULL;
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
 	m_pSttMacro = NULL;
 #endif
 	m_pSttMsgs = NULL;
@@ -71,7 +71,7 @@ CSttMsgs* CSttCmdData::GetSttMsgs()
 	return m_pSttMsgs;
 }
 
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
 CSttMacro* CSttCmdData::GetSttMacro(BOOL bInitParas, BOOL bInitResults,BOOL bInitSearchResults)
 {
 	if (m_pSttMacro == NULL)
@@ -172,7 +172,7 @@ void CSttCmdData::InitAfterRead()
 		{
 			m_pSttParas = (CSttParas*)p;
 		}
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
 		else if (nClassID == STTCMDCLASSID_CSTTMACRO)
 		{
 			m_pSttMacro = (CSttMacro*)p;
@@ -282,7 +282,7 @@ CExBaseObject* CSttCmdData::CreateNewChild(const CString &strClassID, BOOL &bAdd
 		m_pSttParas = NewSttParas();
 		pNew = m_pSttParas;
 	}
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
 	else if (strClassID == pXmlKeys->m_strCSttMacroKey)
 	{
 		CSttMacro *pNewMacro = new CSttMacro();
@@ -319,7 +319,7 @@ CExBaseObject* CSttCmdData::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/)
 	{
 		pNew = NewSttParas();
 	}
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
 	else if (nClassID == STTCMDCLASSID_CSTTMACRO)
 	{
 		pNew = new CSttMacro();
@@ -574,7 +574,7 @@ void CSttCmdData::AppendParas(CSttCmdData &oSrcCmd)
 	m_pSttParas->AppendEx(*pSrcParas);
 	pSrcParas->RemoveAll();
 
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
 	//暂时不考虑SttMacro
 	if (oSrcCmd.m_pSttMacro == NULL)
 	{
@@ -660,7 +660,7 @@ CDvmDatasetGroup* CSttCmdData::GetDatasetGroup()
 }
 
 
-//2021-8-4  lijunqing
+//2021-8-4  Eric
 CExBaseObject* CSttCmdData::FindInParasByID(const CString &strID)
 {
 	GetSttParas();

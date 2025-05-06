@@ -51,7 +51,7 @@ long CSttServerClientSocket::ReceiveBuffer(BYTE *pBuf,long nLen)
 	return nRcvLen;
 */
 
-	//2019-12-30   lijunqing
+	//2019-12-30   Eric
 	long nRcvLen = m_pSocket->read((char*)pBuf, nLen);
 
 	return nRcvLen;

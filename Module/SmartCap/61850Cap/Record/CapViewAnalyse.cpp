@@ -162,7 +162,7 @@ void CCapViewAnalyse::InitCapViewDraw()
 		return;
 	}
 
-	long nDataLen = 8000;   //CAP_RECORD_POINTS;  //最多两秒钟  lijunqing 2022-04024
+	long nDataLen = 8000;   //CAP_RECORD_POINTS;  //最多两秒钟  Eric 2022-04024
 	m_nSamRateForDraw = 4000; //周波点数为80
 	double dMax = 0,dMin =0;
 	dMax = nDataLen;

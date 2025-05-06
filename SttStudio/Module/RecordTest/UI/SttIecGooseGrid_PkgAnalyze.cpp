@@ -14,7 +14,7 @@ void CSttIecGooseGrid_PkgAnalyze::IecRcdFunc(CCapDeviceBase *pCapDevice)
 {
 	m_pCapDevice = pCapDevice;
 
-	//2022-5-28  lijunqing
+	//2022-5-28  Eric
 	CDvmDataset *pDatasetCstcErr = NULL;
 	CDvmData *pDataCtrl = NULL;
 

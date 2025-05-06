@@ -542,5 +542,5 @@ inline BOOL Ep_IsMatchStateNone(PEPBUFFERPOS pBufferPos)
 #define WM_CAP_MONITOR  (WM_USER+1012)
 #define WM_CAP_MONITORS  (WM_USER+1013)
 
-//2022-6-13  lijunqing
+//2022-6-13  Eric
 #define WM_WRITE_XSMARTCAP_FILE  (WM_USER+1014)

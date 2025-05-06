@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //CapDeviceMngr.cpp  CCapDeviceMngr
@@ -32,7 +32,7 @@ CCapDeviceMngr::~CCapDeviceMngr()
 }
 
 
-//2022-4-14  lijunqing
+//2022-4-14  Eric
 void CCapDeviceMngr::GetSttCapParas(CCapDeviceBase *pCapDeviceBase, CDataGroup *pSttParas, BOOL bUseSmv, 
 									BOOL bUseGoose,BOOL bUseFT3)
 {
@@ -405,7 +405,7 @@ void CCapDeviceMngr::InitNameAndID(CCapDeviceBase *pCapDevice)
 CCapDeviceBase* CCapDeviceMngr::AddCapDevice(CDataGroup *pSttIecCb)
 {
 	CString strType, strCRC, strPkgDetect,strSTMode;
-	long nPort = 0 , nAppID = 0, nChCount = 0;  //2022-12-25  lijunqing 没有初始化，调试的时候导致通道数没定义，为随机数
+	long nPort = 0 , nAppID = 0, nChCount = 0;  //2022-12-25  Eric 没有初始化，调试的时候导致通道数没定义，为随机数
 	long nSmpRate = 0,nPkgLenth = 0;
 	double dBaudRate = 0.0f;//2.5M为整数
 	strSTMode = "FT3";
@@ -421,7 +421,7 @@ CCapDeviceBase* CCapDeviceMngr::AddCapDevice(CDataGroup *pSttIecCb)
 	stt_GetDataValueByID(pSttIecCb, XPARA_ID_OnePkgLen, nPkgLenth);
 	stt_GetDataValueByID(pSttIecCb, XPARA_ID_STMode, strSTMode);
 
-	//2022-6-11 lijunqing  如果通道数为0，则忽略此控制块。这样方便系统处理
+	//2022-6-11 Eric  如果通道数为0，则忽略此控制块。这样方便系统处理
 	if ((nChCount <= 0)&&(strType != XPARA_ID_TYPE_FT3))//非FT3并且通道数为0,则忽略
 	{
 		CLogPrint::LogFormatString(XLOGLEVEL_ERROR, _T("IecCb: [%s] [%04X] ChCount==0"), strType.GetString(), nAppID);
@@ -669,7 +669,7 @@ BOOL CCapDeviceMngr::ValidSTMode()
 	return TRUE;
 }
 
-//定期更新装置链接状态  2020-06-27  lijunqing
+//定期更新装置链接状态  2020-06-27  Eric
 void CCapDeviceMngr::UpdateDeviceLinkState()
 {
 	if (m_pRecordTest == NULL)
@@ -749,7 +749,7 @@ void CCapDeviceMngr::SelectDevicesByLink(CExBaseList &list, UINT nClassID, BOOL 
 	}
 }
 
-//2022-5-3  lijunqing
+//2022-5-3  Eric
 void CCapDeviceMngr::ClearCap()
 {
 	CCapDeviceBase *p = NULL;
@@ -787,7 +787,7 @@ void CCapDeviceMngr::ClearPara()
 }
 
 
-//2022-12-25  lijunqing
+//2022-12-25  Eric
 CCapDeviceBase* CCapDeviceMngr::GetSelectDevice()
 {
 	POS pos = GetHeadPosition();

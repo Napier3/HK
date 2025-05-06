@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttCmdBase.h  CSttCmdBase
@@ -28,8 +28,8 @@ public:
 	CSttCmdBase();
 	virtual ~CSttCmdBase();
 
-	CString m_strToSN;   //2021-8-22  lijunqing
-	CString m_strFromSN;  //2021-8-22  lijunqing
+	CString m_strToSN;   //2021-8-22  Eric
+	CString m_strFromSN;  //2021-8-22  Eric
 
 	//long m_nFrameHead;		//帧头标识
 	long m_nType_Cmd;		//命令类型
@@ -70,11 +70,11 @@ public:
 	void SetCreateMacroChild(bool bCreateMacroChild)	{	m_bCreateMacroChild = bCreateMacroChild;	}
 
 public:
-	//2022-10-22  lijunqing  函数增加格式，没有采用缺省值，编译的时候会导致语法错误，从强制修改，实现代码的统一
+	//2022-10-22  Eric  函数增加格式，没有采用缺省值，编译的时候会导致语法错误，从强制修改，实现代码的统一
 	BOOL GetXml_Pkg(char **ppszBuffer, long &nLen, long nSttCmdDataFormat);
     BOOL ParsePkgHead(BYTE *pPkgBuffer);
 
-	//2022-10-22 lijunqing 增加数据格式参数
+	//2022-10-22 Eric 增加数据格式参数
     BOOL ParsePkgXml(BYTE *pPkgBuffer, long nLen, char *pwszDestBuffer, const long &nXmlRWType = _PUGI_XML_TYPE_);
     char* ParsePkgOnly(BYTE *pPkgBuffer);
 
@@ -87,21 +87,21 @@ public:
 	//pRetData!=NULL则返回应答结果
 	long DoWait(CSttSocketDataBase_File *pSocket,STT_CMD_INFO *pCmdInfo,long nTimeOut = -1,CSttCmdData *pRetData=NULL,BOOL bDoEvents=TRUE);
 
-//2020-10-20  lijunqing
+//2020-10-20  Eric
 private:
-	//2021-7-21  lijunqing 暂时保留这个变量，后续去掉，采用统一的标准的接口
+	//2021-7-21  Eric 暂时保留这个变量，后续去掉，采用统一的标准的接口
 	CSttSocketDataBase *m_pRefSocketDataBase; 
 
-	//2021-7-21  lijunqing 新的接口变量，后续使用这个接口
-	void *m_pCmmOptrInterface;   //2022-10-19  lijunqing  由g改为void*
+	//2021-7-21  Eric 新的接口变量，后续使用这个接口
+	void *m_pCmmOptrInterface;   //2022-10-19  Eric  由g改为void*
 
 	//私有成员变量访问方法
 public:
-	//2021-7-21  lijunqing 暂时保留这个变量，后续去掉，采用统一的标准的接口
+	//2021-7-21  Eric 暂时保留这个变量，后续去掉，采用统一的标准的接口
 	void SetRefSocketData(CSttSocketDataBase *pSocket)  {   m_pRefSocketDataBase = pSocket; }
 	CSttSocketDataBase* GetRefSocketData()  {   return m_pRefSocketDataBase;    }
 
-	//2021-7-21  lijunqing 新的接口变量，后续使用这个接口
+	//2021-7-21  Eric 新的接口变量，后续使用这个接口
 	void SetSttCmmOptrInterface(void *pCmmOptrInterface)  {   m_pCmmOptrInterface = pCmmOptrInterface; }
 	void* GetSttCmmOptrInterface()  {   return m_pCmmOptrInterface;    }
 

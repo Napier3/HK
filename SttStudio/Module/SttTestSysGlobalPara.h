@@ -283,7 +283,7 @@ extern tmt_PtPara g_oPTTestPara;
 
 extern LocalSysPara g_oLocalSysPara;
 
-//2022-9-19  lijunqing  同样的代码，出现了好几个地方
+//2022-9-19  Eric  同样的代码，出现了好几个地方
 void stt_SystemParas_GetString(CString &strSysParas);
 void stt_SystemParas_SetString(const CString &strSysParas);
 void stt_SystemParas_SetString(char *strSysParas, long nLen);

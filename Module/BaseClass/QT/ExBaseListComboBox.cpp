@@ -28,7 +28,7 @@ void ex_InsertChildreComboBox(CExBaseList *pDatas, QComboBox *pComboBox, BOOL bA
 	{
 		pObj = pDatas->GetNext(pos);
 
-		//2022-9-28  lijunqing 设置Item关联的对象
+		//2022-9-28  Eric 设置Item关联的对象
 		if (bAddParentNameID)
 		{
 			CExBaseObject *pParent = (CExBaseObject *)pObj->GetParent();
@@ -69,7 +69,7 @@ CExBaseObject* ex_ComboBox_GetSelObj(QComboBox *pComboBox)
 }
 
 #include <QAbstractItemView>
-//2022-11-3  lijunqing
+//2022-11-3  Eric
 void ex_ComboBox_adjustItemWidth(QComboBox *pComboBox)
 {
 	int max_len=0;
@@ -569,7 +569,7 @@ BOOL CExBaseListComboBox::DeleteObject(CExBaseObject *pObj)
 	}
 }
 
-//2021-1-8  lijunqing
+//2021-1-8  Eric
 BOOL CExBaseListComboBox::DeleteCurrSelObject()
 {
 	long nIndex = GetCurSel();

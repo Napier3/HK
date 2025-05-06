@@ -51,8 +51,8 @@ public:
 	virtual long SendCmd(CSttCmdBase *pCmd,BOOL bCompress=FALSE,BOOL bReset=TRUE, long nSrcID_Test=0, long nTimeOut=0);
 	virtual long ReturnSysState(CSttSocketDataBase *pSocket, int nCmdType, char *pszCmdID, BOOL bIsSuccess);
     virtual long ReturnSysState(CSttSocketDataBase *pSocket,CSttSysState *pSysState, BOOL bSpyAllCmd);
-    virtual long ReturnSysState(CSttCmdBase *pSttCmd, long nCmdExecStatus,CSttCmdData *pRetData);  //lijunqing 2020-10-20
-	virtual long ReturnSysState(CSttCmdBase *pSttCmd, long nCmdExecStatus,CSttSocketDataBase *pSocket, CSttCmdData *pRetData);  //lijunqing 2020-10-21
+    virtual long ReturnSysState(CSttCmdBase *pSttCmd, long nCmdExecStatus,CSttCmdData *pRetData);  //Eric 2020-10-20
+	virtual long ReturnSysState(CSttCmdBase *pSttCmd, long nCmdExecStatus,CSttSocketDataBase *pSocket, CSttCmdData *pRetData);  //Eric 2020-10-21
 
 	virtual long OnTestMsg(CSttSocketDataBase *pClientSocket, BYTE *pBuf, long nLen);
 	virtual BOOL OnTestMsgEx(CSttSocketDataBase *pClientSocket, BYTE *pBuf, long nLen, long nCmdType, char *pszCmdID, char *pszTestor, char *pszRetCmdType, BOOL &bRet);
@@ -86,11 +86,11 @@ public:
 	CSttSocketDataBase *GetTestAuthoritySocket();
 	CSttSocketDataBase *GetAtsAuthoritySocket();
 
-    //2020-11-29  lijunqing
+    //2020-11-29  Eric
     //根据软件ID返回报文
     void SendToAllUser(const CString &strSoftID, BYTE *pBuf,long nLen);
 
-    //2022-2-12  lijunqing
+    //2022-2-12  Eric
     CSttPkgDispatchInterfaces m_oSttPkgDispatch;
     void Add(CSttPkgDispatchInterface *p)           {   m_oSttPkgDispatch.Add(p);   }
     void Remove(CSttPkgDispatchInterface *p)    {   m_oSttPkgDispatch.Remove(p);    }

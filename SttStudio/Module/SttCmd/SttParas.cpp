@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttParas.cpp  CSttParas
@@ -8,7 +8,7 @@
 #include "stdafx.h"
 #include "SttParas.h"
 
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
 #include "SttRptMapDatas.h"
 #include "SttChMaps.h"
 #endif
@@ -103,14 +103,14 @@ CExBaseObject* CSttParas::CreateNewChild(const CString &strClassID, BOOL &bAddTo
         return new CDvmDataset();
     }
 	else if (strClassID == pXmlKeys->m_strCDvmDeviceKey)
-	{//2023-1-28  lijunqing 增加枚举装置模型的功能
+	{//2023-1-28  Eric 增加枚举装置模型的功能
 		return new CDvmDevice();
 	}
 	else if (strClassID == pXmlKeys->m_strCDvmDatasetGroupKey)
 	{
 		return new CDvmDatasetGroup();
 	}
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
 	else if (strClassID == pXmlKeys->m_strCSttReportsKey)
 	{
 		return new CSttReports();
@@ -165,7 +165,7 @@ CExBaseObject* CSttParas::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/)
 	{
 		return new CDvmDatasetGroup();
 	}
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
 	else if (nClassID == STTCMDCLASSID_REPORTS)
 	{
 		return new CSttReports();
@@ -237,7 +237,7 @@ void CSttParas::AttachParas(CDataGroup *pParas)
 // }
 
 CDvmData* CSttParas::AddNewData(const CString &strID, const CString &strValue, BOOL bUseFind)
-{//2022-8-10  lijunqing
+{//2022-8-10  Eric
     CString strDataType = _T("string");
 
 	if (bUseFind)
@@ -413,7 +413,7 @@ CDvmDatasetGroup* CSttParas::GetDvmDatasetGroup(BOOL bCreateNew)
 	return pFind;
 }
 
-//2023-1-28  lijunqing 增加枚举装置模型的功能
+//2023-1-28  Eric 增加枚举装置模型的功能
 CDvmDevice* CSttParas::GetDvmDevice(BOOL bCreateNew)
 {
 	CDvmDevice *pFind = (CDvmDevice*)FindByClassID(DVMCLASSID_CDVMDEVICE);
@@ -430,7 +430,7 @@ CDvmDevice* CSttParas::GetDvmDevice(BOOL bCreateNew)
 	return pFind;
 }
 
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
 CSttReports* CSttParas::GetSttReports(BOOL bCreateNew)
 {
     CSttReports *pFind = (CSttReports*)FindByClassID(STTCMDCLASSID_REPORTS);
@@ -530,7 +530,7 @@ void CSttParas::AttatchItems(CSttItems *pItems)
 
 #endif
 
-//2022-3-23  lijunqing 曾经考虑使用XFileMngr，但是底层服务使用起来太麻烦，就直接添加此函数
+//2022-3-23  Eric 曾经考虑使用XFileMngr，但是底层服务使用起来太麻烦，就直接添加此函数
 void CSttParas::SearchFiles(const CString &strPath, long nGetSubDirs, long nGetFiles, const CString &strFileType)
 {
 	Search(this, strPath, nGetSubDirs, nGetFiles, strFileType);

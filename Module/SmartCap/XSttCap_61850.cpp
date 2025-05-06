@@ -63,7 +63,7 @@ void CXSttCap_61850::OnRcdBufRcv(BYTE *pBuffer, long nLen)
 	m_pSttXCapBufferMngr->AddFrameBuffer(pBuffer, nLen);
 }
 
-long CXSttCap_61850::OnRcdRcvClosed()  ////2022-6-30  lijunqing 
+long CXSttCap_61850::OnRcdRcvClosed()  ////2022-6-30  Eric 
 {
 	if (!m_bTestStarted)
 	{
@@ -497,7 +497,7 @@ void CXSttCap_61850::GetSttRecordParas( CIecCfgDatasMngr *pDatasMngr, CSttParas 
 	pData->m_strID = _T("SubscribeCount");
 	pParas->AddNewChild(pData);
 
-	//2020-7-15 lijunqing
+	//2020-7-15 Eric
 	//SMV     不获取SV报文有如下情况
 	//GOOSE发布能力GooseSendTest、GOOSE报文一致性GooseCstcTest
 	//时间控制准确度TimeControlTest  GOOSE同步差GooseSnyTest

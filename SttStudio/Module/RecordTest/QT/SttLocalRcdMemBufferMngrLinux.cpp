@@ -60,7 +60,7 @@ void CSttLocalRcdMemBufferMngrLinux::TransCapPkg()
 	}
 
 	if (CXCapPkgBufferMngrInterface::Is_XSmartCapDebugHead())
-	{//2022-6-19  lijunqing  调试报文头的模式
+	{//2022-6-19  Eric  调试报文头的模式
 		return TransCapPkg_DebugHead();
 	}
 
@@ -76,7 +76,7 @@ void CSttLocalRcdMemBufferMngrLinux::TransCapPkg()
 			return;
 		}
 
-		//2022-6-13  lijunqing   如果是写文件，则不再做任何处理
+		//2022-6-13  Eric   如果是写文件，则不再做任何处理
 		if (CXSmartCapFileWrite::WriteBuffer((char*)m_pRingMemBufRead, nTotalLen))
 		{
 			continue;
@@ -118,7 +118,7 @@ void CSttLocalRcdMemBufferMngrLinux::ResetBuffer()
 	m_oPkgHeadStcMngr.init();
 }
 
-//2022-4-21  lijunqing 监视缓冲区位置：填充位置和解析位置
+//2022-4-21  Eric 监视缓冲区位置：填充位置和解析位置
 void CSttLocalRcdMemBufferMngrLinux::LogBufferPos()
 {
 	long nReadPos = m_nReadPos;

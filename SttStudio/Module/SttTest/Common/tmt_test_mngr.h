@@ -1,5 +1,5 @@
 #pragma once
-//2021-5-30   lijunqing 
+//2021-5-30   Eric 
 #include "tmt_test_paras_head.h"
 
 //最多1024个测试点，简单化处理

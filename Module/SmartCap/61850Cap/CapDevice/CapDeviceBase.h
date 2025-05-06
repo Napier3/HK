@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //CapDeviceBase.h  CCapDeviceBase
@@ -19,7 +19,7 @@
 
 #include "../../../../61850/Module/CfgDataMngr/IecCfgDevice.h"
 
-//SOE  lijunqing 2020-6-20
+//SOE  Eric 2020-6-20
 #include "../../../../Module/BaseClass/ExBaseCycleArray.h"
 #include "../../../System/TickCount32.h"
 #include "CapAnalysisConfig.h"
@@ -55,7 +55,7 @@ public:
 	CString m_strDestAddress;
 	CString m_strSrcAddress;
 	
-	//2022-4-13  lijunqing
+	//2022-4-13  Eric
 	CString m_strCRC;
 	CString m_strPkgDetect;
 	CString m_strPkg;
@@ -143,13 +143,13 @@ public:
 
 	//添加报文数据到录波通道中
 	void AddCapDataBuffer(PEPCAPPARSEDATAS pDatas,BYTE* pBuferHead = NULL,long nBufferLenth = 0);
-	void CapRecord(PEPCAPPARSEDATAS pDatas);  //2022-6-19  lijunqing
+	void CapRecord(PEPCAPPARSEDATAS pDatas);  //2022-6-19  Eric
 	void SetCapSelect(BOOL bSelect);
 
 	virtual void Reset();  //开始抓包，复位之前的状态
 	virtual BOOL IsDataRcvOverTime();
 
-	//2020-6-20  lijunqing  分析突变或者变化量
+	//2020-6-20  Eric  分析突变或者变化量
 	virtual void AnalysisData(PEPCAPPARSEDATAS pDatas,BYTE* pBuferHead = NULL,long nBufferLenth = 0)	{};
 	virtual void CreateDvmDataset(CDvmDataset *pDataset);
 
@@ -160,7 +160,7 @@ public:
 	virtual void analysis_gs(PEPCAPPARSEDATAS pDatas);
 	virtual void analysis6044(PEPCAPPARSEDATAS pDatas);
 
-	//2022-5-3  lijunqing
+	//2022-5-3  Eric
 	virtual void ClearCap();
 	virtual void ClearAnalysisResultErrors(){};//20220614 zhouhj清除测试结果中的错误
 	CString GetCtrlDesc();//获取控制块描述 20230301 
@@ -170,6 +170,6 @@ public:
 void cap_mac_string_to_byte(const CString &strMac, BYTE *pMAC);
 CString GetMacStringFromByte(const unsigned char *pMacAddr);
 
-//lijunqing 2020-6-20  暂时使用全局变量记录SOE缓存，后续如果需要多个设备数据模型，再做修改
+//Eric 2020-6-20  暂时使用全局变量记录SOE缓存，后续如果需要多个设备数据模型，再做修改
 extern CExBaseCycleArray *g_pSmartCapSoeCycleArray;
 extern CExBaseCycleArray *g_pSmartCapBinCycleArray;

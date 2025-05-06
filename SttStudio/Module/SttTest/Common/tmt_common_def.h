@@ -1099,12 +1099,12 @@ typedef struct ReplayCoef
 } Drv_ReplayCoef;
 
 
-//2022-8-25  lijunqing
+//2022-8-25  Eric
 typedef struct _Replay_HdCh_RcdData_Map_
 {
     int   nHdCh;   //硬件通道编号
 
-    //对应的录波数据的位置   2022-8-24 lijunqing
+    //对应的录波数据的位置   2022-8-24 Eric
     //故障回放时:对应的波形数据的编号，没有配置，则为-1
     //模式1:如果通道没有配置，则不需要下载波形数据；
     //模式2:通道没有配置，依然下载通道数据，此时数据为0

@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttCommCmd.cpp  CSttCommCmd
@@ -558,7 +558,7 @@ long CSttCommCmd::XmlWriteChildren(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oE
 		if (CSttCmdDefineXmlRWKeys::IsOnlyGetItem())
 		{
 			//只获取项目目录的情况下，不需要特性曲线相关以及测试功能参数
-			//2022-10-14  lijunqing
+			//2022-10-14  Eric
 			if (nClassID == STTGBXMLCLASSID_CSTTCOMM_DATA
 				|| nClassID == STTGBXMLCLASSID_CSTTREPORTMAP)
 				//|| nClassID == STTCMDCLASSID_REPORTS)

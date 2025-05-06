@@ -356,13 +356,13 @@ CDvmDataset* dvm_FindDsByDatas(CDvmLogicDevice *pLdevice, CDvmDataset *pSrcDs)
 	return pFind;
 }
 
-//2021-2-23  lijunqing
+//2021-2-23  Eric
 void DvmDataset_to_Values(CDvmDataset *pSrc, CValues *pValues)
 {
 	DvmDatas_to_Values((CExBaseList*)pSrc, pValues);
 }
 
-//2022-7-24  lijunqing
+//2022-7-24  Eric
 void DvmDatas_to_Values(CExBaseList *pSrc, CValues *pValues)
 {
 	POS pos = pSrc->GetHeadPosition();

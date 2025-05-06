@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //XKeyDB.cpp  CXKeyDB
@@ -36,7 +36,7 @@ CXKeyDB::~CXKeyDB()
 	CKeyDbXmlRWKeys::Release();
 }
 
-//2022-5-10  lijunqing
+//2022-5-10  Eric
 void CXKeyDB::SetRemoveSubKeys(bool b)
 {
 	CXKeyStringParser::SetRemoveSubKeys(b);
@@ -778,7 +778,7 @@ BOOL CXKeyDB::CreateXKeyMatchRef(const CString &strKey, long nArrayIndex, CXKeyM
 	return FALSE;
 }
 
-//2023-2-6  lijunqing  创建strKey对应的CXKeyMatchRef
+//2023-2-6  Eric  创建strKey对应的CXKeyMatchRef
 CXKeyMatchRef* CXKeyDB::CreateXKeyMatchRef(const CString &strKey)
 {
 	CXKeyMatchRefList oList;

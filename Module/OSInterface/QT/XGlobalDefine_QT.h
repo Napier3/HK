@@ -59,7 +59,7 @@ void Sleep(long nmSecond);
 
 #define wcsicmp wcscasecmp
 
-//2020-6-1  lijunqing
+//2020-6-1  Eric
 #define strtok_s strtok_r
 
 

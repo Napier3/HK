@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //XLanguageResourceBase.h  CXLanguageResourceBase
@@ -34,7 +34,7 @@ public:
 
 	virtual void RegisterLanguageResource();
 
-	//2023-2-28  lijunqing LINUX QT下，编码模式的问题，还没设置编码模式的时候，全局静态变量会是乱码，所以增加此函数
+	//2023-2-28  Eric LINUX QT下，编码模式的问题，还没设置编码模式的时候，全局静态变量会是乱码，所以增加此函数
 	virtual void InitLangTxt();
 
 };

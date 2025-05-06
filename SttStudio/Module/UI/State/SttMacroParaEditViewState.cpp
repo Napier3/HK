@@ -269,7 +269,7 @@ void QSttMacroParaEditViewState::SetDatas(CDataGroup *pDataset)
 	UpdateStateParas();
 }
 
-//2023-2-4  lijunqing 提高程序界面初始化打开的速度，将矢量图、状态图等的初始化放到线程
+//2023-2-4  Eric 提高程序界面初始化打开的速度，将矢量图、状态图等的初始化放到线程
 void QSttMacroParaEditViewState::InitSpyToolWidget()	
 {
 	if (g_nLogDebugInfor == 1)	{		CLogPrint::LogString(XLOGLEVEL_TRACE, "***** benin State::SetDatas-6   InitVectorWidget");	}

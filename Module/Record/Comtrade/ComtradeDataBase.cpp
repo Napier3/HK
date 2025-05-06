@@ -77,7 +77,7 @@ void CComtradeDataBase::AllocBuffer(long nTotalBufferLenth)
 {
 	ClearBuffer();
 
-	//2020-07-26  lijunqing
+	//2020-07-26  Eric
 	//m_nTotalPoints = nTotalPoints;
 	m_pnAttachBuffer = new unsigned short[nTotalBufferLenth];
 	ZeroMemory(m_pnAttachBuffer, sizeof(unsigned short) * nTotalBufferLenth);

@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttMacroTestUI_TestMacroUI.h  CSttMacroTestUI_TestMacroUI
@@ -58,6 +58,6 @@ public:
 	//此时是否包含模板生成文件不能作为原生界面的判据,如果包含m_strUI_File则为网页界面,否则为原生界面
 	BOOL IsUIOriginal()		{	return ( /*m_strGenFile.IsEmpty() &&*/ m_strUI_File.IsEmpty() );	}
 	BOOL IsUIWeb()		{	return ( /*!m_strGenFile.IsEmpty() &&*/ !m_strUI_File.IsEmpty() );	}
-	BOOL HasCharLib()	{	return m_strCharlibFile.GetLength() > 0;	}  //2022-6-30  lijunqing
+	BOOL HasCharLib()	{	return m_strCharlibFile.GetLength() > 0;	}  //2022-6-30  Eric
 };
 

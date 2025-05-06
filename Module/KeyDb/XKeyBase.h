@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //XKeyBase.h  CXKeyBase
@@ -51,7 +51,7 @@ public:
 	CXKeyMatchRef* AddKey(CXKeyBase *pXKey, long nArrayIndex=-1);
 	BOOL IsSubKey(CXKeyMatchRef *pXKeyRef,CString strText);
 	BOOL Match(CXKeyMatchRef *pXKeyRef);
-	void RemoveKey(CXKeyMatchRef *pXKeyRef);  //2022-5-10   lijunqing
+	void RemoveKey(CXKeyMatchRef *pXKeyRef);  //2022-5-10   Eric
 	long XFindIndex(CXKeyMatchRef *pXKeyRef);
 
 	virtual void InsertTreeCtrl(CTreeCtrl *pTreeCtrl, HTREEITEM htiParent, DWORD dwParam=0);
@@ -61,7 +61,7 @@ public:
 	virtual BOOL Match(CXKeyMatchRefList *pDstXKeys, long &nMatchRatio);
 	virtual BOOL IsSubKey(CXKeyMatchRef *pXKey, long &nImportance);
 
-	//2023-2-6  lijunqing 判断是否为子集
+	//2023-2-6  Eric 判断是否为子集
 	virtual BOOL IsSubset(CXKeyMatchRefList *pKeysSub);
 
 };

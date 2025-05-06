@@ -14,7 +14,7 @@
 #define TESTAPPCONFIG_OK_MSG			10001
 #define TESTAPPCONFIG_LOCKTAB_MSG		10002
 /*
-2021-8-12  lijunqing  考虑到连接多台测试仪，不能使用全局的CSttTestAppConfigTool
+2021-8-12  Eric  考虑到连接多台测试仪，不能使用全局的CSttTestAppConfigTool
 和CSttTestAppCfg，因此作出此次的修改。
 同时为了兼容物联测试平台的规范，CSttTestAppCfg采用DataGroup模式进行重新设计
 为了兼容之前的版本，新的配置文件名称为“TestAppConfig.xml",区别于老的配置文件【SttTestAppCfg.xml】
@@ -46,7 +46,7 @@ public:
 
 	CSttTestMsgViewInterface *m_pSttTestMsgViewInterface;
 	CString m_strSoftID;
-	CString m_strServerID;  //2020-11-29  lijunqing  连接的服务端ID
+	CString m_strServerID;  //2020-11-29  Eric  连接的服务端ID
 	CSttTestEngineClientData *m_pClientEngine;
 	void FreeClientEngine();
 	void UpdateClientEngine();

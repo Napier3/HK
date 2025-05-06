@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //DvmValue.h  CDvmValue
@@ -49,8 +49,8 @@ public:
 
 	CDvmValue* FindByID_Has(const CString &strID);
 	CDvmValue* FindByID_HasEx(const CString &strSubID);
-	CDvmValue* FindByID_MmsAttr(const CString &strAttrID);  //2022-5-13  lijunqing
-	CString GetAttrByID_MmsAttr(const CString &strAttrID);  //2022-5-13  lijunqing
+	CDvmValue* FindByID_MmsAttr(const CString &strAttrID);  //2022-5-13  Eric
+	CString GetAttrByID_MmsAttr(const CString &strAttrID);  //2022-5-13  Eric
 
 	BOOL SetValue_Mms(const CString &strAttrID, const CString &strValue);
 	BOOL SetValue_Mms(const CString &strAttrID, long nValue);
@@ -77,7 +77,7 @@ public:
 
 	BOOL UpdateChildValue(CDvmValue *pSrcParentValue, BOOL bIsNew = FALSE);
 
-	//2021-10-22  lijunqing
+	//2021-10-22  Eric
 	void InitByValues(CExBaseList *pValues); 
 	CString GetIDPath_Root_Dataset(const CString &strPathSp = _T("$"));
 
@@ -88,7 +88,7 @@ public:
 
 };
 
-//2022-5-13  lijunqing
+//2022-5-13  Eric
 CDvmValue* dvm_FindByID_Has(CExBaseList *pParent, const CString &strAttrID);
 CDvmValue* dvm_FindByID_MmsAttr(CExBaseList *pParent, const CString &strAttrID);
 

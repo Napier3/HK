@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //XMatchObject.h  CXMatchObject
@@ -55,7 +55,7 @@ public:
 	virtual UINT GetClassID() {    return KDBCLASSID_CXMATCHOBJECT;   }
 	virtual void InsertTreeCtrl(CTreeCtrl *pTreeCtrl, HTREEITEM htiParent, DWORD dwParam=0);
 	virtual void FreeMatch();
-	BOOL XMatch(CXKeyMatchRefList *pSrcXKeys, CXKeyMatchRefList *pDstXKeys, long &nMatchRatio); //2022-5-9 lijunqing 开放的接口
+	BOOL XMatch(CXKeyMatchRefList *pSrcXKeys, CXKeyMatchRefList *pDstXKeys, long &nMatchRatio); //2022-5-9 Eric 开放的接口
 	void XAddXMatchRatioObject(long nRatio, CExBaseObject *pRefObj);
 
 //私有成员变量

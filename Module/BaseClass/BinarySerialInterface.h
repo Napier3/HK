@@ -93,7 +93,7 @@ inline void BinarySerializeWrite(CBinarySerialBuffer &oBinaryBuffer, const SYSTE
 }
 //#endif
 
-//2020-12-27  lijunqing
+//2020-12-27  Eric
 inline void BinarySerializeWrite(CBinarySerialBuffer &oBinaryBuffer, char *pszString)
 {
 	oBinaryBuffer.WriteString(pszString);
@@ -132,7 +132,7 @@ inline void BinarySerializeRead(CBinarySerialBuffer &oBinaryBuffer, SYSTEMTIME &
 }
 //#endif
 
-//2020-12-27  lijunqing
+//2020-12-27  Eric
 inline long BinarySerializeRead(CBinarySerialBuffer &oBinaryBuffer, char *pszString)
 {
 	return oBinaryBuffer.ReadString(pszString);

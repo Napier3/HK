@@ -161,7 +161,7 @@ void CXObjectRefDriver::Release()
 	}
 }
 
-//2022-10-19 lijunqing
+//2022-10-19 Eric
 CXObjectRefDriver* CXObjectRefDriver::Clone()
 {
 	CXObjectRefDriver *pNew = new CXObjectRefDriver();

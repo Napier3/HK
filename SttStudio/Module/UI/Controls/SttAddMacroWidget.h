@@ -20,7 +20,7 @@ public:
     explicit QSttAddMacroWidget(QFont font,QWidget *parent = 0);
     virtual ~QSttAddMacroWidget();
 
-	void Use_Name_ID(BOOL bUse);  //lijunqing 2022-6-24  lijunqing
+	void Use_Name_ID(BOOL bUse);  //Eric 2022-6-24  Eric
 	virtual void OnItemSelChanged(CExBaseListTreeCtrl *pTreeCtrl, CExBaseObject *pSelObj);
 	virtual BOOL OnItemBDblClk(CExBaseListTreeCtrl  *pTreeCtrl, CExBaseObject *pSelObj);
 

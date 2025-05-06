@@ -8,7 +8,7 @@ CString::CString()
 }
 
 CString::CString(const char *pString)
-{//2022-1-13  lijunqing
+{//2022-1-13  Eric
 #ifdef _PSX_QT_SRCFILE_GBK_
 #ifdef _PSX_QT_LINUX_
     *this = QObject::tr(pString);
@@ -22,7 +22,7 @@ CString::CString(const char *pString)
 
 CString::CString(char *pString)
 {
-	//2022-1-13  lijunqing
+	//2022-1-13  Eric
 #ifdef _PSX_QT_SRCFILE_GBK_
 #ifdef _PSX_QT_LINUX_
     *this = QObject::tr(pString);
@@ -66,7 +66,7 @@ CString::CString(const CString &str)
 
 CString& CString::operator=(const char *pString)
 {
-	//2022-3-23  lijunqing
+	//2022-3-23  Eric
 #ifdef _PSX_QT_SRCFILE_GBK_
 #ifdef _PSX_QT_LINUX_
     //*this = QObject::tr(pString);
@@ -106,7 +106,7 @@ const char* CString::GetString()
     return m_oQbytes.data();
 }
 
-//2023-2-7  lijunqing Çå¿Õm_oQbytes
+//2023-2-7  Eric Çå¿Õm_oQbytes
 void CString::ClearBytes()
 {
 	m_oQbytes.clear();

@@ -32,7 +32,7 @@ public:
 	CXEthernetCap_61850* CreateEthernetCap_61850(int nNetCardIndex);
 #endif
 	CXSttCap_61850* GetSttCap_61850()	{	return g_pSttCap61850;	}
-	//2022-4-7 lijunqing 创建纯粹的61850分析功能，不需要做报问提取，330报文监视模式
+	//2022-4-7 Eric 创建纯粹的61850分析功能，不需要做报问提取，330报文监视模式
 	CXSttCap_61850* CreateSttCap_61850(CSttTestAppCfg *pSttTestAppCfg, CXCapPkgBufferMngrInterface *pSttXCapBufferMngr);
 
 	BOOL IsCapExit();
@@ -47,7 +47,7 @@ public:
 	void RecordDevice(CCapDeviceBase *pDevice);
 	void InitDvmDevice(CCapDeviceBase *pCapDevice); //根据pCapDevice，初始化设备数据模型
 	void InitDvmDevices();
-	void IecAnalysis_AddDatasets();	//创建IEC分析相关的数据集  2022-5-8- lijunqing
+	void IecAnalysis_AddDatasets();	//创建IEC分析相关的数据集  2022-5-8- Eric
 
 	CXSmMemBufferMngr* GetCapMemBufferMngr();
 	void OnCloseMainFrame();
@@ -63,7 +63,7 @@ public:
 
 	void GetSttCapParas(CDataGroup *pSttParas, BOOL bUseSmv, BOOL bUseGoose, BOOL bUseFT3);
 
-	//2022-5-2  lijunqing 
+	//2022-5-2  Eric 
 	void InitSmartCapCtrl();
 
 public:

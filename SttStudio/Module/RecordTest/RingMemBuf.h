@@ -15,7 +15,7 @@ public:
 	CRingMemBuf();
     virtual ~CRingMemBuf();
 
-//2022-6-30  lijunqing  CSttRcdBufferRcvMsg
+//2022-6-30  Eric  CSttRcdBufferRcvMsg
 public:
 	virtual void OnRcdBufRcv(BYTE *pBuffer, long nLen)
 	{

@@ -138,7 +138,7 @@ long CSttClientTestEngine::Process_SysState_System(CSttSocketDataBase *pClientSo
 		nRet = Process_SysState_System_GetSysConfig(oSysState);
 	}
 	else if (oSysState.m_strID == STT_CMD_TYPE_SYSTEM_ReadMeas)
-	{//2021-10-2  lijunqing
+	{//2021-10-2  Eric
 		nRet = Process_SysState_System_ReadMeas(oSysState);
 	}
 	else

@@ -879,7 +879,7 @@ long CXFolder::Search(CExBaseList *pListPostfix, BOOL bTraveSubFolder, BOOL bAdd
 // 			}
 // 			else
 // 			{
-// 				if (!bAddFiles)  //2022-3-23  lijunqing 如果不添加文件，则继续
+// 				if (!bAddFiles)  //2022-3-23  Eric 如果不添加文件，则继续
 // 				{
 // 					continue;
 // 				}
@@ -950,7 +950,7 @@ long CXFolder::Search(CExBaseList *pListPostfix, BOOL bAddSubFiles, BOOL bAddSub
 			}
 			else
 			{
-				if (!bAddSubFiles)  //2022-3-23  lijunqing 如果不添加文件，则继续
+				if (!bAddSubFiles)  //2022-3-23  Eric 如果不添加文件，则继续
 				{
 					continue;
 				}

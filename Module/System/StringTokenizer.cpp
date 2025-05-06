@@ -213,7 +213,7 @@ const char* CStringTokenizer::NextToken()
 	char *pEnd = m_pData + m_nLength;
 
 	//get current string and move to next string
-	//if (pTemp < pEnd)   //2019-8-23  lijunqing
+	//if (pTemp < pEnd)   //2019-8-23  Eric
 	if (pTemp < pEnd)
 	{
 		pString = pTemp;

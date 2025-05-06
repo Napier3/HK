@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //CapDeviceBase.cpp  CCapDeviceBase
@@ -164,7 +164,7 @@ BOOL CCapDeviceBase::Compare(BYTE *pDstMac,BYTE *pSrcMac,UINT APPID, UINT nCMT)
 		return FALSE;
 	}
 
-	//2020-07-02  lijunqing 
+	//2020-07-02  Eric 
 // 	if (memcmp(m_byteSrcMac, pSrcMac, 6) != 0)
 // 	{
 // 		return FALSE;
@@ -362,7 +362,7 @@ void CCapDeviceBase::AddCapDataBuffer(PEPCAPPARSEDATAS pDatas,BYTE* pBuferHead,l
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
-//2022-6-19  lijunqing
+//2022-6-19  Eric
 void CCapDeviceBase::CapRecord(PEPCAPPARSEDATAS pDatas)
 {
 	POS pos = GetHeadPosition();
@@ -453,7 +453,7 @@ void CCapDeviceBase::analysis_gs(PEPCAPPARSEDATAS pDatas)
 	}
 }
 
-//2022-5-3  lijunqing
+//2022-5-3  Eric
 void CCapDeviceBase::ClearCap()
 {
 	m_nMatchState = MATCH_STATE_NONE;
@@ -531,7 +531,7 @@ void CCapDeviceBase::InitDevice(CIecCfgDataBase *pIecCfgData)
 // 		}
 	}
 
-	//lijunqing 2020-6-19  初始化的时候赋值，分析过程中
+	//Eric 2020-6-19  初始化的时候赋值，分析过程中
 	memcpy(m_oAnalysisResults.srcMAC,  m_byteSrcMac, 6);
 	memcpy(m_oAnalysisResults.desMAC, m_byteDestMac, 6);
 	m_oAnalysisResults.m_dwAppID =  m_dwAppID;

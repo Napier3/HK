@@ -168,7 +168,7 @@ void XSttRcdInitChDvmData(CDvmData *pChDvmData, long nHarm, BOOL bIecTest)
 	pDvmValue->m_strValue = _T("50.00");
 	pChDvmData->AddNewChild(pDvmValue);
 
-	//2022-5-16  lijunqing
+	//2022-5-16  Eric
 	pDvmValue = new CDvmValue;
 	pDvmValue->m_strName = _T("Æ½¾ùÖµ");
 	pDvmValue->m_strID = strID + _T("avg");

@@ -7553,7 +7553,7 @@ namespace pugi
 		char_t* indent = PUGIXML_TEXT("\t");
 		impl::xml_buffered_writer buffered_writer(writer, encoding_auto);
 
-		//2020-7-10  lijunqing  如果需要，则开放
+		//2020-7-10  Eric  如果需要，则开放
 		//buffered_writer.write_string(PUGIXML_TEXT("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"));
 		//buffered_writer.write('\n');
 
@@ -7587,7 +7587,7 @@ namespace pugi
 			memcpy(*ppszRetBuffer + nOffset, pszDest, nTotalSize);
 			(*ppszRetBuffer)[nLenRet] = 0;
 
-			//2022-11-12  lijunqing  在析构函数中删除
+			//2022-11-12  Eric  在析构函数中删除
             //delete pszDest;//20220507 zhoulei
 		}
 
@@ -7617,7 +7617,7 @@ namespace pugi
 		long nOffsetBuf = buffered_writer.m_strOffsetBuffer.length();
 		long nSrcLen = buffered_writer.bufsize + nOffsetBuf/sizeof(char_t);
 
-		//lijunqing 2022-3-11  
+		//Eric 2022-3-11  
 		nSrcLen += nOffset;
 
 		*ppwszRetBuffer = new wchar_t[nSrcLen+2];
@@ -7647,7 +7647,7 @@ namespace pugi
 		char_t* indent = PUGIXML_TEXT("\t");
 		impl::xml_buffered_writer buffered_writer(writer, encoding_auto);
 
-		//2020-7-10  lijunqing  如果需要，则开放
+		//2020-7-10  Eric  如果需要，则开放
 		//buffered_writer.write_string(PUGIXML_TEXT("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"));
 		//buffered_writer.write('\n');
 
@@ -7656,7 +7656,7 @@ namespace pugi
 
 		long nTotalSize = buffered_writer.m_strOffsetBuffer.length()+buffered_writer.bufsize*sizeof(char_t);
 		long nSrcLen = nTotalSize;
-		long nDestLen = nSrcLen*3/2+10;  //全部都是中文的极端情况  2020-7-10  lijunqing
+		long nDestLen = nSrcLen*3/2+10;  //全部都是中文的极端情况  2020-7-10  Eric
 
 		char *pSrcValue = NULL;
 

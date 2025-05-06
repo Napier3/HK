@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //DataGroup.h  CDataGroup
@@ -8,7 +8,7 @@
 
 #include "DataMngrGlobal.h"
 
-//2021-1-17  lijunqing  基本没有使用场合，注释掉
+//2021-1-17  Eric  基本没有使用场合，注释掉
 //#include "LongDatas.h"
 #include "ShortDatas.h"
 #include "DvmData.h"
@@ -60,7 +60,7 @@ public:
 
 	virtual void SetGroupCount(const CString &strDataType, long nGroupCount, CExBaseList &listNew, CExBaseList &listDelete);
 	void ResetDatas(CExBaseList &listDatas);
-	void ResetDatas();   //2021-8-15  lijunqing
+	void ResetDatas();   //2021-8-15  Eric
 
 	void GetDataIDPath(CString &strPath, CExBaseObject *pPara);
 	CString GetDataIDPath(CExBaseObject *pPara);
@@ -70,7 +70,7 @@ public:
 	CDvmData* AddNewData(const CString &strName, const CString &strID, const CString &strDataType, const CString &strValue
 		, const CString &strUnit=_T(""), const CString &strMin=_T(""), const CString &strMax=_T(""), const CString &strStep=_T(""));
 	CDvmData* AddNewData(const CString &strID, const CString &strValue);
-	//2021-9-5 lijunqing 简单新建Data函数
+	//2021-9-5 Eric 简单新建Data函数
 	CDvmData* AddNewData(const CString &strID,float fValue);
 	CDvmData* AddNewData(const CString &strID,long nValue);
 	CDvmData* AddNewData(const CString &strID,double fValue);
@@ -85,32 +85,32 @@ public:
     long FindByDataType_Data(const CString &strDataType, CExBaseList &oList);
 
 
-	//2020-10-13 lijunqing
+	//2020-10-13 Eric
 	CDvmData* FindDataByValue(const CString &strValue);
 
 	void ShortData_to_DvmData();
 	long GetChildCount(UINT nClassID);
 	long GetChildCount(const CString &strDataType);
 
-	//2020-10-27  lijunqing
+	//2020-10-27  Eric
 	//2022-1-18  shaolei 增加类型判断
 	BOOL GetDataValue(const CString &strID, CString &strValue, UINT nClassID = DVMCLASSID_CDVMDATA);
 	BOOL GetDataValue(const CString &strID, long &nValue, UINT nClassID = DVMCLASSID_CDVMDATA);
 	BOOL GetDataValue(const CString &strID, double &dValue, UINT nClassID = DVMCLASSID_CDVMDATA);//zhouhj 20210828 快速获取浮点值
 	BOOL GetDataType(const CString &strID, CString &strDataType, UINT nClassID = DVMCLASSID_CDVMDATA);//dingxy 20240515 快速获取DataType
 
-	//2021-8-2  lijunqing
+	//2021-8-2  Eric
 	void SetDataValue(const CString &strID, const CString &strValue, BOOL bAddNewNotExist = FALSE, UINT nClassID = DVMCLASSID_CDVMDATA);
 	void SetDataValue(const CString &strID, long nValue, BOOL bAddNewNotExist = FALSE, UINT nClassID = DVMCLASSID_CDVMDATA);
 	void SetDataValue(const CString &strID, double dValue, BOOL bAddNewNotExist = FALSE, UINT nClassID = DVMCLASSID_CDVMDATA);//zhouhj 20220424 快速获取浮点值
 
-	//2021-10-3  lijunqing
+	//2021-10-3  Eric
 	void InitDataValues(CDataGroup *pSrc, BOOL bCloneWhenNotFind);
 	void AddDataValuesNotExist(CDataGroup *pSrc);//将pSrc多余的部分，添加到this shaolei 2023-10-24
 
 	void InitNameByID(const CString &strName,const CString &strID);//zhouhj 20220424 通过ID查找,对其name属性进行赋值
 
-	//2022-8-11 lijunqing 根据查询的条件对象，判断当前数据对象是否包含数据，默认使用CDvmData
+	//2022-8-11 Eric 根据查询的条件对象，判断当前数据对象是否包含数据，默认使用CDvmData
 	BOOL Match(CDataGroup *pQuery); 
 ////多语言相关
 public:
@@ -124,10 +124,10 @@ public:
 	long SelectDatas_IDHas(const CString &strIDHas, CExBaseList &oListDatas, BOOL bRecursive=FALSE); 
 };
 
-//2021-5-5  lijunqing 
+//2021-5-5  Eric 
 CDataGroup* dvm_FindDataGroupByValue(CExBaseList &listGroup, const CString &strValue);
 
-//2022-4-13  lijunqing 从SttParas移动到此处，更加方便使用
+//2022-4-13  Eric 从SttParas移动到此处，更加方便使用
 BOOL stt_GetDataValueByID(CExBaseList *pList, const char* strValueID, CString &strValue);
 BOOL stt_GetDataValueByID(CExBaseList *pList, const char* strValueID, long &nValue);
 long stt_GetDataValueByID2(CExBaseList *pList, const char* strValueID, long nDefaultValue);
@@ -135,12 +135,12 @@ BOOL stt_GetDataValueByID(CExBaseList *pList, const CString &strValueID, CString
 BOOL stt_GetDataValueByID(CExBaseList *pList, const CString &strValueID, long &nValue);
 BOOL stt_GetDataValueByID(CExBaseList *pList, const CString &strValueID, double &dValue);
 BOOL stt_GetDataValueByID(CExBaseList *pList, const CString &strValueID, float &fValue);
-BOOL stt_GetDataValueByID(CExBaseList *pList, const CString &strValueID, short &nValue);//2021-9-1  lijunqing
+BOOL stt_GetDataValueByID(CExBaseList *pList, const CString &strValueID, short &nValue);//2021-9-1  Eric
 
 long stt_SetDataValueByID(CExBaseList *pList, const CString &strValueID, const CString &strValue);
 long stt_GetDataValueByID2(CExBaseList *pList, const CString &strValueID, long nDefaultValue);
 
-//2022-9-12  lijunqing
+//2022-9-12  Eric
 void dvm_SetDvmX_Value(CExBaseObject *pData, long nValue);
 void dvm_SetDvmX_Value(CExBaseObject *pData, const CString &strValue);
 void dvm_GetDvmX_Value(CExBaseObject *pData, long &nValue);

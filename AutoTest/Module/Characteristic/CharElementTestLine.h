@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //CharElementTestLine.h  CCharElementTestLine
@@ -9,7 +9,7 @@
 #include "CharacteristicGlobal.h"
 #include "../../../Module/XDrawBase/XDrawList.h"
 
-//2022-7-24  lijunqing 移动到AutoTestGlobalDefine.h
+//2022-7-24  Eric 移动到AutoTestGlobalDefine.h
 // #define TESTLINE_ACT_STATE_NONE     -255
 // #define TESTLINE_ACT_STATE_ACT      1
 // #define TESTLINE_ACT_STATE_NOACT    0

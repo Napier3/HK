@@ -50,7 +50,7 @@ public:
 
 	MR1200SYSANALYSEMNGR m_oMR1200SysAnalyseMngr;
 
-	//2020-06-12  lijunqing  是否逐点计算
+	//2020-06-12  Eric  是否逐点计算
 	BOOL m_bCalPointByPoint;
 
 public:

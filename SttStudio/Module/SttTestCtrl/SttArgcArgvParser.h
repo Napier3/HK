@@ -18,7 +18,7 @@ public:
 	long  m_nUseMeasServer;  //是否使用MEAS-Server
 	long  m_nWaitingTime;//在Linux下,防止刚开机,MainCore程序还未初始化完毕,刚开机时,等待几秒再与其通讯
 
-	//2022-12-01  LIJUNQING
+	//2022-12-01  Eric
 	CString m_strAssistID;
 
 	//2022-12-6

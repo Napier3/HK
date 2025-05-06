@@ -765,7 +765,7 @@ BOOL CEquationBuffer::PartString(const char *pszSrcBegin,const char *pszSrcEnd
 	//如果不包含结束字符，则不处理
 	if (*pCurr != cEnd)
 	{
-		//2021-1-3  lijunqing 考虑末尾没有分隔符号的特殊情况
+		//2021-1-3  Eric 考虑末尾没有分隔符号的特殊情况
 		if ((*pszRightBegin != NULL) && (*pCurr == 0))
 		{
 			bTrue = TRUE;
@@ -1041,7 +1041,7 @@ void CEquationBuffer::InitEquationKeyList()
 
 		if (bLine)
 		{
-			//2021-1-3  lijunqing 考虑末尾没有分隔符号的特殊情况
+			//2021-1-3  Eric 考虑末尾没有分隔符号的特殊情况
 			if (pLeftBegin == NULL || pLeftEnd == NULL || pRightBegin == NULL)// || pRightEnd == NULL)
 			{
 			}

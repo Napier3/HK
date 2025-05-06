@@ -5,7 +5,7 @@
 /*  //½âÎöÀý×Ó
 CString m_strTextFormat = _T("{*}{Text\"=\"}{*}{Binary\"0x0A\"}");
 char pszData[MAX_PATH];
-strcpy(pszData, "name=lijunqing\n");
+strcpy(pszData, "name=Eric\n");
 
 CFormatTextBuffer oFTBuf(m_strTextFormat);
 oFTBuf.ParseFormatBuffer((BYTE*)pszData, strlen(pszData));

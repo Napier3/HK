@@ -8,7 +8,7 @@ class CXMsgCycleBuffer
 public:
     typedef struct xmsg_def
     {
-        unsigned long flag;  //flag == 0 / 1  2022-10-31  lijunqing
+        unsigned long flag;  //flag == 0 / 1  2022-10-31  Eric
         unsigned long nMsgID;
         unsigned long wParam;   //nMsgID==WM_TIMER; wParam=nIDEvent
         unsigned long lParam;  //nMsgID==WM_TIMER; lParam=nElapse

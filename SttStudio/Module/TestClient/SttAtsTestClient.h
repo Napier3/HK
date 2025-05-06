@@ -110,7 +110,7 @@ public:
 	virtual long OnRtData(CSttParas *pParas);
 	virtual long OnMeas(CDataGroup *pParas);
 
-	//2022-1-14  lijunqing  AtsReport
+	//2022-1-14  Eric  AtsReport
 	virtual void OnReport(const CString &strTestID, long nDeviceIndex, long nReportIndex, long nItemIndex, const CString & strItemID, long nState, CSttParas *pParas);
 
 
@@ -135,7 +135,7 @@ public:
 
 		return 0;
 	}
-	//2022-01-18  lijunqing
+	//2022-01-18  Eric
 	virtual void On_Ats_Generate(const CString &strAtsCmd, CSttParas *pParas);
 	//2022-04-18  shaolei
 	virtual void On_Ats_SaveTest(CSttSysState *pSysState);
@@ -146,10 +146,10 @@ public:
 	//2022-06-25  shaolei
 	virtual void On_Ats_ExportWordRpt(CSttSysState *pSysState);
 	
-	//2022-9-13  lijunqing
+	//2022-9-13  Eric
 	virtual void On_Ats_QueryItem(CSttSysState *pSysState);
 
-//2022-4-14 lijunqing
+//2022-4-14 Eric
 public:
 	virtual void Ats_IecDetect(long bEnable);
 	virtual void Ats_IecRecord(CDataGroup *pIecRecordParas);

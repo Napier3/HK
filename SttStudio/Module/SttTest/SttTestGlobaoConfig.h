@@ -3,7 +3,7 @@
 
 #include "../SttTestBase/SttXmlSerialize.h"
 
-//2020-10-21  lijunqing 
+//2020-10-21  Eric 
 //XML串行化参数，用于区分是串行化整个校准系数文件或者是部分
 typedef struct stt_adj_parameter_xml_serial_config
 {

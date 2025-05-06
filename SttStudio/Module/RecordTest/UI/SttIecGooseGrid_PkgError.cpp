@@ -23,7 +23,7 @@ void CSttIecGooseGrid_PkgError::IecRcdFunc(CCapDeviceBase *pCapDevice)
 		return;
 	}
 
-	//2022-5-28  lijunqing
+	//2022-5-28  Eric
 	CDvmDataset *pDsError = NULL;
 	CDvmData *pDataCtrl = NULL;
 

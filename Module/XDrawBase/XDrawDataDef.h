@@ -105,7 +105,7 @@ public:
 
 };
 
-//2021-9-7  lijunqing
+//2021-9-7  Eric
 class CXDrawData_Point_Ex : public CXDrawDataBase, public XDRAWDATA_POINT_EX
 {
 public:
@@ -134,7 +134,7 @@ public:
 #define CURVE_LINE_TYPE_LINE_SEGMENT   1
 #define CURVE_LINE_TYPE_LINE_RAY           2
 
-//2021-9-7  lijunqing 
+//2021-9-7  Eric 
 class CXDrawData_LineBase : public CXDrawDataBase
 {
 public:
@@ -197,7 +197,7 @@ public:
 	void Init_K_by_Angle();
 };
 
-//2021-9-7  lijunqing 
+//2021-9-7  Eric 
 class CXDrawData_Line_Ex : public CXDrawData_LineBase
 {
 public:

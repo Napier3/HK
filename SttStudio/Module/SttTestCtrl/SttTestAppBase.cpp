@@ -36,12 +36,12 @@ CSttTestAppBase *g_pTheSttTestApp = nullptr;
 long g_nLogDebugInfor = 0;
 
 
-//2022-4-7  lijunqing 不同的产品，使用的方式是不同的，例如：AT02D使用分配内存方式
+//2022-4-7  Eric 不同的产品，使用的方式是不同的，例如：AT02D使用分配内存方式
 //330使用共享内存方式，所以缓冲区在各工程的Main中创建，以保证通用性
 CSttRcdBufferRcvMsg *g_pSttRcdSndRingBuf;
 
 //#define _use_g_theIotEngineApp_
-//2022-11-12  lijunqing
+//2022-11-12  Eric
 //#include "../SmartTestInterface/QT/PpSttIotEngineClientWidget.h"
 #include "../UI/Controls/SafetyMsgCfg/SttSafetyMsgCfgGlobal.h"
 #include "../../../61850/Module/61850ClientConfig/61850ClientCfgMngrGlobal.h"
@@ -55,7 +55,7 @@ CSttTestAppBase::CSttTestAppBase()
    m_pTestCtrlCntr = nullptr;
    m_pKeyDB = nullptr;
 
-   m_pDvmDevice = nullptr;  //2023-2-21  lijunqing  被测装置的设备数据模型
+   m_pDvmDevice = nullptr;  //2023-2-21  Eric  被测装置的设备数据模型
 }
 
 CSttTestAppBase::~CSttTestAppBase()
@@ -116,7 +116,7 @@ void CSttTestAppBase::InitSttTestApp(CXLanguageResourceBase *pLanguage)
 	CSttTestGridDefineXmlRWKeys::Create();
 }
 
-//2023-03-01 lijunqing 为了提高程序启动速度，和通信相关的，打开通信界面的时候在启动初始化
+//2023-03-01 Eric 为了提高程序启动速度，和通信相关的，打开通信界面的时候在启动初始化
 void CSttTestAppBase::IinitGbWzdAiTool()
 {
     //sun if (g_theGbWzdAiTool != nullptr)
@@ -126,7 +126,7 @@ void CSttTestAppBase::IinitGbWzdAiTool()
 
 	InitKeyDB();
 
-	//2023-2-23  lijunqing
+    //2023-2-23  Eric
     //sun Create_GbWzdAiTool();  //可以考虑状态序列、谐波、手动等模块。不创建自动识别的部分
     //sun g_theGbWzdAiTool->SetXKeyDB(m_pKeyDB);
 	OpenPpSttCommConfigFile();
@@ -177,7 +177,7 @@ void CSttTestAppBase::ExitSttTestApp()
 		ExitSttIecRecord();
 	}
 
-	//2022-11-12  lijunqing  通信客户端
+    //2022-11-12  Eric  通信客户端
 #ifdef _use_g_theIotEngineApp_
 	//Release_PpSttIotEngineDebugWidget();
 
@@ -189,7 +189,7 @@ void CSttTestAppBase::ExitSttTestApp()
 	}
 #endif
 
-	//2023-2-7  lijunqing
+    //2023-2-7  Eric
     //sun Release_GbWzdAiTool();
 }
 
@@ -364,7 +364,7 @@ BOOL CSttTestAppBase::StartSmartTest(const CString& strMacroID)
 	strPath += _T("e-Report/Bin/");
 	strPath += _T("SmartTestCore.exe");
 
-	//2022-3-27  lijunqing  直接启动，运行于后台
+    //2022-3-27  Eric  直接启动，运行于后台
 	CString strCmdLine = _T("MacroID:");
 
 	if (SmartTestIsNeedArguments(strMacroID))
@@ -422,7 +422,7 @@ void CSttTestAppBase::OnCmd_StopTest()
 
 }
 
-//2022-4-11 lijunqing
+//2022-4-11 Eric
 void CSttTestAppBase::InitSttIecRecord(CSttTestAppCfg* pSttTestAppCfg)
 {
     if (g_theSmartCapCtrl != nullptr)
@@ -433,14 +433,14 @@ void CSttTestAppBase::InitSttIecRecord(CSttTestAppCfg* pSttTestAppCfg)
 	CXSmartCapMngr::Create();
 
 #ifdef _XSmartCap_use_SttRcdSocket_
-	//使用动态分配的内存  2022-6-21  lijunqing
+    //使用动态分配的内存  2022-6-21  Eric
 	CSttRcdMemBufferMngr *pSttRcdMemBufferMngr = new CSttRcdMemBufferMngr();
 	CXSttCap_61850 *pXSttCap_61850 = g_theXSmartCapMngr->CreateSttCap_61850(pSttTestAppCfg, pSttRcdMemBufferMngr);
 	pXSttCap_61850->m_bUseSttTestEngineClientData = FALSE;
 	g_pSttRcdSndRingBuf = pXSttCap_61850;
 #else
 
-	//2022-4-7  lijunqing 创建共性内存Server
+    //2022-4-7  Eric 创建共性内存Server
     CRingMemBuf *pRingMemBuf = nullptr;
 #ifdef _PSX_QT_LINUX_
 	CRingMemBufShm *pRingMemBufShm = new CRingMemBufShm();
@@ -475,7 +475,7 @@ void CSttTestAppBase::InitSttIecRecord(CSttTestAppCfg* pSttTestAppCfg)
 	g_theSmartCapCtrl->BeginSmartCapThread();
 	pXSttCap_61850->m_pKeyDB = m_pKeyDB;
 
-	//2022-9-25  lijunqing初始化 g_theHtmlRptGenFactory
+    //2022-9-25  Eric初始化 g_theHtmlRptGenFactory
     //sun g_theHtmlRptGenFactory->m_pDvmDevice = pXSttCap_61850->m_pDvmDevice;
 
 }
@@ -507,7 +507,7 @@ void CSttTestAppBase::InitKeyDB()
 }
 
 
-//2023-2-21  lijunqing  被测装置的设备数据模型
+//2023-2-21  Eric  被测装置的设备数据模型
 void CSttTestAppBase::CreateNewDvmDevice()
 {
 	FreeDvmDevice();

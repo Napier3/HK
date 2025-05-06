@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //CapDeviceGoose.cpp  CCapDeviceGoose
@@ -130,7 +130,7 @@ void CCapDeviceGoose::AnalysisData(PEPCAPPARSEDATAS pDatas,BYTE* pBuferHead,long
 }
 
 //2022-5-31  屏蔽此函数，此函数效率很低，实时处理不合适
-//2020-6-20  lijunqing  分析突变或者变化量
+//2020-6-20  Eric  分析突变或者变化量
 /*
 void CCapDeviceGoose::AnalysisData(PEPCAPPARSEDATAS pDatas)
 {

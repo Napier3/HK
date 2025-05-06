@@ -9,7 +9,7 @@
 #define XLOGLEVEL_INFOR			        	4
 #define XLOGLEVEL_REALTIME_INFO				5
 
-//2020-09-09  LIJUNQING  增加调试信息，用于远程或者仪器底层
+//2020-09-09  Eric  增加调试信息，用于远程或者仪器底层
 #define XLOGLEVEL_DEBUG		        		6
 
 //2022-11-29   zhouhj     增加用于测试结果显示及测试助手显示
@@ -92,7 +92,7 @@ public:
 	static void LogFormatString(LPVOID pPara, long nLevel, const char *strFormat, ...);
 // #endif
 
-	//2020-06-24  lijunqing
+	//2020-06-24  Eric
 	static void LogBuffer(BYTE *pBuffer, long nBeginIndex, long nCount);
 
 #ifdef _PSX_IDE_QT_

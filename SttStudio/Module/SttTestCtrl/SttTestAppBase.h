@@ -12,7 +12,7 @@
 #include "../Main/Module/SttWgtCmdThread.h"
 #endif
 
-//2023-2-21  lijunqing 通信部分
+//2023-2-21  Eric 通信部分
 #include "../SmartTestInterface/PpSttCommConfig.h"
 
 class CSttTestAppBase
@@ -61,13 +61,13 @@ public:
 	void OnCmd_StartTest();
 	void OnCmd_StopTest();
 
-//2022-4-11 lijunqing
+//2022-4-11 Eric
 public:
 	virtual void InitSttIecRecord(CSttTestAppCfg* pSttTestAppCfg);
 	virtual void ExitSttIecRecord();
 	virtual void InitKeyDB();
 
-//2023-2-21  lijunqing  被测装置的设备数据模型
+//2023-2-21  Eric  被测装置的设备数据模型
 public:
 	CDvmDevice *m_pDvmDevice; 
 	CPpSttCommConfig m_oCommConfig;
@@ -80,7 +80,7 @@ public:
 	BOOL IsDeviceNewCreate();
 	void OpenPpSttCommConfigFile();
 
-	//2023-03-01 lijunqing 为了提高程序启动速度，和通信相关的，打开通信界面的时候在启动初始化
+	//2023-03-01 Eric 为了提高程序启动速度，和通信相关的，打开通信界面的时候在启动初始化
 	virtual void IinitGbWzdAiTool();
 };
 

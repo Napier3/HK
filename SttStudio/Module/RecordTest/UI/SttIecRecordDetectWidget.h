@@ -6,7 +6,7 @@
 #include "SttIecCbGrid.h"
 #include "../../../../Module/OSInterface/XWndInterface.h"
 #include "../../../Module/UI/Controls/SttCheckBox.h"
-//2022-12-02  lijunqing  
+//2022-12-02  Eric  
 #include "../../Assist/SttAssistGlobalApi.h"
 #include "SttIecRecordWriteFileWidget.h"
 
@@ -21,7 +21,7 @@ class QSttIecRecordDetectWidget;
 }
 
 class QSttIecRecordDetectWidget : public QDialog, public CXWndInterface, public CExBaseListGridOptrInterface,
-	public CSttWndAssistInterface  //2022-12-02 lijunqing 测试助手相关的接口
+	public CSttWndAssistInterface  //2022-12-02 Eric 测试助手相关的接口
 {
     Q_OBJECT
 

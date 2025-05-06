@@ -32,7 +32,7 @@ public://CSttIecRcdFuncInterface
 	virtual void NextPage();
 	virtual void PrevPage();
 
-	virtual void InitTimeAxis();  //2022-4-24  lijunqing 初始化时间坐标，可被重载设置个性化
+	virtual void InitTimeAxis();  //2022-4-24  Eric 初始化时间坐标，可被重载设置个性化
 
 public:
 

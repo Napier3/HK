@@ -309,7 +309,7 @@ typedef struct _SttAt02_Pkt_head_
 #endif
 }SST_AT02_PKT_HEAD, *PSST_AT02_PKT_HEAD;
 
-//2022-6-19  lijunqing
+//2022-6-19  Eric
 // 很容易出现丢包的情况，为了排除是因为应用程序消耗资源比较大的情况，只做
 // AT02D报文头分析。
 #define STT_AT02_HDAD_STC_MAX  20

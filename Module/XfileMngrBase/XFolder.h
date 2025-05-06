@@ -101,7 +101,7 @@ public:
 	long Search(CExBaseList *pListPostfix, BOOL bAddSubFiles, BOOL bAddSubFolders,BOOL bSearchSubFolders);	//20220702 zhouhj 是否添加子文件、是否添加子文件夹、是否检索子文件夹
 
 protected:
-	//从资源管理器搜索		搜索配置文件、文件夹  //2022-3-23  lijunqing add bAddFiles
+	//从资源管理器搜索		搜索配置文件、文件夹  //2022-3-23  Eric add bAddFiles
 	long Search(CExBaseList *pListPostfix, BOOL bTraveSubFolder, BOOL bAddFiles=TRUE);	
 	long SearchChildren(CExBaseList *pListPostfix, BOOL bTraveSubFolder, BOOL bAddFiles=TRUE);		//遍历子文件夹		搜索子文件夹的文件、文件夹
 	long SearchChildren(CExBaseList *pListPostfix, BOOL bAddSubFiles, BOOL bAddSubFolders,BOOL bSearchSubFolders);	//20220702 zhouhj 是否添加子文件、是否添加子文件夹、是否检索子文件夹

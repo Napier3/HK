@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttChMap.h  CSttChMap
@@ -28,7 +28,7 @@ public:
 
 	CString  m_strAlias;
 
-	//2021-5-1  lijunqing  为了通道映射的方便性，定义软件资源的编号
+	//2021-5-1  Eric  为了通道映射的方便性，定义软件资源的编号
 	long m_nRsIndex;  
 //重载函数
 public:

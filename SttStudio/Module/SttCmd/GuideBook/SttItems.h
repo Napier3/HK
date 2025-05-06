@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttItems.h  CSttItems
@@ -55,7 +55,7 @@ public:
 	double m_fYset;
 	double m_fXact;
 	double m_fYact;
-	long m_nFlagAct;  //2022-7-25  lijunqing
+	long m_nFlagAct;  //2022-7-25  Eric
 
 	double m_fSearchXb;
 	double m_fSearchYb;
@@ -121,7 +121,7 @@ public:
 	virtual CExBaseObject* CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys);
 	virtual CExBaseObject* CreateNewChild(long nClassID/*, BOOL &bAddToTail*/);
 
-	//2022-10-14  lijunqing
+	//2022-10-14  Eric
 	virtual long XmlWriteChildren(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oElement, CXmlRWKeys *pXmlRWKeys);	
 
 	//2023-3-21 zhouhj 将特性曲线放入链表中
@@ -160,8 +160,8 @@ public:
 };
 
 
-//2022-3-28  lijunqing
+//2022-3-28  Eric
 CSttItems* stt_gb_new_items(CExBaseList *pParent, const CString &strName, const CString &strID);
 
-//2022-7-25  lijunqing 获得特性曲线节点Items
+//2022-7-25  Eric 获得特性曲线节点Items
 CSttItems* stt_gb_get_ancestor_items_has_char(CExBaseObject *pItem);

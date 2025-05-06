@@ -1,4 +1,4 @@
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttTestClientBase.h  CSttTestClientBase
@@ -22,7 +22,7 @@
 
 class CSttTestClientBase : public CExBaseList
 	, public CSttTestMsgViewInterface, public CMacroTestEventInterface
-	, public CXTimer //2021-9-3  lijunqing 使用窗口作为定时器，以及后续的消息扩展
+	, public CXTimer //2021-9-3  Eric 使用窗口作为定时器，以及后续的消息扩展
 {
 public:
 	CSttTestClientBase();
@@ -33,7 +33,7 @@ public:
 	CSttTestAppCfg m_oTestAppCfg;
 
 public:
-	//2020-11-29 lijunqing 
+	//2020-11-29 Eric 
 	virtual void OnTestMsg(BYTE *pBuf, long nLen);
 	virtual void OnTestMsgEx(CSttSocketDataBase *pClientSocket, BYTE *pBuf, long nLen, long nCmdType, char *pszCmdID, char *pszTestor, char *pszRetCmdType);
 	virtual void On_Process_SysState(CSttSocketDataBase *pClientSocket, CSttSysState &oSysState);
@@ -68,11 +68,11 @@ public:
 	void StopTest();
 	virtual void CloseDevice(const CString &strDeviceSN = _T(""));
 
-	//2022-10-23  lijunqing
+	//2022-10-23  Eric
 	void SetSttCmdDataFormat(long nSttCmdDataFormat);
 
 //////////////////////////////////////////////////////////////////////////
-//2021-8-14  lijunqing  提取的，基于STT协议部分的公共接口函数，便于STT和MQTT两种方式进行兼容
+//2021-8-14  Eric  提取的，基于STT协议部分的公共接口函数，便于STT和MQTT两种方式进行兼容
 public:
 	//CSttTestEngineClientData* GetTestEngineClient()	{	return m_pXClientEngine;	}
 
@@ -84,7 +84,7 @@ public:
 	void DisConnect();	
 	void DisConnectForClose(BOOL bDelete);
 	
-	//lijunqing 2021-8-14  将System_Login 从 SttMacroTest 移到此处，便于封装
+	//Eric 2021-8-14  将System_Login 从 SttMacroTest 移到此处，便于封装
 	long System_LoginEx();
 
 	//2020-10-26  shaolei
@@ -147,10 +147,10 @@ public:
 	long Adjust_ReadDeviceParameter(CStringArray &astrTypes, BOOL bDoEvents=TRUE,CSttCmdData *pRetData = NULL,BOOL bSendCmdAsync=FALSE);
 	long Adjust_WriteFile(BOOL bSendCmdAsync=FALSE, BOOL bDoEvents=TRUE);
 
-	//2021-9-30  lijunqing
+	//2021-9-30  Eric
 	long Meas_Read(BOOL bSendCmdAsync=FALSE, BOOL bDoEvents=TRUE);
 
-	//2020-10-09 文件处理  lijunqing
+	//2020-10-09 文件处理  Eric
 	//读文件 strRealFilePath，目标文件相对路径，例如："Config/DeviceSystemParas.xml"  strDestFilePath,本地绝对路径
 	long ReadFile(const CString &strSrcFileRealPath, const CString &strDestFilePath,CSttSocketFileTransferProgress *pProgress);
 	//写文件：strSrcFilePath，本地绝对路径；strSrcFileRealPath目标文件相对路径
@@ -204,8 +204,8 @@ public:
 	long Debug_ConfigDebug(CDataGroup *pGroup,BOOL bDoEvents=TRUE,CSttCmdData *pRetData = NULL);
 	long Debug_ConfigDebug(CSttDebugCmd *pCmd,BOOL bDoEvents=TRUE,CSttCmdData *pRetData = NULL);
 	long Debug_ConfigDebug(long nLogDataBind,long nLogPkgDataInfor,long nLogPkg
-		,long nLogDebugInfor,long nNoChangeWhenSame, long nSpyCmd);  //2020-12-04  lijunqing add spy-cmd
-	long Debug_ConfigDebug(const CString &strDebugParaID, long nValue); //2020-12-04  lijunqing add spy-cmd
+		,long nLogDebugInfor,long nNoChangeWhenSame, long nSpyCmd);  //2020-12-04  Eric add spy-cmd
+	long Debug_ConfigDebug(const CString &strDebugParaID, long nValue); //2020-12-04  Eric add spy-cmd
 
 	//测试功能事件接口
 	virtual void OnTestStarted(const CString &strMacroID, CDataGroup *pParas)	{}
@@ -221,7 +221,7 @@ public:
 	CDataGroup m_oMeasData;
 	void OpenMeasDataFile();
 
-//2021-9-2  lijunqing
+//2021-9-2  Eric
 public:
 	virtual void OnXTimer(DWORD dwTimerID);
 

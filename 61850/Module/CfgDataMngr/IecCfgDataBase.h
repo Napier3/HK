@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //IecCfgDataBase.h  CIecCfgDataBase
@@ -39,7 +39,7 @@ public:
 	CIecCfgChsBase *m_pCfgChs;
 	CExBaseObject  *m_pSclRef;
 
-	CString m_strDvmDatasetID;  //2022-5-7 lijunqing 临时用于记录设备数据模型的ID
+	CString m_strDvmDatasetID;  //2022-5-7 Eric 临时用于记录设备数据模型的ID
 
 //重载函数
 public:

@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //DataMngrGlobal.h
@@ -77,7 +77,7 @@
 #define DVMCLASSID_CDVMLOGS       (DVMCLASSID_EXLISTCLASS + 0X0000002F)
 #define DVMCLASSID_CDSVAPPEARFORERR       (DVMCLASSID_EXLISTCLASS + 0X00000030)
 
-//2021-10-9  LIJUNQING
+//2021-10-9  Eric
 #define DVMCLASSID_CDVMDATASETGROUP       (DVMCLASSID_EXLISTCLASS + 0X00000031)
 
 //2023-0106 zhouhj
@@ -200,7 +200,7 @@ public:
 	//lijq 2020-4-15  DataGroup的子对象data，是ShortData，还是DvmData
 	long m_nIsGroupUseDvmData;
 
-	//lijunqing 2020-10-23 保存xml文件时，只保存id和value
+	//Eric 2020-10-23 保存xml文件时，只保存id和value
 	long m_nXmlOnlyWrite_Id_Value;
     static void IncXmlOnlyWrite_Id_Value(CDataMngrXmlRWKeys *pXmlKeys=NULL, long nAdd=1);
     static void DecXmlOnlyWrite_Id_Value(CDataMngrXmlRWKeys *pXmlKeys=NULL, long nDec=1);
@@ -210,7 +210,7 @@ public:
 	static void IncIsEqualOwn_Id_Value(CDataMngrXmlRWKeys *pXmlKeys=NULL, long nAdd=1);
 	static void DecIsEqualOwn_Id_Value(CDataMngrXmlRWKeys *pXmlKeys=NULL, long nDec=1);
 
-	//lijunqing 2023-2-28  lijunqing 只读取主属性，针对data，不读取min、max、unit、step、time、change等
+	//Eric 2023-2-28  Eric 只读取主属性，针对data，不读取min、max、unit、step、time、change等
 	long m_nXmlOnlyRead_MainAttr;
 	static void IncXmlOnlyRead_MainAttr(CDataMngrXmlRWKeys *pXmlKeys=NULL, long nAdd=1);
 	static void DecXmlOnlyRead_MainAttr(CDataMngrXmlRWKeys *pXmlKeys=NULL, long nDec=1);
@@ -477,7 +477,7 @@ BOOL dvm_IsValueEqual(const CString &strValue1, const CString &strValue2);
 BOOL dvm_IsValueEqual(BSTR strValue1, BSTR strValue2);
 #endif
 
-//lijunqing 2021-8-11  增加这两个全局函数，访问的时候方便
+//Eric 2021-8-11  增加这两个全局函数，访问的时候方便
 void dvm_IncGroupUseDvmData(CDataMngrXmlRWKeys *pXmlKeys=NULL);
 void dvm_DecGroupUseDvmData(CDataMngrXmlRWKeys *pXmlKeys=NULL);
 

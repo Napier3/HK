@@ -338,7 +338,7 @@ void Number_String_To_1000(CString &strNumber)
 	}
 }
 
-//char* 与 wchar*之间的转换  2019-12-1   lijunqing
+//char* 与 wchar*之间的转换  2019-12-1   Eric
 int str_char_to_wchar(wchar_t **ppwszDest, const char *pszSrc, long nLen)
 {
 	if (nLen == -1)

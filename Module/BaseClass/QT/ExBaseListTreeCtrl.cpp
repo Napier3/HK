@@ -439,7 +439,7 @@ BOOL CExBaseListTreeCtrl::CanAdd(CExBaseObject *pObj)
 
 BOOL CExBaseListTreeCtrl::CanAdd(UINT nClassID)
 {
-	//2021-8-21  lijunqing  如果没有定义，则显示所有
+	//2021-8-21  Eric  如果没有定义，则显示所有
 	if (m_arrdwClassID.GetCount() == 0)
 	{
 		return TRUE;

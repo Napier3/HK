@@ -36,7 +36,7 @@
 
 
 
-//2020-12-24  lijunqing
+//2020-12-24  Eric
 typedef union _stt_pp_value_
 {
 	BOOL boolVal;

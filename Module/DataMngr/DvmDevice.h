@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //DvmDevice.h  CDvmDevice
@@ -14,7 +14,7 @@
 #define  DEVICE_manufacturer  _T("manufacturer")
 #define  DEVICE_desc          _T("desc")
 
-//2023-4-21  lijunqing 增加Data数据对象对formart属性的使用模式
+//2023-4-21  Eric 增加Data数据对象对formart属性的使用模式
 //0=数据模式；默认；1=公式模式，用于根据码值进行计算，例如   V*120/32767
 #define DVM_FORMART_USE_MODE_VAL    0
 #define DVM_FORMART_USE_MODE_EXPR    1
@@ -40,7 +40,7 @@ public:
 	CDvmDataset *m_pDeviceAttr;
 	BOOL m_bModifiedFlag;
 
-	//2023-4-21  lijunqing 增加Data数据对象对formart属性的使用模式
+	//2023-4-21  Eric 增加Data数据对象对formart属性的使用模式
 	//0=数据模式；默认；1=公式模式，用于根据码值进行计算，例如   V*120/32767
 	long m_nFormatUseMode;  
 //重载函数
@@ -81,16 +81,16 @@ public:
 	CDvmDataset* GetDeviceAttrs();
 	long GetIndex()	{	return CString_To_long(m_strID);	}
 
-//2020-6-18  lijunqing  增加通用的功能
+//2020-6-18  Eric  增加通用的功能
 public:
 	CDvmDataset* FindDataset(const CString &strDatasetID);
-	CDvmDataset* FindDatasetByPath(const CString &strDatasetIDPath);  //2022-11-21 lijunqing
+	CDvmDataset* FindDatasetByPath(const CString &strDatasetIDPath);  //2022-11-21 Eric
 	long GetDatasetList(const CString &strKey, CExBaseList &oListDataset);  //获取数据集列表
 	long GetDatasetList(CStringArray &strKeyArray, CExBaseList &oListDataset);  //获取数据集列表
 
 	CDvmDataset* GetDataset(const CString &strLdID, const CString &strDsID, BOOL bCreateNew = TRUE);
 
-	//2023-4-18  lijunqing
+	//2023-4-18  Eric
 	long GetDatasetCount();
 public:
 	CDvmData* SelectDataObj(const CString &strPath);

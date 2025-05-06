@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //XLanguageResourceBase.cpp  CXLanguageResourceBase
@@ -82,7 +82,7 @@ void CXLanguageResourceBase::InitLangRsByFileEx(CXLanguage *pXLangRef, const CSt
 #ifdef _PSX_QT_LINUX_
 #ifndef NOT_USE_XLANGUAGE
 	if (xlang_IsCurrXLanguageChinese())
-	{//2023-2-28  lijunqing 中文环境，不做处理
+	{//2023-2-28  Eric 中文环境，不做处理
 		return;
 	}
 #endif
@@ -2062,11 +2062,11 @@ CString g_sLangTxt_SyntaxCheckTips                   ;// _T("语法检查\n语法检查"
 CString g_sLangID_OutputWnd                ;//= _T("sOutputWnd");
 CString g_sLangTxt_OutputWnd               ;//= _T("输出窗口");
 
-//2023-03-12  lijunqing 从MMS和ATS移动到此处
+//2023-03-12  Eric 从MMS和ATS移动到此处
 CString g_sLangID_DataSet                 ;//= _T("sDataSet");
 CString g_sLangTxt_DataSet            ;//= _T("数据集");
 
-//2023-3-15 lijunqing from 61850cfg and autotest
+//2023-3-15 Eric from 61850cfg and autotest
 CString g_sLangID_Quit                     ;  //= _T("sQuit");
 CString g_sLangTxt_Quit                    ;  //= _T("退出");
 CString g_sLangID_QuitTip                  ;  //= _T("sQuitTip");

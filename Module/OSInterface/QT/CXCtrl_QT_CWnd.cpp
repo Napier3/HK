@@ -185,7 +185,7 @@ BOOL CWnd::IsTimerExist2(int nTimer)
 
 BOOL CWnd::DestroyWindow()
 {
-    //2020-11-22 lijunqing
+    //2020-11-22 Eric
     PostMessage(WM_CLOSE, 0, 0);
     m_bClose = true;
  /*
@@ -310,7 +310,7 @@ void CWnd::PostMessage(unsigned int nMsgID, unsigned long wParam, unsigned long 
 //        }
 //    }
 
-//    //2020-11-22 lijunqing debug for breakpoint
+//    //2020-11-22 Eric debug for breakpoint
 //    int i=10;
 //    i = 100;
 //}

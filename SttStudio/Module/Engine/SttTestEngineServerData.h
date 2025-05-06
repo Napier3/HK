@@ -16,14 +16,14 @@
 
 #include "SttServerNativeConfig.h"
 
- //2022-2-12  lijunqing  测试仪报文转发，通过SocketServer转发给所有链接自动测试控制服务的客户端
+ //2022-2-12  Eric  测试仪报文转发，通过SocketServer转发给所有链接自动测试控制服务的客户端
 class CSttTestEngineServerData : public CSttPkgDispatchInterface
 {
 public:
 	CSttTestEngineServerData();
 	virtual ~CSttTestEngineServerData();
 
-    //2022-2-12  lijunqing
+    //2022-2-12  Eric
     virtual void DispatchMsg(unsigned char *pBuf, long nLen);
 
 protected:
@@ -56,7 +56,7 @@ public:
 	virtual long Process_Cmd_System_Request(CSttSocketDataBase *pClientSocket, CSttSystemCmd &oSysCmd);
 	virtual long Process_Cmd_System_Authority(CSttSocketDataBase *pClientSocket, CSttSystemCmd &oSysCmd);
 	virtual long Process_Cmd_System_LiveUpdate(CSttSocketDataBase *pClientSocket, CSttSystemCmd &oSysCmd);
-    //2020-12-05  lijunqing add
+    //2020-12-05  Eric add
     BOOL Cmd_System_GetFilePath(CSttSystemCmd &oSysCmd,  CString &strFullPath, CString &strRelPath);
     virtual long Process_Cmd_System_DownFile(CSttSocketDataBase *pClientSocket, CSttSystemCmd &oSysCmd);
 	virtual long ProcessCmd_SetSysConfig(CSttSocketDataBase *pClientSocket, CSttSystemCmd &oSysCmd);
@@ -72,7 +72,7 @@ public:
 	//只检测具有单机测试权限的测试端心跳超时
 	virtual void CheckHeartbeatOverTime()=0;
 
-//2020-07-12  lijunqing
+//2020-07-12  Eric
 public:
     BOOL CanSendLog()	{	return g_nSttLogServerDebugInfor;	};
 	virtual void LogDebugInfor(const CString &strInfor);
@@ -81,7 +81,7 @@ public:
 
 };
 
-//2020-10-19  lijunqing  Server只有一个，所以定义一个全局变量，方便访问
+//2020-10-19  Eric  Server只有一个，所以定义一个全局变量，方便访问
 extern CSttTestEngineServerData *g_theSttTestEngineServer;
 extern CSttSocketDataBase *g_pReplayTestSocket;
 extern long g_nCheckAuthority;

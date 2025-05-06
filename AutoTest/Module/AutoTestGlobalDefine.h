@@ -60,15 +60,15 @@ inline DWORD gb_GetReportFillProgID(const CString &strReportFillProgID)
 #define EngineEvent_CommError						_T("CommError")
 #define EngineEvent_CommFinish					_T("CommFinish")
 #define EngineEvent_CommCmdError				_T("CommCmdError")
-//2020-11-24  lijunqing
+//2020-11-24  Eric
 #define EngineEvent_DeviceClosed					_T("DeviceClosed")
-//2023-2-1  lijunqing 
+//2023-2-1  Eric 
 #define EngineEvent_DvmEnumFinish					_T("DvmEnumFinish")
 //2023-9-12
 #define EngineEvent_ID_ex_ConnectDeviceSuccessful  _T("ConnectDeviceSuccessful")
 #define EngineEvent_ID_ex_ConnectDeviceFailed      _T("ConnectDeviceFailed")
 //////////////////////////////////////////////////////////////////////////
-//2023-2-1  lijunqing 
+//2023-2-1  Eric 
 #define EngineEvent_ID_ConnectDeviceFailed		     1
 #define EngineEvent_ID_ConnectDeviceSuccessful	 2
 #define EngineEvent_ID_CommError					3
@@ -127,13 +127,13 @@ void ats_SetReportFillProgID(DWORD dwReportType);
 void ats_SetReportFillProgID(const CString &strReportFillProgID);
 void ats_InitReportFillProgID();
 
-//2022-7-24  lijunqing  从CharElementTestLine.h移到此处
+//2022-7-24  Eric  从CharElementTestLine.h移到此处
 #define TESTLINE_ACT_STATE_NONE     -255
 #define TESTLINE_ACT_STATE_ACT      1
 #define TESTLINE_ACT_STATE_NOACT    0
 
 //////////////////////////////////////////////////////////////////////////
-//lijunqing 2022-7-24 from MacroCharItems.h
+//Eric 2022-7-24 from MacroCharItems.h
 #define MACRO_CHAR_TEST_AXISMODE_XY       _T("x-y")
 #define MACRO_CHAR_TEST_AXISMODE_RANGLE   _T("r-angle")
 #define MACRO_CHAR_TEST_LINEDEF_POINT     _T("point")

@@ -1011,7 +1011,7 @@ CString CExBaseObject::GetNamePathEx(UINT nRootClassID, BOOL bHasRoot, const CSt
 	return strPath;
 }
 
-//2022-9-17  lijunqing
+//2022-9-17  Eric
 CString CExBaseObject::GetIDPathEx(CExBaseObject *pRoot, BOOL bHasRoot, const CString &strSeperator)
 {
 	CString strPath;

@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttFrameConfig.h  CSttFrameConfig
@@ -40,7 +40,7 @@ public:
 	CString m_strMacroFileID;//测试功能文件ID：RelayTest、MuTest等
 	long m_nSelMacroShow;//是否显示 选择功能 0: 不显示  1： 显示
 
-	//2023-2-26  lijunqing
+	//2023-2-26  Eric
 	long m_nFrameBtnGap;   //框架工具栏按钮垂直方向与边框之间的间隔
 //重载函数
 public:

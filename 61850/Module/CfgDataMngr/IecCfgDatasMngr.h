@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //IecCfgDatasMngr.h  CIecCfgDatasMngr
@@ -148,7 +148,7 @@ public:
 	void GetIecCfgSmvInputDatas(CExBaseList &oList, BOOL bGetCommon=TRUE);
 
 	BOOL OpenIecCfgFile(const CString &strFile);
-	BOOL SetIecCfgDataString(const CString &strIecCfgData);  //2022-9-19  lijunqing
+	BOOL SetIecCfgDataString(const CString &strIecCfgData);  //2022-9-19  Eric
 	void DelteteContrlBlocks_Unselected();//zhouhj 20210528删除未选择的控制块
 
 	BOOL HasContrlBlock_Selected();//判断当前是否全部控制块都为空
@@ -193,7 +193,7 @@ protected:
 	BOOL AddCfgData_Gin(const CString &strCfgDataFile);
 	BOOL AddCfgData_Gout(const CString &strCfgDataFile);
 	
-	void InitAfterRead2();   //2022-9-19  lijunqing
+	void InitAfterRead2();   //2022-9-19  Eric
 //	BOOL AddCfgData_SmvInput(long nCfgDataClassID, const CString &strCfgDataFile);
 };
 

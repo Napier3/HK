@@ -1,7 +1,7 @@
 #pragma once
 
 #include "SttCmtrdCfgDefineGlobal.h"
-// #include "SttComtradeGroup.h"  //2021-11-2  lijunqing
+// #include "SttComtradeGroup.h"  //2021-11-2  Eric
 #include "SttModuleChComtradeBind.h"
 #include "../../../Module/Record/Comtrade/ComtradeMngr.h"
 #include "../../../Module/Record/Comtrade/ComtradeRateData.h"

@@ -11,7 +11,7 @@
 
 class CBigComtradeTransPlay : /*public CSttTestMsgViewInterface,*/public CTestEventBaseInterface
 {
-//2022-11-13  lijunqing
+//2022-11-13  Eric
 private:
 	static CBigComtradeTransPlay *g_pBigComtradeTransPlay;
 	static long g_nBigComtradeTransPlay;
@@ -53,9 +53,9 @@ public:
 
 	//打开Comtrade文件事件处理接口
 	BOOL OnOpenComtradeFile(const CString &strComtradeFile,BOOL bInitDefault=TRUE);
-	BOOL HasComtradeDataNeedDraw(); //2021-9-19  lijunqing  是否有波形数据需要绘图
-	CRcdComtradeFile* GetSrcComtradeFile(); //2021-9-20  lijunqing
-	CRcdComtradeFile* GetPlayComtradeFile(); //2021-9-20  lijunqing
+	BOOL HasComtradeDataNeedDraw(); //2021-9-19  Eric  是否有波形数据需要绘图
+	CRcdComtradeFile* GetSrcComtradeFile(); //2021-9-20  Eric
+	CRcdComtradeFile* GetPlayComtradeFile(); //2021-9-20  Eric
 	void GenerateComtradeChDatas(BOOL bSeekToBegin);
 
 	//开始测试事件处理接口

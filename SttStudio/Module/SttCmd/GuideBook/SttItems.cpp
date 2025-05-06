@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttItems.cpp  CSttItems
@@ -440,7 +440,7 @@ long CSttItems::XmlWriteChildren(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oEle
 		if (CSttCmdDefineXmlRWKeys::IsOnlyGetItem())
 		{
 			//只获取项目目录的情况下，不需要特性曲线相关以及测试功能参数
-			//2022-10-14  lijunqing
+			//2022-10-14  Eric
 			if (nClassID == STTGBXMLCLASSID_CSTTTESTMACROUIPARAS
 				/*|| nClassID == STTGBXMLCLASSID_CSTTMACROCHARITEMS*/)// zhouhj 20221024 更新测试报告时,需要使用特性曲线的测试项,不删除此类测试项
 				//|| nClassID == STTGBXMLCLASSID_CSTTREPORTMAP
@@ -834,7 +834,7 @@ long CSttItemsEmpty::XmlWriteOwn(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oEle
 }
 
 
-//2022-3-28  lijunqing
+//2022-3-28  Eric
 CSttItems* stt_gb_new_items(CExBaseList *pParent, const CString &strName, const CString &strID)
 {
 	CSttItems *pNew = new CSttItems();
@@ -850,7 +850,7 @@ CSttItems* stt_gb_new_items(CExBaseList *pParent, const CString &strName, const 
 	return pNew;
 }
 
-//2022-7-25  lijunqing 获得特性曲线节点Items
+//2022-7-25  Eric 获得特性曲线节点Items
 CSttItems* stt_gb_get_ancestor_items_has_char(CExBaseObject *pItem)
 {
 	CExBaseObject *pParent = (CExBaseObject*)pItem->GetParent();

@@ -6,7 +6,7 @@
 #include "../../../../Module/SmartCap/61850Cap/CapDevice/CapDeviceBase.h"
 #include "SttIecRcdFuncInterface.h"
 
-//2022-12-02  lijunqing  
+//2022-12-02  Eric  
 #include "../../Assist/SttAssistGlobalApi.h"
 
 namespace Ui {
@@ -15,7 +15,7 @@ class QSttIecRecordMainWidget;
 
 
 class QSttIecRecordMainWidget : public QDialog, 
-	public CSttWndAssistInterface  //2022-12-02 lijunqing 测试助手相关的接口
+	public CSttWndAssistInterface  //2022-12-02 Eric 测试助手相关的接口
 {
     Q_OBJECT
 public:

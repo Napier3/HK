@@ -76,13 +76,13 @@ long CSttTestEngineBase::ReturnSysState(CSttSocketDataBase *pSocket,CSttSysState
 		return 0;
 	}
 
-    //2020-11-29  lijunqing
+    //2020-11-29  Eric
     m_oClientUserMngr.SendSysState(pSocket, pSysState, bSpyAllCmd);
     return 0;
     //return pSocket->SendSysState(pSysState);
 }
 
-//lijunqing 2020-10-21
+//Eric 2020-10-21
 long CSttTestEngineBase::ReturnSysState(CSttCmdBase *pSttCmd, long nCmdExecStatus,CSttSocketDataBase *pSocket, CSttCmdData *pRetData)
 {
 	if (pSocket == NULL)
@@ -96,7 +96,7 @@ long CSttTestEngineBase::ReturnSysState(CSttCmdBase *pSttCmd, long nCmdExecStatu
 
 	if (pRetData != NULL)
 	{//返回结果数据
-		//2020-10-27  lijunqing
+		//2020-10-27  Eric
 		oSysState.AppendParas(*pRetData);
 		//pRetData->RemoveAll();
 	}
@@ -107,7 +107,7 @@ long CSttTestEngineBase::ReturnSysState(CSttCmdBase *pSttCmd, long nCmdExecStatu
 }
 
 
-//lijunqing 2020-10-20
+//Eric 2020-10-20
 long CSttTestEngineBase::ReturnSysState(CSttCmdBase *pSttCmd, long nCmdExecStatus,CSttCmdData *pRetData)
 {
 	CSttSocketDataBase *pSocket = pSttCmd->GetRefSocketData();
@@ -134,7 +134,7 @@ CSttSocketDataBase *CSttTestEngineBase::GetAtsAuthoritySocket()
 	return pUser->m_pRefSttSckt;
 }
 
-//2020-11-29  lijunqing
+//2020-11-29  Eric
 //根据软件ID返回报文
 void CSttTestEngineBase::SendToAllUser(const CString &strSoftID, BYTE *pBuf,long nLen)
 {
@@ -171,7 +171,7 @@ long CSttTestEngineBase::OnTestMsg(CSttSocketDataBase *pClientSocket, BYTE *pBuf
 
 BOOL CSttTestEngineBase::OnTestMsgEx(CSttSocketDataBase *pClientSocket, BYTE *pBuf, long nLen, long nCmdType, char *pszCmdID, char *pszTestor, char *pszRetCmdType, BOOL &bRet)
 {
-	//2020-11-29  lijunqing  监视所有命令报文
+	//2020-11-29  Eric  监视所有命令报文
 #ifdef _PSX_QT_LINUX_ 
 	 if (g_nSttLogServerSpyAllCmd)
 	 {
@@ -509,7 +509,7 @@ long CSttTestEngineBase::Process_SysState_Reply(CSttSocketDataBase *pClientSocke
 		return  Process_SysState_Adjust(pClientSocket,oSysState);
 	}
 	else if (oSysState.m_strRetSttCmd ==  CSttCmdDefineXmlRWKeys::CSttIotCmdKey())
-	{//2022-10-08  lijunqing
+	{//2022-10-08  Eric
 		return  Process_SysState_IOT(pClientSocket,oSysState);
 	}
 

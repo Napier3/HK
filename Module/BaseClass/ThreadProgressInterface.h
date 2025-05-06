@@ -25,7 +25,7 @@ public:
 	virtual void StepIt() = 0;
 	virtual void ShowMsg(const CString &strMsg) = 0;
 	virtual void StartTimer(long nTimerLong) = 0;
-	virtual void SetPos(long nPos) {}	//2024-3-26  lijunqing
+	virtual void SetPos(long nPos) {}	//2024-3-26  Eric
 
 	virtual void Finish(DWORD dwParam=0)	{}
 	virtual void StepPos(long nPos){};

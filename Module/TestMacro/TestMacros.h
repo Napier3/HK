@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //TestMacros.h  CTestMacros
@@ -27,7 +27,7 @@ public:
 
 private:
 	static CString g_strOldMacroTestDataTypeFile;
-	BOOL m_bOpenFlag;  //2021-8-14  lijunqing  避免多次反复打开文件
+	BOOL m_bOpenFlag;  //2021-8-14  Eric  避免多次反复打开文件
 
 //重载函数
 public:
@@ -63,7 +63,7 @@ public:
 
 	CTestMacro *GetCloneMacro(const CString& strID);
 
-	//lijunqing  2021-8-15
+	//Eric  2021-8-15
 	void InitParas_Dvm();
 };
 

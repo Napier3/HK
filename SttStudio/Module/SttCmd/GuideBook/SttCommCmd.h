@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttCommCmd.h  CSttCommCmd
@@ -61,14 +61,14 @@ public:
 	CSttCommCmd();
 	virtual ~CSttCommCmd();
 
-	CString  m_strCommCmdID;  //2022-9-14  lijunqing
+	CString  m_strCommCmdID;  //2022-9-14  Eric
 	//CString  m_strType;
 	CString  m_strRwOptr;
 	long  m_nSortSoeByT;
 	long  m_nDsvRunAfterResultScript;
 	long  m_nCmdExecModeForMgrpt;
 
-	//2022-10-3  lijunqing 针对智能测试终端软件平台，基于HTML报告模板，通信命令是否需要将关联的数据集填写到
+	//2022-10-3  Eric 针对智能测试终端软件平台，基于HTML报告模板，通信命令是否需要将关联的数据集填写到
 	//报告中，采用标记进行表示，以提高程序运行的效率，否则通过接口函数查询或者每次都将数据传入报告模板进行填写
 	//程序运行效率很低
 	long m_nFillRptDataset;
@@ -89,7 +89,7 @@ public:
 	virtual CExBaseObject* CreateNewChild(const CString &strClassID, BOOL &bAddToTail, CXmlRWKeys *pXmlRWKeys);
 	virtual CExBaseObject* CreateNewChild(long nClassID/*, BOOL &bAddToTail*/);
 
-	//2022-10-14  lijunqing
+	//2022-10-14  Eric
 	virtual long XmlWriteChildren(CXmlRWDocBase &oXMLDoc, CXmlRWElementBase &oElement, CXmlRWKeys *pXmlRWKeys);	
 
 //私有成员变量

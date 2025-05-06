@@ -757,7 +757,7 @@ DWORD rcd_CalCyclePoints(DWORD dwSampRate, double dFreq);
 DWORD rcd_CalCyclePoints(DWORD dwSampRate, double dFreq, bool bCarry);
 DWORD rcd_CalCyclePoints(double dCyclePoints, bool bCarry);
 
-//2021-1-16   lijunqing
+//2021-1-16   Eric
 #define XRCD_ANALYSIS_DRAW_FILE_POSTFIX    _T("rcdrw")
 
 #endif // !defined(_RecordGlobalDefine_h__)

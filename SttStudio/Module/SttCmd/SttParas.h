@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttParas.h  CSttParas
@@ -12,7 +12,7 @@
 #include "../../../Module/DataMngr/DvmDatasetGroup.h"
 #include "../../../Module/DataMngr/DvmDevice.h"
 
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
 #include "GuideBook/SttReports.h"
 #include "SttRptMapDatas.h"
 #endif
@@ -27,9 +27,9 @@ public:
 	CSttParas();
 	virtual ~CSttParas();
 
-	//2021-8-6  lijunqing  
+	//2021-8-6  Eric  
 	CString m_strTextParasID;
-	//CString m_strTextParas;    //2021-8-17  lijunqing  改为  m_pszTextParas
+	//CString m_strTextParas;    //2021-8-17  Eric  改为  m_pszTextParas
 	char *m_pszTextParas;
 	long m_nLenTextParas;
 
@@ -85,10 +85,10 @@ public:
 	BOOL GetDataValue(const CString &strID, __int64 &n64Value);
     CDvmDataset* GetDvmDataset(BOOL bCreateNew=FALSE);
 	CDvmDatasetGroup* GetDvmDatasetGroup(BOOL bCreateNew=FALSE);
-	CDvmDevice* GetDvmDevice(BOOL bCreateNew=FALSE);		//2023-1-28  lijunqing 增加枚举装置模型的功能
+	CDvmDevice* GetDvmDevice(BOOL bCreateNew=FALSE);		//2023-1-28  Eric 增加枚举装置模型的功能
 
-#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  lijunqing
-    //lijunqing 2020-0916
+#ifndef STT_CMD_PARAS_NOT_USE_TEST  //2022-10-24  Eric
+    //Eric 2020-0916
     CSttReports* GetSttReports(BOOL bCreateNew=FALSE);
     CSttRptMapDatas* GetSttRptMapDatas(BOOL bCreateNew=FALSE);
 #endif
@@ -111,7 +111,7 @@ protected:
 #endif
 
 public:
-	//2022-3-23  lijunqing 曾经考虑使用XFileMngr，但是底层服务使用起来太麻烦，就直接添加此函数
+	//2022-3-23  Eric 曾经考虑使用XFileMngr，但是底层服务使用起来太麻烦，就直接添加此函数
 	void SearchFiles(const CString &strPath, long nGetSubDirs, long nGetFiles, const CString &strFileType);
 protected:
 	long Search(CDataGroup *pParent, const CString &strPath, long nGetSubDirs, long nGetFiles, const CString &strFileType);	
@@ -146,7 +146,7 @@ public:
 
 };
 
-//2022-4-13  lijunqing 移动到CDataGroup
+//2022-4-13  Eric 移动到CDataGroup
 // BOOL stt_GetDataValueByID(CExBaseList *pList, const char* strValueID, CString &strValue);
 // BOOL stt_GetDataValueByID(CExBaseList *pList, const char* strValueID, long &nValue);
 // long stt_GetDataValueByID2(CExBaseList *pList, const char* strValueID, long nDefaultValue);
@@ -154,7 +154,7 @@ public:
 // BOOL stt_GetDataValueByID(CExBaseList *pList, const CString &strValueID, long &nValue);
 // BOOL stt_GetDataValueByID(CExBaseList *pList, const CString &strValueID, double &dValue);
 // BOOL stt_GetDataValueByID(CExBaseList *pList, const CString &strValueID, float &fValue);
-// BOOL stt_GetDataValueByID(CExBaseList *pList, const CString &strValueID, short &nValue);//2021-9-1  lijunqing
+// BOOL stt_GetDataValueByID(CExBaseList *pList, const CString &strValueID, short &nValue);//2021-9-1  Eric
 // 
 // long stt_SetDataValueByID(CExBaseList *pList, const CString &strValueID, const CString &strValue);
 // long stt_GetDataValueByID2(CExBaseList *pList, const CString &strValueID, long nDefaultValue);

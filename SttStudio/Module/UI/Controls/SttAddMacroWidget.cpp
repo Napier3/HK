@@ -56,7 +56,7 @@ QSttAddMacroWidget::~QSttAddMacroWidget()
 	delete m_pTestMacroUIMngr;
 }
 
-void QSttAddMacroWidget::Use_Name_ID(BOOL bUse)  //lijunqing 2022-6-24  lijunqing
+void QSttAddMacroWidget::Use_Name_ID(BOOL bUse)  //Eric 2022-6-24  Eric
 {
 	m_bUseNameID = bUse;
 	//南瑞要求项目标识采用默认的

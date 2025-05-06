@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //TestMacroGlobal.h
@@ -43,7 +43,7 @@ public:
 	}
 
 public:
-	BSTR m_strCTestMacrosIncludeKey; //macros-include  2021-8-14  lijunqing  充电桩自动测试，多仪器功能文件的扩充
+	BSTR m_strCTestMacrosIncludeKey; //macros-include  2021-8-14  Eric  充电桩自动测试，多仪器功能文件的扩充
 	BSTR m_strCTestMacroConfigKey; //macro-test-config
 	BSTR m_strCTestMacroConfigsKey; //test-macro-configs
 	BSTR m_strCTestMacrosFileMngrKey; //macro-file-mngr

@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //TestMacros.cpp  CTestMacros
@@ -321,7 +321,7 @@ CTestMacro *CTestMacros::GetCloneMacro(const CString& strID)
 	return pNew;
 }
 
-//lijunqing  2021-8-15
+//Eric  2021-8-15
 void CTestMacros::InitParas_Dvm()
 {
 	POS pos = GetHeadPosition();

@@ -29,7 +29,7 @@
 // #endif
 // #endif
 
-//lijunqing 2020-11-6 message
+//Eric 2020-11-6 message
 #ifdef QT_Wnd_USE_QWIDGET
 class CWnd : public QWidget, public CXWndInterface
 #else

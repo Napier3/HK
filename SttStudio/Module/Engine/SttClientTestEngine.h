@@ -63,11 +63,11 @@ public:
 	virtual long Process_Comtrade_SendDataStartAck(CSttSocketDataBase *pClientSocket, BYTE *pBuf, long nLen, char *pszCmdID, char *pszTestor);
 	virtual long Process_SysState_System_LiveUpdate(CSttSysState &oSysState);
 
-//2020-10-25  lijunqing
+//2020-10-25  Eric
 public:
 	virtual long Process_SysState(CSttSocketDataBase *pClientSocket, BYTE *pBuf, long nLen, char *pszCmdID, char *pszTestor, char *pszRetCmdType);
 
-    //2022-2-12  lijunqing
+    //2022-2-12  Eric
     virtual void AddPkgDispatch(CSttPkgDispatchInterface *pPkgDispatch);
 	virtual void RemovePkgDispatch(CSttPkgDispatchInterface *pPkgDispatch);
 };

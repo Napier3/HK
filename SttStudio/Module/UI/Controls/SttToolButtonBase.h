@@ -12,8 +12,8 @@ public:
     QSttToolButtonBase(CExBaseObject *pCfgData,QWidget *parent=0);
 	virtual ~QSttToolButtonBase();
 public:
-	virtual void UpdateState(CDataGroup *pDataGroup);  //2022-6-9  lijunqing
-	virtual void UpdateState(CDvmData *pData);  //2022-6-9  lijunqing  改为virtual
+	virtual void UpdateState(CDataGroup *pDataGroup);  //2022-6-9  Eric
+	virtual void UpdateState(CDvmData *pData);  //2022-6-9  Eric  改为virtual
     virtual void SetPic(int nState){		}
 	virtual void ShowBtn(bool bShow);
 	virtual void UpdateEnableState(const CString &strState);
@@ -23,7 +23,7 @@ public:
 	CDvmData* FindData(CDataGroup *pDataGroup);
 	CDvmData* FindData(CDataGroup *pDataGroup, const CString strID);
 
-	//2022-12-02  lijunqing 设置图标
+	//2022-12-02  Eric 设置图标
 	void SetBtnIcon(CSttFrame_Button *pBtnData);
 	void FillBtnIcon(CSttFrame_Button *pBtnData);
 public:

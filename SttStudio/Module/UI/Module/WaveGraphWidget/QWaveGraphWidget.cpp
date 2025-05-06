@@ -43,7 +43,7 @@ QWaveGraphWidget::~QWaveGraphWidget()
 {
 	//delete m_pReplayRecordTest;
 
-	//lijunqing : 必须首先释放与窗口相关的绘图对象，否则在窗口销毁之后再释放，就会导致系统崩溃
+	//Eric : 必须首先释放与窗口相关的绘图对象，否则在窗口销毁之后再释放，就会导致系统崩溃
 	m_oDrawMemDC->Release();  
 
 	m_pRcdComtradeFile = NULL;

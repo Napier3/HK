@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttCmdDefineGlobal.h
@@ -9,12 +9,12 @@
 #include "../../../61850/Module/CfgDataMngr/IecCfgDataMngrGlobal.h"
 //#include "../../../Module/DataMngr/DataMngrGlobal.h"
 
-//2021-6-13  lijunqing
+//2021-6-13  Eric
 //模块class id的命名，都用模块的功能概要简写，同时都是大写，MNGR是生成工具缺省的，必须要修改
 //因此将“MngrCLASSID”改为“STTCMDCLASSID”。
 //#define STTCMDCLASSID_BASECLASS       (CLASSID_BASECLASS + 0X00010000)
 //#define STTCMDCLASSID_EXLISTCLASS       (CLASSID_EXLISTCLASS + 0X00010000)
-//2023-9-9  lijunqing  (CLASSID_BASECLASS + 0X00010000) >> (CLASSID_BASECLASS + 0X00310000)
+//2023-9-9  Eric  (CLASSID_BASECLASS + 0X00010000) >> (CLASSID_BASECLASS + 0X00310000)
 #define STTCMDCLASSID_BASECLASS       (CLASSID_BASECLASS + 0X00310000)
 #define STTCMDCLASSID_EXLISTCLASS       (CLASSID_EXLISTCLASS + 0X00310000)
 
@@ -48,7 +48,7 @@
 #define STTCMDCLASSID_CSTTIOTCMD       (STTCMDCLASSID_EXLISTCLASS + 0X0000001A)
 
 //shaolei  20210724  add
-//lijunqing 2022-1-14   所有项目的classid 与STTGBXMLCLASSID_CSTTITEMBASE关联
+//Eric 2022-1-14   所有项目的classid 与STTGBXMLCLASSID_CSTTITEMBASE关联
 #define STTGBXMLCLASSID_CSTTGUIDEBOOK			(STTCMDCLASSID_EXLISTCLASS + 0X0000001B)
 #define STTGBXMLCLASSID_CSTTITEMBASE			(STTCMDCLASSID_EXLISTCLASS + 0X00001000)
 #define STTGBXMLCLASSID_CSTTITEMS					(STTGBXMLCLASSID_CSTTITEMBASE + 0X0000001D)
@@ -66,11 +66,11 @@
 #define STTCMDCLASSID_CSTTSEARCHRESULTS       (STTCMDCLASSID_EXLISTCLASS + 0X00000028)//zhouhj 20210925 增加搜索点结果
 #define STTGBXMLCLASSID_CSTTCONTENTS				(STTCMDCLASSID_EXLISTCLASS + 0X00000029)  
 #define STTGBXMLCLASSID_CSTTTESTMACROUIPARAS		(STTCMDCLASSID_BASECLASS + 0X0000002A)  
-//2022-7-24  lijunqing 
+//2022-7-24  Eric 
 #define STTGBXMLCLASSID_MACROCHARITEMLINEDEF		(STTCMDCLASSID_BASECLASS + 0X0000002B)
 #define STTGBXMLCLASSID_CSTTMACROCHARITEMS              (STTGBXMLCLASSID_CSTTITEMBASE + 0x0000002C)
 
-//2022-9-14  lijunqing
+//2022-9-14  Eric
 #define STTGBXMLCLASSID_CSTTCOMM_DATA			(STTCMDCLASSID_EXLISTCLASS + 0x0000002D)
 
 //2022-12-19  shaolei
@@ -104,7 +104,7 @@ protected:
 	static long g_nMngrRef;
 
 	BOOL m_bOnlyGetItem;
-	long m_nGuideBookUseItemKey;  //2022-3-24  lijunqing
+	long m_nGuideBookUseItemKey;  //2022-3-24  Eric
 
 public:
 	static CSttCmdDefineXmlRWKeys* g_pXmlKeys;
@@ -114,7 +114,7 @@ public:
 	static BOOL IsOnlyGetItem()	{	return g_pXmlKeys->m_bOnlyGetItem;	}
 	static void SetOnlyGetItem(BOOL b)	{	g_pXmlKeys->m_bOnlyGetItem = b;	}
 
-	//2022-3-24  lijunqing
+	//2022-3-24  Eric
 	static void stt_Inc_GuideBookUseItemKey(CSttCmdDefineXmlRWKeys *pXmlKeys);
 	static void stt_Dec_GuideBookUseItemKey(CSttCmdDefineXmlRWKeys *pXmlKeys);
 	static long stt_Is_GuideBookUseItemKey(CSttCmdDefineXmlRWKeys *pXmlKeys);
@@ -264,7 +264,7 @@ public:
 	BSTR m_strYMinKey; //ymin
 	BSTR m_strYMaxKey; //ymax
 
-	//2022-7-24  lijunqing
+	//2022-7-24  Eric
 	BSTR m_strCMacroCharItemLineDefKey;
 	BSTR  m_strAxisModeKey;   //Axis mode:x-y; r-angle
 	BSTR  m_strParaIdXbKey;

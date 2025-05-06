@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttAtsCmd.h  CSttAtsCmd
@@ -11,7 +11,7 @@
 #include "SttCmdBase.h"
 class CSttSocketDataBase;
 
-//2021-7-17  lijunqing
+//2021-7-17  Eric
 class CSttAtsCmd : public CSttCmdBase, public CXObjectRefBase
 {
 public:
@@ -38,7 +38,7 @@ public:
 	virtual CBaseObject* CloneEx(BOOL bCopyOwn=TRUE, BOOL bCopyChildren=FALSE);
 	virtual BOOL CanPaste(UINT nClassID);
 
-	//2020-10-20  lijunqing
+	//2020-10-20  Eric
 // private:
 // 	CSttSocketDataBase *m_pRefSocketDataBase;
 // 

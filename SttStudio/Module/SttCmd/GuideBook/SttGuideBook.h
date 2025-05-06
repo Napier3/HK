@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttGuideBook.h  CSttGuideBook
@@ -41,7 +41,7 @@ public:
 	CString  m_strAuthorityCop;
 	CString  m_strScriptType;
 
-	//2022-3-19  lijunqing  globaldatas
+	//2022-3-19  Eric  globaldatas
 	CDvmDataset *m_pGlobalDatas;	//测试的全局数据
 	CDataGroup *m_pItemsTec;  //2023-10-23 shaolei   南瑞windows软件，要求填写到报告中的“技术要求”、“报告数据保留小数位数”可编辑
 	CDataGroup *m_pAinDataMapCfg;  //2023-11-14 遥测参数映射。在导出word报告时，需要反向映射。故增加指针记录到模板中
@@ -72,13 +72,13 @@ public:
 
 //属性变量访问方法
 public:
-	void SetGuideBookName(const CString &strName);  //2022-9-13  lijunqing
+	void SetGuideBookName(const CString &strName);  //2022-9-13  Eric
 	CString GetGuideBookName();
 
-	//2022-1-11  lijunqing
+	//2022-1-11  Eric
 	CSttDevice* GetDevice(BOOL bCreate=FALSE);
 
-	//2022-3-19  lijunqing  globaldatas
+	//2022-3-19  Eric  globaldatas
 	CDvmDataset* GetGlobalDatas(BOOL bCreateNew=FALSE);
 	void InitGlobalDatas(CDvmDataset *pGlobalDatas);
 	void ClearGuideBook();
@@ -88,7 +88,7 @@ public:
 	virtual void GetFirstTwoItemsByItemsType(CString &strFirst, CString &strSecond);
 	virtual void GetAllItemsByItemsType(CExBaseList &oList);
 
-	//2022-3-30  lijunqing
+	//2022-3-30  Eric
 	void SaveFile();
 	void SaveFile(const CString &strPath, const CString &strFileName);
 	CSttItemBase* InsertItems(const CString &strParentPath, CSttItems *pItems, BOOL &bUpdateParent);
@@ -96,7 +96,7 @@ public:
 	//根据类型，查找第一个CSttItems项目
 	CSttItems* FindFirstItems(const CString &strType, BOOL bCheckType = TRUE);
 
-	//2023-2-8  lijunqing
+	//2023-2-8  Eric
 	CDvmData* FindDataByID(const CString &strID);
 	BOOL GetDataValueByID(const CString &strID, float &fValue);
 	void AddTimeSettingCoef(long nTSettingUnitMs);

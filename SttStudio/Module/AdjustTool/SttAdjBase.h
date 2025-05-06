@@ -1,4 +1,4 @@
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttAdjBase.h  CSttAdjBase
@@ -10,7 +10,7 @@
 
 #include "../../../Module/API/GlobalConfigApi.h"
 
-//2021-5-4  lijunqing  统一定义到校准系数文件中，方便访问
+//2021-5-4  Eric  统一定义到校准系数文件中，方便访问
 #include "../SttTest/Common/tmt_adjust_sys_para_module_def.h"
 #include "../SttTest/Common/tmt_adjust_sys_para_trans.h"
 

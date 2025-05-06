@@ -8,7 +8,7 @@
 #include "QImpCharactWidget.h"
 #include "CharEditWidgetBase.h"
 
-/*  2022-9-5  lijunqing
+/*  2022-9-5  Eric
 基础框架，后续对于电能质量等没有特性曲线图的部分，可以将特性曲线功能放到子类，例如QCharEditMainWidget_RElay
 */
 
@@ -55,7 +55,7 @@ public:
 	void GroupDatasToChar(CDataGroup *pDatas);//将模板视图数据赋值给特性曲线界面
 	void CharToGroupDatas(CDataGroup *pDatas);//将特性曲线界面参数数据赋值给模板视图数据
 
-	//2022-9-3  lijunqing
+	//2022-9-3  Eric
 	void InitCharacteristicsLib(const CString &strUI_ID,const CString &strCharLibFile);//参数1为界面参数功能ID
 	void ShowCharacteristics(CCharacteristics *pCharacteristics);
 	CString GetCharLibID();

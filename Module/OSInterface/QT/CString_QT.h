@@ -23,7 +23,7 @@ public:
 
     const char* GetString() const;
     const char* GetString();
-	void ClearBytes();    //2023-2-7  lijunqing Çå¿Õm_oQbytes
+	void ClearBytes();    //2023-2-7  Eric Çå¿Õm_oQbytes
 
     inline int GetLength() const
     {

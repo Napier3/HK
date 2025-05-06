@@ -173,7 +173,7 @@ public:
 
 	void init()
 	{	
-		init_head(); //2021-9-13  lijunqing
+		init_head(); //2021-9-13  Eric
 
 		strcpy(m_pszMacroID, STT_MACRO_ID_VoltageInverseTime);
 		m_nVersion = 0x00010001;

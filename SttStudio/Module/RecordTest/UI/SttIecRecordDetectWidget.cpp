@@ -265,7 +265,7 @@ void QSttIecRecordDetectWidget::XPostMessage(unsigned int nMsgID, unsigned long 
 		}
 
 		emit sig_AddNewDevice(pCapDeviceBase);
-		//2022-12-02  lijunqing 探测到装置设备
+		//2022-12-02  Eric 探测到装置设备
 
 		return;
 	}
@@ -960,7 +960,7 @@ void QSttIecRecordDetectWidget::ImportIecfg()
 		pNative->Ats_IecDetect(1);
 	}
 
-	//2022-12-25  lijunqing
+	//2022-12-25  Eric
 	assist_event(Event_ID_IecAddCb, NULL);
 }
 

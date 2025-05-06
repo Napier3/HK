@@ -10,12 +10,12 @@
 #include "../UI/SttTestCntrFrameBase.h"
 #include "../SttCmd/GuideBook/SttContents.h"
 #include "../ReplayTest/BigComtradeTransPlay.h"
-//2022-10-5  lijunqing
+//2022-10-5  Eric
 //#include "../Engine/PpMeas/PpSttIotMeasServer.h"
 #include "../../../Module/SmartCap/X61850CapBase.h"
 #include "../../../Module/SmartCap/XSmartCapMngr.h"
 
-//2022-10-7  lijunqing
+//2022-10-7  Eric
 //sun #include "../../../IotAtsMngr/Module/PxEngineServer/IotPxEngineServer.h"
 #include "../HtmlReport/SttXHtmlRptGenFactoryBase.h"
 #include "../UI/SttTestCntrCmdDefine.h"
@@ -219,7 +219,7 @@ void CSttTestCtrlCntrNative::OnReport(const CString &strTestID, long nDeviceInde
 
 	CSttReports *pItemReports = pItem->SetReports(pSttReports);
 	pSttReport = (CSttReport*)pItemReports->GetTail();
-	//2022-10-3  LIJUNQING  处理rpt-map-datas
+	//2022-10-3  Eric  处理rpt-map-datas
 	CSttRptMapDatas *pRptMapDatas = (CSttRptMapDatas*)pSttParas->FindByClassID(STTCMDCLASSID_CSTTRPTMAPDATAS);
 
     if ((pRptMapDatas != nullptr)&&(pSttReport != nullptr))
@@ -1092,7 +1092,7 @@ void CSttTestCtrlCntrNative::On_Ats_SaveTemplate(CSttSysState *pSysState)
 }
 
 
-//2022-9-13  lijunqing
+//2022-9-13  Eric
 void CSttTestCtrlCntrNative::On_Ats_QueryItem(CSttSysState *pSysState)
 {
 	CSttParas *pParas = pSysState->GetSttParas();
@@ -1161,7 +1161,7 @@ BOOL RtData_To_RcdStep6U6I_Ch(CDataGroup *pRtData, CDvmDataset *pDsRcdStep6U6I
 }
 
 long CSttTestCtrlCntrNative::On_RtData(CDataGroup *pRtData)
-{//2022-10-6  lijunqing
+{//2022-10-6  Eric
 	CXSttCap_61850 *pXSttCap_61850 = CXSmartCapMngr::GetSttCap61850_Global();
 
     if (pXSttCap_61850 == nullptr)
@@ -1420,7 +1420,7 @@ long CSttTestCtrlCntrNative::Ats_SetItemPara(const CString &strItemPath, const C
 	}
 	else if (strMacroID == STT_CMD_TYPE_SYSTEM_SystemConfig)
 	{
-		//2022-9-19  lijunqing  同样的代码，出现了好几个地方
+		//2022-9-19  Eric  同样的代码，出现了好几个地方
 /*
 		CSttMacro *pSysConfigMacro = new CSttMacro;
 		CSttParas *pSttParas = new CSttParas;
@@ -1669,7 +1669,7 @@ void CSttTestCtrlCntrNative::GetAllItemsByID(const CString &strItemID, CExBaseLi
 }
 
 
-//2022-3-29  lijunqing
+//2022-3-29  Eric
 //成功返回3
 long CSttTestCtrlCntrNative::TestItem(const CString &strItemPath)
 {
@@ -1723,7 +1723,7 @@ bool CSttTestCtrlCntrNative::IsTestAppConnect()
 	return m_oSttAtsClient.m_bTestAppConnect;
 }
 
-//模板、报告数据等相关的接口  2022-3-14  lijunqing
+//模板、报告数据等相关的接口  2022-3-14  Eric
 CString CSttTestCtrlCntrNative::SaveTestFile(const CString &strRealPath, const CString &strTemplateFileName)
 {
     if (m_pSttGuideBook == nullptr)
@@ -1926,7 +1926,7 @@ long CSttTestCtrlCntrNative::Ats_ConfigDevice(CDataGroup *pCommCfg)
 }
 
 
-//2022-4-14 lijunqing
+//2022-4-14 Eric
 void CSttTestCtrlCntrNative::Ats_IecDetect(long bEnable)
 {
 	m_oSttAtsClient.Ats_IecDetect(bEnable);
@@ -1955,7 +1955,7 @@ long CSttTestCtrlCntrNative::OnConnectStateChanged(bool bState)
 	return nRet;
 }
 
-//2022-10-5  lijunqing
+//2022-10-5  Eric
 void  CSttTestCtrlCntrNative::InitMeasServer()
 {
 	CSttTestAppCfg* pSttTestAppCfg = m_oSttAtsClient.GetSttTestAppCfg();

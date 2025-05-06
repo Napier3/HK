@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttMacroTestUI_TestMacroUIDB.h  CSttMacroTestUI_TestMacroUIDB
@@ -82,7 +82,7 @@ public:
 	CSttMacroTestUI_TestMacroUIs* GetTestMacroUIs()	{	return m_pTestMacroUIs;	}
 	void SetTestMacroUIs(CSttMacroTestUI_TestMacroUIs* pTestMacroUIs)	{	m_pTestMacroUIs = pTestMacroUIs;	}
 
-	//2022-1-9   lijunqing
+	//2022-1-9   Eric
 	static CSttMacroTestUI_TestMacroUI* FindTestMacroUI(const CString &strMacroUiId);
 
 //属性变量访问方法

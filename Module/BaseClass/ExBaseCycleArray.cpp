@@ -220,7 +220,7 @@ void CExBaseCycleArray::DeleteAll()
 	m_nCurrCount = 0;
 }
 
-//2022-10-19  lijunqing
+//2022-10-19  Eric
 CExBaseObject* CExBaseCycleArray::ReadCurr(int nOffsetIndex, BOOL bSetNull )
 {
 	CExBaseObject *p = GetExBaseObject(m_nCurrReadIndex);

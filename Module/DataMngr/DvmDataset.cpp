@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //DvmDataset.cpp  CDvmDataset
@@ -534,7 +534,7 @@ CDvmData* CDvmDataset::AddNewDataEx(const CString &strName, const CString &strID
 	return AddNewData(strName, strID, strDataType, strValue, strUnit, strMin, strMax, strStep);
 }
 
-//2023-2-18  lijunqing
+//2023-2-18  Eric
 CDvmData* CDvmDataset::AddNewDataEx(CDvmData *pSrc)
 {
     CDvmData *pNew = (CDvmData *)FindByID(pSrc->m_strID);
@@ -621,7 +621,7 @@ long CDvmDataset::ClearByReserved(DWORD dwReserved)
 	return nDelCount;
 }
 
-//2021-8-4  lijunqing CDvmDataset *pDatasetSrc ==>> CExBaseList *pListSrc
+//2021-8-4  Eric CDvmDataset *pDatasetSrc ==>> CExBaseList *pListSrc
 void CDvmDataset::AppendCloneWithoutRepeat(CExBaseList *pListSrc)
 {
 	POS pos = pListSrc->GetHeadPosition();
@@ -646,7 +646,7 @@ void CDvmDataset::AppendCloneWithoutRepeat(CExBaseList *pListSrc)
 			AddNewChild(pNew);
 		}
 		else
-		{//2021-8-4  lijunqing  如果存在，在设置值
+		{//2021-8-4  Eric  如果存在，在设置值
 			pFind->m_strValue = pData->m_strValue;
 		}
 	}
@@ -715,7 +715,7 @@ long CDvmDataset::SerializeWrite(CShareMemSerialize *pBinaryBuffer)
 }
 #endif
 
-//2021-1-3 lijunqing
+//2021-1-3 Eric
 void CDvmDataset::ResetDvmDataValues()
 {
 	POS pos = GetHeadPosition();

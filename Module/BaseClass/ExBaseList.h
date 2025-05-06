@@ -116,7 +116,7 @@ public:
 	virtual void InitNameAndIDForPaste(CExBaseObject *pObj);
 	virtual CExBaseObject* AddNewChild(CExBaseObject *pNew, BOOL bInitNameAndId=FALSE);
 	virtual CExBaseObject* FindByClassID(DWORD dwClassID);
-	virtual CExBaseObject* FindByClassID(DWORD dwClassID, long nIndex);  //2023-3-28  lijunqing
+	virtual CExBaseObject* FindByClassID(DWORD dwClassID, long nIndex);  //2023-3-28  Eric
 	virtual BOOL AddChildren(UINT nChildClassID, long nCount);
 
 	virtual DWORD FilterChildren(const CString &strTxtFilter, DWORD dwMode=FILTERMODE_HAS);
@@ -157,7 +157,7 @@ public:
 	virtual CString GetXLangID(CExBaseObject *pChildObj);
 	virtual void GetXLangID(CExBaseObject *pChildObj, CString &strLangID);
 
-//2019-4-17  lijunqing,用于编辑的时候，验证数据是否有效
+//2019-4-17  Eric,用于编辑的时候，验证数据是否有效
 public:
 	virtual BOOL ValidateForNew(CExBaseObject* pNewObj);
 	virtual BOOL ValidateForNew(CExBaseObject* pNewObj, BOOL bValidateName, BOOL bValidateID);
@@ -180,7 +180,7 @@ BOOL ValidateExBaseObjectID(CExBaseObject *pObj, CString &strID);
 BOOL ValidateExBaseObjectNameAndID(CExBaseObject *pObj, CString &strName, CString &strID);
 
 #ifndef NO_XDbBaseLib
-//2019-5-11  lijunqing
+//2019-5-11  Eric
 BOOL DB_ValidateExBaseObjectNameAndPk_New(CExBaseObject *pObj, const CString &strName, CString &strMsg);
 BOOL DB_ValidateExBaseObjectNameAndPk_Edit(CExBaseObject *pObj, CExBaseObject *pRefObj, const CString &strName, CString &strMsg);
 #endif

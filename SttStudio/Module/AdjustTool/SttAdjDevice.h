@@ -1,4 +1,4 @@
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttAdjDevice.h  CSttAdjDevice
@@ -21,9 +21,9 @@ public:
 	BOOL SaveSttAdjFile();
 	CDataGroup* GetDeviceAttrs();
 	CDataGroup* GetBoutTrunOnValueDef();
-	void GetDeviceVersioninfors(CDataGroup &oDeviceInfors);  //2022-3-18  lijunqing
+	void GetDeviceVersioninfors(CDataGroup &oDeviceInfors);  //2022-3-18  Eric
 
-	//2021-5-4  lijunqing  将模块类型由整数转换为字符串，兼容老版本校准系数文件
+	//2021-5-4  Eric  将模块类型由整数转换为字符串，兼容老版本校准系数文件
 	void TransModuleTypeFromLongToString();
 
 	CDataGroup* AddModule(const CString &strSelModuleClass);
@@ -60,7 +60,7 @@ public:
 	BOOL GetAllModules(CExBaseList *pCurModuleList);
 
 public:
-	//2022-2-9  lijunqing 
+	//2022-2-9  Eric 
 	void InitChannelsID();
 	BOOL CheckModulePos();
 

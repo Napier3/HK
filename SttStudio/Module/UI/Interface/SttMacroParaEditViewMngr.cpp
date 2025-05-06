@@ -109,7 +109,7 @@ void CSttMacroParaEditViewMngr::DeletePrev()
 CSttMacroParaEditInterface* CSttMacroParaEditViewMngr::CreateSttMacroParaEditView(const CString &strMacroID, const CString &strGridFile,BOOL bUseExist)
 {
 	if (bUseExist)
-	{//2022-3-10  lijunqing  如果是返回存在的功能视图
+	{//2022-3-10  Eric  如果是返回存在的功能视图
 		if(g_pSttMacroParaEditViewMngr->m_strMacroID == strMacroID 
 			&& g_pSttMacroParaEditViewMngr->m_pMacroParaView != NULL)
 		{

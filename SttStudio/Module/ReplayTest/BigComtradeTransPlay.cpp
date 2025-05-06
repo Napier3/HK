@@ -204,13 +204,13 @@ BOOL CBigComtradeTransPlay::OnOpenComtradeFile(const CString &strComtradeFile,BO
 	return m_oBigComtradeFileRead.OpenComtradeFile(strComtradeFile,FILE_READBUF_SIZE,bInitDefault);
 }
 
-//2021-9-19  lijunqing  是否有波形数据需要绘图
+//2021-9-19  Eric  是否有波形数据需要绘图
 BOOL CBigComtradeTransPlay::HasComtradeDataNeedDraw()
 {
 	return m_oBigComtradeFileRead.m_oSrcComtradeFile.GetTotalPoints() > 0;
 }
 
-//2021-9-20  lijunqing
+//2021-9-20  Eric
 CRcdComtradeFile* CBigComtradeTransPlay::GetSrcComtradeFile()
 {
 	return &m_oBigComtradeFileRead.m_oSrcComtradeFile;

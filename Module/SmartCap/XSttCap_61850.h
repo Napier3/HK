@@ -39,7 +39,7 @@ class CXSttCap_61850 : public CX61850CapBase, public CSttRcdBufferRcvMsg
 {
 public:
 	virtual void OnRcdBufRcv(BYTE *pBuffer, long nLen) ;
-	virtual long OnRcdRcvClosed(); ////2022-6-30  lijunqing 
+	virtual long OnRcdRcvClosed(); ////2022-6-30  Eric 
 
 public:
 	CXSttCap_61850(CXCapPkgBufferMngrInterface *pSttXCapBufferMngr);
@@ -73,7 +73,7 @@ protected:
 
 	CSttFrameMemBufferMngr m_oCapBufferMngr61850;   //抓包报文缓冲区
 	
-	CXCapPkgBufferMngrInterface *m_pSttXCapBufferMngr; //2022-4-6  lijunqing 修改，使用动态创建的对象
+	CXCapPkgBufferMngrInterface *m_pSttXCapBufferMngr; //2022-4-6  Eric 修改，使用动态创建的对象
 	//CSttRcdMemBufferMngr m_oSttRcdMemBufferMngr;
 
 	CSttCapThread *m_pSttCapThread;

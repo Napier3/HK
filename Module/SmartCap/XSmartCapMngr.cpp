@@ -91,7 +91,7 @@ CXEthernetCap_61850* CXSmartCapMngr::CreateEthernetCap_61850(int nNetCardIndex)
 }
 #endif
 
-//2022-4-7 lijunqing 创建纯粹的61850分析功能，不需要做报问提取，330报文监视模式
+//2022-4-7 Eric 创建纯粹的61850分析功能，不需要做报问提取，330报文监视模式
 // CSttLocalRcdMemBufferMngrLinux *pSttLocalRcdMemBufferMngrLinux =new CSttLocalRcdMemBufferMngrLinux();
 //CSttRcdMemBufferMngr *pSttRcdMemBufferMngr = new CSttRcdMemBufferMngr();
 CXSttCap_61850* CXSmartCapMngr::CreateSttCap_61850(CSttTestAppCfg *pSttTestAppCfg
@@ -302,7 +302,7 @@ void CXSmartCapMngr::GetSttCapParas(CDataGroup *pSttParas, BOOL bUseSmv, BOOL bU
 	}
 }
 
-//2022-5-2  lijunqing 
+//2022-5-2  Eric 
 void CXSmartCapMngr::InitSmartCapCtrl()
 {
 	g_pSttCap61850->ClearCap();

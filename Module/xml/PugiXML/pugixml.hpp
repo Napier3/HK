@@ -1102,7 +1102,7 @@ namespace pugi
 		char* get_xml_string();
 		char* get_xml_string_ascii();
 		//xxy 20200516
-		long get_xml_string_wchar(wchar_t **ppwszRetBuffer, long nOffset);  //lijunqing 2022-3-11 add , long nOffset
+		long get_xml_string_wchar(wchar_t **ppwszRetBuffer, long nOffset);  //Eric 2022-3-11 add , long nOffset
 
 #ifndef PUGIXML_NO_STL
 		// Save XML document to stream (semantics is slightly different from xml_node::print, see documentation for details).

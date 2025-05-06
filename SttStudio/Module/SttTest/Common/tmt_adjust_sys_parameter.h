@@ -8,7 +8,7 @@
 
 #define STT_ADJUST_SYS_PARA_VERSION_1_0     0X00010000
 
-//2020-12-27  LIJUNQING  ºóÐøÈç¹û½á¹¹ÌåÔö¼ÓÊý¾Ý£¬ÔòµÝÔö°æ±¾ºÅ
+//2020-12-27  Eric  ºóÐøÈç¹û½á¹¹ÌåÔö¼ÓÊý¾Ý£¬ÔòµÝÔö°æ±¾ºÅ
 //g_dwSttAdjSysParaCurrVersion±íÊ¾µ±Ç°×îÐÂµÄ°æ±¾ºÅ
 //¶þ½øÖÆÎÄ¼þÏòÀÏ°æ±¾¼æÈÝ£¬ËùÒÔ±ØÐëµÃÔö¼Ó°æ±¾¿ØÖÆ
 //ÀÏ°æ±¾Èí¼þ¼æÈÝÐÂ°æ±¾ÎÄ¼þµÄ·½·¨£º
@@ -26,7 +26,7 @@ extern bool g_bWriteHdInfor;
 extern BOOL g_bWriteHdInfor;
 #endif
 
-//2020-10-21  lijunqing 
+//2020-10-21  Eric 
 #include "../SttTestGlobaoConfig.h"
 //#include "../../SttDevice/Module/PowerCtrl/SttPowerCtrlBase.h"//zhouhj 20210511 ¸ÃÎÄ¼þÀàÖÐ°üº¬ÁËÏµÍ³²ÎÊýÀà,ÏµÍ³²ÎÊýÖÐÐèÒªÓÃµ½×î´óÄ£¿éÊýºê¶¨Òå,±ÜÃâ³öÏÖÖØ¸´°üº¬,´Ë´¦Ö»ÉùÃ÷Àà
 class CSttPowerCtrlBase;
@@ -47,7 +47,7 @@ class CSttPowerCtrlBase;
 
 #define ADJUST_MAX_CH_MAPS_COUNT        12
 
-//2021-5-2  lijunqing  ÒòÎªÍâ²¿ÐèÒª·ÃÎÊ£¬ËùÒÔ½«Ä£¿éÊôÐÔ¶¨Òå²¿·Ö·Åµ½  tmt_adjust_sys_para_module_def.h
+//2021-5-2  Eric  ÒòÎªÍâ²¿ÐèÒª·ÃÎÊ£¬ËùÒÔ½«Ä£¿éÊôÐÔ¶¨Òå²¿·Ö·Åµ½  tmt_adjust_sys_para_module_def.h
 #include "tmt_adjust_sys_para_module_def.h"
 
 //Ó²¼þÍ¨µÀID»º³åÇøµÄ³¤¶È
@@ -261,7 +261,7 @@ public:
 	//Êµ¼ÊµÄÐ³²¨´ÎÊýÔÚÄ£¿éÊôÐÔÖÐ¶¨Òå
 	PSTT_CHANNEL_WAVE_ADJUST m_pChWaveAdj;
 
-	//2021-4-30  lijunqing
+	//2021-4-30  Eric
 	//ÌÖÂÛ½á¹û£ºÎª·½±ã½«À´µÄ°æ±¾À©³ä£¬ÎªÃ¿¸öÍ¨µÀ¶¼Ôö¼Ó¶ÀÁ¢µÄÊôÐÔÈçÏÂ
 	//           ²É¼¯¡¢Êä³ö£ºWorkMode£º
 	//           µçÑ¹¡¢µçÁ÷£¿£ºEeType
@@ -297,7 +297,7 @@ public:
 	PSTT_CHANNEL_ADJUSTS m_pChsAdjust;
 	//	STT_CHANNEL_ADJUSTS m_oChsAdjust[ADJUST_MAX_CHANNEL_COUNT];
 
-	//2021-5-2  lijunqing  ÒÔÏÂµÄ²¿·Ö£¬ÊÇ·ñÓÐ±ØÒªµ¥¶À×÷ÎªÒ»¸ö¶ÔÏó
+	//2021-5-2  Eric  ÒÔÏÂµÄ²¿·Ö£¬ÊÇ·ñÓÐ±ØÒªµ¥¶À×÷ÎªÒ»¸ö¶ÔÏó
 	//????????????????????????????????????????????????
 	STT_CHANNEL_ADJUSTS m_oChsAdjust_PTU_Is;//6ºÏ1,´óµçÁ÷¶Ë×ÓIsÍ¨µÀÐ£×¼
 
@@ -428,7 +428,7 @@ public:
 	//	STT_MODULE_CH_MAPS m_oChMaps;
 	//	STT_MODULE_CH_GROUPS m_oChGroups;
 
-	//2021-4-29  lijunqing
+	//2021-4-29  Eric
 	//Ó²¼þÍ¨µÀ¶¨Òå£º¼´Ó²¼þÍ¨µÀµÄID£¬ÓÃÓÚÍ¨µÀÓ³Éä
 	//ÏµÍ³³õÊ¼»¯µÄÊ±ºò³õÊ¼»¯£¬²»¸Ä±ä
 	STT_MODULE_CH_DEFS m_oChDefs;
@@ -446,7 +446,7 @@ public:
 typedef struct stt_Module_Attr
 {
 	//////////////////////////////////////////////////////////////////////////
-	//ÒÑ¾­È·¶¨µÄÊôÐÔ  lijunqing
+	//ÒÑ¾­È·¶¨µÄÊôÐÔ  Eric
 	char m_strModelName[32];//Ä£¿éÐÍºÅ
 	char m_strModuleSN[32];//Ä£¿éÐòÁÐºÅ
 	long m_nChannelNum;//Í¨µÀÊý
@@ -491,7 +491,7 @@ typedef struct stt_Module_Attr
 	float m_fDigitalDelay;//Êý×ÖÄ£¿éÏàÎ»ÑÓÊ±
 
 	long  m_nSwitchIn[8];//×î´ó4×é16IOÔª¼þ£¬¹²64IO
-	//2021-6-2  lijunqing ½«¸÷ÖÖºÏ²¢Ä£Ê½Í³Ò»¶¨Òå
+	//2021-6-2  Eric ½«¸÷ÖÖºÏ²¢Ä£Ê½Í³Ò»¶¨Òå
 	long  m_nChMergeMode;//Í¨µÀºÏ²¢Ä£Ê½£º0=²»Ö§³Ö£»1=6ºÏ1£» 2=6ºÏ3£»
 	//2023-10-30 zhoulei ÓÃÓÚÐ¡ÐÅºÅ²å¼þ
 	long  m_nChTypeChg;//Í¨µÀµçÆøÀàÐÍ¿É±ä£»1:¿É±ä,0:²»¿É±ä
@@ -499,7 +499,7 @@ typedef struct stt_Module_Attr
 	char m_strDateProduce[24]; //2020-10-10£¬¶àÁô¼¸Î»£¬±ÜÃâ×Ö·û´®¶àÁË
 	char m_strFactory[64]; //2020-10-10£¬¶àÁô¼¸Î»£¬±ÜÃâ×Ö·û´®¶àÁË
 
-	//2021-4-30  lijunqing
+	//2021-4-30  Eric
 	//ÌÖÂÛ½á¹û£ºÎª·½±ã½«À´µÄ°æ±¾À©³ä£¬ÎªÃ¿¸öÍ¨µÀ¶¼Ôö¼Ó¶ÀÁ¢µÄÊôÐÔÈçÏÂ
 	//           ²É¼¯¡¢Êä³ö£ºWorkMode£º
 	//           µçÑ¹¡¢µçÁ÷£¿£ºEeType
@@ -601,7 +601,7 @@ typedef struct stt_Module
 	long m_nChTmtPos[STT_MODULE_CHANNEL_MAX];//Ó³Éäµ½Èí¼þ×ÊÔ´
 	long m_nChTmtPosEx[STT_MODULE_CHANNEL_MAX];//Ó³Éäµ½Èí¼þ×ÊÔ´ADMU
 
-	//2021-6-2  lijunqing
+	//2021-6-2  Eric
 	float m_fChTmtCoef[STT_MODULE_CHANNEL_MAX];   //Ó³ÉäÍ¨µÀµÄÏµÊý£ºÀýÈçµçÁ÷¶àÍ¨µÀºÏ²¢Êä³ö£¬Ã¿¸öÍ¨µÀµÄÏµÊýÉèÖÃ
 	//	long m_nArrayBeginIndex;
 
@@ -656,7 +656,7 @@ typedef struct stt_Module
 
 	}
 
-	//2021-5-2  lijunqing  ¸ù¾Ým_dwVersion×ö³õÊ¼»¯´¦Àí
+	//2021-5-2  Eric  ¸ù¾Ým_dwVersion×ö³õÊ¼»¯´¦Àí
 	void init_after_read()
 	{
 
@@ -719,7 +719,7 @@ typedef struct stt_Device_Attrs
 	char m_strDriverName[32]; //Çý¶¯Ãû³Æ
 
 	char m_strDeviceName[32];//ÒÇÆ÷ÐÍºÅ£ºÀýÈçPN466
-	char  m_strSN[32];//×°ÖÃÐòÁÐºÅ£¬×Ö·û´®ÐÍ 2020-10-14  lijunqing
+	char  m_strSN[32];//×°ÖÃÐòÁÐºÅ£¬×Ö·û´®ÐÍ 2020-10-14  Eric
 
 	//ÆäËû²ÎÊý
 	char m_strDateProduce[24]; //2020-10-10£¬¶àÁô¼¸Î»£¬±ÜÃâ×Ö·û´®¶àÁË
@@ -1301,7 +1301,7 @@ bool stt_open_adjust_file_path(const CString &strFilePath);//zhouhj 20210506 Ôö¼
 void stt_xml_serialize_write_adjust();
 void stt_xml_serialize_register_adjust(const CString &strXMLPath);
 
-//2021-5-2  lijunqing save-adjust-file
+//2021-5-2  Eric save-adjust-file
 bool stt_save_adjust_file(const char *pszFileName);
 
 
@@ -1341,7 +1341,7 @@ PSTT_ADJUST_ITEM stt_adj_find_meas_u_item(float fGearVal,int nModulePos,int nCha
 PSTT_ADJUST_ITEM stt_adj_find_meas_i_item(float fGearVal,int nModulePos,int nChannel,float fTemperature,int nHarm=1);
 //////////////////////////////////////////////////////////////////////////
 //
-//ÐòÁÐ»¯Êý¾ÝÀàÐÍ£º×Ö·û´® ==>>  ÎÄ±¾  2021-5-4  lijunqing
+//ÐòÁÐ»¯Êý¾ÝÀàÐÍ£º×Ö·û´® ==>>  ÎÄ±¾  2021-5-4  Eric
 void stt_xml_serialize_data_type(CSttXmlSerializeBase *pXmlSerialize, const char *pszName, const char *pszID, const char *pszUnit, const char *pszDataType, long &nValue);
 
 #endif // TMT_ADJUST_SYS_PARAMETER_H

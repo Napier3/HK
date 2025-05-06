@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttSysState.h  CSttSysState
@@ -12,7 +12,7 @@
 #include "../../../Module/BaseClass/XObjectRefBase.h"
 
 //////////////////////////////////////////////////////////////////////////
-//move to SttSysState.h   2022-8-1  lijunqing
+//move to SttSysState.h   2022-8-1  Eric
 
 class CSttSysState : public CSttCmdBase, public CXObjectRefBase
 {

@@ -448,7 +448,7 @@ void T_RT_CalEffecValue(PRTCALFUNCPARA pCalFuncPara, T1 *pnBuffer)
 	//unsigned short *pnBuffer  = pCalFuncPara->pnBuffer;       //缓冲区
 	float          *pfBuffer  = pCalFuncPara->pfBuffer;
 
-	//2022-5-4  lijunqing
+	//2022-5-4  Eric
 	long nCalIndex = 0;
 #ifdef not_use_FreqCalFix50Hz//2023.7.14 zhouhj 默认采用固定50Hz方式，修改兼容非50Hz的情况
 	long nCalCount = pCalFuncPara->dwSampleRate/50;
@@ -603,7 +603,7 @@ void T_RT_CalEffecValue(PRTCALFUNCPARA pCalFuncPara, T1 *pnBuffer)
 		pRtChAttrVal->dEffecValue -= dZeroValue;
 	}
 
-	//2022-5-4  lijunqing can angle
+	//2022-5-4  Eric can angle
 	//判断是否过零点过多,fdp add 2010.6.13
 	if (*pnFreqZeroPosCount > MAX_FREQ_ZERO_POS_COUNT || *pnFreqZeroPosCount == 0)
 	{
@@ -1754,7 +1754,7 @@ void GetRealandImValue(PRTCALFUNCPARA pCalFuncPara,double& dReal1,double& dReal2
 	dIm3   = dValue3 * sin(dPasic3);
 }
 
-//2022-5-3  lijunqing enable harm cal  functions
+//2022-5-3  Eric enable harm cal  functions
 long g_nEnableCal_Root  = 1 ;
 
 long g_nEnableCal_Harm02Value = 1 ;

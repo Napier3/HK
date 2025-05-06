@@ -68,7 +68,7 @@ public:
 #ifdef _SHOW_PARA
 	CDrawParas m_oParas;//参数显示管理
 
-	//2022-9-1  lijunqing
+	//2022-9-1  Eric
 	void CalValue();
 
 #endif
@@ -141,7 +141,7 @@ public:
 public:
 	virtual void AddAttrsDraw(CRtVariable *pRtVariable)	{	};
 
-//2021-1-16  lijunqing
+//2021-1-16  Eric
 	void AttatchAxisX(CRulerAxis *pAxis)
 	{
 		m_pRulerAxis->AttatchRefAxis(pAxis);

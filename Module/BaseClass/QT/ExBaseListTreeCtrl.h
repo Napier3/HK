@@ -17,7 +17,7 @@ public:
 
 };
 
-//2021-8-24  lijunqing
+//2021-8-24  Eric
 class CExBaseListTreeCtrl;
 
 class CExBaseListTreeOptrInterface

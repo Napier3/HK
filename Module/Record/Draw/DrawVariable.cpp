@@ -120,7 +120,7 @@ CDrawVariable::~CDrawVariable()
 
 #ifdef _SHOW_PARA
 
-//2022-9-1  lijunqing
+//2022-9-1  Eric
 void CDrawVariable::CalValue()
 {
 	m_oParas.CalValue();

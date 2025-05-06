@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttIotCmd.h  CSttIotCmd
@@ -49,7 +49,7 @@ public:
 	CSttIotCmd* NewSttIotCmd(void *pCmmInterface)	;
 	CSttIotCmd* SttIotCmd()	{	return (CSttIotCmd*)GetXObjectRef();	}
 
-	//2022-10-19 lijunqing
+	//2022-10-19 Eric
 	virtual CXObjectRefDriver* Clone();
 };
 

@@ -145,7 +145,7 @@ public:
     virtual BOOL SetXml(_bstr_t &strXml, CXmlRWKeys *pXmlRWKeys,const long &nXmlRWType = _PUGI_XML_TYPE_);
 #endif
 
-    //2020-5-31  lijunqing
+    //2020-5-31  Eric
     virtual BOOL SetXml(CXmlRWDocBase *pRWDoc, BSTR bstrElementKey, CXmlRWKeys *pXmlRWKeys);
     virtual BOOL SetXml_ASCII(char *strXml, long nLen,CXmlRWKeys *pXmlRWKeys,const long &nXmlRWType = _PUGI_XML_TYPE_);
 	virtual BOOL SetXml_UTF8(char *strXml,long nLen, CXmlRWKeys *pXmlRWKeys,const long &nXmlRWType = _PUGI_XML_TYPE_);
@@ -153,11 +153,11 @@ public:
 	static bool IsBaseObject(UINT nClassID)       {        return ( (nClassID & CLASSID_BASEORLISTMASK) == CLASSID_BASECLASS);      };
 	static bool IsBaseList(UINT nClassID)         {        return ( (nClassID & CLASSID_LISTCLASS) == CLASSID_LISTCLASS);      };
 
-	//2020-10-13  lijunqing
+	//2020-10-13  Eric
 	virtual void SetModifiedFlag(BOOL bModified=TRUE);
 	virtual BOOL GetModifiedFlagOwn();
 	virtual void SaveBaseObject();
-	virtual BOOL GetModifiedFlag(BOOL bRoot=TRUE); //2021-5-5  lijunqing
+	virtual BOOL GetModifiedFlag(BOOL bRoot=TRUE); //2021-5-5  Eric
 
 protected:
 	virtual void SetModifiedFlagOwn(BOOL bModified=TRUE);

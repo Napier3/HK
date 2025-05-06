@@ -29,7 +29,7 @@ BOOL CSttXmlSerializeBase::xml_serialize(const char *pszName,const char *pszID,c
 CSttXmlSerializeBase* CSttXmlSerializeBase::xml_serialize(const char *pszName,const char *pszID, const char *pszDataTypeID, BSTR bstrElementKey ) {	return NULL;	}
 CSttXmlSerializeBase* CSttXmlSerializeBase::xml_serialize(const char *pszName,const char *pszID, long nIndex, const char *pszDataTypeID, BSTR bstrElementKey ) {	return NULL;	}
 
-//2021-6-1  lijunqing : use bstrElementKey and nIndex 
+//2021-6-1  Eric : use bstrElementKey and nIndex 
 CSttXmlSerializeBase* CSttXmlSerializeBase::xml_serialize(BSTR bstrElementKey, long nIndex, const char *pszName,const char *pszID, const char *pszDataTypeID) {	return NULL;	}
 
 BOOL CSttXmlSerializeBase::xml_serialize_sys_pata(const char *pszName,const char *pszID,const char *pszUnit,const char *pszDataTypeID,
@@ -126,7 +126,7 @@ CXmlRWElementBase* CSttXmlSerializeRead::FindElement(BSTR bstrElementKey, long n
 	return pFind;
 }
 
-CXmlRWElementBase* CSttXmlSerializeRead::FindElement(BSTR bstrElementKey, BSTR bstrAttrID, const char *pszAttrValue,   long nIndex)  //2021-6-5  lijunqing
+CXmlRWElementBase* CSttXmlSerializeRead::FindElement(BSTR bstrElementKey, BSTR bstrAttrID, const char *pszAttrValue,   long nIndex)  //2021-6-5  Eric
 {
 	CXmlRWElementBase *p = NULL;
 	CXmlRWElementBase *pFind = NULL;
@@ -462,7 +462,7 @@ CSttXmlSerializeBase* CSttXmlSerializeRead::xml_serialize(const char *pszName,co
 	}
 }
 
-//2021-6-1  lijunqing : use bstrElementKey and nIndex 
+//2021-6-1  Eric : use bstrElementKey and nIndex 
 CSttXmlSerializeBase* CSttXmlSerializeRead::xml_serialize(BSTR bstrElementKey, long nIndex, const char *pszName,const char *pszID, const char *pszDataTypeID)
 {
 	CXmlRWElementBase *pFind = FindElement(bstrElementKey, stt_DataTypeKey(), pszDataTypeID, nIndex);
@@ -800,7 +800,7 @@ CSttXmlSerializeBase* CSttXmlSerializeWrite::xml_serialize(const char *pszName,c
 }
 
 
-//2021-6-1  lijunqing : use bstrElementKey and nIndex 
+//2021-6-1  Eric : use bstrElementKey and nIndex 
 CSttXmlSerializeBase* CSttXmlSerializeWrite::xml_serialize(BSTR bstrElementKey, long nIndex, const char *pszName,const char *pszID, const char *pszDataTypeID)
 {
 	CXmlRWElementBase *pDataElement = CreateElement(bstrElementKey);
@@ -1496,7 +1496,7 @@ CSttXmlSerializeBase* CSttDataGroupSerializeRead::xml_serialize(const char *pszN
 	return pNew;
 }
 
-//2021-6-1  lijunqing : use bstrElementKey and nIndex 
+//2021-6-1  Eric : use bstrElementKey and nIndex 
 CSttXmlSerializeBase* CSttDataGroupSerializeRead::xml_serialize(BSTR bstrElementKey, long nIndex, const char *pszName,const char *pszID, const char *pszDataTypeID)
 {
 // 	CXmlRWElementBase *pFind = FindElement(bstrElementKey, stt_DataTypeKey(), pszDataTypeID, nIndex);
@@ -1669,7 +1669,7 @@ CSttXmlSerializeBase* CSttDataGroupSerializeRegister::xml_serialize(const char *
 	return pNewRegister;
 }
 
-//2021-6-1  lijunqing : use bstrElementKey and nIndex 
+//2021-6-1  Eric : use bstrElementKey and nIndex 
 CSttXmlSerializeBase* CSttDataGroupSerializeRegister::xml_serialize(BSTR bstrElementKey, long nIndex, const char *pszName,const char *pszID, const char *pszDataTypeID)
 {
 	char pszNewName[_STT_XML_NEW_NAME_LEN_], pszNewID[_STT_XML_NEW_NAME_LEN_];

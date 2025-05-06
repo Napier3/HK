@@ -89,7 +89,7 @@ void QSttBatteryButton::SetPic(int nState)
 }
 
 
-void QSttBatteryButton::UpdateState(CDataGroup *pDataGroup)  //2022-6-9  lijunqing
+void QSttBatteryButton::UpdateState(CDataGroup *pDataGroup)  //2022-6-9  Eric
 {
 	long nPowerAC = -1, nBatCap = -1;
 	stt_GetDataValueByID(pDataGroup, _T("PowerAC"), nPowerAC);
@@ -385,7 +385,7 @@ void QSttGpsButton::SetPic( int nState )
 
 //#include "../SttTestCntrFrameBase.h"
 
-void QSttGpsButton::UpdateState(CDataGroup *pDataGroup)  //2022-6-9  lijunqing
+void QSttGpsButton::UpdateState(CDataGroup *pDataGroup)  //2022-6-9  Eric
 {
 	CString strGpsString = _T("");
 	long nSyn = 0, nSecond = 0, nNSecend = 0;
@@ -600,7 +600,7 @@ void QSttBlueToothButton::SetPic( int nState )
 	}
 }
 
-void QSttBlueToothButton::UpdateState(CDataGroup *pDataGroup)  //2022-6-10  lijunqing
+void QSttBlueToothButton::UpdateState(CDataGroup *pDataGroup)  //2022-6-10  Eric
 {
 	long nBle = -1;
 	stt_GetDataValueByID(pDataGroup, _T("Ble"), nBle);

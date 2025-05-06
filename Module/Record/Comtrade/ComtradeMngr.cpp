@@ -59,7 +59,7 @@ CRcdComtradeFile::CRcdComtradeFile(BOOL bCreateBuffer)
 	m_bCreateBuffer = bCreateBuffer;
 	m_nTotalPoints = 0;
 
-	//2021-1-17  lijunqing
+	//2021-1-17  Eric
 	m_nRefCount = 0;
 }
 
@@ -1345,7 +1345,7 @@ long CRcdComtradeFile::ReadDataFile(const CString& strFilePath)
 
 long CRcdComtradeFile::GetTotalPoints()
 {
-	//2021-9-20  lijunqing
+	//2021-9-20  Eric
 	if (m_pnDataPoints == NULL || m_nSamAmount == 0)
 	{
 		return 0;

@@ -1,5 +1,5 @@
 #pragma once
-//2021-5-30   lijunqing 
+//2021-5-30   Eric 
 #include "../../SttTestBase/SttXmlSerialize.h"
 
 #define TMT_PARAS_HEAD_MACROID_LEN  32	//2021-8-2 yyj空间加大，MacroID超过16会异常
@@ -78,7 +78,7 @@ public:
 	long m_nTestState; //测试状态  0=未测试； 1=测试完成，合格；2=测试完成，不合格
 	long m_nSelected;//测试项是否被选择  zhouhj 20210712 
 
-	//2021-9-7  lijunqing
+	//2021-9-7  Eric
 	void *m_pDrawRef;   //绘图对象的引用，如果没有绘图对象，则为NULL
 
 	virtual ~tmt_paras_head(){}//zhouhj 20210623 不加该函数,delete数组中对象时,报错
@@ -115,12 +115,12 @@ void stt_xml_serialize(PTMT_PARAS_HEAD pParas, CSttXmlSerializeBase *pXmlSierial
 void stt_xml_serialize(PTMT_PARAS_RSLT_EXPR_MNGR	pRsltExprMngr,   CSttXmlSerializeBase *pXmlSerialize);
 void stt_xml_serialize(PTMT_PARAS_RSLT_EXPR 	pRsltExpr, long nIndex,  CSttXmlSerializeBase *pXmlSerialize);
 
-CString stt_get_test_item_name(PTMT_PARAS_HEAD pParas);	//2021-7-15  lijunqing 获取测试点的名字
+CString stt_get_test_item_name(PTMT_PARAS_HEAD pParas);	//2021-7-15  Eric 获取测试点的名字
 
-void stt_clone_expr_mngr(TMT_PARAS_RSLT_EXPR_MNGR pSrc, TMT_PARAS_RSLT_EXPR_MNGR pDest);//2021-7-21  lijunqing  克隆表达式
+void stt_clone_expr_mngr(TMT_PARAS_RSLT_EXPR_MNGR pSrc, TMT_PARAS_RSLT_EXPR_MNGR pDest);//2021-7-21  Eric  克隆表达式
 void stt_clone_expr_mngr(PTMT_PARAS_HEAD pSrc, PTMT_PARAS_HEAD pDest);
 
-//2022-1-8  lijunqing zhoulei zhouhongjun shefu
+//2022-1-8  Eric zhoulei zhouhongjun shefu
 //测试功能参数结构体用到了如下两个数据，LINUX TestCtrl不需要引入太多的和Device相关的内容
 //因此将此两个变量改为全局变量。读完硬件信息，初始化此两个变量
 extern int g_nBinExCount;//=MAX_ExBINARY_COUNT;

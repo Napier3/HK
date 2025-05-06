@@ -35,6 +35,6 @@ public:
 	virtual BYTE* GetDataBuffer()	{	return m_pBuffer;	}
 	virtual BYTE* GetCurBuffer()	{	return m_pCurrPos;	}
 
-	//2022-9-23  lijunqing
+	//2022-9-23  Eric
 	void ZeroBuffer();
 };

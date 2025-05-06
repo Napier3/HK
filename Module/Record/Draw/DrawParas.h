@@ -38,7 +38,7 @@ public:
 	void SetParaRect(CRect rcPara);
 	void SetParentWnd(CWnd* pParentWnd);
 
-	//2022-9-1  lijunqing
+	//2022-9-1  Eric
 	void CalValue();
 public:
 	CDrawParas();

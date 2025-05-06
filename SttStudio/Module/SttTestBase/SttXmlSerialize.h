@@ -32,11 +32,11 @@ public:
 	CSttXmlSerializeBase* CreateXmlSerializeWrite(CExBaseObject *pSttObj);
 	CSttXmlSerializeBase* CreateXmlSerializeRegister(CExBaseObject *pSttObj);
 
-	//2021-5-30  lijunqing
+	//2021-5-30  Eric
 	CSttXmlSerializeBase* CreateXmlSerializeWrite(BSTR bstrXmlRootKey);
 	CSttXmlSerializeBase* CreateXmlSerializeRegister(BSTR bstrXmlRootKey);
 
-	//2021-8-12  lijunqing
+	//2021-8-12  Eric
 	CSttXmlSerializeBase* CreateXmlSerializeRead(const CString &strFile);
 	CSttXmlSerializeBase* CreateXmlSerializeRead_String(const CString &strXML);
 	CSttXmlSerializeBase* CreateXmlSerializeRead_String_UTF8(char *pszBuffer, long nLen);

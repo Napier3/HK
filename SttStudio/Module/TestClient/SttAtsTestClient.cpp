@@ -17,7 +17,7 @@
 
 #define STT_EXCEPTION_TIMEOUT               2000//异常事件超时时间,超过2s未收到,默认超时已恢复
 
-//2022-10-6  lijunqing  
+//2022-10-6  Eric  
 //CSttAtsTestClient与CSttPowerTestEngineBase功能重复，当时因为时间紧，就没有进行相同功能的抽象处理
 //因此把CSttPowerTestEngineBase也包含到工程中，2022-10-6 lijq移去CSttPowerTestEngineBase
 CSttTestAppConfigTool g_oSttTestAppConfigTool;
@@ -1128,7 +1128,7 @@ void CSttAtsTestClient::OnTestState(const CString &strMacroID, CDataGroup *pPara
 	}
 }
 
-//2022-10-6  lijunqing  美化OnRtData
+//2022-10-6  Eric  美化OnRtData
 void AtsTestClient_OnRtData_GlobalRtDataMngr(CDataGroup *pRtDataGroup)
 {
 	CSttGlobalRtDataMngr *pRtDataMngr = &g_oSttTestResourceMngr.m_oRtDataMngr;
@@ -1221,7 +1221,7 @@ long CSttAtsTestClient::OnRtData(CSttParas *pParas)
 		}
 
 		if (pRtDataGroup->m_strID == SYS_STATE_XEVENT_EVENTID_RtData)
-		{////2022-10-6  lijunqing
+		{////2022-10-6  Eric
 			m_pAtsEventRcv->On_RtData(pRtDataGroup);  //实时数据处理
 			AtsTestClient_OnRtData_GlobalRtDataMngr(pRtDataGroup);  //美化函数
 		}
@@ -1560,7 +1560,7 @@ void CSttAtsTestClient::OnUpdateSyncTime(CDataGroup *pRtSyncTime)
 	m_pAtsEventRcv->OnUpdateSyncTime(pRtSyncTime);
 }
 
-//2022-4-14 lijunqing
+//2022-4-14 Eric
 void CSttAtsTestClient::Ats_IecDetect(long bEnable)
 {
 	if (!ConnectAtsTestServer())

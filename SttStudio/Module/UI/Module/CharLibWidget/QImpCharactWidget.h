@@ -16,7 +16,7 @@ class QImpCharactWidget : public QWidget
     Q_OBJECT
 
 public:
-	//lijunqing 2021-10-28  lijunqing  
+	//Eric 2021-10-28  Eric  
 	//bUseOptrButtons=是否使用图形操作按钮
 	//bUseMouseMoveChar=是否使用鼠标移动图形，对于反时限等，是不需要移动图形的
     explicit QImpCharactWidget(QWidget *parent = 0, bool bUseOptrButtons=FALSE, BOOL bUseMouseMoveChar=FALSE);
@@ -109,7 +109,7 @@ public slots:
 //	void slot_ZKFinshed(RoundPara para);
 	void slot_UpdateDrawCharacters(CExBaseObject *pCharacteristic);	//20210915
 	void slot_ZKDel(int);
-	void slotDrawOptr_ZoomIn();	//2021-10-26  lijunqing
+	void slotDrawOptr_ZoomIn();	//2021-10-26  Eric
 	void slotDrawOptr_ZoomOut();	
 	void slotDrawOptr_Reset();	
 	void slotDrawOptr_MouseZoom();	

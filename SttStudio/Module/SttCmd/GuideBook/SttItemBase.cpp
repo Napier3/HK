@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttItemBase.cpp  CSttItemBase
@@ -287,7 +287,7 @@ CExBaseObject* CSttItemBase::CreateNewChild(const CString &strClassID, BOOL &bAd
 		pNew = new CSttReports();
 	}
 	else if (strClassID == pXmlKeys->m_strContentsKey)
-	{	//2022-9-3  lijunqing  因为device和macro-char-items都有特性曲线，
+	{	//2022-9-3  Eric  因为device和macro-char-items都有特性曲线，
 		//以及单点测试的时候也有特性曲线，所以将contents扩展放到了此处
 		return new CSttContents();
 	}

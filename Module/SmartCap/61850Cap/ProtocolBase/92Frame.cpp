@@ -128,7 +128,7 @@ long C92Frame::ParseOwn(PEPBUFFERPOS pBufferPos, CFrameDetail *pDetailList)
 		
 		while (TRUE)
 		{
-			if (! Ep_IsBufferEnough(pBufferPos, nLen))//2020-07-15  lijunqing  数据的长度足够
+			if (! Ep_IsBufferEnough(pBufferPos, nLen))//2020-07-15  Eric  数据的长度足够
 			{
 				return -1;
 			}
@@ -301,7 +301,7 @@ long C92Frame::ParseOwn(PEPBUFFERPOS pBufferPos)
 	//security 是0x81 当是81的时候，后面的长度就是值；
 	while (TRUE)
 	{
-/*		//2020-07-15  lijunqing 可以不判断
+/*		//2020-07-15  Eric 可以不判断
 		if (! IsInBuffer(pBufferPos))
 		{//不在缓冲区范围之内
 			return -1;
@@ -310,7 +310,7 @@ long C92Frame::ParseOwn(PEPBUFFERPOS pBufferPos)
 		ReadTagLen(byteTag,  nLen,  pBufferPos);
 
 		if (! Ep_IsBufferEnough(pBufferPos, nLen))
-		{//2020-07-15  lijunqing  数据的长度足够
+		{//2020-07-15  Eric  数据的长度足够
 			return -1;
 		}
 
@@ -391,7 +391,7 @@ long C92Frame::ParseOwn(PEPBUFFERPOS pBufferPos)
 		while (TRUE)
 		{
 			if (! Ep_IsBufferEnough(pBufferPos, nLen))
-			{//2020-07-15  lijunqing  数据的长度足够
+			{//2020-07-15  Eric  数据的长度足够
 				return -1;
 			}
 

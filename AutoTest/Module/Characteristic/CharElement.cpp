@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //CharElement.cpp  CCharElement
@@ -440,7 +440,7 @@ void CCharElement::SetTestPoint(long nPoints)
 		return;
 	}
 
-	//2023-3-2  lijunqing
+	//2023-3-2  Eric
 	//区分sys和用户自定一部分，只设置系统测试点的数量，对于自定义添加点，不修改
 	CExBaseList oListSys, oListOther;
 	SelectLines(oListSys, oListOther);

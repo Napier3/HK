@@ -19,8 +19,8 @@ static char THIS_FILE[]=__FILE__;
 
 #ifdef CHECK_HEARTBEAT_TIMEOUT_MODE
 long g_nSendHeartbeatTimeGap = 5000;
-//long g_nRecvHeartbeatTimeGap = 30000;//2021-8-20  lijunqing  use timer-count
-long g_nRecvHeartbeatTimeGap = 30;//2021-8-20  lijunqing  use timer-count
+//long g_nRecvHeartbeatTimeGap = 30000;//2021-8-20  Eric  use timer-count
+long g_nRecvHeartbeatTimeGap = 30;//2021-8-20  Eric  use timer-count
 #else
 long g_nSendHeartbeatTimeGap = 0;
 long g_nRecvHeartbeatTimeGap = 0;
@@ -45,7 +45,7 @@ CSttSocketDataBase_File::CSttSocketDataBase_File()
 
 	m_oExpandRecvBuf.AllocBuffer();
 
-	//2021-8-20  lijunqing  use timer-count
+	//2021-8-20  Eric  use timer-count
 	m_nRecvHeartbeatCounter = 0;
 }
 
@@ -756,7 +756,7 @@ void CSttSocketDataBase_File::RestartSendHeartbeatTickCount()
 void CSttSocketDataBase_File::RestartRecvHeartbeatTickCount()
 {
 	//m_oRecvHeartbeatTick.Enter();
-	//2021-8-20  lijunqing  use timer-count
+	//2021-8-20  Eric  use timer-count
 	m_nRecvHeartbeatCounter = 0;
 }
 

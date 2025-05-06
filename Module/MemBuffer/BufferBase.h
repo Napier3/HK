@@ -18,7 +18,7 @@ protected:
 	char	*m_pPointer;		//文件执行指针
 	long	m_nLengthEx;	//扩展长度
 	bool	m_bFormartAllChar;	//是否格式化指定的全部字符
-	bool   m_bAttatch;  //2021-5-16  lijunqing 
+	bool   m_bAttatch;  //2021-5-16  Eric 
 
 public:
 	CBufferBase();
@@ -29,7 +29,7 @@ public:
 	CBufferBase(const char *pBuffBegin,const char *pBuffEnd);
 	virtual ~CBufferBase();
 
-	//2021-5-16  lijunqing 
+	//2021-5-16  Eric 
 	void Attatch(char *pszBuff);
 	char* Dettatch();
 

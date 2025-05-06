@@ -129,7 +129,7 @@ void stt_xml_serialize_register_adjust(CSttXmlSerializeBase *pXmlSerialize)
 {
 	stt_create_adjust();
 
-	//2021-5-5  lijunqing 返回Device根节点
+	//2021-5-5  Eric 返回Device根节点
 	CSttXmlSerializeBase *pDevice = pXmlSerialize->xml_serialize("Device", "Device", "Device", CDataMngrXmlRWKeys::CDataGroupKey());
 
 	stt_xml_serialize(g_theDeviceSystemParameter, pDevice);
@@ -460,7 +460,7 @@ void stt_xml_serialize(PSTT_MODULE_CH_DEF  pPara,  long nIndex, CSttXmlSerialize
 #endif
 	//pXmlHdCh->xml_serialize("工作模式","WorkMode","","WorkMode", pPara->m_nWorkMode);
 	//pXmlHdCh->xml_serialize("电气类型","EeType","","EeType", pPara->m_nEeType);
-	//2021-5-4  lijunqing  数据类型  标准ID和整数之间的转换
+	//2021-5-4  Eric  数据类型  标准ID和整数之间的转换
 #ifdef NOT_USE_XLANGUAGE
 	stt_xml_serialize_data_type(pXmlHdCh, "工作模式","WorkMode","","WorkMode", pPara->m_nWorkMode);
 #else
@@ -597,7 +597,7 @@ void stt_xml_serialize(PST_MODULE_ATTR  pPara,  CSttXmlSerializeBase *pXmlSerial
 
 	if (g_theAdjParaXmlSerialConfig.m_nModuleAttr != 0)
 	{
-		//2021-5-4  lijunqing  数据类型  标准ID和整数之间的转换
+		//2021-5-4  Eric  数据类型  标准ID和整数之间的转换
 #ifdef NOT_USE_XLANGUAGE
 		stt_xml_serialize_data_type(pXmlModuleAttrs, "模块类型","ModuleType","","ModuleType", pPara->m_nModuleType);
 		pXmlModuleAttrs->xml_serialize("型号","Model","","string", pPara->m_strModelName);
@@ -1516,7 +1516,7 @@ PSTT_ADJUST_ITEM stt_adj_find_meas_i_item(float fGearVal,int nModulePos,int nCha
 
 //////////////////////////////////////////////////////////////////////////
 //
-//序列化数据类型：字符串 ==>>  文本  2021-5-4  lijunqing
+//序列化数据类型：字符串 ==>>  文本  2021-5-4  Eric
 #include "tmt_adjust_sys_para_trans.h"
 
 void stt_xml_serialize_data_type(CSttXmlSerializeBase *pXmlSerialize, const char *pszName, const char *pszID, const char *pszUnit, const char *pszDataType, long &nValue)

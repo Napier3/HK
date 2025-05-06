@@ -834,7 +834,7 @@ long CSerializeBufferBase::WriteWChar(wchar_t wch)
     return 2;
 }
 
-//2020-12-27 lijunqing
+//2020-12-27 Eric
 long CSerializeBufferBase::ReadString(char *pstrData)
 {
     char *p = pstrData;

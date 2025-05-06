@@ -8,7 +8,7 @@ CSttTestCntrApplication::CSttTestCntrApplication(Display *pDisplay):QApplication
 CSttTestCntrApplication::CSttTestCntrApplication(int argc, char *argv[]):QApplication(argc,argv)
 #endif
 {
-	g_nXSttRcdInitChDvmData_Harm = 25; //2022-5-8  lijunqing  //20220511 zhouhj 目前只计算到25次谐波,暂时只显示25次
+    g_nXSttRcdInitChDvmData_Harm = 25; //2022-5-8  Eric  //20220511 zhouhj 目前只计算到25次谐波,暂时只显示25次
 }
 
 CSttTestCntrApplication::~CSttTestCntrApplication()

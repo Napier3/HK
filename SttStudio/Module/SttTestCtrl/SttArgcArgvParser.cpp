@@ -79,7 +79,7 @@ void CSttArgcArgvParser::Parser(int argc, char *argv[])
 	ParseLong(ARGV_CMD_PARA_ID_IEC, &m_nUseIec);
 	ParseLong(ARGV_CMD_PARA_ID_MEASSERVER, &m_nUseMeasServer);
 	ParseLong(ARGV_CMD_PARA_ID_waiting_time, &m_nWaitingTime);
-	ParseString(ARGV_CMD_PARA_ID_ASSIST, m_strAssistID);  //2022-12-01  lijunqing
+	ParseString(ARGV_CMD_PARA_ID_ASSIST, m_strAssistID);  //2022-12-01  Eric
 
 	ParseString(ARGV_CMD_PARA_ID_macro_file, m_strMacroFile);  
 	ParseString(ARGV_CMD_PARA_ID_sscl_path, m_strSsclFilePath);  

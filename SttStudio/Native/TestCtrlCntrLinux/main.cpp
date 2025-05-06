@@ -20,12 +20,12 @@
 //  #include "../../../Module/XMinidmp/XMinidmp.h"
 //  #endif
 
-//2022-9-23  lijunqing
+//2022-9-23  Eric
 #include "../../Module/HtmlReport/IECTest/SttIecTestHtmlRptGenFactory.h"
 #include "../../Module/SttTestCtrl/SttArgcArgvParser.h"
 // extern bool g_bIsOpenMacroFromMain;
 
-//2022-10-8  lijunqing
+//2022-10-8  Eric
 #include "../../Module/SmartTestInterface/QT/PpSttIotEngineDebugWidget.h"
 
 #include "../../Module/UI/SttTestCntrCmdDefine.h"
@@ -41,7 +41,7 @@ QSttEventFilter *g_pSttEventFilter = NULL;
 QSttProgDlg *g_pSttGlobalProgDlg = NULL;
 
 
-//t2022-12-02  lijunqing
+//t2022-12-02  Eric
 //macrotest macro_id=MUAccuracyTest;assist=admutest;iec=1;meas_svr=0;macro_file=AdmuTest;
 //macrotest macro_id=MUAccuracyTest;assist=mutest;iec=1;meas_svr=0;macro_file=MuTest;
 //macrotest macro_id=MUAccurAutoTest;assist=mutest;iec=1;meas_svr=1;macro_file=MuTest;
@@ -171,7 +171,7 @@ qDebug() << "Debug sun: from TestCtrlCntrLinux!!!! S";
 #endif
 	}
 	else if (oParser.m_strCmdID == ARGV_CMD_ID_OPENFILE)
-    {////2022-10-5  lijunqing open auto test file : gbxml, gbrpt
+    {////2022-10-5  Eric open auto test file : gbxml, gbrpt
 		oSttTestCntrFrameLinux.SetAddMacroEnable(false);
 
 		if (g_pSttGlobalProgDlg)
@@ -211,7 +211,7 @@ qDebug() << "Debug sun: from TestCtrlCntrLinux!!!! S";
 
     CSttMacroParaEditViewMngr::Release();
 
-    //2022-9-23  lijunqing
+    //2022-9-23  Eric
     //sun delete pHtmlRptGenFactory;
 
 	ReleaseSttTestCntrThread();

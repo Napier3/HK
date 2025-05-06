@@ -208,7 +208,7 @@ public:
 	virtual CString GetIDPathEx(UINT nRootClassID, BOOL bHasRoot=TRUE, const CString &strSeperator=_T("$"));
 	virtual CString GetNamePathEx(UINT nRootClassID, BOOL bHasRoot=TRUE, const CString &strSeperator=_T("$"));
 
-	CString GetIDPathEx(CExBaseObject *pRoot, BOOL bHasRoot=TRUE, const CString &strSeperator=_T("$"));   //2022-9-17  lijunqing
+	CString GetIDPathEx(CExBaseObject *pRoot, BOOL bHasRoot=TRUE, const CString &strSeperator=_T("$"));   //2022-9-17  Eric
 	CString GetNamePathEx(CExBaseObject *pRoot, BOOL bHasRoot=TRUE, const CString &strSeperator=_T("$"));   //2023-9-1 shaolei
 	
 ////∂‡”Ô—‘œ‡πÿ

@@ -3,7 +3,7 @@
 
 #include "../../Module/UI/SttTestCntrFrameBase.h"
 
-//2023-2-20  lijunqing 通信模块
+//2023-2-20  Eric 通信模块
 //#include "../../Module/SmartTestInterface/QT/PpSttIotEngineClientWidgetMain.h"
 
 class QSttTestCntrFrameLinux : public QSttTestCntrFrameBase
@@ -52,9 +52,9 @@ public://界面相关变量
 
 public:
 	virtual void OnCmd_Menu();
-	virtual void OnCmd_IecCap(); //2022-4-10  lijunqing
-	virtual void OnCmd_IecCapWriteFile(); //2022-6-13  lijunqing
-	virtual void OnCmd_IecCapDebugHead(); //2022-6-13  lijunqing
+    virtual void OnCmd_IecCap(); //2022-4-10  Eric
+    virtual void OnCmd_IecCapWriteFile(); //2022-6-13  Eric
+    virtual void OnCmd_IecCapDebugHead(); //2022-6-13  Eric
 	virtual void InitIecCapTest(bool bActiveIecCap, bool bStartDetect,bool bShowMenuBtns = true);//20220526 对从主界面进入IEC测试做初始化
 	virtual void OnCmd_Liveupdate();
 	virtual void OnCmd_ULiveupdate();
@@ -72,7 +72,7 @@ public:
 	//zhouhj 2024.3.17 停止测试后,立刻将测试界面恢复,防止开始、停止按钮无法操作
 	virtual void OnCmd_StopTest();
 
-//2023-2-20  lijunqing 通信模块  这个部分其实应该放到QSttTestCntrFrameBase
+//2023-2-20  Eric 通信模块  这个部分其实应该放到QSttTestCntrFrameBase
 //但是首先是在Windows版本实现了，所以暂时就不修改基类QSttTestCntrFrameBase
 public:
 	//zhouhj 2023.1.4 移入基类

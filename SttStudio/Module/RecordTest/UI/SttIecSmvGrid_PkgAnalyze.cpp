@@ -42,7 +42,7 @@ void CSttIecSmvGrid_PkgAnalyze::IecRcdFunc(CCapDeviceBase *pCapDevice)
 {
 	m_pCapDevice = pCapDevice;
 
-	//2022-5-28  lijunqing
+	//2022-5-28  Eric
 	CDvmDataset *pDataset_SVCstcErr = NULL;
 	CDvmData *pDataSv = NULL;
 

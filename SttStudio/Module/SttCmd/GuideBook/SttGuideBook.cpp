@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //SttGuideBook.cpp  CSttGuideBook
@@ -445,7 +445,7 @@ CExBaseObject* CSttGuideBook::CreateNewChild(long nClassID/*, BOOL &bAddToTail*/
 	return pNew;
 }
 
-//2022-9-13  lijunqing
+//2022-9-13  Eric
 void CSttGuideBook::SetGuideBookName(const CString &strName)
 {
 	m_strName = strName;
@@ -468,7 +468,7 @@ CString CSttGuideBook::GetGuideBookName()
 	return pDevice->m_strName;
 }
 
-//2022-1-11  lijunqing
+//2022-1-11  Eric
 CSttDevice* CSttGuideBook::GetDevice(BOOL bCreate)
 {
 	CSttDevice *pFind = (CSttDevice*)FindByClassID(STTGBXMLCLASSID_CSTTDEVICE);
@@ -600,7 +600,7 @@ void CSttGuideBook::GetAllItemsByItemsType(CExBaseList &oList)
 	pDevice->GetAllItemsByItemsType(oList);
 }
 
-//2022-3-30  lijunqing
+//2022-3-30  Eric
 void CSttGuideBook::SaveFile()
 {
 	
@@ -701,7 +701,7 @@ CSttItems* CSttGuideBook::FindFirstItems(const CString &strType, BOOL bCheckType
 	return (CSttItems *)pDevice->FindFirstItems(strType, bCheckType);
 }
 
-//2023-2-8  lijunqing
+//2023-2-8  Eric
 CDvmData* CSttGuideBook::FindDataByID(const CString &strID)
 {
 	CDvmData *pFind = NULL;

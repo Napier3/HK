@@ -10,11 +10,11 @@
 
 void ex_InsertChildreComboBox(CExBaseList *pDatas, QComboBox *pComboBox, BOOL bAddParentNameID = FALSE, long nSel=0);
 
-//2022-9-28  lijunqing 直接获取对象
+//2022-9-28  Eric 直接获取对象
 CExBaseObject* ex_ComboBox_GetSelObj(QComboBox *pComboBox, long nIndex);
 CExBaseObject* ex_ComboBox_GetSelObj(QComboBox *pComboBox);
 
-//2022-11-3  lijunqing
+//2022-11-3  Eric
 void ex_ComboBox_adjustItemWidth(QComboBox *pComboBox);
 
 
@@ -63,7 +63,7 @@ public:
 #endif
 
 	virtual BOOL DeleteObject(CExBaseObject *pObj);
-	virtual BOOL DeleteCurrSelObject();  //2021-1-8  lijunqing
+	virtual BOOL DeleteCurrSelObject();  //2021-1-8  Eric
 	virtual long AddObj(CExBaseObject *pObj);
 	virtual long InsertObj(long nIndex, CExBaseObject *pObj);
 

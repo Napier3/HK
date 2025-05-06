@@ -657,7 +657,7 @@ BOOL CEpExpression::max_min(PNOD &oLeft,PNOD &oRight)
 	return TRUE;
 }
 
-//2020-08-05  lijunqing 1$Prot$LLN0....多设备数据模型的处理
+//2020-08-05  Eric 1$Prot$LLN0....多设备数据模型的处理
 void CEpExpression::identificator_var(int &poz, PNOD &nod, PNOD &nod2, PNOD &result, PNOD &pResultTemp)
 {
 	while (_v_isalpha_ex(m_pszEpExpression[m_nCurrPosition])) 

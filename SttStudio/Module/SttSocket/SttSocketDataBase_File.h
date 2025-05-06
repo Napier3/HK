@@ -98,7 +98,7 @@ public:
 	//发送接收心跳计时器
 	CTickCount32 m_oSendHeartbeatTick;
 
-	//2021-8-20  lijunqing  use timer-count
+	//2021-8-20  Eric  use timer-count
 	//CTickCount32 m_oRecvHeartbeatTick;
 	long m_nRecvHeartbeatCounter;
 

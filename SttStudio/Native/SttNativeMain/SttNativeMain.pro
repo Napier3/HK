@@ -409,7 +409,8 @@ SOURCES += main.cpp\
     ../../Module/SttTest/SttTestGlobaoConfig.cpp \
     ../../Module/SttSocket/TestServer/SttServerClientSocketBase.cpp \
     ../../../61850/Module/SCL/CcdFileRead.cpp \
-    ../../../Module/OSInterface/QT/CXCtrl_QT_CWnd.cpp
+    ../../../Module/OSInterface/QT/CXCtrl_QT_CWnd.cpp \
+    hkmain.cpp
     
 HEADERS  += \
     ../../../61850/Module/CfgDataMngr/IecCfgDatasMngr.h \
@@ -801,9 +802,12 @@ HEADERS  += \
     ../../Module/SttTest/SttTestGlobaoConfig.h \
     ../../Module/SttSocket/TestServer/SttServerClientSocketBase.h \
     ../../../61850/Module/SCL/CcdFileRead.h \
-    ../../../Module/OSInterface/QT/CXCtrl_QT_CWnd.h
+    ../../../Module/OSInterface/QT/CXCtrl_QT_CWnd.h \
+    hkmain.h
 
-FORMS += 
+FORMS +=  \
+    hkmain.ui
 
 RESOURCES += \
+    HKMain.qrc \
     SttNativeMain.qrc

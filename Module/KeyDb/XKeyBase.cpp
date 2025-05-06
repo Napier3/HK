@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //XKeyBase.cpp  CXKeyBase
@@ -263,7 +263,7 @@ BOOL CXKeyMatchRefList::Match(CXKeyMatchRef *pXKeyRef)
 	return FALSE;
 }
 
-//2022-5-10  lijunqing
+//2022-5-10  Eric
 void CXKeyMatchRefList::RemoveKey(CXKeyMatchRef *pXKeyRef)
 {
 	POS pos = GetHeadPosition();
@@ -418,7 +418,7 @@ BOOL CXKeyMatchRefList::Match(CXKeyMatchRefList *pDstXKeys, long &nMatchRatio)
 	return bTrue;
 }
 
-//2023-2-6  lijunqing 判断是否为子集
+//2023-2-6  Eric 判断是否为子集
 BOOL CXKeyMatchRefList::IsSubset(CXKeyMatchRefList *pKeysSub)
 {
 	POS pos = pKeysSub->GetHeadPosition();

@@ -471,7 +471,7 @@ BOOL CXmlRWDocBase::SetXml_UTF8(char *strXML, long nLen)
 
 long CXmlRWDocBase::GetXml_wchar(wchar_t **ppzszRetBuffer, long nOffset){return 0;}
 
-//lijunqing 2022-3-11
+//Eric 2022-3-11
 long CXmlRWDocBase::GetXml_ASCII(char **ppszRetBuffer, long nOffset){return 0;}
 
 

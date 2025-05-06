@@ -12,7 +12,7 @@
 #define PI   3.14159265
 
 
-//2020-06-28  lijunqing  频率计算方法
+//2020-06-28  Eric  频率计算方法
 #define FREQUENCY_CAL_MODE_DFT   0
 #define FREQUENCY_CAL_MODE_FFT    1
 #define FREQUENCY_CAL_MODE_FFT_DFT    2
@@ -129,7 +129,7 @@ inline BOOL rt_is_frequency_cal_mode_fft_dft()
 	BOOL ModifyZeroPosition(DWORD dwBufferLen,DWORD* pZeroPos,DWORD& dwCount);
 	BOOL ModifyZeroPosition(PRTCALFUNCPARA pCalFuncPara, DWORD* pZeroPos, DWORD& dwCount);
 	
-//2022-5-3  lijunqing enable harm cal  functions
+//2022-5-3  Eric enable harm cal  functions
 
 extern long g_nEnableCal_Root;//  = 1 ;
 

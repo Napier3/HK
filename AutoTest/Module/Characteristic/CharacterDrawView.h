@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //CharDrawViewIedCfg.h  CCharDrawViewIedCfg
@@ -29,7 +29,7 @@ protected:
 	CXDrawPoint            *m_pCurrTestPoint;//zhouhj 20210825 派生类中使用
 	CXDrawMngr *m_pXDrawMngr_Axis;    //绘图的坐标体系
 
-	//2021-9-17  lijunqing  默认缺省的坐标系，在没有特性曲线的情况下使用
+	//2021-9-17  Eric  默认缺省的坐标系，在没有特性曲线的情况下使用
 	CString  m_strAxis;
 
 //私有成员变量
@@ -71,7 +71,7 @@ public:
 	virtual void Draw(CDC *pDC, double fZoomRatio,const CPoint &ptOffset);
 // 	virtual void Pick(const CPoint &point, CExBaseList &oList);
 
-	//2021-9-7  lijunqing
+	//2021-9-7  Eric
 	virtual void GetAxisInterface(CAxisInterface **ppAxisInterface);
 
 public:
@@ -102,7 +102,7 @@ public:
 	virtual void MoveDown(double dCoef=0.2);
 	virtual void CalAxisMinMax(double &dXMin, double &dYMin, double &dXMax, double &dYMax);
  
-	//2021-10-28  lijunqing   鼠标移动图形
+	//2021-10-28  Eric   鼠标移动图形
 	virtual void MouseMove_SetBegin(CPoint &ptBegin);
 	virtual void MouseMove_MoveTo(CPoint &point);
 

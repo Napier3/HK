@@ -1,5 +1,5 @@
 //这段源代码由ClassGenerator创建
-//版权所有 LiJunqing  lijunqing1224@126.com
+//版权所有 Eric  Eric1224@126.com
 //保留所有权利
 
 //XDrawGlobal.h
@@ -26,7 +26,7 @@
 #define DWCLASSID_CXDRAWPOINT_EX          (DWCLASSID_BASECLASS + 0X0000000C)
 #define DWCLASSID_CXDRAWLINE_EX          (DWCLASSID_BASECLASS + 0X0000000D)
 
-//2021-1-16  lijunqing
+//2021-1-16  Eric
 #define DWCLASSID_CXDRAWTEXT           (DWCLASSID_BASECLASS + 0X0000000E)
 
 // #define AXIS_TYPE_ID_CARTES     _T("cartes")
